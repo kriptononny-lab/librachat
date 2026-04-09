@@ -43,7 +43,7 @@ export default function ContactPage() {
         {/* Основной контент */}
         <section style={{ padding:"0 0 120px" }}>
           <div className="container-site">
-            <div className="grid-2col" style={{ gap:"40px", alignItems:"start" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap:"32px", alignItems:"start" }}>
 
               {/* Форма */}
               <div style={{ borderRadius:"20px", padding:"32px", background:"rgba(14,13,25,0.92)", border:"1px solid rgba(101,88,224,0.18)" }}>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 </p>
 
                 <div style={{ display:"flex", flexDirection:"column", gap:"14px" }}>
-                  <div className="grid-2col form-inputs" style={{ gap:"12px" }}>
+                  <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 180px), 1fr))", gap:"12px" }}>
                     {["Ваше имя", "Должность"].map(pl => (
                       <input key={pl} type="text" placeholder={pl}
                         style={{ padding:"13px 16px", borderRadius:"12px", fontSize:"14px", color:"#f2f0ff", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.09)", outline:"none", width:"100%" }} />

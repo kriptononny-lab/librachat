@@ -87,12 +87,12 @@ export function SocialProofSection() {
         </motion.div>
 
         {/* Счётчики */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "56px" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap:"16px", marginBottom:"56px" }}>
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
               initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
-              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "36px 16px", borderRadius: "20px", textAlign: "center", background: "rgba(14,13,25,0.75)", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "24px 12px", borderRadius: "20px", textAlign: "center", background: "rgba(14,13,25,0.75)", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               <span style={{ fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 800, color: "#c9920a", letterSpacing: "-0.02em" }}>{s.el}</span>
               <span style={{ fontSize: "14px", lineHeight: 1.5, color: "#a89ec0", maxWidth: "160px" }}>{s.label}</span>

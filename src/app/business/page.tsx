@@ -79,7 +79,7 @@ export default function BusinessPage() {
                 <p style={{ fontSize: "16px", lineHeight: 1.655, color: "#a89ec0", maxWidth: "420px" }}>
                   Масштабируй работу команды с LibraChat — корпоративный ИИ с безопасностью данных, управлением доступом и интеграциями под твои процессы.
                 </p>
-                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <div className="btn-pair" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <Link href="/contact?type=demo" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", borderRadius: "999px", background: "#6558e0", color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(101,88,224,0.4)" }}>
                     Запросить демо
                   </Link>
@@ -223,7 +223,7 @@ export default function BusinessPage() {
         {/* ── CTA + ФОРМА ── */}
         <section style={{ padding: "120px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site">
-            <div className="grid-2col business-cta-grid" style={{ gap: "32px", padding: "48px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap:"32px", padding:"48px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "20px", justifyContent: "center" }}>
                 <h2 style={{ fontSize: "clamp(32px, 3vw, 48px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.15, color: "#f0eeff" }}>
                   Готовы внедрить<br /><span className="text-gradient">ИИ в команду?</span>
@@ -241,7 +241,7 @@ export default function BusinessPage() {
               </div>
               <div style={{ borderRadius: "18px", padding: "28px", display: "flex", flexDirection: "column", gap: "14px", background: "rgba(8,7,16,0.7)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <p style={{ fontSize: "15px", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>Запросить демо</p>
-                <div className="grid-2col form-inputs" style={{ gap: "10px" }}>
+                <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 180px), 1fr))", gap:"10px" }}>
                   {["Имя", "Должность", "Email", "Телефон"].map(pl => (
                     <input key={pl} type="text" placeholder={pl} style={{ padding: "12px 14px", borderRadius: "12px", fontSize: "14px", color: "#fff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", outline: "none" }} />
                   ))}

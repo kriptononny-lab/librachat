@@ -51,7 +51,7 @@ export function StepsSection() {
         </motion.div>
 
         {/* Шаги */}
-        <div className="grid-3col" style={{ gap: "40px", position: "relative" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 220px), 1fr))", gap:"40px", position:"relative" }}>
 
           {STEPS.map((step, i) => (
             <motion.div
@@ -64,7 +64,7 @@ export function StepsSection() {
             >
               {/* Коннектор вправо */}
               {i < 2 && (
-                <div style={{
+                <div className="steps-connector" style={{
                   position: "absolute",
                   top: "32px",
                   left: "calc(50% + 36px)",

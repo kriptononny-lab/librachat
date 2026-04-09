@@ -121,7 +121,7 @@ export default function FeaturesPage() {
               </Link>
             </div>
             {/* Статистика */}
-            <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", width:"100%", maxWidth:"560px", borderTop:"1px solid rgba(255,255,255,0.07)", marginTop:"8px" }}>
+            <div className="grid-3col" style={{ width:"100%", maxWidth:"560px", borderTop:"1px solid rgba(255,255,255,0.07)", marginTop:"8px" }}>
               {[
                 { value:"1 480+", label:"тестировщиков" },
                 { value:"4.9 / 5", label:"средняя оценка" },
@@ -149,7 +149,7 @@ export default function FeaturesPage() {
                 { badge:"УМНЫЙ ДИАЛОГ", title:"Отвечает на любые вопросы — понятно и точно", desc:"LibraChat понимает контекст, помнит историю диалога и адаптирует ответы. Подаёт знания на трёх уровнях сложности. Объясняет сложное просто, а простое — подробно.", points:["Поддерживает контекст до 200 000 токенов","Объясняет сложные термины понятным языком","Отвечает на русском, английском и 50+ языках"], mockup:"chat" },
                 { badge:"РАБОТА С ФАЙЛАМИ", title:"Анализирует документы и данные за секунды", desc:"Загрузи PDF, таблицу или презентацию — LibraChat прочитает, выделит главное, ответит на вопросы по содержимому и создаст резюме.", points:["PDF, Word, Excel, PowerPoint, CSV","Автоматическое извлечение ключевых данных","Работа с несколькими файлами одновременно"], mockup:"files" },
               ].map((feat, i) => (
-                <div key={feat.badge} style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"64px", alignItems:"center" }}>
+                <div key={feat.badge} style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap:"40px", alignItems:"start" }}>
                   <div style={{ order: i % 2 === 1 ? 2 : 1, display:"flex", justifyContent:"center" }}>
                     {feat.mockup === "chat" ? <ChatMockup /> : <FilesMockup />}
                   </div>
@@ -259,7 +259,7 @@ export default function FeaturesPage() {
         {/* CTA */}
         <section style={{ padding:"80px 0 100px", background:"#07060e" }}>
           <div className="container-site">
-            <div style={{ position:"relative", overflow:"hidden", borderRadius:"24px", padding:"72px 48px", textAlign:"center", background:"rgba(14,13,25,0.97)", border:"1px solid rgba(101,88,224,0.2)" }}>
+            <div className="cta-inner" style={{ position:"relative", overflow:"hidden", borderRadius:"24px", padding:"72px 48px", textAlign:"center", background:"rgba(14,13,25,0.97)", border:"1px solid rgba(101,88,224,0.2)" }}>
               <div style={{ position:"absolute", top:0, left:0, right:0, height:"1px", background:"linear-gradient(90deg,transparent,rgba(101,88,224,0.6),transparent)" }} />
               <div style={{ position:"relative", display:"flex", flexDirection:"column", alignItems:"center", gap:"20px" }}>
                 <div className="section-badge">14 ДНЕЙ БЕСПЛАТНО</div>

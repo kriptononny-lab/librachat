@@ -57,7 +57,7 @@ export default function PrivacyPage() {
         {/* Шапка */}
         <section style={{ padding:"60px 0 48px" }}>
           <div className="container-site">
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 320px", gap:"48px", alignItems:"start" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap:"40px" }}>
               <div>
                 <div className="section-badge" style={{ marginBottom:"16px", width:"fit-content" }}>✦ ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</div>
                 <h1 style={{ fontSize:"clamp(28px, 4vw, 48px)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.15, color:"#f2f0ff", marginBottom:"16px" }}>
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
         {/* Контент + сайдбар */}
         <section style={{ paddingBottom:"80px", borderTop:"1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site" style={{ maxWidth:"1000px", paddingTop:"48px" }}>
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 240px", gap:"48px", alignItems:"start" }}>
+            <div style={{ display:"grid", gap:"40px", alignItems:"start" }}>
 
               {/* Основной контент */}
               <div style={{ display:"flex", flexDirection:"column", gap:"48px" }}>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
 
                 <Section id="data" title="Данные которые мы собираем">
                   <p style={S.p}>В рамках работы LibraChat мы получаем только те данные, которые необходимы для работы сервиса — без избыточного сбора информации.</p>
-                  <div style={{ borderRadius:"12px", overflow:"hidden", border:"1px solid rgba(255,255,255,0.08)" }}>
+                  <div className="table-scroll" style={{ borderRadius:"12px", overflow:"auto", border:"1px solid rgba(255,255,255,0.08)" }}>
                     <table style={{ width:"100%", fontSize:"13px", borderCollapse:"collapse" }}>
                       <thead>
                         <tr style={{ background:"rgba(14,13,25,0.92)", borderBottom:"1px solid rgba(255,255,255,0.07)" }}>
