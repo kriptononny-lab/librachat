@@ -89,7 +89,7 @@ function AnimatedInput() {
       </div>
 
       {/* Быстрые действия */}
-      <div style={{ padding:"0 20px 18px", display:"flex", flexWrap:"wrap", gap:"8px" }}>
+      <div className="widget-actions" style={{ padding:"0 20px 18px", display:"flex", gap:"8px" }}>
         {QUICK_ACTIONS.map(({ icon: Icon, label }) => (
           <span key={label} style={{ display:"inline-flex", alignItems:"center", gap:"6px", padding:"7px 14px", borderRadius:"999px", fontSize:"13px", border:"1px solid rgba(255,255,255,0.08)", color:"#a89ec0", cursor:"pointer" }}>
             <Icon size={14} />
@@ -210,14 +210,14 @@ export function HeroSection() {
             initial={{ opacity:0 }}
             animate={{ opacity:1 }}
             transition={{ duration:0.5, delay:0.68 }}
-            style={{ width:"100%", maxWidth:"700px", display:"grid", gridTemplateColumns:"repeat(3,1fr)", borderTop:"1px solid rgba(255,255,255,0.07)" }}
+            style={{ width:"100%", maxWidth:"700px", display:"grid", borderTop:"1px solid rgba(255,255,255,0.07)" }}
           >
             {[
               { value:"Без VPN", label:"начать пользоваться легко" },
               { value:"1 480",   label:"тестировщиков подтвердили преимущества" },
               { value:"30 сек",  label:"среднее время регистрации" },
             ].map((s, i) => (
-              <div key={s.label} style={{ display:"flex", flexDirection:"column", gap:"6px", padding:"24px 12px", textAlign:"center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
+              <div key={s.label} className="hero-stats-item" style={{ display:"flex", flexDirection:"column", gap:"6px", padding:"24px 12px", textAlign:"center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
                 <span style={{ fontSize:"22px", fontWeight:700, color:"#c9920a" }}>{s.value}</span>
                 <span style={{ fontSize:"12px", lineHeight:1.45, color:"#a89ec0" }}>{s.label}</span>
               </div>

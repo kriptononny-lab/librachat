@@ -66,7 +66,7 @@ export default function BusinessPage() {
         {/* ── HERO ── */}
         <section style={{ padding: "100px 0 80px", background: "#07060e" }}>
           <div className="container-site">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
+            <div className="grid-2col" style={{ gap: "48px", alignItems: "center" }}>
 
               {/* Текст */}
               <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
@@ -104,7 +104,7 @@ export default function BusinessPage() {
                   <p style={{ fontSize: "14px", fontWeight: 600, color: "#fff" }}>Панель управления командой</p>
                   <span style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "999px", background: "rgba(101,88,224,0.15)", color: "#9b8ff8", border: "1px solid rgba(101,88,224,0.3)" }}>Business Pro</span>
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "10px" }}>
+                <div className="grid-3col" style={{ gap: "10px" }}>
                   {[{ value: "47", label: "Участников" }, { value: "1 240", label: "Запросов сегодня" }, { value: "98%", label: "Удовлетворённость" }].map(s => (
                     <div key={s.label} style={{ padding: "14px 10px", borderRadius: "14px", textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <p style={{ fontSize: "20px", fontWeight: 800, color: "#fff" }}>{s.value}</p>
@@ -223,7 +223,7 @@ export default function BusinessPage() {
         {/* ── CTA + ФОРМА ── */}
         <section style={{ padding: "120px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", padding: "56px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
+            <div className="grid-2col business-cta-grid" style={{ gap: "40px", padding: "48px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "20px", justifyContent: "center" }}>
                 <h2 style={{ fontSize: "clamp(32px, 3vw, 48px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.15, color: "#f0eeff" }}>
                   Готовы внедрить<br /><span className="text-gradient">ИИ в команду?</span>
@@ -241,7 +241,7 @@ export default function BusinessPage() {
               </div>
               <div style={{ borderRadius: "18px", padding: "28px", display: "flex", flexDirection: "column", gap: "14px", background: "rgba(8,7,16,0.7)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <p style={{ fontSize: "15px", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>Запросить демо</p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                <div className="grid-2col" style={{ gap: "10px" }}>
                   {["Имя", "Должность", "Email", "Телефон"].map(pl => (
                     <input key={pl} type="text" placeholder={pl} style={{ padding: "12px 14px", borderRadius: "12px", fontSize: "14px", color: "#fff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", outline: "none" }} />
                   ))}

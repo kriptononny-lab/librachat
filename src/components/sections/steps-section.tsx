@@ -51,7 +51,7 @@ export function StepsSection() {
         </motion.div>
 
         {/* Шаги */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "40px", position: "relative" }}>
+        <div className="grid-3col" style={{ gap: "40px", position: "relative" }}>
 
           {STEPS.map((step, i) => (
             <motion.div
@@ -60,7 +60,7 @@ export function StepsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.14 }}
-              style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", position: "relative" }}
+              className="step-col" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", position: "relative" }}
             >
               {/* Коннектор вправо */}
               {i < 2 && (

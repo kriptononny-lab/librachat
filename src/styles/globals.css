@@ -243,3 +243,198 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
+
+/* ===================================================
+   Адаптивные сетки — мобильная адаптация
+   =================================================== */
+
+/* 2 колонки → 1 на мобильном */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/* 3 колонки → 1 на мобильном */
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+/* Контент + сайдбар */
+.grid-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 48px;
+  align-items: start;
+}
+.grid-sidebar-lg {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+/* Футер */
+.grid-footer {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .grid-footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .grid-sidebar-lg {
+    grid-template-columns: 1fr;
+  }
+  .grid-sidebar-lg .sidebar-col {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2col,
+  .grid-3col,
+  .grid-sidebar {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .sidebar-sticky {
+    display: none !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  .mobile-full {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .mobile-center {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .mobile-pad {
+    padding: 40px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-footer {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-sm {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Секции — меньше паддинг на мобильном */
+@media (max-width: 768px) {
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  h1 { font-size: clamp(28px, 8vw, 48px) !important; }
+  .container-site {
+    padding-inline: 20px !important;
+  }
+  /* Скрыть сайдбар статьи на мобильном */
+  .article-sidebar {
+    display: none !important;
+  }
+}
+
+/* ===================================================
+   Точная мобильная адаптация компонентов
+   =================================================== */
+
+/* Hero виджет — чат не выходит за края */
+@media (max-width: 768px) {
+  /* Таб-переключатели — скролл вместо переноса */
+  .tabs-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding-bottom: 4px;
+  }
+  .tabs-scroll::-webkit-scrollbar { display: none; }
+
+  /* Виджет чата в hero */
+  .hero-widget-aura {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Кнопки быстрых действий в виджете — скролл */
+  .widget-actions {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .widget-actions::-webkit-scrollbar { display: none; }
+
+  /* Статистика hero — меньше паддинг */
+  .hero-stats-item {
+    padding: 16px 8px !important;
+  }
+
+  /* Business CTA блок — одна колонка */
+  .business-cta-grid {
+    grid-template-columns: 1fr !important;
+    padding: 32px 24px !important;
+  }
+
+  /* Таблицы — горизонтальный скролл */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* FAQ кнопки вопросов */
+  .faq-btn {
+    padding: 16px 18px !important;
+  }
+
+  /* Карточки steps — убрать горизонтальные отступы */
+  .step-col {
+    padding: 0 8px !important;
+  }
+
+  /* Секция "3 шага" — уменьшить коннектор */
+  .steps-connector {
+    display: none !important;
+  }
+
+  /* Marquee текст — чуть крупнее для читаемости */
+  .marquee-text {
+    font-size: 14px !important;
+  }
+
+  /* Download платформы */
+  .platform-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Pricing блок переключателя месяц/год */
+  .billing-toggle {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .platform-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Кнопки рядом → стопкой */
+  .btn-pair {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .btn-pair a, .btn-pair button {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}

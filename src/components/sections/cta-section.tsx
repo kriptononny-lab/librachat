@@ -40,7 +40,7 @@ export function CtaSection() {
               14 дней бесплатно — без карты, без обязательств. Отмена в любой момент.
             </p>
 
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px", marginTop: "8px" }}>
+            <div className="btn-pair" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px", marginTop: "8px" }}>
               <Link href="https://librachat.kz/auth" style={{
                 display: "inline-flex", alignItems: "center", justifyContent: "center",
                 padding: "14px 36px", borderRadius: "999px",

@@ -86,7 +86,7 @@ export default function DownloadPage() {
         {/* Платформы */}
         <section style={{ padding:"0 0 120px" }}>
           <div className="container-site">
-            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(260px, 1fr))", gap:"20px" }}>
+            <div className="platform-grid" style={{ gap:"20px" }}>
               {PLATFORMS.map(({ icon: Icon, title, subtitle, badge, version, href, primary, soon }) => (
                 <div key={title} style={{
                   display:"flex", flexDirection:"column", gap:"20px", padding:"32px 28px",
