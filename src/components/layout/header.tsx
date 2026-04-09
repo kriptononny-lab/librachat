@@ -180,7 +180,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            style={{ position:"fixed", inset:0, zIndex:40, background:"rgba(0,0,0,0.6)", backdropFilter:"blur(4px)" }}
+            style={{ position:"fixed", inset:0, zIndex:65, background:"rgba(0,0,0,0.6)", backdropFilter:"blur(4px)" }}
           />
 
           {/* Панель */}
@@ -189,7 +189,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             initial={{ x:"100%" }} animate={{ x:0 }} exit={{ x:"100%" }}
             transition={{ type:"spring", damping:28, stiffness:300 }}
             style={{
-              position:"fixed", top:0, right:0, bottom:0, zIndex:50,
+              position:"fixed", top:0, right:0, bottom:0, zIndex:70,
               width:"280px", display:"flex", flexDirection:"column",
               background:"#13121f", borderLeft:"1px solid rgba(255,255,255,0.08)",
             }}
@@ -274,7 +274,7 @@ export function Header() {
     <>
       <header
         style={{
-          position: "fixed", top: 0, left: 0, right: 0, zIndex: 30,
+          position: "fixed", top: 0, left: 0, right: 0, zIndex: 60,
           transition: "all 300ms ease",
           padding: scrolled ? "12px 0" : "16px 0",
           background: scrolled ? "rgba(14,14,19,0.88)" : "transparent",
@@ -309,6 +309,7 @@ export function Header() {
               onClick={() => setMenuOpen(true)}
               className="mobile-burger-btn"
               aria-label="Открыть меню"
+              style={{ position: "relative", zIndex: 100, pointerEvents: "auto" }}
             >
               <Menu size={22} color="#a89ec0" />
             </button>
