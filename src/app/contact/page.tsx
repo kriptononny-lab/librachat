@@ -43,17 +43,17 @@ export default function ContactPage() {
         {/* Основной контент */}
         <section style={{ padding:"0 0 120px" }}>
           <div className="container-site">
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"48px", alignItems:"start" }}>
+            <div className="grid-2col" style={{ gap:"40px", alignItems:"start" }}>
 
               {/* Форма */}
-              <div style={{ borderRadius:"24px", padding:"40px", background:"rgba(14,13,25,0.92)", border:"1px solid rgba(101,88,224,0.18)" }}>
+              <div style={{ borderRadius:"20px", padding:"32px", background:"rgba(14,13,25,0.92)", border:"1px solid rgba(101,88,224,0.18)" }}>
                 <h2 style={{ fontSize:"22px", fontWeight:700, color:"#f2f0ff", marginBottom:"8px" }}>Запросить демо</h2>
                 <p style={{ fontSize:"14px", color:"#a89ec0", marginBottom:"28px", lineHeight:1.6 }}>
                   Оставьте заявку — наш менеджер свяжется в течение 2 часов
                 </p>
 
                 <div style={{ display:"flex", flexDirection:"column", gap:"14px" }}>
-                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"12px" }}>
+                  <div className="grid-2col form-inputs" style={{ gap:"12px" }}>
                     {["Ваше имя", "Должность"].map(pl => (
                       <input key={pl} type="text" placeholder={pl}
                         style={{ padding:"13px 16px", borderRadius:"12px", fontSize:"14px", color:"#f2f0ff", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.09)", outline:"none", width:"100%" }} />

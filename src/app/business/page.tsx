@@ -223,7 +223,7 @@ export default function BusinessPage() {
         {/* ── CTA + ФОРМА ── */}
         <section style={{ padding: "120px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site">
-            <div className="grid-2col business-cta-grid" style={{ gap: "40px", padding: "48px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
+            <div className="grid-2col business-cta-grid" style={{ gap: "32px", padding: "48px", borderRadius: "24px", background: "rgba(14,13,25,0.92)", border: "1px solid rgba(101,88,224,0.2)" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "20px", justifyContent: "center" }}>
                 <h2 style={{ fontSize: "clamp(32px, 3vw, 48px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.15, color: "#f0eeff" }}>
                   Готовы внедрить<br /><span className="text-gradient">ИИ в команду?</span>
@@ -241,12 +241,12 @@ export default function BusinessPage() {
               </div>
               <div style={{ borderRadius: "18px", padding: "28px", display: "flex", flexDirection: "column", gap: "14px", background: "rgba(8,7,16,0.7)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <p style={{ fontSize: "15px", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>Запросить демо</p>
-                <div className="grid-2col" style={{ gap: "10px" }}>
+                <div className="grid-2col form-inputs" style={{ gap: "10px" }}>
                   {["Имя", "Должность", "Email", "Телефон"].map(pl => (
                     <input key={pl} type="text" placeholder={pl} style={{ padding: "12px 14px", borderRadius: "12px", fontSize: "14px", color: "#fff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", outline: "none" }} />
                   ))}
                   {["Название компании", "Размер команды"].map(pl => (
-                    <input key={pl} type="text" placeholder={pl} style={{ gridColumn: "span 2", padding: "12px 14px", borderRadius: "12px", fontSize: "14px", color: "#fff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", outline: "none" }} />
+                    <input key={pl} type="text" placeholder={pl} style={{ padding: "12px 14px", borderRadius: "12px", fontSize: "14px", color: "#fff", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", outline: "none" }} />
                   ))}
                 </div>
                 <Link href="/contact?type=demo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "14px", borderRadius: "999px", background: "#6558e0", color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(101,88,224,0.4)", marginTop: "4px" }}>

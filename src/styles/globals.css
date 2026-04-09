@@ -438,3 +438,58 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
     justify-content: center !important;
   }
 }
+
+/* ===================================================
+   Критические мобильные фиксы — v3
+   =================================================== */
+
+/* Запрет горизонтального скролла */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Все формы — полная ширина на мобильном */
+@media (max-width: 768px) {
+  /* Поля формы — 1 колонка */
+  .form-inputs {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Business CTA блок — уменьшить паддинги */
+  .business-cta-grid {
+    grid-template-columns: 1fr !important;
+    padding: 28px 20px !important;
+    gap: 24px !important;
+  }
+
+  /* Все карточки с большим паддингом */
+  [style*="padding: \"40px\""],
+  [style*="padding: \"48px\""],
+  [style*="padding: \"56px\""] {
+    padding: 24px 20px !important;
+  }
+
+  /* Инпуты и кнопки — полная ширина */
+  input, select, textarea, button[type="submit"] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Исправить span 2 в 1-колоночной сетке */
+  .form-inputs > * {
+    grid-column: auto !important;
+  }
+
+  /* Дашборд-виджет в business — схлопнуть */
+  .grid-2col > div {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  /* Footer — убрать overflow */
+  .grid-footer > div {
+    min-width: 0;
+    overflow: hidden;
+  }
+}
