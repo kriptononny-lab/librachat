@@ -27,7 +27,7 @@ function YoutubeIcon() {
 }
 
 const socialLinks = [
-  { href: SITE_CONFIG.social.telegram, icon: <TelegramIcon />, label: "Telegram" },
+  { href: "https://t.me/", icon: <TelegramIcon />, label: "Telegram" },
   { href: SITE_CONFIG.social.vk,       icon: <VkIcon />,       label: "ВКонтакте" },
   { href: SITE_CONFIG.social.youtube,  icon: <YoutubeIcon />,  label: "YouTube" },
 ];
@@ -90,7 +90,7 @@ export function Footer() {
           </div>
 
           {/* Навигационные колонки */}
-          {NAV_COLUMNS.map((col) => (
+          {NAV_COLUMNS.slice(0, 3).map((col) => (
             <div key={col.title} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               <p style={{ fontSize: "11px", fontWeight: 700, color: "rgba(242,240,255,0.4)", letterSpacing: "0.09em", textTransform: "uppercase", marginBottom: "4px" }}>
                 {col.title}
@@ -104,6 +104,21 @@ export function Footer() {
               ))}
             </div>
           ))}
+
+          {/* Колонка поддержки — контакты */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <p style={{ fontSize: "11px", fontWeight: 700, color: "rgba(242,240,255,0.4)", letterSpacing: "0.09em", textTransform: "uppercase", marginBottom: "4px" }}>
+              Поддержка
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <p style={{ fontSize: "11px", color: "#2e2a3e", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email</p>
+              <a href="mailto:support@librachat.kz" style={{ fontSize: "13px", color: "#4a4560", textDecoration: "none" }}>support@librachat.kz</a>
+              <a href="mailto:business@librachat.kz" style={{ fontSize: "13px", color: "#4a4560", textDecoration: "none" }}>business@librachat.kz</a>
+              <p style={{ fontSize: "11px", color: "#2e2a3e", textTransform: "uppercase", letterSpacing: "0.05em", marginTop: "6px" }}>Телефон</p>
+              <a href="tel:+77478703783" style={{ fontSize: "13px", color: "#4a4560", textDecoration: "none" }}>+7 747 870 37 83</a>
+              <p style={{ fontSize: "12px", color: "#2e2a3e", lineHeight: 1.4 }}>Пн–Пт, 9:00–18:00 (GMT+6)</p>
+            </div>
+          </div>
         </div>
 
         {/* Нижняя строка */}
