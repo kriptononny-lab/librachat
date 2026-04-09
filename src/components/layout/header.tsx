@@ -25,6 +25,19 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Lightbulb:     <Lightbulb size={18} />,
 };
 
+// Хук определения мобильного экрана
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return isMobile;
+}
+
 // ===================================================
 // Десктопный дропдаун
 // ===================================================
@@ -263,6 +276,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -287,32 +301,42 @@ export function Header() {
             {/* Логотип */}
             <Logo />
 
-            {/* Десктопная навигация */}
-            <nav className="desktop-nav" style={{ alignItems: "center", gap: "24px", flex: 1, justifyContent: "center" }}>
-              {MAIN_NAV.map((item) => (
-                <NavItem key={item.href} item={item} />
-              ))}
-            </nav>
+            {/* Десктопная навигация — только не мобильный */}
+            {!isMobile && (
+              <nav style={{ display: "flex", alignItems: "center", gap: "24px", flex: 1, justifyContent: "center" }}>
+                {MAIN_NAV.map((item) => (
+                  <NavItem key={item.href} item={item} />
+                ))}
+              </nav>
+            )}
 
-            {/* Правая часть */}
-            <div className="desktop-nav-right" style={{ alignItems: "center", gap: "8px", flexShrink: 0 }}>
-              <Button variant="ghost" size="md" asChild>
-                <Link href="https://librachat.kz/auth">Войти</Link>
-              </Button>
-              <Button variant="primary" size="md" asChild>
-                <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
-              </Button>
-            </div>
+            {/* Правая часть — только не мобильный */}
+            {!isMobile && (
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
+                <Button variant="ghost" size="md" asChild>
+                  <Link href="https://librachat.kz/auth">Войти</Link>
+                </Button>
+                <Button variant="primary" size="md" asChild>
+                  <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
+                </Button>
+              </div>
+            )}
 
-            {/* Бургер (мобильный) — скрыт на десктопе */}
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="mobile-burger-btn"
-              aria-label="Открыть меню"
-              style={{ position: "relative", zIndex: 100, pointerEvents: "auto" }}
-            >
-              <Menu size={22} color="#a89ec0" />
-            </button>
+            {/* Бургер — только мобильный */}
+            {isMobile && (
+              <button
+                onClick={() => setMenuOpen(true)}
+                aria-label="Открыть меню"
+                style={{
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  padding: "8px", borderRadius: "10px", background: "transparent",
+                  border: "1px solid rgba(255,255,255,0.1)", cursor: "pointer",
+                  position: "relative", zIndex: 100,
+                }}
+              >
+                <Menu size={22} color="#a89ec0" />
+              </button>
+            )}
           </div>
         </div>
       </header>
