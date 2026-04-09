@@ -54,6 +54,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{__html: `
+          .mobile-burger-btn { display: none !important; }
+          .desktop-nav { display: flex; }
+          .desktop-nav-right { display: flex; }
+          @media (max-width: 768px) {
+            .mobile-burger-btn { display: flex !important; }
+            .desktop-nav { display: none !important; }
+            .desktop-nav-right { display: none !important; }
+          }
+        `}} />
+      </head>
       <body>{children}</body>
     </html>
   );
