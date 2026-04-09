@@ -53,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
-      <body>{children}</body>
+    <html lang="ru" suppressHydrationWarning style={{ overflowX: "hidden", maxWidth: "100vw" }}>
+      <body style={{ overflowX: "hidden", maxWidth: "100vw", position: "relative" }}>{children}</body>
     </html>
   );
 }
