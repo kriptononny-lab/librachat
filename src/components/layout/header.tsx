@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
@@ -272,6 +272,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isMobile = useIsMobile();
+  const handleClose = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -336,7 +337,7 @@ export function Header() {
         </div>
       </header>
       {/* Мобильное меню */}
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <MobileMenu open={menuOpen} onClose={handleClose} />
     </>
   );
 }
