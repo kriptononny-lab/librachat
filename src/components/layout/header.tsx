@@ -292,7 +292,7 @@ export function Header() {
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >
-        <div className="container-site">
+        <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: "clamp(16px, 4vw, 48px)", paddingRight: "clamp(16px, 4vw, 48px)" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px" }}>
             {/* Логотип */}
             <Logo />
