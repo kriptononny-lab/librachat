@@ -1,0 +1,9 @@
+export { HeroSection }          from "./hero-section";
+export { FacetsSection }        from "./facets-section";
+export { FeaturesSection }      from "./features-section";
+export { StepsSection }         from "./steps-section";
+export { SocialProofSection }   from "./social-proof-section";
+export { PricingPreviewSection } from "./pricing-preview-section";
+export { FaqSection }           from "./faq-section";
+export { CtaSection }           from "./cta-section";
+export { PricingClient }        from "./pricing-client";

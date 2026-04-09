@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "business": "For Business",
+    "learn": "Learn",
+    "download": "Download",
+    "login": "Log in",
+    "try_free": "Try for free"
+  },
+  "hero": {
+    "badge": "Next-gen AI",
+    "title": "Your smart assistant",
+    "subtitle": "Librachat helps you get things done faster — work, study, or creativity.",
+    "cta_primary": "Try for free",
+    "cta_secondary": "Watch demo",
+    "chat_placeholder": "Type something..."
+  },
+  "pricing": {
+    "title": "Simple, transparent pricing",
+    "subtitle": "Start for free, scale as you grow",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save": "Save {percent}%",
+    "popular": "Popular",
+    "per_month": "/ mo",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "For personal use"
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "For professionals"
+      },
+      "business": {
+        "name": "Business",
+        "description": "For teams & companies"
+      }
+    }
+  },
+  "footer": {
+    "company": "Company",
+    "product": "Product",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {year} Librachat. All rights reserved."
+  },
+  "common": {
+    "learn_more": "Learn more",
+    "get_started": "Get started",
+    "contact_us": "Contact us",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again"
+  }
+}

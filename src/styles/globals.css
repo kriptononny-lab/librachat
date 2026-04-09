@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* ===================================================
+   LIBRACHAT — Design Tokens v2 (упрощённая палитра)
+   =================================================== */
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Фиолетовый — глубже, менее детский */
+  --color-brand-400: #7c6af0;
+  --color-brand-500: #6558e0;   /* основной */
+  --color-brand-600: #5a4bd1;
+  --color-brand-700: #6558e0;
+
+  /* Янтарный — приглушённее */
+  --color-amber-400: #c9920a;
+  --color-amber-500: #b87608;
+
+  /* Фоны — единый тёмный фон, без пёстрости */
+  --color-bg-base:    #07060e;
+  --color-bg-surface: #14131c;
+  --color-bg-raised:  #1a1925;
+  --color-bg-card:    #1e1d28;
+
+  /* Текст — контрастнее */
+  --color-text-primary:   #f2f0ff;   /* чуть чище белый */
+  --color-text-secondary: #a89ec0;   /* фиолетово-серый */
+  --color-text-muted:     #58506e;   /* подписи, метки */
+
+  /* Границы */
+  --color-border:        rgba(255,255,255,0.07);
+  --color-border-medium: rgba(255,255,255,0.11);
+  --color-border-accent: rgba(101,88,224,0.35);
+
+  /* Статусы */
+  --color-success: #22c55e;
+  --color-warning: #c9920a;
+  --color-error:   #ef4444;
+
+  /* Радиусы */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  20px;
+  --radius-full: 9999px;
+
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+}
+
+/* ===================================================
+   Base
+   =================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.65;
+  min-height: 100dvh;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 9999px; }
+
+/* ===================================================
+   Контейнер
+   =================================================== */
+.container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 768px)  { .container-site { padding-inline: 2rem; } }
+@media (min-width: 1280px) { .container-site { padding-inline: 2.5rem; } }
+
+/* ===================================================
+   Компоненты
+   =================================================== */
+
+/* Кнопка-прожектор — только на primary, без внешнего свечения */
+.btn-primary-glow {
+  box-shadow: 0 4px 20px rgba(101,88,224,0.35);
+  transition: box-shadow 200ms ease, background 200ms ease;
+}
+.btn-primary-glow:hover {
+  box-shadow: 0 4px 28px rgba(108,92,231,0.5);
+}
+
+/* Карточки */
+.card-dark {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+.card-raised {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-xl);
+}
+
+/* Градиентный текст — ТОЛЬКО фиолетовый, нигде больше */
+.text-gradient {
+  background: linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Янтарный цвет текста (не градиент) */
+.text-amber { color: var(--color-amber-400); }
+
+/* Бейдж секции */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(101,88,224,0.1);
+  border: 1px solid rgba(101,88,224,0.22);
+  font-size: 11px;
+  font-weight: 600;
+  color: #a89ec0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Карточка с hover glow */
+.card-hover {
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+.card-hover:hover {
+  border-color: rgba(101,88,224,0.35) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(101,88,224,0.12), 0 0 0 1px rgba(101,88,224,0.08);
+}
+
+/* Aura за виджетом чата в hero */
+.hero-widget-aura {
+  position: relative;
+}
+.hero-widget-aura::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  border-radius: 36px;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(101,88,224,0.14), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Пульсирующая точка в section-badge */
+.badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #9b8ff8;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: badge-pulse 2.4s ease-in-out infinite;
+}
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* Адаптивность хедера */
+.mobile-burger-btn {
+  display: none;
+  padding: 8px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.desktop-nav {
+  display: flex;
+}
+.desktop-nav-right {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .mobile-burger-btn {
+    display: flex !important;
+  }
+  .desktop-nav {
+    display: none !important;
+  }
+  .desktop-nav-right {
+    display: none !important;
+  }
+}
+button, a[class*="rounded-full"], a[class*="rounded-"] {
+  max-width: 100%;
+}
+
+/* Безопасные отступы для flex-контейнеров с кнопками на мобильном */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* ===================================================
+   Анимации
+   =================================================== */
+@keyframes fade-up  { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fade-in  { from { opacity:0; } to { opacity:1; } }
+@keyframes typing-cursor { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.animate-fade-up { animation: fade-up  0.5s var(--ease-smooth) both; }
+.animate-fade-in { animation: fade-in  0.4s var(--ease-smooth) both; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
