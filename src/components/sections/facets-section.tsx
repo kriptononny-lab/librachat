@@ -35,7 +35,7 @@ export function FacetsSection() {
 
   return (
     <section style={{ padding: "120px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-      <div style={{ maxWidth:"1280px", margin:"0 auto", paddingLeft:"clamp(16px, 4vw, 48px)", paddingRight:"clamp(16px, 4vw, 48px)" }}>
+      <div className="container-site">
 
         {/* Заголовок */}
         <motion.div

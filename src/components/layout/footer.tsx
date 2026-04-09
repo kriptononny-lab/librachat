@@ -61,7 +61,7 @@ export function Footer() {
         background: "linear-gradient(90deg, transparent 0%, rgba(101,88,224,0.3) 30%, rgba(101,88,224,0.5) 50%, rgba(101,88,224,0.3) 70%, transparent 100%)",
       }} />
 
-      <div style={{ maxWidth:"1280px", margin:"0 auto", paddingLeft:"clamp(16px, 4vw, 48px)", paddingRight:"clamp(16px, 4vw, 48px)", paddingTop:"56px", paddingBottom:"40px" }}>
+      <div className="container-site" style={{ padding: "56px 0 40px" }}>
 
         {/* Основная сетка */}
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(min(100%, 150px), 1fr))", gap:"28px", marginBottom:"48px" }}>

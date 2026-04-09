@@ -135,15 +135,15 @@ function RotatingHeadline() {
 
 export function HeroSection() {
   return (
-    <section style={{ minHeight:"100dvh", display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:"88px", paddingBottom:"60px", overflow:"hidden", position:"relative" }}>
-      <div style={{ maxWidth:"1280px", margin:"0 auto", paddingLeft:"clamp(16px, 4vw, 48px)", paddingRight:"clamp(16px, 4vw, 48px)" }}>
-        <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", maxWidth:"760px", margin:"0 auto" }}>
+    <section style={{ minHeight:"100dvh", display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:"88px", paddingBottom:"60px", position:"relative" }}>
+      <div className="container-site">
+        <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", maxWidth:"760px", margin:"0 auto", width:"100%", overflow:"hidden" }}>
 
           {/* Бейдж */}
           <motion.div initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.4 }} style={{ marginBottom:"32px" }}>
-            <div className="section-badge">
+            <div className="section-badge" style={{ maxWidth:"100%", flexWrap:"wrap", justifyContent:"center", textAlign:"center" }}>
               <span className="badge-dot" />
-              ИИ-АССИСТЕНТ НОВОГО ПОКОЛЕНИЯ С РОДНЫМ МЕНТАЛИТЕТОМ
+              ИИ-АССИСТЕНТ НОВОГО ПОКОЛЕНИЯ
             </div>
           </motion.div>
 
