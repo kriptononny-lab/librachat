@@ -12,7 +12,7 @@ import { CtaSection }           from "@/components/sections/cta-section";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
       <Header />
       <main className="flex-1" style={{ paddingTop: "68px" }}>
         <HeroSection />

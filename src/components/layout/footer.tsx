@@ -64,7 +64,7 @@ export function Footer() {
       <div className="container-site" style={{ padding: "56px 0 40px" }}>
 
         {/* Основная сетка */}
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(min(100%, 150px), 1fr))", gap:"28px", marginBottom:"48px" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(min(100%, 160px), 1fr))", gap:"32px", marginBottom:"48px" }}>
 
           {/* Бренд */}
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
