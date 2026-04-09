@@ -72,7 +72,7 @@ function CaseSteps({ items }: { items: { title: string; desc: string }[] }) {
           </div>
           <div>
             <p style={{ fontSize: "15px", fontWeight: 600, color: "#f0eeff", marginBottom: "6px" }}>{item.title}</p>
-            <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#a89ec0" }}>{item.desc}</p>
+            <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#a89ec0" }}>{item.desc}</p>
           </div>
         </div>
       ))}
@@ -357,7 +357,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
               {/* Сайдбар */}
               <aside style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ borderRadius: "16px", padding: "20px", background: "rgba(101,88,224,0.07)", border: "1px solid rgba(101,88,224,0.2)", position: "sticky", top: "88px" }}>
+                <div style={{ borderRadius: "16px", padding: "20px", background: "#0e0d19", border: "1px solid rgba(101,88,224,0.25)", position: "sticky", top: "88px" }}>
                   <div className="section-badge" style={{ marginBottom: "12px", fontSize: "10px" }}>14 ДНЕЙ БЕСПЛАТНО</div>
                   <p style={{ fontSize: "14px", fontWeight: 600, color: "#f0eeff", marginBottom: "8px", lineHeight: 1.4 }}>Попробуйте LibraChat</p>
                   <p style={{ fontSize: "13px", color: "#a89ec0", marginBottom: "16px", lineHeight: 1.6 }}>Без карты. Отмена в любой момент.</p>
