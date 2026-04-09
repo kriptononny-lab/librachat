@@ -121,7 +121,7 @@ export default function FeaturesPage() {
               </Link>
             </div>
             {/* Статистика */}
-            <div className="grid-3col" style={{ width:"100%", maxWidth:"560px", borderTop:"1px solid rgba(255,255,255,0.07)", marginTop:"8px" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 140px), 1fr))", width:"100%", maxWidth:"560px", borderTop:"1px solid rgba(255,255,255,0.07)", marginTop:"8px" }}>
               {[
                 { value:"1 480+", label:"тестировщиков" },
                 { value:"4.9 / 5", label:"средняя оценка" },

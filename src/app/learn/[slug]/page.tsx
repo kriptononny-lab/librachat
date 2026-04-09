@@ -44,7 +44,7 @@ function Li({ children }: { children: React.ReactNode }) {
 
 function CaseBlockquote({ text, author, role }: { text: string; author: string; role: string }) {
   return (
-    <div style={{ padding: "24px 28px", borderRadius: "16px", background: "rgba(101,88,224,0.07)", borderLeft: "3px solid #6558e0", position: "relative" }}>
+    <div style={{ padding: "24px 20px", borderRadius: "16px", background: "rgba(101,88,224,0.07)", borderLeft: "3px solid #6558e0", position: "relative", width:"100%", boxSizing:"border-box", wordBreak:"break-word", overflowWrap:"break-word" }}>
       <Quote size={22} color="rgba(101,88,224,0.3)" style={{ position: "absolute", top: "16px", right: "20px" }} />
       <p style={{ fontSize: "16px", lineHeight: 1.8, color: "#a89ec0", fontStyle: "italic", marginBottom: "16px" }}>
         «{text}»
@@ -340,9 +340,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {/* Контент + сайдбар */}
         <section style={{ paddingBottom: "80px" }}>
           <div className="container-site" style={{ maxWidth: "900px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 260px", gap: "48px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 500px), 1fr))", gap: "48px", alignItems: "start" }}>
 
-              <article style={{ minWidth: 0 }}>
+              <article style={{ minWidth: 0, width: "100%" }}>
                 {realContent ?? <GenericContent article={article} />}
 
                 {/* Теги */}
@@ -355,8 +355,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </div>
               </article>
 
-              {/* Сайдбар */}
-              <aside style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {/* Сайдбар — скрыт через inline max-width на мобильном */}
+              <aside style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", maxWidth: "260px" }}>
                 <div style={{ borderRadius: "16px", padding: "20px", background: "#0e0d19", border: "1px solid rgba(101,88,224,0.25)", position: "sticky", top: "88px" }}>
                   <div className="section-badge" style={{ marginBottom: "12px", fontSize: "10px" }}>14 ДНЕЙ БЕСПЛАТНО</div>
                   <p style={{ fontSize: "14px", fontWeight: 600, color: "#f0eeff", marginBottom: "8px", lineHeight: 1.4 }}>Попробуйте LibraChat</p>
@@ -413,7 +413,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {/* Финальный CTA */}
         <section style={{ padding: "80px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site">
-            <div style={{ position: "relative", overflow: "hidden", borderRadius: "24px", padding: "72px 40px", textAlign: "center", background: "rgba(14,13,25,0.97)", border: "1px solid rgba(101,88,224,0.18)" }}>
+            <div className="cta-inner" style={{ position: "relative", overflow: "hidden", borderRadius: "24px", padding: "72px 40px", textAlign: "center", background: "rgba(14,13,25,0.97)", border: "1px solid rgba(101,88,224,0.18)" }}>
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg,transparent,rgba(108,92,231,0.6),transparent)" }} />
               <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
                 <div className="section-badge">ПОЛУЧИТЕ ТЕ ЖЕ РЕЗУЛЬТАТЫ</div>

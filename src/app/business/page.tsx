@@ -66,7 +66,7 @@ export default function BusinessPage() {
         {/* ── HERO ── */}
         <section style={{ padding: "100px 0 80px", background: "#07060e" }}>
           <div className="container-site">
-            <div className="grid-2col" style={{ gap: "48px", alignItems: "center" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap:"48px", alignItems:"start" }}>
 
               {/* Текст */}
               <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
@@ -104,7 +104,7 @@ export default function BusinessPage() {
                   <p style={{ fontSize: "14px", fontWeight: 600, color: "#fff" }}>Панель управления командой</p>
                   <span style={{ fontSize: "11px", padding: "4px 10px", borderRadius: "999px", background: "rgba(101,88,224,0.15)", color: "#9b8ff8", border: "1px solid rgba(101,88,224,0.3)" }}>Business Pro</span>
                 </div>
-                <div className="grid-3col" style={{ gap: "10px" }}>
+                <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 110px), 1fr))", gap:"10px" }}>
                   {[{ value: "47", label: "Участников" }, { value: "1 240", label: "Запросов сегодня" }, { value: "98%", label: "Удовлетворённость" }].map(s => (
                     <div key={s.label} style={{ padding: "14px 10px", borderRadius: "14px", textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
                       <p style={{ fontSize: "20px", fontWeight: 800, color: "#fff" }}>{s.value}</p>
