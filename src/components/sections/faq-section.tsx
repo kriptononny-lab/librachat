@@ -17,7 +17,7 @@ export function FaqSection() {
 
   return (
     <section style={{ padding: "120px 0", background: "#100f1d", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-      <div className="container-site" style={{ maxWidth: "780px" }}>
+      <div style={{ maxWidth:"780px", margin:"0 auto", paddingLeft:"clamp(16px, 4vw, 48px)", paddingRight:"clamp(16px, 4vw, 48px)" }}>
 
         {/* Заголовок */}
         <div style={{ textAlign: "center", marginBottom: "52px" }}>
