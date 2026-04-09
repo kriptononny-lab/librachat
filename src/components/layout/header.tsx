@@ -278,7 +278,6 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const isMobile = useIsMobile();
   const handleClose = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
@@ -299,51 +298,41 @@ export function Header() {
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >
-        <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: "clamp(16px, 4vw, 48px)", paddingRight: "clamp(16px, 4vw, 48px)" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px" }}>
-            {/* Логотип */}
+        <div className="container-site">
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
             <Logo />
 
-            {/* Десктопная навигация — только не мобильный */}
-            {!isMobile && (
-              <nav style={{ display: "flex", alignItems: "center", gap: "24px", flex: 1, justifyContent: "center" }}>
-                {MAIN_NAV.map((item) => (
-                  <NavItem key={item.href} item={item} />
-                ))}
-              </nav>
-            )}
+            <nav className="desktop-nav" style={{ alignItems: "center", gap: "24px", flex: 1, justifyContent: "center" }}>
+              {MAIN_NAV.map((item) => (
+                <NavItem key={item.href} item={item} />
+              ))}
+            </nav>
 
-            {/* Правая часть — только не мобильный */}
-            {!isMobile && (
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
-                <Button variant="ghost" size="md" asChild>
-                  <Link href="https://librachat.kz/auth">Войти</Link>
-                </Button>
-                <Button variant="primary" size="md" asChild>
-                  <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
-                </Button>
-              </div>
-            )}
+            <div className="desktop-nav-right" style={{ alignItems: "center", gap: "8px", flexShrink: 0 }}>
+              <Button variant="ghost" size="md" asChild>
+                <Link href="https://librachat.kz/auth">Войти</Link>
+              </Button>
+              <Button variant="primary" size="md" asChild>
+                <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
+              </Button>
+            </div>
 
-            {/* Бургер — только мобильный */}
-            {isMobile && (
-              <button
-                onClick={() => setMenuOpen(true)}
-                aria-label="Открыть меню"
-                style={{
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  padding: "8px", borderRadius: "10px", background: "transparent",
-                  border: "1px solid rgba(255,255,255,0.1)", cursor: "pointer",
-                  position: "relative", zIndex: 100,
-                }}
-              >
-                <Menu size={22} color="#a89ec0" />
-              </button>
-            )}
+            <button
+              className="mobile-burger-btn"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Открыть меню"
+              style={{
+                alignItems: "center", justifyContent: "center",
+                padding: "8px", borderRadius: "10px", background: "transparent",
+                border: "1px solid rgba(255,255,255,0.1)", cursor: "pointer",
+                flexShrink: 0,
+              }}
+            >
+              <Menu size={22} color="#a89ec0" />
+            </button>
           </div>
         </div>
       </header>
-      {/* Мобильное меню */}
       <MobileMenu open={menuOpen} onClose={handleClose} />
     </>
   );
