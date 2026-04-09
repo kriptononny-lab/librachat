@@ -84,7 +84,7 @@ export default function BusinessPage() {
                     Запросить демо
                   </Link>
                   <Link href="/contact?type=sales" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", borderRadius: "999px", background: "transparent", color: "#f0eeff", fontSize: "15px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.16)" }}>
-                    Связаться с продажами
+                    Для продаж
                   </Link>
                 </div>
                 {/* Статистика */}

@@ -114,7 +114,7 @@ export default function FeaturesPage() {
             </p>
             <div style={{ display:"flex", gap:"12px", flexWrap:"wrap", justifyContent:"center" }}>
               <Link href="https://librachat.kz/auth" style={{ padding:"13px 28px", borderRadius:"999px", background:"#6558e0", color:"#fff", fontSize:"15px", fontWeight:600, textDecoration:"none", boxShadow:"0 4px 20px rgba(101,88,224,0.4)" }}>
-                Попробовать бесплатно
+                Попробовать
               </Link>
               <Link href="/contact" style={{ padding:"13px 28px", borderRadius:"999px", background:"transparent", color:"#f2f0ff", fontSize:"15px", fontWeight:600, textDecoration:"none", border:"1px solid rgba(255,255,255,0.16)" }}>
                 Запросить демо

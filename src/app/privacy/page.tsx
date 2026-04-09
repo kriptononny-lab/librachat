@@ -202,7 +202,7 @@ export default function PrivacyPage() {
                     <p style={{ fontSize:"13px", fontWeight:600, color:"#f2f0ff", marginBottom:"8px" }}>Появились вопросы?</p>
                     <p style={{ fontSize:"12px", color:"#a89ec0", marginBottom:"14px", lineHeight:1.6 }}>Ответим в течение 24 часов в рабочие дни.</p>
                     <Link href="/contact" style={{ display:"flex", alignItems:"center", justifyContent:"center", padding:"10px", borderRadius:"999px", fontSize:"13px", fontWeight:600, color:"#f2f0ff", textDecoration:"none", border:"1px solid rgba(255,255,255,0.16)", background:"transparent" }}>
-                      Написать в поддержку
+                      Поддержка
                     </Link>
                   </div>
                 </div>

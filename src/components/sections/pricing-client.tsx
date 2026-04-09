@@ -228,7 +228,7 @@ export function PricingClient() {
                   Начать бесплатно
                 </Link>
                 <Link href="/contact?type=demo" style={{ padding: "14px 32px", borderRadius: "999px", background: "transparent", color: "#f0eeff", fontSize: "15px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.16)" }}>
-                  Связаться с продажами
+                  Для продаж
                 </Link>
               </div>
             </div>
