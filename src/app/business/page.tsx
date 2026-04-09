@@ -250,7 +250,7 @@ export default function BusinessPage() {
                   ))}
                 </div>
                 <Link href="/contact?type=demo" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "14px", borderRadius: "999px", background: "#6558e0", color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(101,88,224,0.4)", marginTop: "4px" }}>
-                  Получить демо бесплатно
+                  Запросить демо
                 </Link>
                 <p style={{ fontSize: "12px", textAlign: "center", color: "#4a4560" }}>
                   Нажимая кнопку, вы принимаете{" "}

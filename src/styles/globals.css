@@ -10,33 +10,33 @@
 
   /* Фиолетовый — глубже, менее детский */
   --color-brand-400: #7c6af0;
-  --color-brand-500: #6558e0;   /* основной */
+  --color-brand-500: #6c5ce7;   /* основной */
   --color-brand-600: #5a4bd1;
-  --color-brand-700: #6558e0;
+  --color-brand-700: #4a3bbf;
 
   /* Янтарный — приглушённее */
-  --color-amber-400: #c9920a;
-  --color-amber-500: #b87608;
+  --color-amber-400: #e8952a;
+  --color-amber-500: #d4820f;
 
   /* Фоны — единый тёмный фон, без пёстрости */
-  --color-bg-base:    #07060e;
+  --color-bg-base:    #0c0c10;
   --color-bg-surface: #14131c;
   --color-bg-raised:  #1a1925;
   --color-bg-card:    #1e1d28;
 
   /* Текст — контрастнее */
-  --color-text-primary:   #f2f0ff;   /* чуть чище белый */
-  --color-text-secondary: #a89ec0;   /* фиолетово-серый */
-  --color-text-muted:     #58506e;   /* подписи, метки */
+  --color-text-primary:   #f0eeff;
+  --color-text-secondary: #a89ec0;
+  --color-text-muted:     #6b6480;
 
   /* Границы */
   --color-border:        rgba(255,255,255,0.07);
   --color-border-medium: rgba(255,255,255,0.11);
-  --color-border-accent: rgba(101,88,224,0.35);
+  --color-border-accent: rgba(108,92,231,0.35);
 
   /* Статусы */
   --color-success: #22c55e;
-  --color-warning: #c9920a;
+  --color-warning: #e8952a;
   --color-error:   #ef4444;
 
   /* Радиусы */
@@ -102,7 +102,7 @@ body {
 
 /* Кнопка-прожектор — только на primary, без внешнего свечения */
 .btn-primary-glow {
-  box-shadow: 0 4px 20px rgba(101,88,224,0.35);
+  box-shadow: 0 4px 20px rgba(108,92,231,0.35);
   transition: box-shadow 200ms ease, background 200ms ease;
 }
 .btn-primary-glow:hover {
@@ -123,7 +123,7 @@ body {
 
 /* Градиентный текст — ТОЛЬКО фиолетовый, нигде больше */
 .text-gradient {
-  background: linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%);
+  background: linear-gradient(135deg, #8b7cf8 0%, #6c5ce7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -136,11 +136,11 @@ body {
 .section-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(101,88,224,0.1);
-  border: 1px solid rgba(101,88,224,0.22);
+  background: rgba(108,92,231,0.1);
+  border: 1px solid rgba(108,92,231,0.25);
   font-size: 11px;
   font-weight: 600;
   color: #a89ec0;
@@ -148,73 +148,17 @@ body {
   text-transform: uppercase;
 }
 
-/* Карточка с hover glow */
+/* Карточка с hover */
 .card-hover {
-  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
 }
 .card-hover:hover {
-  border-color: rgba(101,88,224,0.35) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(101,88,224,0.12), 0 0 0 1px rgba(101,88,224,0.08);
+  border-color: rgba(108,92,231,0.3) !important;
+  background: rgba(26,25,37,0.95) !important;
+  transform: translateY(-2px);
 }
 
-/* Aura за виджетом чата в hero */
-.hero-widget-aura {
-  position: relative;
-}
-.hero-widget-aura::before {
-  content: "";
-  position: absolute;
-  inset: -24px;
-  border-radius: 36px;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(101,88,224,0.14), transparent 70%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Пульсирующая точка в section-badge */
-.badge-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #9b8ff8;
-  display: inline-block;
-  flex-shrink: 0;
-  animation: badge-pulse 2.4s ease-in-out infinite;
-}
-@keyframes badge-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.75); }
-}
-
-/* Адаптивность хедера */
-.mobile-burger-btn {
-  display: none;
-  padding: 8px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.1);
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-.desktop-nav {
-  display: flex;
-}
-.desktop-nav-right {
-  display: flex;
-}
-
-@media (max-width: 768px) {
-  .mobile-burger-btn {
-    display: flex !important;
-  }
-  .desktop-nav {
-    display: none !important;
-  }
-  .desktop-nav-right {
-    display: none !important;
-  }
-}
+/* Кнопки никогда не выходят за края */
 button, a[class*="rounded-full"], a[class*="rounded-"] {
   max-width: 100%;
 }
@@ -243,253 +187,3 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
-
-/* ===================================================
-   Адаптивные сетки — мобильная адаптация
-   =================================================== */
-
-/* 2 колонки → 1 на мобильном */
-.grid-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-/* 3 колонки → 1 на мобильном */
-.grid-3col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-/* Контент + сайдбар */
-.grid-sidebar {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 48px;
-  align-items: start;
-}
-.grid-sidebar-lg {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 48px;
-  align-items: start;
-}
-/* Футер */
-.grid-footer {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-
-@media (max-width: 900px) {
-  .grid-footer {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .grid-sidebar-lg {
-    grid-template-columns: 1fr;
-  }
-  .grid-sidebar-lg .sidebar-col {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-2col,
-  .grid-3col,
-  .grid-sidebar {
-    grid-template-columns: 1fr !important;
-  }
-  .grid-footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-  .sidebar-sticky {
-    display: none !important;
-  }
-  .hide-mobile {
-    display: none !important;
-  }
-  .mobile-full {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .mobile-center {
-    text-align: center !important;
-    align-items: center !important;
-  }
-  .mobile-pad {
-    padding: 40px 20px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-footer {
-    grid-template-columns: 1fr;
-  }
-  .grid-2col-sm {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Секции — меньше паддинг на мобильном */
-@media (max-width: 768px) {
-  section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-  }
-  h1 { font-size: clamp(28px, 8vw, 48px) !important; }
-  .container-site {
-    padding-inline: 20px !important;
-  }
-  /* Скрыть сайдбар статьи на мобильном */
-  .article-sidebar {
-    display: none !important;
-  }
-}
-
-/* ===================================================
-   Точная мобильная адаптация компонентов
-   =================================================== */
-
-/* Hero виджет — чат не выходит за края */
-@media (max-width: 768px) {
-  /* Таб-переключатели — скролл вместо переноса */
-  .tabs-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    padding-bottom: 4px;
-  }
-  .tabs-scroll::-webkit-scrollbar { display: none; }
-
-  /* Виджет чата в hero */
-  .hero-widget-aura {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* Кнопки быстрых действий в виджете — скролл */
-  .widget-actions {
-    overflow-x: auto;
-    flex-wrap: nowrap !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .widget-actions::-webkit-scrollbar { display: none; }
-
-  /* Статистика hero — меньше паддинг */
-  .hero-stats-item {
-    padding: 16px 8px !important;
-  }
-
-  /* Business CTA блок — одна колонка */
-  .business-cta-grid {
-    grid-template-columns: 1fr !important;
-    padding: 32px 24px !important;
-  }
-
-  /* Таблицы — горизонтальный скролл */
-  .table-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* FAQ кнопки вопросов */
-  .faq-btn {
-    padding: 16px 18px !important;
-  }
-
-  /* Карточки steps — убрать горизонтальные отступы */
-  .step-col {
-    padding: 0 8px !important;
-  }
-
-  /* Секция "3 шага" — уменьшить коннектор */
-  .steps-connector {
-    display: none !important;
-  }
-
-  /* Marquee текст — чуть крупнее для читаемости */
-  .marquee-text {
-    font-size: 14px !important;
-  }
-
-  /* Download платформы */
-  .platform-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  /* Pricing блок переключателя месяц/год */
-  .billing-toggle {
-    transform: scale(0.9);
-  }
-}
-
-@media (max-width: 480px) {
-  .platform-grid {
-    grid-template-columns: 1fr !important;
-  }
-  /* Кнопки рядом → стопкой */
-  .btn-pair {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .btn-pair a, .btn-pair button {
-    text-align: center !important;
-    justify-content: center !important;
-  }
-}
-
-/* ===================================================
-   Критические мобильные фиксы — v3
-   =================================================== */
-
-/* Запрет горизонтального скролла */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Все формы — полная ширина на мобильном */
-@media (max-width: 768px) {
-  /* Поля формы — 1 колонка */
-  .form-inputs {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Business CTA блок — уменьшить паддинги */
-  .business-cta-grid {
-    grid-template-columns: 1fr !important;
-    padding: 28px 20px !important;
-    gap: 24px !important;
-  }
-
-  /* Все карточки с большим паддингом */
-  [style*="padding: \"40px\""],
-  [style*="padding: \"48px\""],
-  [style*="padding: \"56px\""] {
-    padding: 24px 20px !important;
-  }
-
-  /* Инпуты и кнопки — полная ширина */
-  input, select, textarea, button[type="submit"] {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Исправить span 2 в 1-колоночной сетке */
-  .form-inputs > * {
-    grid-column: auto !important;
-  }
-
-  /* Дашборд-виджет в business — схлопнуть */
-  .grid-2col > div {
-    min-width: 0;
-    overflow: hidden;
-  }
-
-  /* Footer — убрать overflow */
-  .grid-footer > div {
-    min-width: 0;
-    overflow: hidden;
-  }
-}
