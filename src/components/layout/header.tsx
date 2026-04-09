@@ -25,9 +25,9 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Lightbulb:     <Lightbulb size={18} />,
 };
 
-// Хук определения мобильного экрана
+// Хук определения мобильного экрана — mobile-first (по умолчанию мобильный)
 function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
     setIsMobile(mq.matches);
@@ -172,7 +172,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
 }
 
 // ===================================================
-// Мобильное меню
+// Мобильное меню — без анимации, максимально надёжно
 // ===================================================
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const pathname = usePathname();
@@ -183,90 +183,85 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  if (!open) return null;
+
   return (
-    <AnimatePresence>
-      {open && (
-        <>
-          {/* Затемнение */}
-          <motion.div
-            key="overlay"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+    <div style={{ position:"fixed", inset:0, zIndex:9999 }}>
+      {/* Затемнение */}
+      <div
+        onClick={onClose}
+        style={{ position:"absolute", inset:0, background:"rgba(0,0,0,0.65)" }}
+      />
+
+      {/* Панель */}
+      <div style={{
+        position:"absolute", top:0, right:0, bottom:0,
+        width:"min(300px, 85vw)",
+        display:"flex", flexDirection:"column",
+        background:"#13121f",
+        borderLeft:"1px solid rgba(255,255,255,0.1)",
+        zIndex:1,
+        overflowY:"auto",
+      }}>
+        {/* Шапка */}
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"20px", borderBottom:"1px solid rgba(255,255,255,0.08)", flexShrink:0 }}>
+          <Logo size="sm" />
+          <button
             onClick={onClose}
-            style={{ position:"fixed", inset:0, zIndex:65, background:"rgba(0,0,0,0.6)", backdropFilter:"blur(4px)" }}
-          />
-
-          {/* Панель */}
-          <motion.div
-            key="panel"
-            initial={{ x:"100%" }} animate={{ x:0 }} exit={{ x:"100%" }}
-            transition={{ type:"spring", damping:28, stiffness:300 }}
-            style={{
-              position:"fixed", top:0, right:0, bottom:0, zIndex:70,
-              width:"280px", display:"flex", flexDirection:"column",
-              background:"#13121f", borderLeft:"1px solid rgba(255,255,255,0.08)",
-            }}
+            style={{ padding:"8px", borderRadius:"10px", color:"#a89ec0", background:"transparent", border:"none", cursor:"pointer", fontSize:"20px", lineHeight:1 }}
           >
-            {/* Шапка */}
-            <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"20px", borderBottom:"1px solid rgba(255,255,255,0.08)" }}>
-              <Logo size="sm" />
-              <button onClick={onClose} aria-label="Закрыть меню"
-                style={{ padding:"8px", borderRadius:"10px", color:"#a89ec0", background:"transparent", border:"none", cursor:"pointer" }}>
-                <X size={20} />
-              </button>
-            </div>
+            ✕
+          </button>
+        </div>
 
-            {/* Навигация */}
-            <nav style={{ flex:1, overflowY:"auto", padding:"16px", display:"flex", flexDirection:"column", gap:"2px" }}>
-              {MAIN_NAV.map((item) => {
-                const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
-                return (
-                  <div key={item.href}>
-                    <Link href={item.href} style={{
-                      display:"flex", alignItems:"center", padding:"10px 12px",
-                      borderRadius:"10px", fontSize:"14px", fontWeight:500, textDecoration:"none",
-                      color: isActive ? "#fff" : "#a89ec0",
-                      background: isActive ? "rgba(101,88,224,0.12)" : "transparent",
-                      transition:"color 150ms, background 150ms",
-                    }}>
-                      {item.label}
-                    </Link>
-                    {item.children && (
-                      <div style={{ marginLeft:"12px", paddingLeft:"12px", marginTop:"2px", borderLeft:"1px solid rgba(255,255,255,0.06)", display:"flex", flexDirection:"column", gap:"0" }}>
-                        {item.children.map(child => (
-                          <Link key={child.href + child.label} href={child.href} style={{
-                            display:"block", padding:"7px 8px", fontSize:"13px",
-                            color:"#4a4560", textDecoration:"none", transition:"color 150ms",
-                          }}>
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+        {/* Навигация */}
+        <nav style={{ flex:1, padding:"16px", display:"flex", flexDirection:"column", gap:"4px" }}>
+          {MAIN_NAV.map((item) => {
+            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            return (
+              <div key={item.href}>
+                <Link href={item.href} style={{
+                  display:"flex", alignItems:"center", padding:"12px 14px",
+                  borderRadius:"10px", fontSize:"15px", fontWeight:500, textDecoration:"none",
+                  color: isActive ? "#fff" : "#c0b8d8",
+                  background: isActive ? "rgba(101,88,224,0.15)" : "transparent",
+                }}>
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div style={{ marginLeft:"12px", paddingLeft:"12px", borderLeft:"1px solid rgba(255,255,255,0.07)", display:"flex", flexDirection:"column" }}>
+                    {item.children.map(child => (
+                      <Link key={child.href + child.label} href={child.href} style={{
+                        display:"block", padding:"8px 10px", fontSize:"13px",
+                        color:"#6b6480", textDecoration:"none",
+                      }}>
+                        {child.label}
+                      </Link>
+                    ))}
                   </div>
-                );
-              })}
-            </nav>
+                )}
+              </div>
+            );
+          })}
+        </nav>
 
-            {/* CTA внизу */}
-            <div style={{ padding:"16px", borderTop:"1px solid rgba(255,255,255,0.08)", display:"flex", flexDirection:"column", gap:"8px" }}>
-              <Link href="https://librachat.kz/auth" style={{
-                display:"flex", alignItems:"center", justifyContent:"center",
-                padding:"12px", borderRadius:"999px", fontSize:"14px", fontWeight:600,
-                color:"#f2f0ff", textDecoration:"none",
-                border:"1px solid rgba(255,255,255,0.16)", background:"transparent",
-              }}>Войти</Link>
-              <Link href="https://librachat.kz/auth" style={{
-                display:"flex", alignItems:"center", justifyContent:"center",
-                padding:"12px", borderRadius:"999px", fontSize:"14px", fontWeight:600,
-                color:"#fff", textDecoration:"none",
-                background:"#6558e0", boxShadow:"0 4px 16px rgba(101,88,224,0.4)",
-              }}>Начать бесплатно</Link>
-            </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+        {/* CTA */}
+        <div style={{ padding:"16px", borderTop:"1px solid rgba(255,255,255,0.08)", display:"flex", flexDirection:"column", gap:"10px", flexShrink:0 }}>
+          <Link href="https://librachat.kz/auth" style={{
+            display:"flex", alignItems:"center", justifyContent:"center",
+            padding:"13px", borderRadius:"999px", fontSize:"15px", fontWeight:600,
+            color:"#f2f0ff", textDecoration:"none",
+            border:"1px solid rgba(255,255,255,0.16)",
+          }}>Войти</Link>
+          <Link href="https://librachat.kz/auth" style={{
+            display:"flex", alignItems:"center", justifyContent:"center",
+            padding:"13px", borderRadius:"999px", fontSize:"15px", fontWeight:600,
+            color:"#fff", textDecoration:"none",
+            background:"#6558e0", boxShadow:"0 4px 16px rgba(101,88,224,0.4)",
+          }}>Начать бесплатно</Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
