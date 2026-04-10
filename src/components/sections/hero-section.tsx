@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const HERO_PHRASES = [
   "Закрою все лишние вкладки\nв твоём браузере.",
   "Первый ИИ, который понимает\nроссийский бизнес.",
-  "Твой — без VPN.",
+  "Твой — без VPN\nи без лишних настроек.",
   "Курсовая без галлюцинаций.\nНадёжный друг с запасом знаний.",
   "Первый, с кем можно\nбез промптов.",
   "Надёжный друг\nс бесконечным запасом знаний.",
@@ -111,7 +111,7 @@ function RotatingHeadline() {
   }, []);
 
   return (
-    <div style={{ position:"relative", minHeight:"3.2em" }}>
+    <div className="rotating-headline-wrap">
       <AnimatePresence mode="wait">
         <motion.span
           key={idx}

@@ -188,6 +188,24 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 
+/* Фото в кейсах */
+.case-photo-wrap {
+  height: 200px;
+}
+@media (max-width: 767px) {
+  .case-photo-wrap {
+    height: 240px;
+  }
+}
+
+/* Rotating headline — фиксированная высота чтобы не дёргался сайт */
+.rotating-headline-wrap {
+  position: relative;
+  height: 2.4em; /* всегда 2 строки */
+  overflow: hidden;
+  width: 100%;
+}
+
 /* Окошко чата — на мобиле скрываем вкладки и быстрые кнопки */
 @media (max-width: 767px) {
   .widget-tabs    { display: none !important; }

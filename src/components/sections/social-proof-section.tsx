@@ -29,6 +29,7 @@ const TESTIMONIALS = [
     content: "LibraChat — это не просто чат-бот, это напарник, который понимает задачи реального бизнеса. Помог взглянуть на магазин со стороны и внедрить практики, о которых я раньше только читала.",
     result: "Стратегия за один вечер вместо месяца",
     photo: "/case-shishakova.jpg",
+    photoPos: "center 40%",
     initials: "ЮШ",
     href: "/learn/keys-shishakova",
   },
@@ -38,6 +39,7 @@ const TESTIMONIALS = [
     content: "С LibraChat мы перестали гадать, «зайдёт» товар или нет. Я просто даю ему данные, а он выдаёт готовую стратегию: от SEO-описания до рекламных связок.",
     result: "Запуск нового товара в 5 раз быстрее",
     photo: "/case-ozherelyev.jpg",
+    photoPos: "center 15%",
     initials: "ВО",
     href: "/learn/keys-ozherelyev",
   },
@@ -47,6 +49,7 @@ const TESTIMONIALS = [
     content: "Либрачат — первый сервис, который не врёт, не тупит и помнит всё о моих клиентах благодаря разделению на проекты. Теперь это мой главный инструмент для аналитики.",
     result: "Десятки клиентов в одном окне без хаоса",
     photo: "/case-bazarkulova.jpg",
+    photoPos: "center 20%",
     initials: "МБ",
     href: "/learn/keys-bazarkulova",
   },
@@ -95,8 +98,8 @@ export function SocialProofSection() {
               style={{ display: "flex", flexDirection: "column", borderRadius: "20px", overflow: "hidden", background: "rgba(14,13,25,0.84)", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               {/* Фото */}
-              <div style={{ height: "180px", position: "relative", overflow: "hidden", background: "rgba(14,13,25,0.92)", flexShrink: 0 }}>
-                <Image src={t.photo} alt={t.name} fill style={{ objectFit: "cover", objectPosition: t.photo?.includes("bazarkulova") ? "center 20%" : "center top" }} />
+              <div className="case-photo-wrap" style={{ position: "relative", overflow: "hidden", background: "rgba(14,13,25,0.92)", flexShrink: 0 }}>
+                <Image src={t.photo} alt={t.name} fill style={{ objectFit: "cover", objectPosition: t.photoPos }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(12,12,16,0.9))" }} />
               </div>
 
