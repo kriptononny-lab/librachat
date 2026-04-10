@@ -80,8 +80,8 @@ function AnimatedInput() {
       </div>
 
       {/* Ввод */}
-      <div style={{ padding:"20px 20px 16px", display:"flex", alignItems:"flex-start", gap:"12px", minHeight:"72px" }}>
-        <div style={{ flex:1, fontSize:"16px", lineHeight:"1.6", color:"#a89ec0", minHeight:"26px" }}>
+      <div style={{ padding:"16px 20px", display:"flex", alignItems:"center", gap:"12px", height:"72px", overflow:"hidden" }}>
+        <div style={{ flex:1, fontSize:"16px", lineHeight:"1.5", color:"#a89ec0", height:"26px", overflow:"hidden", whiteSpace:"nowrap", textOverflow:"ellipsis" }}>
           {displayed}
           <span style={{ display:"inline-block", width:"2px", height:"18px", background:"#6558e0", marginLeft:"2px", verticalAlign:"middle", animation:"typing-cursor 0.9s step-end infinite" }} />
         </div>
@@ -115,12 +115,14 @@ function RotatingHeadline() {
       <AnimatePresence mode="wait">
         <motion.span
           key={idx}
-          initial={{ opacity:0, y:18 }}
+          initial={{ opacity:0, y:16 }}
           animate={{ opacity:1, y:0 }}
-          exit={{ opacity:0, y:-14, position:"absolute", top:0, left:0, right:0 }}
-          transition={{ duration:0.32, ease:[0.4,0,0.2,1] }}
+          exit={{ opacity:0, y:-12 }}
+          transition={{ duration:0.28, ease:[0.4,0,0.2,1] }}
           style={{
             display:"block",
+            position:"absolute",
+            top:0, left:0, right:0,
             background:"linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%)",
             WebkitBackgroundClip:"text",
             WebkitTextFillColor:"transparent",

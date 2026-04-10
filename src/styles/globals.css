@@ -198,16 +198,12 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
   }
 }
 
-/* Rotating headline — фиксированная высота чтобы не дёргался сайт */
+/* Rotating headline — строго фиксированная высота, никакого дёргания */
 .rotating-headline-wrap {
   position: relative;
-  min-height: 2.6em;
+  height: clamp(64px, 9.6vw, 120px); /* font clamp(26px,4vw,50px) * lineHeight 1.15 * 2 строки */
+  overflow: hidden;
   width: 100%;
-}
-@media (max-width: 767px) {
-  .rotating-headline-wrap {
-    min-height: 3.2em;
-  }
 }
 
 /* Окошко чата — на мобиле скрываем вкладки и быстрые кнопки */
