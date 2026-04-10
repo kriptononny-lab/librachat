@@ -62,20 +62,6 @@ export function StepsSection() {
               transition={{ duration: 0.5, delay: i * 0.14 }}
               className="step-col" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", position: "relative" }}
             >
-              {/* Коннектор вправо */}
-              {i < 2 && (
-                <div className="steps-connector" style={{
-                  position: "absolute",
-                  top: "32px",
-                  left: "calc(50% + 36px)",
-                  right: "calc(-50% + 36px)",
-                  height: "1px",
-                  background: "linear-gradient(to right, rgba(101,88,224,0.4), rgba(101,88,224,0.1))",
-                  pointerEvents: "none",
-                  zIndex: 0,
-                }} />
-              )}
-
               {/* Иконка + номер — вместе */}
               <div style={{ position: "relative", zIndex: 1, marginBottom: "28px" }}>
                 {/* Кружок с иконкой */}
