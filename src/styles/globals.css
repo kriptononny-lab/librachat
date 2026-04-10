@@ -212,7 +212,15 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
   .widget-actions { display: none !important; }
 }
 
-/* Badge dot — пульсирующая точка в бейдже Hero */
+/* Таблица тарифов — скрываем scrollbar но оставляем скролл */
+.pricing-table-wrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.07);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.pricing-table-wrap::-webkit-scrollbar { display: none; }
 .badge-dot {
   display: inline-block;
   width: 6px;

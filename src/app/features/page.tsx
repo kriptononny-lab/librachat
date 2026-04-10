@@ -112,26 +112,13 @@ export default function FeaturesPage() {
             <p style={{ fontSize:"18px", color:"#a89ec0", maxWidth:"500px", lineHeight:1.7 }}>
               LibraChat отвечает на вопросы, анализирует файлы, переводит, пишет и думает вместе с тобой. Без переключений между сервисами.
             </p>
-            <div style={{ display:"flex", gap:"12px", flexWrap:"wrap", justifyContent:"center" }}>
-              <Link href="https://librachat.kz/auth" style={{ padding:"13px 28px", borderRadius:"999px", background:"#6558e0", color:"#fff", fontSize:"15px", fontWeight:600, textDecoration:"none", boxShadow:"0 4px 20px rgba(101,88,224,0.4)" }}>
+            <div style={{ display:"flex", gap:"12px", flexWrap:"wrap", justifyContent:"center", width:"100%", padding:"0 16px" }}>
+              <Link href="https://librachat.kz/auth" style={{ padding:"13px 28px", borderRadius:"999px", background:"#6558e0", color:"#fff", fontSize:"15px", fontWeight:600, textDecoration:"none", boxShadow:"0 4px 20px rgba(101,88,224,0.4)", flex:"1 1 auto", textAlign:"center", minWidth:"180px", maxWidth:"260px" }}>
                 Попробовать
               </Link>
-              <Link href="/contact" style={{ padding:"13px 28px", borderRadius:"999px", background:"transparent", color:"#f2f0ff", fontSize:"15px", fontWeight:600, textDecoration:"none", border:"1px solid rgba(255,255,255,0.16)" }}>
+              <Link href="/contact" style={{ padding:"13px 28px", borderRadius:"999px", background:"transparent", color:"#f2f0ff", fontSize:"15px", fontWeight:600, textDecoration:"none", border:"1px solid rgba(255,255,255,0.16)", flex:"1 1 auto", textAlign:"center", minWidth:"180px", maxWidth:"260px" }}>
                 Запросить демо
               </Link>
-            </div>
-            {/* Статистика */}
-            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 140px), 1fr))", width:"100%", maxWidth:"560px", borderTop:"1px solid rgba(255,255,255,0.07)", marginTop:"8px" }}>
-              {[
-                { value:"1 480+", label:"тестировщиков" },
-                { value:"4.9 / 5", label:"средняя оценка" },
-                { value:"30 сек", label:"время регистрации" },
-              ].map((s, i) => (
-                <div key={s.label} style={{ padding:"20px 8px", textAlign:"center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
-                  <p style={{ fontSize:"22px", fontWeight:800, color:"#c9920a", letterSpacing:"-0.02em" }}>{s.value}</p>
-                  <p style={{ fontSize:"12px", color:"#a89ec0", marginTop:"4px" }}>{s.label}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

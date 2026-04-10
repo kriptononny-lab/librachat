@@ -146,7 +146,7 @@ export function PricingClient() {
             <h2 style={heading}>Что входит в каждый план</h2>
             <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>Подробное сравнение всех возможностей</p>
           </div>
-          <div style={{ overflowX: "auto", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.07)" }}>
+          <div className="pricing-table-wrap">
             <table style={{ width: "100%", minWidth: "560px", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ background: "rgba(14,13,25,0.97)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
@@ -211,9 +211,9 @@ export function PricingClient() {
       </section>
 
       {/* ── ФИНАЛЬНЫЙ CTA ── */}
-      <section style={{ padding: "100px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      <section style={{ padding: "80px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div className="container-site">
-          <div style={{ position: "relative", overflow: "hidden", borderRadius: "24px", padding: "80px 40px", textAlign: "center", background: "rgba(14,13,25,0.97)", border: "1px solid rgba(101,88,224,0.2)" }}>
+          <div style={{ position: "relative", overflow: "hidden", borderRadius: "24px", padding: "clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px)", textAlign: "center", background: "rgba(14,13,25,0.97)", border: "1px solid rgba(101,88,224,0.2)" }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg,transparent,rgba(108,92,231,0.6),transparent)" }} />
             <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
               <div className="section-badge">НАЧНИТЕ УЖЕ СЕГОДНЯ</div>
@@ -223,11 +223,11 @@ export function PricingClient() {
               <p style={{ fontSize: "16px", color: "#a89ec0", maxWidth: "360px", lineHeight: 1.7 }}>
                 Попробуйте все возможности LibraChat без ограничений. Карта не нужна.
               </p>
-              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center", marginTop: "8px" }}>
-                <Link href="https://librachat.kz/auth" style={{ padding: "14px 32px", borderRadius: "999px", background: "#6558e0", color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(101,88,224,0.4)" }}>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center", marginTop: "8px", width: "100%", padding: "0 16px" }}>
+                <Link href="https://librachat.kz/auth" style={{ padding: "14px 32px", borderRadius: "999px", background: "#6558e0", color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(101,88,224,0.4)", flex: "1 1 auto", textAlign: "center", minWidth: "200px", maxWidth: "280px" }}>
                   Начать бесплатно
                 </Link>
-                <Link href="/contact?type=demo" style={{ padding: "14px 32px", borderRadius: "999px", background: "transparent", color: "#f0eeff", fontSize: "15px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.16)" }}>
+                <Link href="/contact?type=demo" style={{ padding: "14px 32px", borderRadius: "999px", background: "transparent", color: "#f0eeff", fontSize: "15px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.16)", flex: "1 1 auto", textAlign: "center", minWidth: "200px", maxWidth: "280px" }}>
                   Для продаж
                 </Link>
               </div>
