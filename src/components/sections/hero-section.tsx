@@ -121,7 +121,7 @@ function RotatingHeadline() {
           transition={{ duration:0.32, ease:[0.4,0,0.2,1] }}
           style={{
             display:"block",
-            background:"linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%)",
+            background:"linear-gradient(135deg, #e8952a 0%, #9b8ff8 55%, #6558e0 100%)",
             WebkitBackgroundClip:"text",
             WebkitTextFillColor:"transparent",
             backgroundClip:"text",
@@ -137,7 +137,16 @@ function RotatingHeadline() {
 
 export function HeroSection() {
   return (
-    <section style={{ minHeight:"100dvh", display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:"88px", paddingBottom:"60px", position:"relative" }}>
+    <section style={{
+      minHeight:"100dvh",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      paddingTop:"88px",
+      paddingBottom:"60px",
+      position:"relative",
+      background: "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(101,88,224,0.18) 0%, transparent 70%), #0c0c10",
+    }}>
       <div className="container-site">
         <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", maxWidth:"760px", margin:"0 auto", width:"100%", overflow:"hidden" }}>
 
