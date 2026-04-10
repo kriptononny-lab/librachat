@@ -322,7 +322,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 src={article.photo}
                 alt={article.title}
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: article.photoPos ?? "center top" }}
                 priority
               />
             ) : (

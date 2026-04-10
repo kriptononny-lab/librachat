@@ -9,6 +9,7 @@ export interface ArticleCard {
   author: string;
   authorRole?: string;
   photo?: string;       // путь к фото /public/...
+  photoPos?: string;    // objectPosition для обложки кейса
   readTime: number;
   views: string;
   tags: string[];
@@ -144,6 +145,7 @@ export const ALL_ARTICLES = [
     author: "Юлия Шишакова",
     authorRole: "ИП, Магазин отделочных материалов из дерева",
     photo: "/case-shishakova.jpg",
+    photoPos: "center 40%",
     readTime: 6,
     views: "1.2K",
     tags: ["кейс", "малый бизнес", "маркетинг"],
@@ -158,6 +160,7 @@ export const ALL_ARTICLES = [
     author: "Василий Ожерельев",
     authorRole: "Компания «Вуди», e-commerce",
     photo: "/case-ozherelyev.jpg",
+    photoPos: "center 15%",
     readTime: 7,
     views: "2.3K",
     tags: ["кейс", "e-commerce", "маркетплейсы"],
@@ -172,6 +175,7 @@ export const ALL_ARTICLES = [
     author: "Марианна Базаркулова",
     authorRole: "Профессиональный маркетолог",
     photo: "/case-bazarkulova.jpg",
+    photoPos: "center 20%",
     readTime: 5,
     views: "1.8K",
     tags: ["кейс", "маркетинг", "аналитика"],
