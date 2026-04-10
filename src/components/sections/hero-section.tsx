@@ -121,7 +121,7 @@ function RotatingHeadline() {
           transition={{ duration:0.32, ease:[0.4,0,0.2,1] }}
           style={{
             display:"block",
-            background:"linear-gradient(135deg, #e8952a 0%, #9b8ff8 55%, #6558e0 100%)",
+            background:"linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%)",
             WebkitBackgroundClip:"text",
             WebkitTextFillColor:"transparent",
             backgroundClip:"text",
