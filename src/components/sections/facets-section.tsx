@@ -44,10 +44,11 @@ export function FacetsSection() {
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>СДЕЛАЕТ МНОГОЕ ДЛЯ ТЕБЯ</div>
           <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.15, color: "#f0eeff" }}>
-            Три грани <span className="text-gradient">одного инструмента</span>
+            Посмотри, что я могу{" "}
+            <span className="text-gradient">сделать для тебя</span>
           </h2>
           <p style={{ marginTop: "14px", fontSize: "16px", color: "#a89ec0", maxWidth: "440px", margin: "14px auto 0", lineHeight: 1.6 }}>
-            Это не месячный план на каждого. Это для тебя — и только.
+            Это лишь несколько идей. Но я могу больше.
           </p>
         </motion.div>
 
