@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { ArrowRight, Send } from "lucide-react";
+import { ArrowRight, Send, BarChart2, FileText, Languages, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HERO_PHRASES = [
@@ -21,6 +21,13 @@ const DEMO_PROMPTS = [
   "Переведи и адаптируй под российский рынок...",
   "Сделай саммари из этой лекции за 30 секунд...",
   "Составь SEO-описание для карточки на Wildberries...",
+];
+
+const QUICK_ACTIONS = [
+  { icon: BarChart2, label: "Анализ данных" },
+  { icon: FileText,  label: "Написать текст" },
+  { icon: Languages, label: "Перевести" },
+  { icon: PenLine,   label: "Написать код" },
 ];
 
 
@@ -57,11 +64,23 @@ function AnimatedInput() {
       background: "rgba(12,11,22,0.98)",
       border: "1px solid rgba(101,88,224,0.35)",
       borderRadius: "20px",
-      boxShadow: "0 0 0 1px rgba(101,88,224,0.08), 0 24px 64px rgba(0,0,0,0.55)",
+      boxShadow: "0 0 0 1px rgba(101,88,224,0.08), 0 24px 64px rgba(0,0,0,0.55), 0 0 100px rgba(101,88,224,0.07)",
       overflow: "hidden",
     }}>
+      {/* Теги — только десктоп */}
+      <div className="widget-tabs" style={{ display:"flex", alignItems:"center", gap:"8px", padding:"14px 20px 12px", borderBottom:"1px solid rgba(255,255,255,0.05)" }}>
+        {["LibraChat","Pro","Без VPN","Помнит всё"].map((t,i) => (
+          <span key={t} style={{ padding:"3px 10px", borderRadius:"999px", fontSize:"12px", fontWeight:500,
+            ...(i===0
+              ? { background:"rgba(101,88,224,0.2)", color:"#a89ec0", border:"1px solid rgba(101,88,224,0.35)" }
+              : { color:"#3d3858", border:"1px solid rgba(255,255,255,0.06)" }) }}>
+            {t}
+          </span>
+        ))}
+      </div>
+
       {/* Ввод */}
-      <div style={{ padding:"20px 20px 20px", display:"flex", alignItems:"flex-start", gap:"12px", minHeight:"72px" }}>
+      <div style={{ padding:"20px 20px 16px", display:"flex", alignItems:"flex-start", gap:"12px", minHeight:"72px" }}>
         <div style={{ flex:1, fontSize:"16px", lineHeight:"1.6", color:"#a89ec0", minHeight:"26px" }}>
           {displayed}
           <span style={{ display:"inline-block", width:"2px", height:"18px", background:"#6558e0", marginLeft:"2px", verticalAlign:"middle", animation:"typing-cursor 0.9s step-end infinite" }} />
@@ -69,6 +88,16 @@ function AnimatedInput() {
         <button style={{ width:"42px", height:"42px", borderRadius:"12px", background:"#6558e0", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, border:"none", cursor:"pointer", boxShadow:"0 4px 16px rgba(101,88,224,0.45)" }}>
           <Send size={16} color="white" />
         </button>
+      </div>
+
+      {/* Быстрые действия — только десктоп */}
+      <div className="widget-actions" style={{ padding:"0 20px 18px", display:"flex", gap:"8px" }}>
+        {QUICK_ACTIONS.map(({ icon: Icon, label }) => (
+          <span key={label} style={{ display:"inline-flex", alignItems:"center", gap:"6px", padding:"7px 14px", borderRadius:"999px", fontSize:"13px", border:"1px solid rgba(255,255,255,0.08)", color:"#a89ec0", cursor:"pointer" }}>
+            <Icon size={14} />
+            {label}
+          </span>
+        ))}
       </div>
     </div>
   );

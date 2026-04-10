@@ -187,3 +187,9 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
+
+/* Окошко чата — на мобиле скрываем вкладки и быстрые кнопки */
+@media (max-width: 767px) {
+  .widget-tabs    { display: none !important; }
+  .widget-actions { display: none !important; }
+}
