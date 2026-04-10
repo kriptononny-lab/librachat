@@ -27,7 +27,7 @@
   /* Текст — контрастнее */
   --color-text-primary:   #f0eeff;
   --color-text-secondary: #a89ec0;
-  --color-text-muted:     #6b6480;
+  --color-text-muted:     #8a7fa8;
 
   /* Границы */
   --color-border:        rgba(255,255,255,0.07);

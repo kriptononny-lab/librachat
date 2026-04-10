@@ -109,14 +109,14 @@ function RotatingHeadline() {
   }, []);
 
   return (
-    <div style={{ position:"relative", overflow:"hidden", minHeight:"2.5em" }}>
+    <div style={{ position:"relative", minHeight:"3.2em" }}>
       <AnimatePresence mode="wait">
         <motion.span
           key={idx}
-          initial={{ opacity:0, y:28 }}
+          initial={{ opacity:0, y:18 }}
           animate={{ opacity:1, y:0 }}
-          exit={{ opacity:0, y:-22 }}
-          transition={{ duration:0.42, ease:[0.4,0,0.2,1] }}
+          exit={{ opacity:0, y:-14, position:"absolute", top:0, left:0, right:0 }}
+          transition={{ duration:0.32, ease:[0.4,0,0.2,1] }}
           style={{
             display:"block",
             background:"linear-gradient(135deg, #9b8ff8 0%, #6558e0 100%)",
@@ -210,16 +210,16 @@ export function HeroSection() {
             initial={{ opacity:0 }}
             animate={{ opacity:1 }}
             transition={{ duration:0.5, delay:0.68 }}
-            style={{ width:"100%", maxWidth:"700px", display:"grid", borderTop:"1px solid rgba(255,255,255,0.07)" }}
+            style={{ width:"100%", maxWidth:"700px", display:"grid", gridTemplateColumns:"repeat(3, 1fr)", borderTop:"1px solid rgba(255,255,255,0.07)" }}
           >
             {[
               { value:"Без VPN", label:"начать пользоваться легко" },
               { value:"1 480",   label:"тестировщиков подтвердили преимущества" },
               { value:"30 сек",  label:"среднее время регистрации" },
             ].map((s, i) => (
-              <div key={s.label} className="hero-stats-item" style={{ display:"flex", flexDirection:"column", gap:"6px", padding:"24px 12px", textAlign:"center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
-                <span style={{ fontSize:"22px", fontWeight:700, color:"#c9920a" }}>{s.value}</span>
-                <span style={{ fontSize:"12px", lineHeight:1.45, color:"#a89ec0" }}>{s.label}</span>
+              <div key={s.label} className="hero-stats-item" style={{ display:"flex", flexDirection:"column", gap:"6px", padding:"20px 8px", textAlign:"center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
+                <span style={{ fontSize:"clamp(16px, 3.5vw, 22px)", fontWeight:700, color:"#c9920a" }}>{s.value}</span>
+                <span style={{ fontSize:"clamp(10px, 2vw, 12px)", lineHeight:1.45, color:"#a89ec0" }}>{s.label}</span>
               </div>
             ))}
           </motion.div>
