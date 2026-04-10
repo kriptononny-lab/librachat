@@ -7,12 +7,12 @@ import { ArrowRight, Send, BarChart2, FileText, Languages, PenLine } from "lucid
 import { Button } from "@/components/ui/button";
 
 const HERO_PHRASES = [
-  "Закрою все лишние вкладки\nв твоём браузере.",
-  "Первый ИИ, который понимает\nроссийский бизнес.",
-  "Твой — без VPN\nи без лишних настроек.",
-  "Курсовая без галлюцинаций.\nНадёжный друг с запасом знаний.",
-  "Первый, с кем можно\nбез промптов.",
-  "Надёжный друг\nс бесконечным запасом знаний.",
+  "Закрою лишние вкладки\nв твоём браузере.",
+  "Первый ИИ\nдля российского бизнеса.",
+  "Твой — без VPN\nи без настроек.",
+  "Курсовая\nбез галлюцинаций.",
+  "Первый, с кем\nможно без промптов.",
+  "Надёжный друг\nс запасом знаний.",
 ];
 
 const DEMO_PROMPTS = [
@@ -175,7 +175,7 @@ export function HeroSection() {
             initial={{ opacity:0 }}
             animate={{ opacity:1 }}
             transition={{ duration:0.4, delay:0.18 }}
-            style={{ fontSize:"clamp(26px, 4vw, 50px)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.15, marginBottom:"24px", width:"100%" }}
+            style={{ fontSize:"clamp(22px, 4vw, 50px)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.15, marginBottom:"24px", width:"100%" }}
           >
             <RotatingHeadline />
           </motion.div>
