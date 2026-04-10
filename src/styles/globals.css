@@ -211,3 +211,19 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
   .widget-tabs    { display: none !important; }
   .widget-actions { display: none !important; }
 }
+
+/* Badge dot — пульсирующая точка в бейдже Hero */
+.badge-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9b8ff8;
+  box-shadow: 0 0 6px rgba(155,143,248,0.6);
+  animation: badge-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}

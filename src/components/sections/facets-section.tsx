@@ -34,7 +34,7 @@ export function FacetsSection() {
   const [activeTab, setActiveTab] = useState<TabId>("self");
 
   return (
-    <section style={{ padding: "120px 0", background: "#07060e", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section style={{ padding: "120px 0", background: "#0e0d1a", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-site">
 
         {/* Заголовок */}
