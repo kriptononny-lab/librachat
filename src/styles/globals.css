@@ -201,7 +201,7 @@ button, a[class*="rounded-full"], a[class*="rounded-"] {
 /* Rotating headline — строго фиксированная высота, никакого дёргания */
 .rotating-headline-wrap {
   position: relative;
-  height: clamp(80px, 12vw, 130px);
+  height: clamp(68px, 10vw, 122px);
   overflow: hidden;
   width: 100%;
 }
