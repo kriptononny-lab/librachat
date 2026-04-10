@@ -16,7 +16,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
     <Link href={`/learn/${article.slug}`} style={{ display:"flex", flexDirection:"column", borderRadius:"16px", overflow:"hidden", background:"rgba(14,13,25,0.85)", border:"1px solid rgba(255,255,255,0.08)", textDecoration:"none", height:"100%" }}>
       <div style={{ position:"relative", height: large ? "180px" : "120px", background: article.gradient ?? "rgba(20,19,28,0.9)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, overflow:"hidden" }}>
         {article.photo
-          ? <Image src={article.photo} alt={article.title} fill style={{ objectFit:"cover" }} />
+          ? <Image src={article.photo} alt={article.title} fill style={{ objectFit:"cover", objectPosition: article.photo?.includes("bazarkulova") ? "center 20%" : "center top" }} />
           : <BookOpen size={large ? 32 : 22} color="rgba(255,255,255,0.15)" />
         }
         {article.photo && <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom, transparent 50%, rgba(12,12,16,0.7))" }} />}
@@ -138,7 +138,7 @@ export function LearnClient() {
                 {realCases.map(article => (
                   <Link key={article.slug} href={`/learn/${article.slug}`} style={{ display:"flex", flexDirection:"column", borderRadius:"20px", overflow:"hidden", background:"rgba(14,13,25,0.85)", border:"1px solid rgba(255,255,255,0.08)", textDecoration:"none" }}>
                     <div style={{ height:"200px", position:"relative", overflow:"hidden", background: article.gradient ?? "rgba(14,13,25,0.9)" }}>
-                      {article.photo && <Image src={article.photo} alt={article.title} fill style={{ objectFit:"cover" }} />}
+                      {article.photo && <Image src={article.photo} alt={article.title} fill style={{ objectFit:"cover", objectPosition: article.photo?.includes("bazarkulova") ? "center 20%" : "center top" }} />}
                       <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom, transparent 40%, rgba(12,12,16,0.85))" }} />
                       <span style={{ position:"absolute", top:"14px", left:"14px", fontSize:"11px", fontWeight:600, padding:"3px 10px", borderRadius:"999px", background:TYPE_COLOR["кейс"].bg, color:TYPE_COLOR["кейс"].text, border:`1px solid ${TYPE_COLOR["кейс"].border}` }}>КЕЙС</span>
                     </div>
@@ -220,7 +220,7 @@ export function LearnClient() {
         {/* CTA */}
         <section style={{ padding:"80px 0", background:"#07060e", borderTop:"1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-site">
-            <div style={{ borderRadius:"24px", padding:"72px 40px", textAlign:"center", background:"rgba(14,13,25,0.97)", border:"1px solid rgba(101,88,224,0.18)", position:"relative", overflow:"hidden" }}>
+            <div className="cta-inner" style={{ borderRadius:"24px", padding:"72px 40px", textAlign:"center", background:"rgba(14,13,25,0.97)", border:"1px solid rgba(101,88,224,0.18)", position:"relative", overflow:"hidden" }}>
               <div style={{ position:"absolute", top:0, left:0, right:0, height:"1px", background:"linear-gradient(90deg,transparent,rgba(101,88,224,0.6),transparent)" }} />
               <div style={{ position:"relative", display:"flex", flexDirection:"column", alignItems:"center", gap:"20px" }}>
                 <div className="section-badge">14 ДНЕЙ БЕСПЛАТНО</div>

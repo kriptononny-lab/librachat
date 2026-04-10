@@ -110,7 +110,7 @@ export function SocialProofSection() {
             >
               {/* Фото */}
               <div style={{ height: "180px", position: "relative", overflow: "hidden", background: "rgba(14,13,25,0.92)", flexShrink: 0 }}>
-                <Image src={t.photo} alt={t.name} fill style={{ objectFit: "cover" }} />
+                <Image src={t.photo} alt={t.name} fill style={{ objectFit: "cover", objectPosition: t.photo?.includes("bazarkulova") ? "center 20%" : "center top" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(12,12,16,0.9))" }} />
               </div>
 
