@@ -4,17 +4,15 @@ const STRAPI_URL =
   process.env.NEXT_PUBLIC_STRAPI_URL || "https://librachat-cms.onrender.com";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
-// ── Типы Strapi v4 ─────────────────────────────────
+// ── Типы Strapi v5 (без обёртки attributes) ────────
 
-interface StrapiMedia {
-  data: {
-    attributes: {
-      url: string;
-    };
-  } | null;
+interface StrapiMediaV5 {
+  url: string;
 }
 
-interface StrapiArticleAttributes {
+interface StrapiArticleV5 {
+  id: number;
+  documentId: string;
   title: string;
   slug: string;
   excerpt: string | null;
@@ -28,13 +26,8 @@ interface StrapiArticleAttributes {
   featured: boolean | null;
   gradient: string | null;
   photoPos: string | null;
-  photo: StrapiMedia | null;
+  photo: StrapiMediaV5 | null;
   publishedAt: string | null;
-}
-
-interface StrapiArticle {
-  id: number;
-  attributes: StrapiArticleAttributes;
 }
 
 interface StrapiResponse<T> {
@@ -44,28 +37,26 @@ interface StrapiResponse<T> {
 
 // ── Хелперы ────────────────────────────────────────
 
-function getPhotoUrl(photo: StrapiMedia | null): string | undefined {
-  if (!photo?.data?.attributes?.url) return undefined;
-  const url = photo.data.attributes.url;
-  return url.startsWith("http") ? url : `${STRAPI_URL}${url}`;
+function getPhotoUrl(photo: StrapiMediaV5 | null): string | undefined {
+  if (!photo?.url) return undefined;
+  return photo.url.startsWith("http") ? photo.url : `${STRAPI_URL}${photo.url}`;
 }
 
-function mapToArticleCard(item: StrapiArticle): ArticleCard {
-  const a = item.attributes;
+function mapToArticleCard(item: StrapiArticleV5): ArticleCard {
   return {
-    slug: a.slug,
-    type: a.type ?? "статья",
-    title: a.title,
-    excerpt: a.excerpt ?? "",
-    author: a.author ?? "LibraChat",
-    authorRole: a.authorRole ?? undefined,
-    photo: getPhotoUrl(a.photo ?? null),
-    photoPos: a.photoPos ?? undefined,
-    readTime: a.readTime ?? 5,
-    views: a.views ?? "500",
-    tags: Array.isArray(a.tags) ? a.tags : [],
-    featured: a.featured ?? false,
-    gradient: a.gradient ?? undefined,
+    slug: item.slug,
+    type: item.type ?? "статья",
+    title: item.title,
+    excerpt: item.excerpt ?? "",
+    author: item.author ?? "LibraChat",
+    authorRole: item.authorRole ?? undefined,
+    photo: getPhotoUrl(item.photo ?? null),
+    photoPos: item.photoPos ?? undefined,
+    readTime: item.readTime ?? 5,
+    views: item.views ?? "500",
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    featured: item.featured ?? false,
+    gradient: item.gradient ?? undefined,
   };
 }
 
@@ -77,16 +68,12 @@ function buildHeaders(): HeadersInit {
 
 // ── Запросы ────────────────────────────────────────
 
-/**
- * Получить список всех опубликованных статей.
- * При ошибке возвращает пустой массив (fallback на статику).
- */
 export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
   try {
     const url = `${STRAPI_URL}/api/articles?populate=photo&sort=createdAt:desc&pagination[pageSize]=100`;
     const res = await fetch(url, {
       headers: buildHeaders(),
-      next: { revalidate: 60 }, // ISR — обновлять раз в минуту
+      next: { revalidate: 60 },
     });
 
     if (!res.ok) {
@@ -94,7 +81,7 @@ export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
       return [];
     }
 
-    const json: StrapiResponse<StrapiArticle[]> = await res.json();
+    const json: StrapiResponse<StrapiArticleV5[]> = await res.json();
     return (json.data ?? []).map(mapToArticleCard);
   } catch (err) {
     console.error("[Strapi] fetchArticles error:", err);
@@ -102,9 +89,6 @@ export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
   }
 }
 
-/**
- * Получить одну статью по slug.
- */
 export async function fetchStrapiArticleBySlug(
   slug: string
 ): Promise<(ArticleCard & { rawContent: unknown }) | null> {
@@ -120,13 +104,13 @@ export async function fetchStrapiArticleBySlug(
       return null;
     }
 
-    const json: StrapiResponse<StrapiArticle[]> = await res.json();
+    const json: StrapiResponse<StrapiArticleV5[]> = await res.json();
     const item = json.data?.[0];
     if (!item) return null;
 
     return {
       ...mapToArticleCard(item),
-      rawContent: item.attributes.content,
+      rawContent: item.content,
     };
   } catch (err) {
     console.error("[Strapi] fetchArticleBySlug error:", err);
