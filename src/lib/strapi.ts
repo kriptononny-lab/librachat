@@ -1,105 +1,135 @@
-import type { ApiResponse } from "@/types";
-
-// ===================================================
-// Клиент для работы со Strapi CMS
-// ===================================================
+import type { ArticleCard, ArticleType } from "./articles";
 
 const STRAPI_URL =
-  process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+  process.env.NEXT_PUBLIC_STRAPI_URL || "https://librachat-cms.onrender.com";
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
-interface FetchOptions extends RequestInit {
-  tags?: string[];
-  revalidate?: number;
+// ── Типы Strapi v4 ─────────────────────────────────
+
+interface StrapiMedia {
+  data: {
+    attributes: {
+      url: string;
+    };
+  } | null;
+}
+
+interface StrapiArticleAttributes {
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: unknown;
+  author: string | null;
+  authorRole: string | null;
+  type: ArticleType | null;
+  readTime: number | null;
+  views: string | null;
+  tags: string[] | null;
+  featured: boolean | null;
+  gradient: string | null;
+  photoPos: string | null;
+  photo: StrapiMedia | null;
+  publishedAt: string | null;
+}
+
+interface StrapiArticle {
+  id: number;
+  attributes: StrapiArticleAttributes;
+}
+
+interface StrapiResponse<T> {
+  data: T;
+  meta?: unknown;
+}
+
+// ── Хелперы ────────────────────────────────────────
+
+function getPhotoUrl(photo: StrapiMedia | null): string | undefined {
+  if (!photo?.data?.attributes?.url) return undefined;
+  const url = photo.data.attributes.url;
+  return url.startsWith("http") ? url : `${STRAPI_URL}${url}`;
+}
+
+function mapToArticleCard(item: StrapiArticle): ArticleCard {
+  const a = item.attributes;
+  return {
+    slug: a.slug,
+    type: a.type ?? "статья",
+    title: a.title,
+    excerpt: a.excerpt ?? "",
+    author: a.author ?? "LibraChat",
+    authorRole: a.authorRole ?? undefined,
+    photo: getPhotoUrl(a.photo ?? null),
+    photoPos: a.photoPos ?? undefined,
+    readTime: a.readTime ?? 5,
+    views: a.views ?? "500",
+    tags: Array.isArray(a.tags) ? a.tags : [],
+    featured: a.featured ?? false,
+    gradient: a.gradient ?? undefined,
+  };
+}
+
+function buildHeaders(): HeadersInit {
+  const headers: HeadersInit = { "Content-Type": "application/json" };
+  if (STRAPI_TOKEN) headers["Authorization"] = `Bearer ${STRAPI_TOKEN}`;
+  return headers;
+}
+
+// ── Запросы ────────────────────────────────────────
+
+/**
+ * Получить список всех опубликованных статей.
+ * При ошибке возвращает пустой массив (fallback на статику).
+ */
+export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
+  try {
+    const url = `${STRAPI_URL}/api/articles?populate=photo&sort=createdAt:desc&pagination[pageSize]=100`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 }, // ISR — обновлять раз в минуту
+    });
+
+    if (!res.ok) {
+      console.error(`[Strapi] fetchArticles failed: ${res.status}`);
+      return [];
+    }
+
+    const json: StrapiResponse<StrapiArticle[]> = await res.json();
+    return (json.data ?? []).map(mapToArticleCard);
+  } catch (err) {
+    console.error("[Strapi] fetchArticles error:", err);
+    return [];
+  }
 }
 
 /**
- * Базовый fetch для Strapi REST API
+ * Получить одну статью по slug.
  */
-async function strapiFetch<T>(
-  endpoint: string,
-  options: FetchOptions = {}
-): Promise<ApiResponse<T>> {
-  const { tags, revalidate, ...fetchOptions } = options;
+export async function fetchStrapiArticleBySlug(
+  slug: string
+): Promise<(ArticleCard & { rawContent: unknown }) | null> {
+  try {
+    const url = `${STRAPI_URL}/api/articles?filters[slug][$eq]=${encodeURIComponent(slug)}&populate=photo`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
 
-  const url = `${STRAPI_URL}/api${endpoint}`;
+    if (!res.ok) {
+      console.error(`[Strapi] fetchArticleBySlug failed: ${res.status}`);
+      return null;
+    }
 
-  const response = await fetch(url, {
-    headers: {
-      "Content-Type": "application/json",
-      ...(STRAPI_TOKEN && { Authorization: `Bearer ${STRAPI_TOKEN}` }),
-      ...fetchOptions.headers,
-    },
-    next: {
-      ...(tags && { tags }),
-      ...(revalidate !== undefined && { revalidate }),
-    },
-    ...fetchOptions,
-  });
+    const json: StrapiResponse<StrapiArticle[]> = await res.json();
+    const item = json.data?.[0];
+    if (!item) return null;
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(
-      error?.error?.message ?? `Strapi fetch failed: ${response.status} ${url}`
-    );
+    return {
+      ...mapToArticleCard(item),
+      rawContent: item.attributes.content,
+    };
+  } catch (err) {
+    console.error("[Strapi] fetchArticleBySlug error:", err);
+    return null;
   }
-
-  return response.json() as Promise<ApiResponse<T>>;
 }
-
-// ===================================================
-// API-методы
-// ===================================================
-
-/** Получить список статей */
-export async function getArticles(params?: {
-  page?: number;
-  pageSize?: number;
-  category?: string;
-}) {
-  const qs = new URLSearchParams();
-  if (params?.page) qs.set("pagination[page]", String(params.page));
-  if (params?.pageSize) qs.set("pagination[pageSize]", String(params.pageSize));
-  if (params?.category) qs.set("filters[category][$eq]", params.category);
-  qs.set("populate", "coverImage,author");
-  qs.set("sort", "publishedAt:desc");
-
-  return strapiFetch(`/articles?${qs}`, {
-    tags: ["articles"],
-    revalidate: 3600, // 1 час
-  });
-}
-
-/** Получить одну статью по slug */
-export async function getArticle(slug: string) {
-  return strapiFetch(`/articles?filters[slug][$eq]=${slug}&populate=*`, {
-    tags: [`article-${slug}`],
-    revalidate: 3600,
-  });
-}
-
-/** Получить тарифные планы из CMS */
-export async function getPlans() {
-  return strapiFetch("/plans?populate=features", {
-    tags: ["plans"],
-    revalidate: 86400, // 24 часа
-  });
-}
-
-/** Получить страницу возможностей */
-export async function getFeatures() {
-  return strapiFetch("/features?populate=icon", {
-    tags: ["features"],
-    revalidate: 86400,
-  });
-}
-
-/** Инвалидация кэша (вызывается из webhook Strapi) */
-export async function revalidateTag(tag: string) {
-  const response = await fetch(`/api/revalidate?tag=${tag}`, {
-    method: "POST",
-  });
-  return response.json();
-}
-
-export { strapiFetch };
