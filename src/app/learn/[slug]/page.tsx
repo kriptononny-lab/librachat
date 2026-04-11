@@ -17,6 +17,9 @@ import { Footer } from "@/components/layout/footer";
 import { ALL_ARTICLES as STATIC_ARTICLES, TYPE_COLOR } from "@/lib/articles";
 import { fetchStrapiArticles, fetchStrapiArticleBySlug } from "@/lib/strapi";
 
+// Новые slug-и из Strapi рендерятся на лету — без редеплоя
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const strapiArticles = await fetchStrapiArticles();
   const allSlugs = new Set([
