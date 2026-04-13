@@ -1,14 +1,21 @@
-import { Header }               from "@/components/layout/header";
-import { Footer }               from "@/components/layout/footer";
-import { HeroSection }          from "@/components/sections/hero-section";
-import { FacetsSection }        from "@/components/sections/facets-section";
-import { StepsSection }         from "@/components/sections/steps-section";
-import { SocialProofSection }   from "@/components/sections/social-proof-section";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { HeroSection } from "@/components/sections/hero-section";
+import { FacetsSection } from "@/components/sections/facets-section";
+import { StepsSection } from "@/components/sections/steps-section";
+import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { PricingPreviewSection } from "@/components/sections/pricing-preview-section";
-import { FaqSection }           from "@/components/sections/faq-section";
-import { CtaSection }           from "@/components/sections/cta-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { CtaSection } from "@/components/sections/cta-section";
+import { fetchStrapiTestimonials, fetchStrapiFaqs, fetchStrapiPlans } from "@/lib/strapi";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [testimonials, faqs, plans] = await Promise.all([
+    fetchStrapiTestimonials(),
+    fetchStrapiFaqs("home"),
+    fetchStrapiPlans(),
+  ]);
+
   return (
     <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
       <Header />
@@ -16,9 +23,9 @@ export default function HomePage() {
         <HeroSection />
         <FacetsSection />
         <StepsSection />
-        <SocialProofSection />
-        <PricingPreviewSection />
-        <FaqSection />
+        <SocialProofSection testimonials={testimonials} />
+        <PricingPreviewSection plans={plans} />
+        <FaqSection faqs={faqs} />
         <CtaSection />
       </main>
       <Footer />

@@ -117,3 +117,104 @@ export async function fetchStrapiArticleBySlug(
     return null;
   }
 }
+
+// ── Типы для остальных коллекций ──────────────────
+
+export interface StrapiTestimonial {
+  id: number;
+  name: string;
+  role: string;
+  content: string;
+  result: string;
+  photo: { url: string } | null;
+  photoPos: string | null;
+  initials: string;
+  href: string;
+  order: number;
+}
+
+export interface StrapiFaq {
+  id: number;
+  question: string;
+  answer: string;
+  page: "home" | "pricing" | "both";
+  order: number;
+}
+
+export interface StrapiFeature {
+  id: number;
+  title: string;
+  desc: string;
+  icon: string;
+  section: "main" | "security";
+  order: number;
+}
+
+export interface StrapiPlan {
+  id: number;
+  planId: string;
+  name: string;
+  subtitle: string;
+  priceMonthly: number;
+  priceAnnual: number;
+  isPopular: boolean;
+  highlight: string | null;
+  ctaLabel: string;
+  ctaHref: string;
+  features: { label: string; ok: boolean }[];
+  order: number;
+}
+
+async function fetchCollection<T>(endpoint: string): Promise<T[]> {
+  try {
+    const url = `${STRAPI_URL}/api/${endpoint}?sort=order:asc&pagination[pageSize]=100`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) {
+      console.error(`[Strapi] fetch ${endpoint} failed: ${res.status}`);
+      return [];
+    }
+    const json = await res.json();
+    return (json.data ?? []) as T[];
+  } catch (err) {
+    console.error(`[Strapi] fetch ${endpoint} error:`, err);
+    return [];
+  }
+}
+
+export async function fetchStrapiTestimonials(): Promise<StrapiTestimonial[]> {
+  const items = await fetchCollection<StrapiTestimonial>("testimonials?populate=photo");
+  return items.map((t: any) => ({
+    ...t,
+    photo: t.photo
+      ? {
+          url: t.photo.url?.startsWith("http")
+            ? t.photo.url
+            : `${STRAPI_URL}${t.photo.url}`,
+        }
+      : null,
+  }));
+}
+
+export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<StrapiFaq[]> {
+  const filter = page ? `&filters[page][$in][0]=${page}&filters[page][$in][1]=both` : "";
+  try {
+    const url = `${STRAPI_URL}/api/faqs?sort=order:asc&pagination[pageSize]=100${filter}`;
+    const res = await fetch(url, { headers: buildHeaders(), next: { revalidate: 60 } });
+    if (!res.ok) return [];
+    const json = await res.json();
+    return (json.data ?? []) as StrapiFaq[];
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchStrapiFeatures(): Promise<StrapiFeature[]> {
+  return fetchCollection<StrapiFeature>("features");
+}
+
+export async function fetchStrapiPlans(): Promise<StrapiPlan[]> {
+  return fetchCollection<StrapiPlan>("plans");
+}
