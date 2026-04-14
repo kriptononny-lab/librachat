@@ -218,3 +218,35 @@ export async function fetchStrapiFeatures(): Promise<StrapiFeature[]> {
 export async function fetchStrapiPlans(): Promise<StrapiPlan[]> {
   return fetchCollection<StrapiPlan>("plans");
 }
+
+// ── SiteText ───────────────────────────────────────
+
+export interface StrapiSiteText {
+  id: number;
+  key: string;
+  value: string | null;
+  valueJson: unknown;
+  page: string | null;
+}
+
+export async function fetchStrapiSiteTexts(
+  page?: string
+): Promise<Record<string, string>> {
+  try {
+    const filter = page ? `&filters[page][$eq]=${page}` : "";
+    const url = `${STRAPI_URL}/api/site-texts?pagination[pageSize]=200${filter}`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return {};
+    const json = await res.json();
+    const map: Record<string, string> = {};
+    for (const item of json.data ?? []) {
+      if (item.key && item.value) map[item.key] = item.value;
+    }
+    return map;
+  } catch {
+    return {};
+  }
+}

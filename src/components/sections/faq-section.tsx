@@ -37,7 +37,16 @@ const STATIC_FAQ = [
   },
 ];
 
-export function FaqSection({ faqs }: { faqs?: StrapiFaq[] }) {
+export function FaqSection({
+  faqs,
+  texts = {},
+}: {
+  faqs?: StrapiFaq[];
+  texts?: Record<string, string>;
+}) {
+  const badge = texts["faq.badge"] ?? "ЧАСТО СПРАШИВАЮТ";
+  const title = texts["faq.title"] ?? "Остались вопросы?";
+  const subtitle = texts["faq.subtitle"] ?? "Ответы на самые популярные вопросы";
   const [open, setOpen] = useState<number | null>(null);
 
   const items =
@@ -56,7 +65,7 @@ export function FaqSection({ faqs }: { faqs?: StrapiFaq[] }) {
       <div className="container-site" style={{ maxWidth: "780px" }}>
         <div style={{ textAlign: "center", marginBottom: "52px" }}>
           <div className="section-badge" style={{ marginBottom: "16px" }}>
-            ЧАСТО СПРАШИВАЮТ
+            {badge}
           </div>
           <h2
             style={{
@@ -67,7 +76,7 @@ export function FaqSection({ faqs }: { faqs?: StrapiFaq[] }) {
               color: "#f0eeff",
             }}
           >
-            Остались вопросы?
+            {title}
           </h2>
           <p
             style={{
@@ -77,7 +86,7 @@ export function FaqSection({ faqs }: { faqs?: StrapiFaq[] }) {
               lineHeight: 1.6,
             }}
           >
-            Ответы на самые популярные вопросы
+            {subtitle}
           </p>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>

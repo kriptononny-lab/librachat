@@ -84,9 +84,13 @@ function StarRow() {
 
 export function SocialProofSection({
   testimonials,
+  texts = {},
 }: {
   testimonials?: StrapiTestimonial[];
+  texts?: Record<string, string>;
 }) {
+  const badge = texts["social.badge"] ?? "НАМ ДОВЕРЯЮТ";
+  const title = texts["social.title"] ?? "Те, кто уже со мной";
   const items =
     testimonials && testimonials.length > 0
       ? testimonials.map((t) => ({
@@ -118,7 +122,7 @@ export function SocialProofSection({
           style={{ textAlign: "center", marginBottom: "56px" }}
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>
-            НАМ ДОВЕРЯЮТ
+            {badge}
           </div>
           <h2
             style={{
@@ -129,7 +133,7 @@ export function SocialProofSection({
               color: "#f0eeff",
             }}
           >
-            Те, кто уже <span className="text-gradient">со мной</span>
+            {title}
           </h2>
         </motion.div>
         <div
