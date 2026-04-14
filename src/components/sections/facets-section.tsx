@@ -115,6 +115,22 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
   const title = texts["facets.title"] ?? "Посмотри, что я могу сделать для тебя";
   const subtitle =
     texts["facets.subtitle"] ?? "Это лишь несколько идей. Но я могу больше.";
+
+  function getCard(tab: string, n: number, staticCard: (typeof CARDS)["self"][0]) {
+    return {
+      ...staticCard,
+      badge: texts[`facets.${tab}.${n}.badge`] ?? staticCard.badge,
+      title: texts[`facets.${tab}.${n}.title`] ?? staticCard.title,
+      desc: texts[`facets.${tab}.${n}.desc`] ?? staticCard.desc,
+      superpower: texts[`facets.${tab}.${n}.superpower`] ?? staticCard.superpower,
+    };
+  }
+
+  const DYNAMIC_CARDS = {
+    self: CARDS.self.map((c, i) => getCard("self", i + 1, c)),
+    business: CARDS.business.map((c, i) => getCard("business", i + 1, c)),
+    study: CARDS.study.map((c, i) => getCard("study", i + 1, c)),
+  };
   const [activeTab, setActiveTab] = useState<TabId>("self");
 
   return (
@@ -216,7 +232,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
               gap: "20px",
             }}
           >
-            {CARDS[activeTab].map((card, i) => (
+            {DYNAMIC_CARDS[activeTab].map((card, i) => (
               <Link
                 key={card.badge}
                 href={card.href}

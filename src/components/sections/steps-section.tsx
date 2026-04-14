@@ -4,32 +4,37 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { UserPlus, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
 
-const STEPS = [
-  {
-    number: "1",
-    Icon: UserPlus,
-    title: "Зарегистрируйтесь",
-    desc: "Создайте аккаунт за 30 секунд. Никаких данных карты — просто email и пароль.",
-  },
-  {
-    number: "2",
-    Icon: MessageCircle,
-    title: "Задайте вопрос",
-    desc: "Напишите любой вопрос на русском — я понимаю контекст и отвечаю сразу.",
-  },
-  {
-    number: "3",
-    Icon: Sparkles,
-    title: "Получите результат",
-    desc: "Деловой текст, код, анализ или перевод — готово мгновенно.",
-  },
-];
-
 export function StepsSection({ texts = {} }: { texts?: Record<string, string> }) {
   const badge = texts["steps.badge"] ?? "3 ПРОСТЫХ ШАГА";
   const title = texts["steps.title"] ?? "Начни работу за 2 минуты";
   const subtitle =
     texts["steps.subtitle"] ?? "Никаких сложных настроек — просто зайди и начни";
+  const STEPS = [
+    {
+      number: "1",
+      Icon: UserPlus,
+      title: texts["steps.1.title"] ?? "Зарегистрируйтесь",
+      desc:
+        texts["steps.1.desc"] ??
+        "Создайте аккаунт за 30 секунд. Никаких данных карты — просто email и пароль.",
+    },
+    {
+      number: "2",
+      Icon: MessageCircle,
+      title: texts["steps.2.title"] ?? "Задайте вопрос",
+      desc:
+        texts["steps.2.desc"] ??
+        "Напишите любой вопрос на русском — я понимаю контекст и отвечаю сразу.",
+    },
+    {
+      number: "3",
+      Icon: Sparkles,
+      title: texts["steps.3.title"] ?? "Получите результат",
+      desc:
+        texts["steps.3.desc"] ??
+        "Деловой текст, код, анализ или перевод — готово мгновенно.",
+    },
+  ];
   return (
     <section
       style={{

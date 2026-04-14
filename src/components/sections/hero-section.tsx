@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Send, BarChart2, FileText, Languages, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_PHRASES = [
+const STATIC_HERO_PHRASES = [
   "Закрою лишние вкладки\nв твоём браузере.",
   "Первый ИИ\nдля российского бизнеса.",
   "Твой — без VPN.\n\u00A0",
@@ -191,10 +191,10 @@ function AnimatedInput() {
   );
 }
 
-function RotatingHeadline() {
+function RotatingHeadline({ phrases }: { phrases: string[] }) {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % HERO_PHRASES.length), 3800);
+    const t = setInterval(() => setIdx((i) => (i + 1) % phrases.length), 3800);
     return () => clearInterval(t);
   }, []);
 
@@ -220,7 +220,7 @@ function RotatingHeadline() {
             whiteSpace: "pre-line",
           }}
         >
-          {HERO_PHRASES[idx]}
+          {phrases[idx]}
         </motion.span>
       </AnimatePresence>
     </div>
@@ -246,6 +246,14 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
       value: texts["hero.stat3.value"] ?? "30 сек",
       label: texts["hero.stat3.label"] ?? "среднее время регистрации",
     },
+  ];
+  const HERO_PHRASES = [
+    texts["hero.phrase1"] ?? STATIC_HERO_PHRASES[0],
+    texts["hero.phrase2"] ?? STATIC_HERO_PHRASES[1],
+    texts["hero.phrase3"] ?? STATIC_HERO_PHRASES[2],
+    texts["hero.phrase4"] ?? STATIC_HERO_PHRASES[3],
+    texts["hero.phrase5"] ?? STATIC_HERO_PHRASES[4],
+    texts["hero.phrase6"] ?? STATIC_HERO_PHRASES[5],
   ];
   return (
     <section
@@ -326,7 +334,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
               width: "100%",
             }}
           >
-            <RotatingHeadline />
+            <RotatingHeadline phrases={HERO_PHRASES} />
           </motion.div>
 
           {/* Подзаголовок */}
