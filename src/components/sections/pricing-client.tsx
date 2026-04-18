@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { Check, X, Minus } from "lucide-react";
-import type { StrapiPlan, StrapiFaq } from "@/lib/strapi";
+import type { StrapiPlan, StrapiFaq, StrapiPricingPage } from "@/lib/strapi";
 
 const STATIC_PLANS: StrapiPlan[] = [
   {
@@ -175,9 +175,11 @@ const heading = {
 export function PricingClient({
   plans,
   faqs,
+  page,
 }: {
   plans?: StrapiPlan[];
   faqs?: StrapiFaq[];
+  page?: StrapiPricingPage | null;
 }) {
   const [annual, setAnnual] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -207,9 +209,7 @@ export function PricingClient({
           <h1
             style={{ ...heading, fontSize: "clamp(36px, 5vw, 64px)", maxWidth: "600px" }}
           >
-            Выберите подходящий
-            <br />
-            <span style={{ color: "#f0eeff" }}>тариф для вас</span>
+            {page?.heroTitle ?? "Выберите подходящий тариф для вас"}
           </h1>
           <p
             style={{
@@ -219,7 +219,8 @@ export function PricingClient({
               lineHeight: 1.7,
             }}
           >
-            Начните бесплатно — обновите план когда будете готовы. Без скрытых платежей.
+            {page?.heroSubtitle ??
+              "Начните бесплатно — обновите план когда будете готовы. Без скрытых платежей."}
           </p>
           <div
             style={{
@@ -291,11 +292,10 @@ export function PricingClient({
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               ТАРИФЫ
             </div>
-            <h2 style={heading}>
-              Выбери <span style={{ color: "#f0eeff" }}>свой результат</span>
-            </h2>
+            <h2 style={heading}>{page?.plansTitle ?? "Выбери свой результат"}</h2>
             <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
-              Тарифы — один инструмент для всех задач. Расти вместе с ним.
+              {page?.plansSubtitle ??
+                "Тарифы — один инструмент для всех задач. Расти вместе с ним."}
             </p>
           </div>
           <div
@@ -461,7 +461,7 @@ export function PricingClient({
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               СРАВНЕНИЕ
             </div>
-            <h2 style={heading}>Что входит в каждый план</h2>
+            <h2 style={heading}>{page?.comparisonTitle ?? "Что входит в каждый план"}</h2>
             <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
               Подробное сравнение всех возможностей
             </p>
@@ -721,9 +721,7 @@ export function PricingClient({
             >
               <div className="section-badge">НАЧНИТЕ УЖЕ СЕГОДНЯ</div>
               <h2 style={{ ...heading, fontSize: "clamp(32px, 4vw, 56px)" }}>
-                14 дней бесплатно
-                <br />
-                <span style={{ color: "#f0eeff" }}>на любом тарифе</span>
+                {page?.ctaTitle ?? "14 дней бесплатно на любом тарифе"}
               </h2>
               <p
                 style={{

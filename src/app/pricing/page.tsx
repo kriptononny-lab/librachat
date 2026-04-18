@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { PricingClient } from "@/components/sections/pricing-client";
-import { fetchStrapiPlans, fetchStrapiFaqs } from "@/lib/strapi";
+import { fetchStrapiPlans, fetchStrapiFaqs, fetchPricingPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
   title: "Тарифы",
@@ -15,16 +15,17 @@ export const metadata: Metadata = {
 };
 
 export default async function PricingPage() {
-  const [plans, faqs] = await Promise.all([
+  const [plans, faqs, page] = await Promise.all([
     fetchStrapiPlans(),
     fetchStrapiFaqs("pricing"),
+    fetchPricingPage(),
   ]);
 
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
       <main style={{ flex: 1, paddingTop: "68px" }}>
-        <PricingClient plans={plans} faqs={faqs} />
+        <PricingClient plans={plans} faqs={faqs} page={page} />
       </main>
       <Footer />
     </div>

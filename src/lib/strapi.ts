@@ -250,3 +250,97 @@ export async function fetchStrapiSiteTexts(
     return {};
   }
 }
+
+// ── Single Types ───────────────────────────────────
+
+export interface StrapiHomePage {
+  heroBadge: string | null;
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  heroStat1Value: string | null;
+  heroStat1Label: string | null;
+  heroStat2Value: string | null;
+  heroStat2Label: string | null;
+  heroStat3Value: string | null;
+  heroStat3Label: string | null;
+  heroPhrase1: string | null;
+  heroPhrase2: string | null;
+  heroPhrase3: string | null;
+  heroPhrase4: string | null;
+  heroPhrase5: string | null;
+  heroPhrase6: string | null;
+  facetsBadge: string | null;
+  facetsTitle: string | null;
+  facetsSubtitle: string | null;
+  stepsBadge: string | null;
+  stepsTitle: string | null;
+  stepsSubtitle: string | null;
+  step1Title: string | null;
+  step1Desc: string | null;
+  step2Title: string | null;
+  step2Desc: string | null;
+  step3Title: string | null;
+  step3Desc: string | null;
+  socialBadge: string | null;
+  socialTitle: string | null;
+  faqBadge: string | null;
+  faqTitle: string | null;
+  faqSubtitle: string | null;
+  ctaBadge: string | null;
+  ctaTitle: string | null;
+}
+
+export interface StrapiFeaturesPage {
+  heroBadge: string | null;
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  featuresTitle: string | null;
+  featuresSubtitle: string | null;
+  securityBadge: string | null;
+  securityTitle: string | null;
+  securitySubtitle: string | null;
+  ctaTitle: string | null;
+  ctaSubtitle: string | null;
+}
+
+export interface StrapiPricingPage {
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  plansTitle: string | null;
+  plansSubtitle: string | null;
+  comparisonTitle: string | null;
+  faqTitle: string | null;
+  faqSubtitle: string | null;
+  ctaTitle: string | null;
+  ctaSubtitle: string | null;
+}
+
+export interface StrapiBusinessPage {
+  heroBadge: string | null;
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  ctaTitle: string | null;
+  ctaSubtitle: string | null;
+}
+
+async function fetchSingleType<T>(endpoint: string): Promise<T | null> {
+  try {
+    const url = `${STRAPI_URL}/api/${endpoint}`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.data as T;
+  } catch {
+    return null;
+  }
+}
+
+export const fetchHomePage = () => fetchSingleType<StrapiHomePage>("home-page");
+export const fetchFeaturesPage = () =>
+  fetchSingleType<StrapiFeaturesPage>("features-page");
+export const fetchPricingPage = () => fetchSingleType<StrapiPricingPage>("pricing-page");
+export const fetchBusinessPage = () =>
+  fetchSingleType<StrapiBusinessPage>("business-page");

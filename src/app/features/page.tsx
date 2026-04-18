@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { fetchStrapiFeatures } from "@/lib/strapi";
+import { fetchStrapiFeatures, fetchFeaturesPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
   title: "Возможности",
@@ -363,7 +363,10 @@ const S = {
 };
 
 export default async function FeaturesPage() {
-  const strapiFeatures = await fetchStrapiFeatures();
+  const [strapiFeatures, page] = await Promise.all([
+    fetchStrapiFeatures(),
+    fetchFeaturesPage(),
+  ]);
   const features =
     strapiFeatures.length > 0
       ? strapiFeatures.map((f) => ({
@@ -506,10 +509,11 @@ export default async function FeaturesPage() {
               <div className="section-badge" style={{ marginBottom: "14px" }}>
                 ТВОЙ ИИ-ПОМОЩНИК
               </div>
-              <h2 style={S.h2}>
-                Ваш ИИ-помощник <span className="text-gradient">на каждый день</span>
-              </h2>
-              <p style={S.sub}>Один инструмент для сотни задач</p>
+              <h2 style={S.h2}>{page?.featuresTitle ?? "Всё в одном окне"}</h2>
+              <p style={S.sub}>
+                {page?.featuresSubtitle ??
+                  "8 инструментов — не нужно переключаться между сервисами"}
+              </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "96px" }}>
               {[
@@ -688,11 +692,10 @@ export default async function FeaturesPage() {
                 <span className="badge-dot" />
                 БЕЗОПАСНОСТЬ
               </div>
-              <h2 style={S.h2}>
-                Как во мне <span className="text-gradient">защищены данные</span>
-              </h2>
+              <h2 style={S.h2}>{page?.securityTitle ?? "Как во мне защищены данные"}</h2>
               <p style={S.sub}>
-                Твои файлы и запросы — только твои. Никаких компромиссов.
+                {page?.securitySubtitle ??
+                  "Твои файлы и запросы — только твои. Никаких компромиссов."}
               </p>
             </div>
             <div
@@ -927,7 +930,7 @@ export default async function FeaturesPage() {
                     color: "#f2f0ff",
                   }}
                 >
-                  Готов попробовать LibraChat?
+                  {page?.ctaTitle ?? "Готов попробовать LibraChat?"}
                 </h2>
                 <p
                   style={{
