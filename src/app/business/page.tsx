@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
-import { fetchBusinessPage } from "@/lib/strapi";
+import {
+  fetchBusinessPage,
+  fetchStrapiBusinessFeatures,
+  fetchStrapiBusinessCases,
+  fetchStrapiBusinessTestimonials,
+} from "@/lib/strapi";
 import { Footer } from "@/components/layout/footer";
 import {
   Shield,
@@ -15,6 +20,17 @@ import {
   Check,
   Star,
 } from "lucide-react";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Shield,
+  Users,
+  Zap,
+  BarChart2,
+  Headphones,
+  Puzzle,
+  FileText,
+  Globe,
+};
 
 export const metadata: Metadata = {
   title: "Для бизнеса",
@@ -174,7 +190,38 @@ function StarRow() {
 }
 
 export default async function BusinessPage() {
-  const page = await fetchBusinessPage();
+  const [page, bizFeatures, bizCases, bizTestimonials] = await Promise.all([
+    fetchBusinessPage(),
+    fetchStrapiBusinessFeatures(),
+    fetchStrapiBusinessCases(),
+    fetchStrapiBusinessTestimonials(),
+  ]);
+
+  const FEATURES_DATA =
+    bizFeatures.length > 0
+      ? bizFeatures.map((f, i) => ({
+          num: String(i + 1).padStart(2, "0"),
+          Icon: ICON_MAP[f.icon] ?? Shield,
+          title: f.title,
+          desc: f.desc,
+        }))
+      : FEATURES.map((f) => ({ ...f, Icon: f.Icon }));
+
+  const USE_CASES_DATA =
+    bizCases.length > 0
+      ? bizCases.map((f, i) => ({
+          Icon: ICON_MAP[f.icon] ?? FileText,
+          title: f.title,
+          desc: f.desc,
+          badge: USE_CASES[i]?.badge ?? "",
+          badgeColor: USE_CASES[i]?.badgeColor ?? "#6558e0",
+        }))
+      : USE_CASES;
+
+  const TESTIMONIALS_DATA =
+    bizTestimonials.length > 0
+      ? bizTestimonials.map((t) => ({ content: t.content, name: t.name, role: t.role }))
+      : TESTIMONIALS;
   return (
     <div style={{ display: "flex", minHeight: "100dvh", flexDirection: "column" }}>
       <Header />
@@ -500,7 +547,7 @@ export default async function BusinessPage() {
                 gap: "16px",
               }}
             >
-              {FEATURES.map(({ num, Icon, title, desc }) => (
+              {FEATURES_DATA.map(({ num, Icon, title, desc }) => (
                 <div key={num} style={S.card}>
                   <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                     <div style={S.iconWrap}>
@@ -546,7 +593,7 @@ export default async function BusinessPage() {
                 gap: "16px",
               }}
             >
-              {USE_CASES.map(({ Icon, title, desc, badge, badgeColor }) => (
+              {USE_CASES_DATA.map(({ Icon, title, desc, badge, badgeColor }) => (
                 <div key={title} style={S.card}>
                   <div style={S.iconWrap}>
                     <Icon size={22} color="#9b8ff8" />
@@ -610,7 +657,7 @@ export default async function BusinessPage() {
                 gap: "16px",
               }}
             >
-              {TESTIMONIALS.map((t, i) => (
+              {TESTIMONIALS_DATA.map((t, i) => (
                 <div
                   key={i}
                   style={{ ...S.card, border: "1px solid rgba(101,88,224,0.14)" }}

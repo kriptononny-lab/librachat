@@ -344,3 +344,37 @@ export const fetchFeaturesPage = () =>
 export const fetchPricingPage = () => fetchSingleType<StrapiPricingPage>("pricing-page");
 export const fetchBusinessPage = () =>
   fetchSingleType<StrapiBusinessPage>("business-page");
+
+// ── Business page specific fetches ────────────────
+
+export async function fetchStrapiBusinessFeatures(): Promise<StrapiFeature[]> {
+  return fetchCollection<StrapiFeature>("features?filters[page][$eq]=business-features");
+}
+
+export async function fetchStrapiBusinessCases(): Promise<StrapiFeature[]> {
+  return fetchCollection<StrapiFeature>("features?filters[page][$eq]=business-cases");
+}
+
+export async function fetchStrapiBusinessTestimonials(): Promise<StrapiTestimonial[]> {
+  try {
+    const url = `${STRAPI_URL}/api/testimonials?populate=photo&filters[page][$eq]=business&sort=order:asc&pagination[pageSize]=100`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return [];
+    const json = await res.json();
+    return (json.data ?? []).map((t: any) => ({
+      ...t,
+      photo: t.photo
+        ? {
+            url: t.photo.url?.startsWith("http")
+              ? t.photo.url
+              : `${STRAPI_URL}${t.photo.url}`,
+          }
+        : null,
+    }));
+  } catch {
+    return [];
+  }
+}
