@@ -294,11 +294,17 @@ export interface StrapiFeaturesPage {
   heroBadge: string | null;
   heroTitle: string | null;
   heroSubtitle: string | null;
+  deepBadge: string | null;
+  deepTitle: string | null;
+  deepSubtitle: string | null;
   featuresTitle: string | null;
   featuresSubtitle: string | null;
   securityBadge: string | null;
   securityTitle: string | null;
   securitySubtitle: string | null;
+  usecasesBadge: string | null;
+  usecasesTitle: string | null;
+  usecasesSubtitle: string | null;
   ctaTitle: string | null;
   ctaSubtitle: string | null;
 }
@@ -319,6 +325,12 @@ export interface StrapiBusinessPage {
   heroBadge: string | null;
   heroTitle: string | null;
   heroSubtitle: string | null;
+  stat1Value: string | null;
+  stat1Label: string | null;
+  stat2Value: string | null;
+  stat2Label: string | null;
+  stat3Value: string | null;
+  stat3Label: string | null;
   ctaTitle: string | null;
   ctaSubtitle: string | null;
 }

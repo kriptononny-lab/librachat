@@ -197,6 +197,21 @@ export default async function BusinessPage() {
     fetchStrapiBusinessTestimonials(),
   ]);
 
+  const STATS_DATA = [
+    {
+      value: page?.stat1Value ?? "500+",
+      label: page?.stat1Label ?? "корпоративных клиентов",
+    },
+    {
+      value: page?.stat2Value ?? "3 ч",
+      label: page?.stat2Label ?? "экономия на сотрудника в день",
+    },
+    {
+      value: page?.stat3Value ?? "99.9%",
+      label: page?.stat3Label ?? "время безотказной работы",
+    },
+  ];
+
   const FEATURES_DATA =
     bizFeatures.length > 0
       ? bizFeatures.map((f, i) => ({
@@ -305,7 +320,7 @@ export default async function BusinessPage() {
                 </div>
                 {/* Статистика */}
                 <div style={{ display: "flex", gap: "32px", paddingTop: "8px" }}>
-                  {STATS.map((s) => (
+                  {STATS_DATA.map((s) => (
                     <div key={s.label}>
                       <p
                         style={{

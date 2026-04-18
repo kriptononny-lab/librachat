@@ -507,7 +507,7 @@ export default async function FeaturesPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "72px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
-                ТВОЙ ИИ-ПОМОЩНИК
+                {page?.deepBadge ?? "ТВОЙ ИИ-ПОМОЩНИК"}
               </div>
               <h2 style={S.h2}>{page?.featuresTitle ?? "Всё в одном окне"}</h2>
               <p style={S.sub}>
@@ -785,12 +785,12 @@ export default async function FeaturesPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "52px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
-                ДЛЯ КОГО
+                {page?.usecasesBadge ?? "ДЛЯ КОГО"}
               </div>
-              <h2 style={S.h2}>
-                Решает задачи <span className="text-gradient">любой сферы</span>
-              </h2>
-              <p style={S.sub}>Настроен под разные рабочие сценарии</p>
+              <h2 style={S.h2}>{page?.usecasesTitle ?? "Решает задачи любой сферы"}</h2>
+              <p style={S.sub}>
+                {page?.usecasesSubtitle ?? "Настроен под разные рабочие сценарии"}
+              </p>
             </div>
             <div
               style={{
