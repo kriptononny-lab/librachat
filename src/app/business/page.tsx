@@ -33,7 +33,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 export const metadata: Metadata = {
-  title: "LibraChat для бизнеса",
+  title: "LibraChat для бизнеса — корпоративный ИИ-ассистент",
   description:
     "Корпоративный ИИ-ассистент без сложных настроек. Безопасность данных, управление командой по ролям, интеграции с вашими сервисами и выделенная поддержка 24/7.",
   openGraph: {

@@ -4,11 +4,11 @@ import { fetchStrapiArticles } from "@/lib/strapi";
 import { ALL_ARTICLES as STATIC_ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Статьи и кейсы LibraChat",
+  title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
   description:
-    "Статьи, гайды и кейсы от команды LibraChat. Учитесь работать с ИИ быстрее на реальных примерах.",
+    "Практические статьи, пошаговые гайды и реальные кейсы от команды LibraChat. Узнайте как работать с ИИ-ассистентом быстрее и эффективнее — без лишних слов.",
   openGraph: {
-    title: "Статьи и кейсы LibraChat",
+    title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
     description: "Гайды, кейсы и обучающие материалы по работе с ИИ-ассистентом.",
     url: "https://librachat.ai/learn",
     siteName: "LibraChat",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Статьи и кейсы LibraChat",
+    title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
     description: "Гайды, кейсы и обучающие материалы по работе с ИИ-ассистентом.",
     images: ["/og-image.png"],
   },

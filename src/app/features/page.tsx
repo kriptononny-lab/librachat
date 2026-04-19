@@ -20,7 +20,7 @@ import { Footer } from "@/components/layout/footer";
 import { fetchStrapiFeatures, fetchFeaturesPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Возможности LibraChat",
+  title: "Возможности LibraChat — 8 инструментов в одном чате",
   description:
     "Всё что нужно для работы и жизни — в одном чате. Анализ файлов, написание текстов, перевод, код и многое другое — без переключений между десятками сервисов.",
   openGraph: {

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Скачать LibraChat",
+  title: "Скачать приложение LibraChat для iOS, Android и браузера",
   description:
     "Скачайте приложение LibraChat для iOS и Android или работайте прямо в браузере. Работает без VPN в России и СНГ — быстро, удобно, бесплатно.",
   openGraph: {

@@ -5,11 +5,11 @@ import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Контакты LibraChat",
+  title: "Контакты и запрос демо LibraChat",
   description:
     "Свяжитесь с командой LibraChat — запросите персональное демо, задайте технический вопрос или обсудите корпоративное решение для вашей компании.",
   openGraph: {
-    title: "Контакты LibraChat",
+    title: "Контакты и запрос демо LibraChat",
     description: "Запросите демо или задайте вопрос команде LibraChat.",
     url: "https://librachat.ai/contact",
     siteName: "LibraChat",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Контакты LibraChat",
+    title: "Контакты и запрос демо LibraChat",
     description: "Запросите демо или задайте вопрос команде LibraChat.",
     images: ["/og-image.png"],
   },

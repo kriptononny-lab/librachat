@@ -5,7 +5,7 @@ import { PricingClient } from "@/components/sections/pricing-client";
 import { fetchStrapiPlans, fetchStrapiFaqs, fetchPricingPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Тарифы LibraChat",
+  title: "Тарифы и планы подписки — выбери подходящий",
   description:
     "Выберите подходящий тариф LibraChat. Начните бесплатно на 14 дней — обновите план когда будете готовы. Без скрытых платежей и обязательств.",
   openGraph: {
