@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -8,6 +7,32 @@ import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { PricingPreviewSection } from "@/components/sections/pricing-preview-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "LibraChat — первый российский ИИ-ассистент без VPN",
+  description:
+    "LibraChat — мощный ИИ-ассистент для работы, учёбы и творчества. Анализирует файлы, пишет тексты, переводит и программирует. Работает без VPN. Попробуй бесплатно 14 дней.",
+  alternates: { canonical: "https://librachat.ai" },
+  openGraph: {
+    title: "LibraChat — первый российский ИИ-ассистент без VPN",
+    description:
+      "Анализ файлов, тексты, перевод, код — всё в одном чате без VPN. 14 дней бесплатно.",
+    url: "https://librachat.ai",
+    siteName: "LibraChat",
+    locale: "ru_RU",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LibraChat — первый российский ИИ-ассистент без VPN",
+    description:
+      "Анализ файлов, тексты, перевод, код — всё в одном чате без VPN. 14 дней бесплатно.",
+    images: ["/og-image.png"],
+  },
+};
+
 import {
   fetchStrapiTestimonials,
   fetchStrapiFaqs,
