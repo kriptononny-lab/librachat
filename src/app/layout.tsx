@@ -4,6 +4,15 @@ import { YandexMetrika } from "@/components/analytics/yandex-metrika";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://librachat.ai"),
   title: {
     default: "LibraChat — первый российский ИИ-ассистент без VPN",
@@ -80,6 +89,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "LibraChat",
+              url: "https://librachat.ai",
+              description:
+                "LibraChat — мощный ИИ-ассистент для работы, учёбы и творчества. Работает без VPN в России и СНГ.",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web, iOS, Android",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "RUB",
+                description: "14 дней бесплатно",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "LibraChat",
+                url: "https://librachat.ai",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://librachat.ai/og-image.png",
+                },
+              },
+            }),
+          }}
+        />
         <GoogleAnalytics />
         <YandexMetrika />
         {children}
