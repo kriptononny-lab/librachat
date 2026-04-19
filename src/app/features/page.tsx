@@ -20,9 +20,27 @@ import { Footer } from "@/components/layout/footer";
 import { fetchStrapiFeatures, fetchFeaturesPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Возможности",
+  title: "Возможности LibraChat",
   description:
-    "Всё что нужно для работы и жизни — в одном чате. LibraChat отвечает на вопросы, анализирует файлы и думает вместе с тобой.",
+    "Всё что нужно для работы и жизни — в одном чате. Анализ файлов, написание текстов, перевод, код — без переключений между сервисами.",
+  openGraph: {
+    title: "Возможности LibraChat — 8 инструментов в одном чате",
+    description: "Анализ файлов, тексты, перевод, код — всё в одном окне без VPN.",
+    url: "https://librachat.ai/features",
+    siteName: "LibraChat",
+    locale: "ru_RU",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Возможности LibraChat — 8 инструментов в одном чате",
+    description: "Анализ файлов, тексты, перевод, код — всё в одном окне без VPN.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://librachat.ai/features",
+  },
 };
 
 const ICON_MAP: Record<string, React.ElementType> = {

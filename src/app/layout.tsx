@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { YandexMetrika } from "@/components/analytics/yandex-metrika";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -47,15 +49,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .mobile-burger-btn { display: none !important; }
           .desktop-nav { display: flex; }
           .desktop-nav-right { display: flex; }
@@ -64,9 +64,15 @@ export default function RootLayout({
             .desktop-nav { display: none !important; }
             .desktop-nav-right { display: none !important; }
           }
-        `}} />
+        `,
+          }}
+        />
       </head>
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics />
+        <YandexMetrika />
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,12 +5,26 @@ import { PricingClient } from "@/components/sections/pricing-client";
 import { fetchStrapiPlans, fetchStrapiFaqs, fetchPricingPage } from "@/lib/strapi";
 
 export const metadata: Metadata = {
-  title: "Тарифы",
+  title: "Тарифы LibraChat",
   description:
     "Выберите подходящий тариф LibraChat. Начните бесплатно — обновите план когда будете готовы. Без скрытых платежей.",
   openGraph: {
-    title: "Тарифы | LibraChat",
+    title: "Тарифы LibraChat — начни бесплатно",
     description: "14 дней бесплатно на любом тарифе. Карта не нужна.",
+    url: "https://librachat.ai/pricing",
+    siteName: "LibraChat",
+    locale: "ru_RU",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Тарифы LibraChat — начни бесплатно",
+    description: "14 дней бесплатно на любом тарифе. Карта не нужна.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://librachat.ai/pricing",
   },
 };
 

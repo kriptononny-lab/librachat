@@ -29,17 +29,39 @@ export async function generateStaticParams() {
   return Array.from(allSlugs).map((slug) => ({ slug }));
 }
 
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://librachat.ai";
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  // Сначала ищем в Strapi, потом в статике
   const strapi = await fetchStrapiArticleBySlug(slug);
   const article = strapi ?? STATIC_ARTICLES.find((a) => a.slug === slug);
   if (!article) return { title: "Статья не найдена" };
-  return { title: article.title, description: article.excerpt };
+  const url = `${BASE}/learn/${slug}`;
+  const image = article.photo ?? "/og-image.png";
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt ?? "",
+      url,
+      siteName: "LibraChat",
+      locale: "ru_RU",
+      type: "article",
+      images: [{ url: image, width: 1200, height: 630, alt: article.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt ?? "",
+      images: [image],
+    },
+  };
 }
 
 // ─── Переиспользуемые блоки ────────────────────────

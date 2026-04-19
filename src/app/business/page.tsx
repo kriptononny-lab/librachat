@@ -33,9 +33,29 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 export const metadata: Metadata = {
-  title: "Для бизнеса",
+  title: "LibraChat для бизнеса",
   description:
-    "LibraChat для корпораций и команд — безопасность данных, управление доступом, интеграции и выделенная поддержка.",
+    "Корпоративный ИИ без сложных настроек. Безопасность данных, управление командой, интеграции и выделенная поддержка.",
+  openGraph: {
+    title: "LibraChat для бизнеса — корпоративный ИИ",
+    description:
+      "Масштабируй команду с LibraChat. Безопасность данных, управление доступом, 24/7 поддержка.",
+    url: "https://librachat.ai/business",
+    siteName: "LibraChat",
+    locale: "ru_RU",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LibraChat для бизнеса — корпоративный ИИ",
+    description:
+      "Масштабируй команду с LibraChat. Безопасность данных, управление доступом, 24/7 поддержка.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://librachat.ai/business",
+  },
 };
 
 const FEATURES = [
