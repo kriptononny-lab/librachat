@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Скачать LibraChat",
   description:
-    "Скачайте LibraChat для iOS, Android или используйте в браузере. Работает без VPN в России и СНГ.",
+    "Скачайте приложение LibraChat для iOS и Android или работайте прямо в браузере. Работает без VPN в России и СНГ — быстро, удобно, бесплатно.",
   openGraph: {
     title: "Скачать LibraChat — iOS, Android, браузер",
     description: "Работает без VPN. Доступен на всех устройствах.",

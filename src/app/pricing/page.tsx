@@ -7,7 +7,7 @@ import { fetchStrapiPlans, fetchStrapiFaqs, fetchPricingPage } from "@/lib/strap
 export const metadata: Metadata = {
   title: "Тарифы LibraChat",
   description:
-    "Выберите подходящий тариф LibraChat. Начните бесплатно — обновите план когда будете готовы. Без скрытых платежей.",
+    "Выберите подходящий тариф LibraChat. Начните бесплатно на 14 дней — обновите план когда будете готовы. Без скрытых платежей и обязательств.",
   openGraph: {
     title: "Тарифы LibraChat — начни бесплатно",
     description: "14 дней бесплатно на любом тарифе. Карта не нужна.",

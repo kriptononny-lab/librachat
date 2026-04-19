@@ -7,7 +7,7 @@ import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react
 export const metadata: Metadata = {
   title: "Контакты LibraChat",
   description:
-    "Свяжитесь с командой LibraChat — запросите демо, задайте вопрос или обсудите корпоративное решение.",
+    "Свяжитесь с командой LibraChat — запросите персональное демо, задайте технический вопрос или обсудите корпоративное решение для вашей компании.",
   openGraph: {
     title: "Контакты LibraChat",
     description: "Запросите демо или задайте вопрос команде LibraChat.",
