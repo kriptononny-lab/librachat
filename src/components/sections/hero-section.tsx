@@ -213,7 +213,7 @@ function RotatingHeadline({ phrases }: { phrases: string[] }) {
             top: 0,
             left: 0,
             right: 0,
-            background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+            background: "linear-gradient(135deg,#7B2FBE,#9B72F0)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",

@@ -34,7 +34,7 @@ export const TYPE_COLOR: Record<
   },
   гайд: {
     bg: "rgba(167,139,250,0.15)",
-    text: "#F472B6",
+    text: "#C4B5FD",
     border: "rgba(167,139,250,0.3)",
   },
   новость: {
