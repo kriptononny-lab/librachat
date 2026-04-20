@@ -58,7 +58,7 @@ export function FaqSection({
     <section
       style={{
         padding: "120px 0",
-        background: "#100f1d",
+        background: "#131009",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >
@@ -73,7 +73,7 @@ export function FaqSection({
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#f0eeff",
+              color: "#FAF5EE",
             }}
           >
             {title}
@@ -82,7 +82,7 @@ export function FaqSection({
             style={{
               marginTop: "14px",
               fontSize: "16px",
-              color: "#a89ec0",
+              color: "#C8B89A",
               lineHeight: 1.6,
             }}
           >
@@ -116,7 +116,7 @@ export function FaqSection({
                   cursor: "pointer",
                   border: "none",
                   background:
-                    open === i ? "rgba(101,88,224,0.07)" : "rgba(14,13,25,0.84)",
+                    open === i ? "rgba(212,165,116,0.07)" : "rgba(28,25,23,0.84)",
                   transition: "background 150ms ease",
                 }}
               >
@@ -124,7 +124,7 @@ export function FaqSection({
                   style={{
                     fontSize: "16px",
                     fontWeight: 600,
-                    color: "#f0eeff",
+                    color: "#FAF5EE",
                     lineHeight: 1.4,
                     flex: 1,
                   }}
@@ -145,8 +145,8 @@ export function FaqSection({
                     fontSize: "20px",
                     fontWeight: 300,
                     lineHeight: 1,
-                    background: "rgba(101,88,224,0.12)",
-                    border: "1px solid rgba(101,88,224,0.25)",
+                    background: "rgba(212,165,116,0.12)",
+                    border: "1px solid rgba(212,165,116,0.25)",
                     color: "#8a7cf8",
                   }}
                 >
@@ -167,7 +167,7 @@ export function FaqSection({
                         padding: "20px 24px",
                         fontSize: "15px",
                         lineHeight: 1.8,
-                        color: "#a89ec0",
+                        color: "#C8B89A",
                         borderTop: "1px solid rgba(255,255,255,0.06)",
                         background: "rgba(8,7,16,0.55)",
                       }}

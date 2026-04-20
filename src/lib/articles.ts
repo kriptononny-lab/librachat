@@ -8,8 +8,8 @@ export interface ArticleCard {
   excerpt: string;
   author: string;
   authorRole?: string;
-  photo?: string;       // путь к фото /public/...
-  photoPos?: string;    // objectPosition для обложки кейса
+  photo?: string; // путь к фото /public/...
+  photoPos?: string; // objectPosition для обложки кейса
   readTime: number;
   views: string;
   tags: string[];
@@ -18,11 +18,26 @@ export interface ArticleCard {
 }
 
 // ── Цвет бейджа по типу ──────────────────────────
-export const TYPE_COLOR: Record<ArticleType, { bg: string; text: string; border: string }> = {
-  "кейс":    { bg: "rgba(108,92,231,0.15)", text: "#8b7cf8", border: "rgba(108,92,231,0.3)" },
-  "статья":  { bg: "rgba(59,130,246,0.15)", text: "#60a5fa", border: "rgba(59,130,246,0.3)" },
-  "гайд":    { bg: "rgba(34,197,94,0.15)",  text: "#4ade80", border: "rgba(34,197,94,0.3)" },
-  "новость": { bg: "rgba(245,166,35,0.15)", text: "#d4820f", border: "rgba(245,166,35,0.3)" },
+export const TYPE_COLOR: Record<
+  ArticleType,
+  { bg: string; text: string; border: string }
+> = {
+  кейс: {
+    bg: "rgba(212,165,116,0.15)",
+    text: "#E8C49A",
+    border: "rgba(212,165,116,0.3)",
+  },
+  статья: {
+    bg: "rgba(59,130,246,0.15)",
+    text: "#60a5fa",
+    border: "rgba(59,130,246,0.3)",
+  },
+  гайд: { bg: "rgba(34,197,94,0.15)", text: "#4ade80", border: "rgba(34,197,94,0.3)" },
+  новость: {
+    bg: "rgba(245,166,35,0.15)",
+    text: "#d4820f",
+    border: "rgba(245,166,35,0.3)",
+  },
 };
 
 // ── Моковые статьи ────────────────────────────────
@@ -31,19 +46,21 @@ export const ARTICLES: ArticleCard[] = [
     slug: "techstart-3-chasa",
     type: "кейс",
     title: "TechStart: экономия 3 часа в день — полный разбор внедрения",
-    excerpt: "Как команда из 47 человек интегрировала LibraChat в рабочие процессы и автоматизировала рутину.",
+    excerpt:
+      "Как команда из 47 человек интегрировала LibraChat в рабочие процессы и автоматизировала рутину.",
     author: "Алексей",
     readTime: 8,
     views: "3.2K",
     tags: ["кейс", "бизнес", "команды"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(108,92,231,0.3),rgba(109,40,217,0.1))",
+    gradient: "linear-gradient(135deg,rgba(212,165,116,0.3),rgba(109,40,217,0.1))",
   },
   {
     slug: "50-promptov-dlya-raboty",
     type: "гайд",
     title: "50 промптов для работы: от написания писем до анализа данных",
-    excerpt: "Готовые шаблоны для самых частых рабочих задач. Просто скопируйте, замените, отправьте.",
+    excerpt:
+      "Готовые шаблоны для самых частых рабочих задач. Просто скопируйте, замените, отправьте.",
     author: "Мария",
     readTime: 12,
     views: "100K",
@@ -55,7 +72,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "retailpro-snizhenie-nagruzki",
     type: "кейс",
     title: "RetailPro: снижение нагрузки на службу поддержки на 40%",
-    excerpt: "Как интернет-магазин с 500 менеджерами автоматизировал ответы на типовые вопросы.",
+    excerpt:
+      "Как интернет-магазин с 500 менеджерами автоматизировал ответы на типовые вопросы.",
     author: "Алексей",
     readTime: 6,
     views: "500",
@@ -65,7 +83,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "5-metrik-posle-vnedreniya",
     type: "статья",
     title: "5 метрик которые стоит отслеживать после внедрения ИИ",
-    excerpt: "Какие показатели действительно покажут, приносит ли LibraChat пользу вашей команде.",
+    excerpt:
+      "Какие показатели действительно покажут, приносит ли LibraChat пользу вашей команде.",
     author: "Мария",
     readTime: 5,
     views: "1.1K",
@@ -75,7 +94,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "kak-napisat-prompt",
     type: "гайд",
     title: "Как написать промпт: полное руководство для начинающих",
-    excerpt: "От простых вопросов до сложных инструкций — освойте искусство общения с ИИ за один вечер.",
+    excerpt:
+      "От простых вопросов до сложных инструкций — освойте искусство общения с ИИ за один вечер.",
     author: "Мария",
     readTime: 10,
     views: "8K",
@@ -95,7 +115,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "librachat-vs-chatgpt",
     type: "статья",
     title: "LibraChat vs ChatGPT: честное сравнение для бизнеса",
-    excerpt: "Тест на 30 задачах: скорость, качество ответов, работа с русским языком, стоимость.",
+    excerpt:
+      "Тест на 30 задачах: скорость, качество ответов, работа с русским языком, стоимость.",
     author: "Алексей",
     readTime: 9,
     views: "500",
@@ -105,7 +126,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "10-sposobov-ispolzovat",
     type: "гайд",
     title: "10 способов использовать LibraChat в HR и рекрутинге",
-    excerpt: "Шаблоны вакансий, автоматическая оценка резюме, подготовка к интервью — всё в одном гайде.",
+    excerpt:
+      "Шаблоны вакансий, автоматическая оценка резюме, подготовка к интервью — всё в одном гайде.",
     author: "Мария",
     readTime: 8,
     views: "2.5K",
@@ -115,7 +137,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "startap-devflow",
     type: "кейс",
     title: "Стартап DevFlow: от идеи до MVP за 3 недели с LibraChat",
-    excerpt: "Основатель-одиночка рассказывает как использовал ИИ для разработки, маркетинга и продаж одновременно.",
+    excerpt:
+      "Основатель-одиночка рассказывает как использовал ИИ для разработки, маркетинга и продаж одновременно.",
     author: "Алексей",
     readTime: 11,
     views: "500",
@@ -125,7 +148,8 @@ export const ARTICLES: ArticleCard[] = [
     slug: "ii-assistent-v-smartfone",
     type: "новость",
     title: "ИИ-ассистент в смартфоне: как изменилась работа за месяц",
-    excerpt: "Личный эксперимент: неделя без ноутбука, только телефон и LibraChat. Что получилось?",
+    excerpt:
+      "Личный эксперимент: неделя без ноутбука, только телефон и LibraChat. Что получилось?",
     author: "Мария",
     readTime: 6,
     views: "500",
@@ -141,7 +165,8 @@ export const ALL_ARTICLES = [
     slug: "keys-shishakova",
     type: "кейс" as ArticleType,
     title: "Либрачат забрал на себя огромный объём «операционки»",
-    excerpt: "Как LibraChat стал «единым окном» для управления маркетингом малого бизнеса.",
+    excerpt:
+      "Как LibraChat стал «единым окном» для управления маркетингом малого бизнеса.",
     author: "Юлия Шишакова",
     authorRole: "ИП, Магазин отделочных материалов из дерева",
     photo: "/case-shishakova.jpg",
@@ -150,7 +175,7 @@ export const ALL_ARTICLES = [
     views: "1.2K",
     tags: ["кейс", "малый бизнес", "маркетинг"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(108,92,231,0.1))",
+    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(212,165,116,0.1))",
   },
   {
     slug: "keys-ozherelyev",
@@ -165,13 +190,14 @@ export const ALL_ARTICLES = [
     views: "2.3K",
     tags: ["кейс", "e-commerce", "маркетплейсы"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(108,92,231,0.1))",
+    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(212,165,116,0.1))",
   },
   {
     slug: "keys-bazarkulova",
     type: "кейс" as ArticleType,
     title: "LibraChat как «гоночный болид» для маркетинговых стратегий",
-    excerpt: "Профессиональная рабочая среда для ведения 10+ клиентских проектов без хаоса.",
+    excerpt:
+      "Профессиональная рабочая среда для ведения 10+ клиентских проектов без хаоса.",
     author: "Марианна Базаркулова",
     authorRole: "Профессиональный маркетолог",
     photo: "/case-bazarkulova.jpg",
@@ -180,12 +206,20 @@ export const ALL_ARTICLES = [
     views: "1.8K",
     tags: ["кейс", "маркетинг", "аналитика"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(108,92,231,0.25),rgba(59,130,246,0.1))",
+    gradient: "linear-gradient(135deg,rgba(212,165,116,0.25),rgba(59,130,246,0.1))",
   },
   ...ARTICLES,
 ];
 
-export const ALL_TAGS = ["Все", "Статьи", "Кейсы", "Гайды", "Для бизнеса", "Продуктивность", "ИИ-инструменты"];
+export const ALL_TAGS = [
+  "Все",
+  "Статьи",
+  "Кейсы",
+  "Гайды",
+  "Для бизнеса",
+  "Продуктивность",
+  "ИИ-инструменты",
+];
 
 // ── Реальные кейсы из PDF ─────────────────────────
 export interface ArticleFull extends ArticleCard {
@@ -199,13 +233,14 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     slug: "keys-shishakova",
     type: "кейс",
     title: "Либрачат забрал на себя огромный объём «операционки» при нехватке времени",
-    excerpt: "ИП Шишакова Юлия Г., Магазин отделочных материалов из дерева — как LibraChat стал «единым окном» для управления маркетингом малого бизнеса.",
+    excerpt:
+      "ИП Шишакова Юлия Г., Магазин отделочных материалов из дерева — как LibraChat стал «единым окном» для управления маркетингом малого бизнеса.",
     author: "Юлия Шишакова",
     readTime: 6,
     views: "1.2K",
     tags: ["кейс", "малый бизнес", "маркетинг", "e-commerce"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(108,92,231,0.1))",
+    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(212,165,116,0.1))",
     results: [
       { label: "Задач в месяц", value: "20+" },
       { label: "Экономия времени", value: "80%" },
@@ -221,13 +256,14 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     slug: "keys-ozherelyev",
     type: "кейс",
     title: "Как вывести товары на маркетплейсы в 5 раз быстрее с помощью ИИ",
-    excerpt: "Ожерельев Василий Сергеевич, компания «Вуди» — поиск и адаптация трендовых товаров с Amazon на российские маркетплейсы в разы быстрее.",
+    excerpt:
+      "Ожерельев Василий Сергеевич, компания «Вуди» — поиск и адаптация трендовых товаров с Amazon на российские маркетплейсы в разы быстрее.",
     author: "Василий Ожерельев",
     readTime: 7,
     views: "2.3K",
     tags: ["кейс", "e-commerce", "маркетплейсы", "WB", "Ozon"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(108,92,231,0.1))",
+    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(212,165,116,0.1))",
     results: [
       { label: "Быстрее запуск товара", value: "5×" },
       { label: "Снижение ДРР", value: "−30%" },
@@ -243,13 +279,14 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     slug: "keys-bazarkulova",
     type: "кейс",
     title: "LibraChat как «гоночный болид» для маркетинговых стратегий и Big Data",
-    excerpt: "Марианна Базаркулова, профессиональный маркетолог — как LibraChat стал профессиональной рабочей средой для ведения нескольких клиентских проектов.",
+    excerpt:
+      "Марианна Базаркулова, профессиональный маркетолог — как LibraChat стал профессиональной рабочей средой для ведения нескольких клиентских проектов.",
     author: "Марианна Базаркулова",
     readTime: 5,
     views: "1.8K",
     tags: ["кейс", "маркетинг", "аналитика", "Big Data"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(108,92,231,0.25),rgba(59,130,246,0.1))",
+    gradient: "linear-gradient(135deg,rgba(212,165,116,0.25),rgba(59,130,246,0.1))",
     results: [
       { label: "Клиентов в одном окне", value: "10+" },
       { label: "Переделок и правок", value: "0" },

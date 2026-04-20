@@ -92,7 +92,7 @@ export default function DownloadPage() {
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#07060e",
+        background: "#0C0A08",
       }}
     >
       <Header />
@@ -118,7 +118,7 @@ export default function DownloadPage() {
             <p
               style={{
                 fontSize: "18px",
-                color: "#a89ec0",
+                color: "#C8B89A",
                 lineHeight: 1.7,
                 marginBottom: "32px",
               }}
@@ -142,10 +142,10 @@ export default function DownloadPage() {
                     alignItems: "center",
                     gap: "7px",
                     fontSize: "14px",
-                    color: "#a89ec0",
+                    color: "#C8B89A",
                   }}
                 >
-                  <Icon size={15} color="#9b8ff8" />
+                  <Icon size={15} color="#E8C49A" />
                   {text}
                 </div>
               ))}
@@ -177,10 +177,10 @@ export default function DownloadPage() {
                       padding: "32px 28px",
                       borderRadius: "20px",
                       background: primary
-                        ? "rgba(101,88,224,0.08)"
-                        : "rgba(14,13,25,0.92)",
+                        ? "rgba(212,165,116,0.08)"
+                        : "rgba(28,25,23,0.92)",
                       border: primary
-                        ? "1px solid rgba(101,88,224,0.4)"
+                        ? "1px solid rgba(212,165,116,0.4)"
                         : "1px solid rgba(255,255,255,0.08)",
                       opacity: soon ? 0.6 : 1,
                     }}
@@ -190,14 +190,14 @@ export default function DownloadPage() {
                         width: "52px",
                         height: "52px",
                         borderRadius: "16px",
-                        background: "rgba(101,88,224,0.12)",
-                        border: "1px solid rgba(101,88,224,0.22)",
+                        background: "rgba(212,165,116,0.12)",
+                        border: "1px solid rgba(212,165,116,0.22)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={24} color="#9b8ff8" />
+                      <Icon size={24} color="#E8C49A" />
                     </div>
                     <div>
                       <h3
@@ -210,7 +210,7 @@ export default function DownloadPage() {
                       >
                         {title}
                       </h3>
-                      <p style={{ fontSize: "14px", color: "#a89ec0" }}>{subtitle}</p>
+                      <p style={{ fontSize: "14px", color: "#C8B89A" }}>{subtitle}</p>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <div
@@ -219,10 +219,10 @@ export default function DownloadPage() {
                           alignItems: "center",
                           gap: "6px",
                           fontSize: "13px",
-                          color: "#a89ec0",
+                          color: "#C8B89A",
                         }}
                       >
-                        <Check size={13} color="#9b8ff8" />
+                        <Check size={13} color="#E8C49A" />
                         {version}
                       </div>
                     </div>
@@ -235,13 +235,13 @@ export default function DownloadPage() {
                         gap: "8px",
                         padding: "13px 20px",
                         borderRadius: "999px",
-                        background: primary ? "#6558e0" : "transparent",
+                        background: primary ? "#D4A574" : "transparent",
                         color: primary ? "#fff" : "#f2f0ff",
                         fontSize: "15px",
                         fontWeight: 600,
                         textDecoration: "none",
                         border: primary ? "none" : "1px solid rgba(255,255,255,0.16)",
-                        boxShadow: primary ? "0 4px 20px rgba(101,88,224,0.4)" : "none",
+                        boxShadow: primary ? "0 4px 20px rgba(212,165,116,0.4)" : "none",
                         cursor: soon ? "not-allowed" : "pointer",
                         pointerEvents: soon ? "none" : "auto",
                       }}
@@ -265,7 +265,7 @@ export default function DownloadPage() {
                 marginTop: "60px",
                 padding: "40px",
                 borderRadius: "24px",
-                background: "rgba(14,13,25,0.88)",
+                background: "rgba(28,25,23,0.88)",
                 border: "1px solid rgba(255,255,255,0.07)",
                 textAlign: "center",
               }}
@@ -280,7 +280,7 @@ export default function DownloadPage() {
               >
                 Уже есть аккаунт?
               </p>
-              <p style={{ fontSize: "14px", color: "#a89ec0", marginBottom: "20px" }}>
+              <p style={{ fontSize: "14px", color: "#C8B89A", marginBottom: "20px" }}>
                 Войдите на любом устройстве — все чаты и настройки синхронизируются
                 автоматически
               </p>
@@ -292,12 +292,12 @@ export default function DownloadPage() {
                   gap: "8px",
                   padding: "13px 28px",
                   borderRadius: "999px",
-                  background: "#6558e0",
+                  background: "#D4A574",
                   color: "#fff",
                   fontSize: "15px",
                   fontWeight: 600,
                   textDecoration: "none",
-                  boxShadow: "0 4px 20px rgba(101,88,224,0.4)",
+                  boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
                 }}
               >
                 <Zap size={16} />

@@ -25,7 +25,7 @@ const CARDS: Record<
 > = {
   self: [
     {
-      icon: <Zap size={20} color="#9b8ff8" />,
+      icon: <Zap size={20} color="#E8C49A" />,
       badge: "Контент-завод на автопилоте",
       title: "Со мной — без выгорания и бесконечной рутины",
       desc: "Сделаю за тебя сценарии для Reels, виральные посты и контент-планы за секунды.",
@@ -34,7 +34,7 @@ const CARDS: Record<
       href: "/features/content",
     },
     {
-      icon: <Briefcase size={20} color="#9b8ff8" />,
+      icon: <Briefcase size={20} color="#E8C49A" />,
       badge: "Маркетинг-отдел в одном окне",
       title: "Не хватает рук или бюджета?",
       desc: "Смотри, вот эта рутина вся на мне: от создания описаний товаров для маркетплейсов до анализа конкурентов и ответов клиентам. Ещё я знаю, как продать твой продукт дороже.",
@@ -43,7 +43,7 @@ const CARDS: Record<
       href: "/features/marketing",
     },
     {
-      icon: <GraduationCap size={20} color="#9b8ff8" />,
+      icon: <GraduationCap size={20} color="#E8C49A" />,
       badge: "Турбо-режим для учёбы",
       title: "Учись быстрее, делай больше",
       desc: "Я мгновенно делаю саммари из часовых лекций, помогаю разобраться в сложных темах и пишу качественные работы, которые проходят проверки.",
@@ -54,7 +54,7 @@ const CARDS: Record<
   ],
   business: [
     {
-      icon: <Briefcase size={20} color="#9b8ff8" />,
+      icon: <Briefcase size={20} color="#E8C49A" />,
       badge: "Помогаю твоей команде",
       title: "Масштабируй без раздувания штата",
       desc: "Я закрываю рутину целого маркетингового отдела: аналитика, документы, переписка, ответы клиентам — всё на мне.",
@@ -63,7 +63,7 @@ const CARDS: Record<
       href: "/business",
     },
     {
-      icon: <Zap size={20} color="#9b8ff8" />,
+      icon: <Zap size={20} color="#E8C49A" />,
       badge: "Контент-завод",
       title: "SEO, карточки, описания — за секунды",
       desc: "Пишу SEO-тексты для WB/Ozon, создаю ТЗ для дизайнеров, адаптирую западный контент под российский рынок.",
@@ -71,7 +71,7 @@ const CARDS: Record<
       href: "/business",
     },
     {
-      icon: <GraduationCap size={20} color="#9b8ff8" />,
+      icon: <GraduationCap size={20} color="#E8C49A" />,
       badge: "Аналитик под ключ",
       title: "Данные без выдумок",
       desc: "Загрузи любой файл — я выдаю выводы строго по данным. Никаких галлюцинаций, только факты.",
@@ -82,7 +82,7 @@ const CARDS: Record<
   ],
   study: [
     {
-      icon: <GraduationCap size={20} color="#9b8ff8" />,
+      icon: <GraduationCap size={20} color="#E8C49A" />,
       badge: "Умный репетитор 24/7",
       title: "Я первый, кто реально помогает освоить программу",
       desc: "Объясняю любые темы простым языком, помогаю с домашними заданиями, готовлю к экзаменам без шаблонных ответов.",
@@ -91,7 +91,7 @@ const CARDS: Record<
       href: "/features/study",
     },
     {
-      icon: <Zap size={20} color="#9b8ff8" />,
+      icon: <Zap size={20} color="#E8C49A" />,
       badge: "Саммари за секунды",
       title: "Пересказ 2-часового видео за 30 секунд",
       desc: "Загрузи лекцию или учебник — получишь структурированный конспект, ключевые тезисы и план подготовки.",
@@ -100,7 +100,7 @@ const CARDS: Record<
       href: "/features/study",
     },
     {
-      icon: <Briefcase size={20} color="#9b8ff8" />,
+      icon: <Briefcase size={20} color="#E8C49A" />,
       badge: "Работы и проекты",
       title: "Качественные работы, которые проходят проверки",
       desc: "Помогаю структурировать курсовую, нахожу источники, проверяю логику аргументов и оформление.",
@@ -159,7 +159,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#f0eeff",
+              color: "#FAF5EE",
             }}
           >
             {title}
@@ -168,7 +168,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
             style={{
               marginTop: "14px",
               fontSize: "16px",
-              color: "#a89ec0",
+              color: "#C8B89A",
               maxWidth: "440px",
               margin: "14px auto 0",
               lineHeight: 1.6,
@@ -205,10 +205,10 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                   border: "none",
                   cursor: "pointer",
                   background:
-                    activeTab === tab.id ? "rgba(101,88,224,0.18)" : "transparent",
-                  color: activeTab === tab.id ? "#f0eeff" : "#a89ec0",
+                    activeTab === tab.id ? "rgba(212,165,116,0.18)" : "transparent",
+                  color: activeTab === tab.id ? "#FAF5EE" : "#C8B89A",
                   outline:
-                    activeTab === tab.id ? "1px solid rgba(101,88,224,0.35)" : "none",
+                    activeTab === tab.id ? "1px solid rgba(212,165,116,0.35)" : "none",
                   transition: "all 200ms ease",
                 }}
               >
@@ -250,7 +250,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget;
-                  el.style.borderColor = "rgba(101,88,224,0.4)";
+                  el.style.borderColor = "rgba(212,165,116,0.4)";
                   el.style.background = "rgba(26,25,40,0.98)";
                   el.style.transform = "translateY(-4px)";
                 }}
@@ -268,8 +268,8 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                       width: "44px",
                       height: "44px",
                       borderRadius: "14px",
-                      background: "rgba(101,88,224,0.12)",
-                      border: "1px solid rgba(101,88,224,0.22)",
+                      background: "rgba(212,165,116,0.12)",
+                      border: "1px solid rgba(212,165,116,0.22)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -282,7 +282,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     style={{
                       fontSize: "13px",
                       fontWeight: 600,
-                      background: "linear-gradient(135deg, #9b8ff8, #6558e0)",
+                      background: "linear-gradient(135deg, #E8C49A, #D4A574)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -296,7 +296,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                   style={{
                     fontSize: "17px",
                     fontWeight: 700,
-                    color: "#f0eeff",
+                    color: "#FAF5EE",
                     lineHeight: 1.35,
                   }}
                 >
@@ -305,7 +305,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
 
                 {/* Описание */}
                 <p
-                  style={{ fontSize: "15px", lineHeight: 1.7, color: "#a89ec0", flex: 1 }}
+                  style={{ fontSize: "15px", lineHeight: 1.7, color: "#C8B89A", flex: 1 }}
                 >
                   {card.desc}
                 </p>
@@ -315,11 +315,11 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                   style={{
                     padding: "14px 16px",
                     borderRadius: "14px",
-                    background: "rgba(101,88,224,0.07)",
-                    border: "1px solid rgba(101,88,224,0.16)",
+                    background: "rgba(212,165,116,0.07)",
+                    border: "1px solid rgba(212,165,116,0.16)",
                     fontSize: "13px",
                     lineHeight: 1.6,
-                    color: "#9b8ff8",
+                    color: "#E8C49A",
                   }}
                 >
                   <span style={{ fontWeight: 600 }}>Супер-сила: </span>
@@ -334,7 +334,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     gap: "6px",
                     fontSize: "14px",
                     fontWeight: 500,
-                    color: "#6558e0",
+                    color: "#D4A574",
                   }}
                 >
                   Попробовать

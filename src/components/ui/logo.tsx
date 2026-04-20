@@ -19,7 +19,10 @@ export function Logo({ className, size = "md", href = "/" }: LogoProps) {
   return (
     <Link
       href={href}
-      className={cn("inline-flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6558e0] rounded-lg", className)}
+      className={cn(
+        "group inline-flex items-center gap-2.5 rounded-lg focus-visible:ring-2 focus-visible:ring-[#D4A574] focus-visible:outline-none",
+        className
+      )}
       aria-label="LibraChat — на главную"
     >
       <Image
@@ -30,8 +33,16 @@ export function Logo({ className, size = "md", href = "/" }: LogoProps) {
         style={{ objectFit: "contain", flexShrink: 0 }}
         priority
       />
-      <span style={{ fontWeight: 700, letterSpacing: "-0.01em", color: "#fff", fontSize: s.textSize, transition: "opacity 150ms ease" }}
-        className="group-hover:opacity-90">
+      <span
+        style={{
+          fontWeight: 700,
+          letterSpacing: "-0.01em",
+          color: "#fff",
+          fontSize: s.textSize,
+          transition: "opacity 150ms ease",
+        }}
+        className="group-hover:opacity-90"
+      >
         Libra<span className="text-gradient">Chat</span>
       </span>
     </Link>

@@ -109,7 +109,7 @@ export function SocialProofSection({
     <section
       style={{
         padding: "120px 0",
-        background: "#100f1d",
+        background: "#131009",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >
@@ -130,7 +130,7 @@ export function SocialProofSection({
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#f0eeff",
+              color: "#FAF5EE",
             }}
           >
             {title}
@@ -155,7 +155,7 @@ export function SocialProofSection({
                 flexDirection: "column",
                 borderRadius: "20px",
                 overflow: "hidden",
-                background: "rgba(14,13,25,0.84)",
+                background: "rgba(28,25,23,0.84)",
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
@@ -164,7 +164,7 @@ export function SocialProofSection({
                 style={{
                   position: "relative",
                   overflow: "hidden",
-                  background: "rgba(14,13,25,0.92)",
+                  background: "rgba(28,25,23,0.92)",
                   flexShrink: 0,
                 }}
               >
@@ -199,7 +199,7 @@ export function SocialProofSection({
                   style={{
                     fontSize: "14px",
                     lineHeight: 1.75,
-                    color: "#a89ec0",
+                    color: "#C8B89A",
                     flex: 1,
                     fontStyle: "italic",
                   }}
@@ -212,9 +212,9 @@ export function SocialProofSection({
                     borderRadius: "10px",
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: "#9b8ff8",
-                    background: "rgba(101,88,224,0.08)",
-                    border: "1px solid rgba(101,88,224,0.18)",
+                    color: "#E8C49A",
+                    background: "rgba(212,165,116,0.08)",
+                    border: "1px solid rgba(212,165,116,0.18)",
                   }}
                 >
                   ↑ {t.result}
@@ -234,7 +234,7 @@ export function SocialProofSection({
                         borderRadius: "50%",
                         overflow: "hidden",
                         flexShrink: 0,
-                        border: "2px solid rgba(101,88,224,0.3)",
+                        border: "2px solid rgba(212,165,116,0.3)",
                       }}
                     >
                       {t.photo ? (
@@ -250,7 +250,7 @@ export function SocialProofSection({
                           style={{
                             width: "100%",
                             height: "100%",
-                            background: "#6558e0",
+                            background: "#D4A574",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -264,10 +264,10 @@ export function SocialProofSection({
                       )}
                     </div>
                     <div>
-                      <p style={{ fontSize: "14px", fontWeight: 600, color: "#f0eeff" }}>
+                      <p style={{ fontSize: "14px", fontWeight: 600, color: "#FAF5EE" }}>
                         {t.name}
                       </p>
-                      <p style={{ fontSize: "12px", color: "#a89ec0", marginTop: "2px" }}>
+                      <p style={{ fontSize: "12px", color: "#C8B89A", marginTop: "2px" }}>
                         {t.role}
                       </p>
                     </div>
@@ -276,7 +276,7 @@ export function SocialProofSection({
                     href={t.href}
                     style={{
                       fontSize: "12px",
-                      color: "#6558e0",
+                      color: "#D4A574",
                       textDecoration: "none",
                       whiteSpace: "nowrap",
                     }}

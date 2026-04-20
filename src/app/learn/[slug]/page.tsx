@@ -73,7 +73,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
         style={{
           fontSize: "20px",
           fontWeight: 700,
-          color: "#f0eeff",
+          color: "#FAF5EE",
           marginBottom: "14px",
           lineHeight: 1.3,
         }}
@@ -84,7 +84,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
         style={{
           fontSize: "15px",
           lineHeight: 1.85,
-          color: "#a89ec0",
+          color: "#C8B89A",
           display: "flex",
           flexDirection: "column",
           gap: "10px",
@@ -104,12 +104,12 @@ function Li({ children }: { children: React.ReactNode }) {
         alignItems: "flex-start",
         gap: "10px",
         fontSize: "15px",
-        color: "#a89ec0",
+        color: "#C8B89A",
         lineHeight: 1.7,
         listStyle: "none",
       }}
     >
-      <Check size={15} color="#6558e0" style={{ flexShrink: 0, marginTop: "4px" }} />
+      <Check size={15} color="#D4A574" style={{ flexShrink: 0, marginTop: "4px" }} />
       <span>{children}</span>
     </li>
   );
@@ -129,8 +129,8 @@ function CaseBlockquote({
       style={{
         padding: "24px 20px",
         borderRadius: "16px",
-        background: "rgba(101,88,224,0.07)",
-        borderLeft: "3px solid #6558e0",
+        background: "rgba(212,165,116,0.07)",
+        borderLeft: "3px solid #D4A574",
         position: "relative",
         width: "100%",
         boxSizing: "border-box",
@@ -140,14 +140,14 @@ function CaseBlockquote({
     >
       <Quote
         size={22}
-        color="rgba(101,88,224,0.3)"
+        color="rgba(212,165,116,0.3)"
         style={{ position: "absolute", top: "16px", right: "20px" }}
       />
       <p
         style={{
           fontSize: "16px",
           lineHeight: 1.8,
-          color: "#a89ec0",
+          color: "#C8B89A",
           fontStyle: "italic",
           marginBottom: "16px",
         }}
@@ -160,7 +160,7 @@ function CaseBlockquote({
             width: "36px",
             height: "36px",
             borderRadius: "50%",
-            background: "linear-gradient(135deg,#6558e0,#6558e0)",
+            background: "linear-gradient(135deg,#D4A574,#D4A574)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -173,8 +173,8 @@ function CaseBlockquote({
           {author[0]}
         </div>
         <div>
-          <p style={{ fontSize: "14px", fontWeight: 600, color: "#f0eeff" }}>{author}</p>
-          <p style={{ fontSize: "12px", color: "#a89ec0", marginTop: "2px" }}>{role}</p>
+          <p style={{ fontSize: "14px", fontWeight: 600, color: "#FAF5EE" }}>{author}</p>
+          <p style={{ fontSize: "12px", color: "#C8B89A", marginTop: "2px" }}>{role}</p>
         </div>
       </div>
     </div>
@@ -193,14 +193,14 @@ function CaseSteps({ items }: { items: { title: string; desc: string }[] }) {
               width: "28px",
               height: "28px",
               borderRadius: "50%",
-              background: "rgba(101,88,224,0.15)",
-              border: "1px solid rgba(101,88,224,0.3)",
+              background: "rgba(212,165,116,0.15)",
+              border: "1px solid rgba(212,165,116,0.3)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: "13px",
               fontWeight: 700,
-              color: "#9b8ff8",
+              color: "#E8C49A",
               flexShrink: 0,
             }}
           >
@@ -211,13 +211,13 @@ function CaseSteps({ items }: { items: { title: string; desc: string }[] }) {
               style={{
                 fontSize: "15px",
                 fontWeight: 600,
-                color: "#f0eeff",
+                color: "#FAF5EE",
                 marginBottom: "6px",
               }}
             >
               {item.title}
             </p>
-            <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#a89ec0" }}>
+            <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#C8B89A" }}>
               {item.desc}
             </p>
           </div>
@@ -237,7 +237,7 @@ function CaseResults({
       style={{
         padding: "24px",
         borderRadius: "16px",
-        background: "rgba(14,13,25,0.84)",
+        background: "rgba(28,25,23,0.84)",
         border: "1px solid rgba(255,255,255,0.07)",
       }}
     >
@@ -249,8 +249,8 @@ function CaseResults({
           marginBottom: "20px",
         }}
       >
-        <TrendingUp size={18} color="#9b8ff8" />
-        <span style={{ fontSize: "16px", fontWeight: 700, color: "#f0eeff" }}>
+        <TrendingUp size={18} color="#E8C49A" />
+        <span style={{ fontSize: "16px", fontWeight: 700, color: "#FAF5EE" }}>
           Результаты
         </span>
       </div>
@@ -286,7 +286,7 @@ function CaseResults({
             >
               {s.value}
             </span>
-            <span style={{ fontSize: "12px", lineHeight: 1.4, color: "#a89ec0" }}>
+            <span style={{ fontSize: "12px", lineHeight: 1.4, color: "#C8B89A" }}>
               {s.label}
             </span>
           </div>
@@ -352,7 +352,7 @@ function CaseShishakova() {
 
       <CaseResults
         items={[
-          { label: "Стратегия за один вечер", value: "✓", color: "#9b8ff8" },
+          { label: "Стратегия за один вечер", value: "✓", color: "#E8C49A" },
           { label: "Задач решается в 1 окне", value: "4+", color: "#c9920a" },
           { label: "Уровень федеральных сетей", value: "↑", color: "#22c55e" },
         ]}
@@ -414,7 +414,7 @@ function CaseOzherelyev() {
 
       <CaseResults
         items={[
-          { label: "Быстрее запуск товара", value: "5×", color: "#9b8ff8" },
+          { label: "Быстрее запуск товара", value: "5×", color: "#E8C49A" },
           { label: "Снижение ДРР", value: "−30%", color: "#c9920a" },
           { label: "Этапов автоматизировано", value: "4/4", color: "#22c55e" },
         ]}
@@ -481,7 +481,7 @@ function CaseBazarkulova() {
 
       <CaseResults
         items={[
-          { label: "Клиентов в одном окне", value: "10+", color: "#9b8ff8" },
+          { label: "Клиентов в одном окне", value: "10+", color: "#E8C49A" },
           { label: "Переделок и правок", value: "≈ 0", color: "#c9920a" },
           { label: "Работа без VPN", value: "100%", color: "#22c55e" },
         ]}
@@ -554,7 +554,7 @@ function renderInline(nodes: InlineNode[]): React.ReactNode {
     let el: React.ReactNode = n.text;
     if (n.bold)
       el = (
-        <strong key={i} style={{ color: "#f0eeff" }}>
+        <strong key={i} style={{ color: "#FAF5EE" }}>
           {el}
         </strong>
       );
@@ -564,7 +564,7 @@ function renderInline(nodes: InlineNode[]): React.ReactNode {
         <code
           key={i}
           style={{
-            background: "rgba(101,88,224,0.15)",
+            background: "rgba(212,165,116,0.15)",
             padding: "2px 6px",
             borderRadius: "4px",
             fontSize: "13px",
@@ -586,7 +586,7 @@ function StrapiBlocks({ blocks }: { blocks: unknown }) {
         switch (block.type) {
           case "paragraph":
             return (
-              <p key={i} style={{ fontSize: "15px", lineHeight: 1.85, color: "#a89ec0" }}>
+              <p key={i} style={{ fontSize: "15px", lineHeight: 1.85, color: "#C8B89A" }}>
                 {renderInline(block.children as InlineNode[])}
               </p>
             );
@@ -597,7 +597,7 @@ function StrapiBlocks({ blocks }: { blocks: unknown }) {
                 style={{
                   fontSize: block.level <= 2 ? "20px" : "17px",
                   fontWeight: 700,
-                  color: "#f0eeff",
+                  color: "#FAF5EE",
                   lineHeight: 1.3,
                   marginTop: "8px",
                 }}
@@ -627,12 +627,12 @@ function StrapiBlocks({ blocks }: { blocks: unknown }) {
                 key={i}
                 style={{
                   padding: "16px 20px",
-                  borderLeft: "3px solid #6558e0",
-                  background: "rgba(101,88,224,0.07)",
+                  borderLeft: "3px solid #D4A574",
+                  background: "rgba(212,165,116,0.07)",
                   borderRadius: "0 12px 12px 0",
                   fontSize: "15px",
                   fontStyle: "italic",
-                  color: "#a89ec0",
+                  color: "#C8B89A",
                   lineHeight: 1.75,
                 }}
               >
@@ -700,7 +700,7 @@ export default async function ArticlePage({
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#07060e",
+        background: "#0C0A08",
       }}
     >
       <Header />
@@ -714,15 +714,15 @@ export default async function ArticlePage({
                 alignItems: "center",
                 gap: "8px",
                 fontSize: "12px",
-                color: "#4a4560",
+                color: "#5A4A38",
                 marginBottom: "24px",
               }}
             >
-              <Link href="/" style={{ color: "#4a4560", textDecoration: "none" }}>
+              <Link href="/" style={{ color: "#5A4A38", textDecoration: "none" }}>
                 Главная
               </Link>
               <span>/</span>
-              <Link href="/learn" style={{ color: "#4a4560", textDecoration: "none" }}>
+              <Link href="/learn" style={{ color: "#5A4A38", textDecoration: "none" }}>
                 Обучение
               </Link>
               <span>/</span>
@@ -751,7 +751,7 @@ export default async function ArticlePage({
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.15,
-                color: "#f0eeff",
+                color: "#FAF5EE",
                 marginBottom: "20px",
               }}
             >
@@ -762,7 +762,7 @@ export default async function ArticlePage({
               style={{
                 fontSize: "18px",
                 lineHeight: 1.75,
-                color: "#a89ec0",
+                color: "#C8B89A",
                 marginBottom: "32px",
                 maxWidth: "700px",
               }}
@@ -786,7 +786,7 @@ export default async function ArticlePage({
                     borderRadius: "50%",
                     overflow: "hidden",
                     flexShrink: 0,
-                    border: "2px solid rgba(101,88,224,0.3)",
+                    border: "2px solid rgba(212,165,116,0.3)",
                   }}
                 >
                   {article.photo ? (
@@ -802,7 +802,7 @@ export default async function ArticlePage({
                       style={{
                         width: "100%",
                         height: "100%",
-                        background: "linear-gradient(135deg,#6558e0,#6558e0)",
+                        background: "linear-gradient(135deg,#D4A574,#D4A574)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -816,10 +816,10 @@ export default async function ArticlePage({
                   )}
                 </div>
                 <div>
-                  <p style={{ fontSize: "14px", fontWeight: 600, color: "#f0eeff" }}>
+                  <p style={{ fontSize: "14px", fontWeight: 600, color: "#FAF5EE" }}>
                     {article.author}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#a89ec0" }}>
+                  <p style={{ fontSize: "12px", color: "#C8B89A" }}>
                     {article.authorRole ?? "LibraChat"}
                   </p>
                 </div>
@@ -830,7 +830,7 @@ export default async function ArticlePage({
                   alignItems: "center",
                   gap: "16px",
                   fontSize: "12px",
-                  color: "#4a4560",
+                  color: "#5A4A38",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
@@ -877,7 +877,7 @@ export default async function ArticlePage({
                 style={{
                   width: "100%",
                   height: "100%",
-                  background: article.gradient ?? "rgba(14,13,25,0.92)",
+                  background: article.gradient ?? "rgba(28,25,23,0.92)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -896,14 +896,14 @@ export default async function ArticlePage({
                       width: "60px",
                       height: "60px",
                       borderRadius: "18px",
-                      background: "rgba(101,88,224,0.15)",
-                      border: "1px solid rgba(101,88,224,0.25)",
+                      background: "rgba(212,165,116,0.15)",
+                      border: "1px solid rgba(212,165,116,0.25)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <BookOpen size={26} color="#9b8ff8" />
+                    <BookOpen size={26} color="#E8C49A" />
                   </div>
                 </div>
               </div>
@@ -950,7 +950,7 @@ export default async function ArticlePage({
                         padding: "5px 12px",
                         borderRadius: "999px",
                         background: "rgba(255,255,255,0.04)",
-                        color: "#a89ec0",
+                        color: "#C8B89A",
                         border: "1px solid rgba(255,255,255,0.08)",
                       }}
                     >
@@ -975,7 +975,7 @@ export default async function ArticlePage({
                     borderRadius: "16px",
                     padding: "20px",
                     background: "#0e0d19",
-                    border: "1px solid rgba(101,88,224,0.25)",
+                    border: "1px solid rgba(212,165,116,0.25)",
                     position: "sticky",
                     top: "88px",
                   }}
@@ -990,7 +990,7 @@ export default async function ArticlePage({
                     style={{
                       fontSize: "14px",
                       fontWeight: 600,
-                      color: "#f0eeff",
+                      color: "#FAF5EE",
                       marginBottom: "8px",
                       lineHeight: 1.4,
                     }}
@@ -1000,7 +1000,7 @@ export default async function ArticlePage({
                   <p
                     style={{
                       fontSize: "13px",
-                      color: "#a89ec0",
+                      color: "#C8B89A",
                       marginBottom: "16px",
                       lineHeight: 1.6,
                     }}
@@ -1015,12 +1015,12 @@ export default async function ArticlePage({
                       justifyContent: "center",
                       padding: "12px",
                       borderRadius: "999px",
-                      background: "#6558e0",
+                      background: "#D4A574",
                       color: "#fff",
                       fontSize: "14px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 16px rgba(101,88,224,0.4)",
+                      boxShadow: "0 4px 16px rgba(212,165,116,0.4)",
                     }}
                   >
                     Начать бесплатно
@@ -1031,7 +1031,7 @@ export default async function ArticlePage({
                   style={{
                     borderRadius: "16px",
                     padding: "20px",
-                    background: "rgba(14,13,25,0.84)",
+                    background: "rgba(28,25,23,0.84)",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
@@ -1063,7 +1063,7 @@ export default async function ArticlePage({
                           style={{
                             fontSize: "13px",
                             fontWeight: 500,
-                            color: "#a89ec0",
+                            color: "#C8B89A",
                             lineHeight: 1.4,
                           }}
                         >
@@ -1075,7 +1075,7 @@ export default async function ArticlePage({
                             alignItems: "center",
                             gap: "4px",
                             fontSize: "11px",
-                            color: "#4a4560",
+                            color: "#5A4A38",
                           }}
                         >
                           <Clock size={10} />
@@ -1095,7 +1095,7 @@ export default async function ArticlePage({
           style={{
             padding: "80px 0",
             borderTop: "1px solid rgba(255,255,255,0.06)",
-            background: "#100f1d",
+            background: "#131009",
           }}
         >
           <div className="container-site">
@@ -1115,7 +1115,7 @@ export default async function ArticlePage({
               style={{
                 fontSize: "clamp(24px, 3vw, 36px)",
                 fontWeight: 800,
-                color: "#f0eeff",
+                color: "#FAF5EE",
                 textAlign: "center",
                 marginBottom: "40px",
               }}
@@ -1139,7 +1139,7 @@ export default async function ArticlePage({
                     gap: "16px",
                     padding: "24px",
                     borderRadius: "16px",
-                    background: "rgba(14,13,25,0.84)",
+                    background: "rgba(28,25,23,0.84)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     textDecoration: "none",
                     transition: "border-color 200ms ease",
@@ -1150,14 +1150,14 @@ export default async function ArticlePage({
                       width: "40px",
                       height: "40px",
                       borderRadius: "12px",
-                      background: "rgba(101,88,224,0.1)",
-                      border: "1px solid rgba(101,88,224,0.2)",
+                      background: "rgba(212,165,116,0.1)",
+                      border: "1px solid rgba(212,165,116,0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <BookOpen size={18} color="#9b8ff8" />
+                    <BookOpen size={18} color="#E8C49A" />
                   </div>
                   <div>
                     <p
@@ -1175,7 +1175,7 @@ export default async function ArticlePage({
                       style={{
                         fontSize: "14px",
                         fontWeight: 600,
-                        color: "#f0eeff",
+                        color: "#FAF5EE",
                         lineHeight: 1.4,
                       }}
                     >
@@ -1188,7 +1188,7 @@ export default async function ArticlePage({
                       alignItems: "center",
                       gap: "4px",
                       fontSize: "13px",
-                      color: "#6558e0",
+                      color: "#D4A574",
                       marginTop: "auto",
                     }}
                   >
@@ -1204,7 +1204,7 @@ export default async function ArticlePage({
         <section
           style={{
             padding: "80px 0",
-            background: "#07060e",
+            background: "#0C0A08",
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
@@ -1217,8 +1217,8 @@ export default async function ArticlePage({
                 borderRadius: "24px",
                 padding: "72px 40px",
                 textAlign: "center",
-                background: "rgba(14,13,25,0.97)",
-                border: "1px solid rgba(101,88,224,0.18)",
+                background: "rgba(28,25,23,0.97)",
+                border: "1px solid rgba(212,165,116,0.18)",
               }}
             >
               <div
@@ -1229,7 +1229,7 @@ export default async function ArticlePage({
                   right: 0,
                   height: "1px",
                   background:
-                    "linear-gradient(90deg,transparent,rgba(108,92,231,0.6),transparent)",
+                    "linear-gradient(90deg,transparent,rgba(212,165,116,0.6),transparent)",
                 }}
               />
               <div
@@ -1248,12 +1248,12 @@ export default async function ArticlePage({
                     fontWeight: 800,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    color: "#f0eeff",
+                    color: "#FAF5EE",
                   }}
                 >
                   Попробуйте LibraChat
                   <br />
-                  <span style={{ color: "#f0eeff" }}>для твоих задач</span>
+                  <span style={{ color: "#FAF5EE" }}>для твоих задач</span>
                 </h2>
                 <div
                   style={{
@@ -1268,12 +1268,12 @@ export default async function ArticlePage({
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
-                      background: "#6558e0",
+                      background: "#D4A574",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 20px rgba(101,88,224,0.4)",
+                      boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
                     }}
                   >
                     Начать бесплатно
@@ -1284,7 +1284,7 @@ export default async function ArticlePage({
                       padding: "14px 32px",
                       borderRadius: "999px",
                       background: "transparent",
-                      color: "#f0eeff",
+                      color: "#FAF5EE",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",

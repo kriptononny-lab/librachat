@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { Check, X, Minus } from "lucide-react";
+import { Check, X } from "lucide-react";
 import type { StrapiPlan, StrapiFaq, StrapiPricingPage } from "@/lib/strapi";
 
 const STATIC_PLANS: StrapiPlan[] = [
@@ -105,63 +105,8 @@ const STATIC_FAQ = [
   },
 ];
 
-const COMPARISON = [
-  {
-    group: "ДИАЛОГ",
-    rows: [
-      { label: "Сообщений в день", free: "20", pro: "∞", team: "∞" },
-      { label: "История диалогов", free: "7 дней", pro: "90 дней", team: "Бесконечно" },
-      { label: "Приоритетный доступ", free: false, pro: false, team: true },
-    ],
-  },
-  {
-    group: "ФАЙЛЫ",
-    rows: [
-      { label: "Загрузка файлов", free: "1/день", pro: "150/день", team: "Без лимита" },
-      { label: "Размер файла", free: "5 МБ", pro: "50 МБ", team: "500 МБ" },
-    ],
-  },
-  {
-    group: "КОМАНДА",
-    rows: [
-      { label: "Общее пространство", free: false, pro: false, team: true },
-      { label: "Управление ролями", free: false, pro: false, team: true },
-    ],
-  },
-  {
-    group: "ИНТЕГРАЦИИ И API",
-    rows: [
-      { label: "API-доступ", free: false, pro: false, team: false },
-      { label: "Webhook-интеграции", free: false, pro: false, team: true },
-    ],
-  },
-];
-
 function fmt(n: number) {
   return n === 0 ? "0 ₽" : n.toLocaleString("ru-RU") + " ₽";
-}
-
-function CellValue({ value }: { value: string | boolean }) {
-  if (value === true)
-    return (
-      <Check size={15} color="#22c55e" style={{ margin: "0 auto", display: "block" }} />
-    );
-  if (value === false)
-    return (
-      <Minus size={15} color="#3a3650" style={{ margin: "0 auto", display: "block" }} />
-    );
-  return (
-    <span
-      style={{
-        display: "block",
-        textAlign: "center",
-        fontSize: "13px",
-        color: "#a89ec0",
-      }}
-    >
-      {value as string}
-    </span>
-  );
 }
 
 const heading = {
@@ -169,7 +114,7 @@ const heading = {
   fontWeight: 800,
   letterSpacing: "-0.02em",
   lineHeight: 1.15,
-  color: "#f0eeff",
+  color: "#FAF5EE",
 } as React.CSSProperties;
 
 export function PricingClient({
@@ -194,7 +139,7 @@ export function PricingClient({
     <>
       {/* ── HERO ── */}
       <section
-        style={{ padding: "100px 0 80px", background: "#07060e", textAlign: "center" }}
+        style={{ padding: "100px 0 80px", background: "#0C0A08", textAlign: "center" }}
       >
         <div
           className="container-site"
@@ -214,7 +159,7 @@ export function PricingClient({
           <p
             style={{
               fontSize: "16px",
-              color: "#a89ec0",
+              color: "#C8B89A",
               maxWidth: "400px",
               lineHeight: 1.7,
             }}
@@ -247,9 +192,9 @@ export function PricingClient({
                     fontWeight: 500,
                     border: "none",
                     cursor: "pointer",
-                    background: active ? "rgba(101,88,224,0.18)" : "transparent",
-                    color: active ? "#f0eeff" : "#a89ec0",
-                    outline: active ? "1px solid rgba(101,88,224,0.35)" : "none",
+                    background: active ? "rgba(212,165,116,0.18)" : "transparent",
+                    color: active ? "#FAF5EE" : "#C8B89A",
+                    outline: active ? "1px solid rgba(212,165,116,0.35)" : "none",
                     transition: "all 200ms ease",
                     display: "flex",
                     alignItems: "center",
@@ -283,7 +228,7 @@ export function PricingClient({
       <section
         style={{
           padding: "80px 0 120px",
-          background: "#100f1d",
+          background: "#131009",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -293,7 +238,7 @@ export function PricingClient({
               ТАРИФЫ
             </div>
             <h2 style={heading}>{page?.plansTitle ?? "Выбери свой результат"}</h2>
-            <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
+            <p style={{ fontSize: "16px", color: "#C8B89A", marginTop: "12px" }}>
               {page?.plansSubtitle ??
                 "Тарифы — один инструмент для всех задач. Расти вместе с ним."}
             </p>
@@ -317,13 +262,11 @@ export function PricingClient({
                     flexDirection: "column",
                     padding: "28px",
                     borderRadius: "20px",
-                    background: plan.isPopular
-                      ? "rgba(101,88,224,0.07)"
-                      : "rgba(14,13,25,0.88)",
+                    background: plan.isPopular ? "rgba(212,165,116,0.07)" : "#1C1917",
                     border: plan.isPopular
-                      ? "1px solid rgba(101,88,224,0.45)"
+                      ? "1px solid rgba(212,165,116,0.45)"
                       : "1px solid rgba(255,255,255,0.08)",
-                    boxShadow: plan.isPopular ? "0 0 40px rgba(101,88,224,0.1)" : "none",
+                    boxShadow: plan.isPopular ? "0 0 40px rgba(212,165,116,0.1)" : "none",
                   }}
                 >
                   {plan.isPopular && plan.highlight && (
@@ -338,21 +281,21 @@ export function PricingClient({
                         fontSize: "12px",
                         fontWeight: 600,
                         color: "#fff",
-                        background: "#6558e0",
+                        background: "#D4A574",
                         whiteSpace: "nowrap",
                       }}
                     >
                       {plan.highlight}
                     </div>
                   )}
-                  <p style={{ fontSize: "12px", color: "#a89ec0", marginBottom: "6px" }}>
+                  <p style={{ fontSize: "12px", color: "#C8B89A", marginBottom: "6px" }}>
                     {plan.subtitle}
                   </p>
                   <h3
                     style={{
                       fontSize: "16px",
                       fontWeight: 700,
-                      color: "#f0eeff",
+                      color: "#FAF5EE",
                       lineHeight: 1.35,
                       marginBottom: "20px",
                     }}
@@ -377,7 +320,7 @@ export function PricingClient({
                         style={{
                           fontSize: "clamp(32px, 3vw, 44px)",
                           fontWeight: 800,
-                          color: "#f0eeff",
+                          color: "#FAF5EE",
                           letterSpacing: "-0.02em",
                         }}
                       >
@@ -385,7 +328,7 @@ export function PricingClient({
                       </motion.span>
                     </AnimatePresence>
                     {price > 0 && (
-                      <span style={{ fontSize: "14px", color: "#a89ec0" }}>/ мес</span>
+                      <span style={{ fontSize: "14px", color: "#C8B89A" }}>/ мес</span>
                     )}
                   </div>
                   <ul
@@ -410,9 +353,9 @@ export function PricingClient({
                         {f.ok ? (
                           <Check size={15} color="#22c55e" style={{ flexShrink: 0 }} />
                         ) : (
-                          <X size={15} color="#3a3650" style={{ flexShrink: 0 }} />
+                          <X size={15} color="#2C2520" style={{ flexShrink: 0 }} />
                         )}
-                        <span style={{ color: f.ok ? "#a89ec0" : "#3a3650" }}>
+                        <span style={{ color: f.ok ? "#C8B89A" : "#2C2520" }}>
                           {f.label}
                         </span>
                       </li>
@@ -429,13 +372,13 @@ export function PricingClient({
                       fontSize: "14px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      background: plan.isPopular ? "#6558e0" : "transparent",
-                      color: plan.isPopular ? "#fff" : "#f0eeff",
+                      background: plan.isPopular ? "#D4A574" : "transparent",
+                      color: plan.isPopular ? "#fff" : "#FAF5EE",
                       border: plan.isPopular
                         ? "none"
                         : "1px solid rgba(255,255,255,0.16)",
                       boxShadow: plan.isPopular
-                        ? "0 4px 20px rgba(101,88,224,0.4)"
+                        ? "0 4px 20px rgba(212,165,116,0.4)"
                         : "none",
                     }}
                   >
@@ -448,132 +391,11 @@ export function PricingClient({
         </div>
       </section>
 
-      {/* ── ТАБЛИЦА ── */}
-      <section
-        style={{
-          padding: "120px 0",
-          background: "#07060e",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <div className="container-site">
-          <div style={{ textAlign: "center", marginBottom: "52px" }}>
-            <div className="section-badge" style={{ marginBottom: "16px" }}>
-              СРАВНЕНИЕ
-            </div>
-            <h2 style={heading}>{page?.comparisonTitle ?? "Что входит в каждый план"}</h2>
-            <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
-              Подробное сравнение всех возможностей
-            </p>
-          </div>
-          <div className="pricing-table-wrap">
-            <table
-              style={{ width: "100%", minWidth: "560px", borderCollapse: "collapse" }}
-            >
-              <thead>
-                <tr
-                  style={{
-                    background: "rgba(14,13,25,0.97)",
-                    borderBottom: "1px solid rgba(255,255,255,0.07)",
-                  }}
-                >
-                  <th
-                    style={{
-                      textAlign: "left",
-                      padding: "16px 20px",
-                      fontSize: "12px",
-                      fontWeight: 600,
-                      color: "#a89ec0",
-                      width: "40%",
-                    }}
-                  >
-                    ФУНКЦИИ
-                  </th>
-                  {["Бесплатно", "ПРО", "Команда"].map((col, i) => (
-                    <th
-                      key={col}
-                      style={{
-                        textAlign: "center",
-                        padding: "16px",
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        color: i === 1 ? "#9b8ff8" : "#a89ec0",
-                      }}
-                    >
-                      {col}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {COMPARISON.map((group) => (
-                  <>
-                    <tr
-                      key={`g-${group.group}`}
-                      style={{
-                        background: "rgba(255,255,255,0.02)",
-                        borderTop: "1px solid rgba(255,255,255,0.06)",
-                      }}
-                    >
-                      <td
-                        colSpan={4}
-                        style={{
-                          padding: "10px 20px",
-                          fontSize: "11px",
-                          fontWeight: 700,
-                          letterSpacing: "0.08em",
-                          color: "#4a4560",
-                        }}
-                      >
-                        {group.group}
-                      </td>
-                    </tr>
-                    {group.rows.map((row, ri) => (
-                      <tr
-                        key={`${group.group}-${ri}`}
-                        style={{
-                          borderTop: "1px solid rgba(255,255,255,0.04)",
-                          background: ri % 2 === 0 ? "rgba(20,19,28,0.5)" : "transparent",
-                        }}
-                      >
-                        <td
-                          style={{
-                            padding: "14px 20px",
-                            fontSize: "14px",
-                            color: "#a89ec0",
-                          }}
-                        >
-                          {row.label}
-                        </td>
-                        <td style={{ padding: "14px 16px" }}>
-                          <CellValue value={row.free} />
-                        </td>
-                        <td
-                          style={{
-                            padding: "14px 16px",
-                            background: "rgba(108,92,231,0.04)",
-                          }}
-                        >
-                          <CellValue value={row.pro} />
-                        </td>
-                        <td style={{ padding: "14px 16px" }}>
-                          <CellValue value={row.team} />
-                        </td>
-                      </tr>
-                    ))}
-                  </>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section
         style={{
           padding: "120px 0",
-          background: "#100f1d",
+          background: "#131009",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -583,7 +405,7 @@ export function PricingClient({
               ЧАСТО ЗАДАЮТ
             </div>
             <h2 style={heading}>Остались вопросы?</h2>
-            <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
+            <p style={{ fontSize: "16px", color: "#C8B89A", marginTop: "12px" }}>
               Ответы на самые популярные вопросы о тарифах и оплате
             </p>
           </div>
@@ -616,14 +438,14 @@ export function PricingClient({
                     cursor: "pointer",
                     border: "none",
                     background:
-                      openFaq === i ? "rgba(108,92,231,0.06)" : "rgba(14,13,25,0.75)",
+                      openFaq === i ? "rgba(212,165,116,0.06)" : "rgba(28,25,23,0.75)",
                   }}
                 >
                   <span
                     style={{
                       fontSize: "15px",
                       fontWeight: 600,
-                      color: "#f0eeff",
+                      color: "#FAF5EE",
                       lineHeight: 1.4,
                     }}
                   >
@@ -641,9 +463,9 @@ export function PricingClient({
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: "18px",
-                      background: "rgba(101,88,224,0.12)",
-                      border: "1px solid rgba(101,88,224,0.25)",
-                      color: "#9b8ff8",
+                      background: "rgba(212,165,116,0.12)",
+                      border: "1px solid rgba(212,165,116,0.25)",
+                      color: "#E8C49A",
                     }}
                   >
                     +
@@ -663,7 +485,7 @@ export function PricingClient({
                           padding: "16px 20px",
                           fontSize: "14px",
                           lineHeight: 1.75,
-                          color: "#a89ec0",
+                          color: "#C8B89A",
                           borderTop: "1px solid rgba(255,255,255,0.06)",
                           background: "rgba(8,7,16,0.55)",
                         }}
@@ -683,7 +505,7 @@ export function PricingClient({
       <section
         style={{
           padding: "80px 0",
-          background: "#07060e",
+          background: "#0C0A08",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -695,8 +517,8 @@ export function PricingClient({
               borderRadius: "24px",
               padding: "clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px)",
               textAlign: "center",
-              background: "rgba(14,13,25,0.97)",
-              border: "1px solid rgba(101,88,224,0.2)",
+              background: "rgba(28,25,23,0.97)",
+              border: "1px solid rgba(212,165,116,0.2)",
             }}
           >
             <div
@@ -707,7 +529,7 @@ export function PricingClient({
                 right: 0,
                 height: "1px",
                 background:
-                  "linear-gradient(90deg,transparent,rgba(108,92,231,0.6),transparent)",
+                  "linear-gradient(90deg,transparent,rgba(212,165,116,0.6),transparent)",
               }}
             />
             <div
@@ -726,7 +548,7 @@ export function PricingClient({
               <p
                 style={{
                   fontSize: "16px",
-                  color: "#a89ec0",
+                  color: "#C8B89A",
                   maxWidth: "360px",
                   lineHeight: 1.7,
                 }}
@@ -749,12 +571,12 @@ export function PricingClient({
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
-                    background: "#6558e0",
+                    background: "#D4A574",
                     color: "#fff",
                     fontSize: "15px",
                     fontWeight: 600,
                     textDecoration: "none",
-                    boxShadow: "0 4px 20px rgba(101,88,224,0.4)",
+                    boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
                     flex: "1 1 auto",
                     textAlign: "center",
                     minWidth: "200px",
@@ -769,7 +591,7 @@ export function PricingClient({
                     padding: "14px 32px",
                     borderRadius: "999px",
                     background: "transparent",
-                    color: "#f0eeff",
+                    color: "#FAF5EE",
                     fontSize: "15px",
                     fontWeight: 600,
                     textDecoration: "none",
