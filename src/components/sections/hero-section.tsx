@@ -164,32 +164,6 @@ function AnimatedInput() {
           <Send size={16} color="#ffffff" />
         </button>
       </div>
-
-      {/* Быстрые действия — только десктоп */}
-      <div
-        className="widget-actions"
-        style={{ padding: "0 20px 18px", display: "flex", gap: "8px" }}
-      >
-        {QUICK_ACTIONS.map(({ icon: Icon, label }) => (
-          <span
-            key={label}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              padding: "7px 14px",
-              borderRadius: "999px",
-              fontSize: "13px",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#9CA3B8",
-              cursor: "pointer",
-            }}
-          >
-            <Icon size={14} />
-            {label}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
