@@ -138,9 +138,9 @@ function ChatMockup() {
       style={{
         borderRadius: "20px",
         padding: "20px",
-        background: "rgba(28,25,23,0.97)",
-        border: "1px solid rgba(212,165,116,0.2)",
-        boxShadow: "0 0 40px rgba(212,165,116,0.1)",
+        background: "rgba(13,13,26,0.97)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -160,7 +160,7 @@ function ChatMockup() {
             width: "24px",
             height: "24px",
             borderRadius: "50%",
-            background: "#D4A574",
+            background: "#A78BFA",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -180,7 +180,7 @@ function ChatMockup() {
             fontSize: "11px",
             padding: "2px 8px",
             borderRadius: "999px",
-            background: "rgba(34,197,94,0.15)",
+            background: "rgba(167,139,250,0.15)",
             color: "#22c55e",
           }}
         >
@@ -196,7 +196,7 @@ function ChatMockup() {
               borderRadius: "16px 16px 4px 16px",
               fontSize: "13px",
               color: "#fff",
-              background: "rgba(212,165,116,0.3)",
+              background: "rgba(167,139,250,0.3)",
             }}
           >
             Составь КП для нового клиента
@@ -208,7 +208,7 @@ function ChatMockup() {
               width: "24px",
               height: "24px",
               borderRadius: "50%",
-              background: "#D4A574",
+              background: "#A78BFA",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -226,7 +226,7 @@ function ChatMockup() {
               padding: "10px 14px",
               borderRadius: "4px 16px 16px 16px",
               fontSize: "13px",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               background: "rgba(255,255,255,0.05)",
             }}
           >
@@ -240,7 +240,7 @@ function ChatMockup() {
           padding: "10px 14px",
           borderRadius: "12px",
           fontSize: "12px",
-          color: "#5A4A38",
+          color: "#4B556A",
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.06)",
         }}
@@ -257,9 +257,9 @@ function FilesMockup() {
       style={{
         borderRadius: "20px",
         padding: "20px",
-        background: "rgba(28,25,23,0.97)",
-        border: "1px solid rgba(212,165,116,0.2)",
-        boxShadow: "0 0 40px rgba(212,165,116,0.1)",
+        background: "rgba(13,13,26,0.97)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -279,7 +279,7 @@ function FilesMockup() {
             width: "24px",
             height: "24px",
             borderRadius: "50%",
-            background: "#D4A574",
+            background: "#A78BFA",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -334,7 +334,7 @@ function FilesMockup() {
             </div>
             <div>
               <p style={{ fontSize: "12px", fontWeight: 500, color: "#fff" }}>{f.name}</p>
-              <p style={{ fontSize: "11px", color: "#C8B89A" }}>{f.size}</p>
+              <p style={{ fontSize: "11px", color: "#9CA3B8" }}>{f.size}</p>
             </div>
           </div>
         ))}
@@ -344,9 +344,9 @@ function FilesMockup() {
           padding: "10px 14px",
           borderRadius: "12px",
           fontSize: "13px",
-          color: "#C8B89A",
-          background: "rgba(212,165,116,0.08)",
-          border: "1px solid rgba(212,165,116,0.2)",
+          color: "#9CA3B8",
+          background: "rgba(167,139,250,0.08)",
+          border: "1px solid rgba(167,139,250,0.2)",
           lineHeight: 1.6,
         }}
       >
@@ -358,7 +358,7 @@ function FilesMockup() {
 }
 
 const S = {
-  sec: (bg = "#0C0A08") =>
+  sec: (bg = "#040408") =>
     ({
       padding: "100px 0",
       background: bg,
@@ -369,11 +369,11 @@ const S = {
     fontWeight: 800,
     letterSpacing: "-0.02em",
     lineHeight: 1.15,
-    color: "#f2f0ff",
+    color: "#F0EEFF",
   } as React.CSSProperties,
   sub: {
     fontSize: "16px",
-    color: "#C8B89A",
+    color: "#9CA3B8",
     lineHeight: 1.65,
     maxWidth: "480px",
     margin: "12px auto 0",
@@ -403,7 +403,7 @@ export default async function FeaturesPage() {
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#0C0A08",
+        background: "#040408",
       }}
     >
       <Header />
@@ -427,7 +427,7 @@ export default async function FeaturesPage() {
               height: "500px",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(212,165,116,0.12),transparent 70%)",
+                "radial-gradient(circle,rgba(167,139,250,0.12),transparent 70%)",
               pointerEvents: "none",
             }}
           />
@@ -451,7 +451,7 @@ export default async function FeaturesPage() {
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
-                color: "#f2f0ff",
+                color: "#F0EEFF",
                 maxWidth: "700px",
               }}
             >
@@ -461,7 +461,7 @@ export default async function FeaturesPage() {
             <p
               style={{
                 fontSize: "18px",
-                color: "#C8B89A",
+                color: "#9CA3B8",
                 maxWidth: "500px",
                 lineHeight: 1.7,
               }}
@@ -484,12 +484,12 @@ export default async function FeaturesPage() {
                 style={{
                   padding: "13px 28px",
                   borderRadius: "999px",
-                  background: "#D4A574",
+                  background: "#A78BFA",
                   color: "#fff",
                   fontSize: "15px",
                   fontWeight: 600,
                   textDecoration: "none",
-                  boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                  boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                   flex: "1 1 auto",
                   textAlign: "center",
                   minWidth: "180px",
@@ -504,7 +504,7 @@ export default async function FeaturesPage() {
                   padding: "13px 28px",
                   borderRadius: "999px",
                   background: "transparent",
-                  color: "#f2f0ff",
+                  color: "#F0EEFF",
                   fontSize: "15px",
                   fontWeight: 600,
                   textDecoration: "none",
@@ -522,7 +522,7 @@ export default async function FeaturesPage() {
         </section>
 
         {/* Глубокие возможности */}
-        <section style={S.sec("#131009")}>
+        <section style={S.sec("#080810")}>
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "72px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
@@ -594,12 +594,12 @@ export default async function FeaturesPage() {
                         fontSize: "clamp(22px, 2.5vw, 32px)",
                         fontWeight: 800,
                         lineHeight: 1.25,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                       }}
                     >
                       {feat.title}
                     </h3>
-                    <p style={{ fontSize: "15px", color: "#C8B89A", lineHeight: 1.75 }}>
+                    <p style={{ fontSize: "15px", color: "#9CA3B8", lineHeight: 1.75 }}>
                       {feat.desc}
                     </p>
                     <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -611,7 +611,7 @@ export default async function FeaturesPage() {
                             alignItems: "flex-start",
                             gap: "10px",
                             fontSize: "14px",
-                            color: "#C8B89A",
+                            color: "#9CA3B8",
                             lineHeight: 1.6,
                             listStyle: "none",
                           }}
@@ -640,7 +640,7 @@ export default async function FeaturesPage() {
                 КЛЮЧЕВЫЕ ФУНКЦИИ
               </div>
               <h2 style={S.h2}>
-                Всё в <span style={{ color: "#f2f0ff" }}>одном окне</span>
+                Всё в <span style={{ color: "#F0EEFF" }}>одном окне</span>
               </h2>
               <p style={S.sub}>8 инструментов — не нужно переключаться между сервисами</p>
             </div>
@@ -663,7 +663,7 @@ export default async function FeaturesPage() {
                       gap: "16px",
                       padding: "24px",
                       borderRadius: "16px",
-                      background: "rgba(28,25,23,0.75)",
+                      background: "rgba(13,13,26,0.75)",
                       border: "1px solid rgba(255,255,255,0.07)",
                     }}
                   >
@@ -672,27 +672,27 @@ export default async function FeaturesPage() {
                         width: "40px",
                         height: "40px",
                         borderRadius: "12px",
-                        background: "rgba(212,165,116,0.1)",
-                        border: "1px solid rgba(212,165,116,0.18)",
+                        background: "rgba(167,139,250,0.1)",
+                        border: "1px solid rgba(167,139,250,0.18)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={20} color="#E8C49A" />
+                      <Icon size={20} color="#C4B5FD" />
                     </div>
                     <div>
                       <h3
                         style={{
                           fontSize: "15px",
                           fontWeight: 600,
-                          color: "#f2f0ff",
+                          color: "#F0EEFF",
                           marginBottom: "6px",
                         }}
                       >
                         {title}
                       </h3>
-                      <p style={{ fontSize: "13px", color: "#C8B89A", lineHeight: 1.65 }}>
+                      <p style={{ fontSize: "13px", color: "#9CA3B8", lineHeight: 1.65 }}>
                         {desc}
                       </p>
                     </div>
@@ -704,7 +704,7 @@ export default async function FeaturesPage() {
         </section>
 
         {/* Как во мне защищены данные — из PDF */}
-        <section style={S.sec("#131009")}>
+        <section style={S.sec("#080810")}>
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
@@ -735,8 +735,8 @@ export default async function FeaturesPage() {
                       gap: "16px",
                       padding: "28px 24px",
                       borderRadius: "20px",
-                      background: "rgba(28,25,23,0.88)",
-                      border: "1px solid rgba(212,165,116,0.15)",
+                      background: "rgba(13,13,26,0.88)",
+                      border: "1px solid rgba(167,139,250,0.15)",
                     }}
                   >
                     <div
@@ -744,28 +744,28 @@ export default async function FeaturesPage() {
                         width: "44px",
                         height: "44px",
                         borderRadius: "14px",
-                        background: "rgba(212,165,116,0.1)",
-                        border: "1px solid rgba(212,165,116,0.22)",
+                        background: "rgba(167,139,250,0.1)",
+                        border: "1px solid rgba(167,139,250,0.22)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={20} color="#E8C49A" />
+                      <Icon size={20} color="#C4B5FD" />
                     </div>
                     <div>
                       <h3
                         style={{
                           fontSize: "15px",
                           fontWeight: 700,
-                          color: "#f2f0ff",
+                          color: "#F0EEFF",
                           marginBottom: "8px",
                           lineHeight: 1.3,
                         }}
                       >
                         {title}
                       </h3>
-                      <p style={{ fontSize: "14px", color: "#C8B89A", lineHeight: 1.7 }}>
+                      <p style={{ fontSize: "14px", color: "#9CA3B8", lineHeight: 1.7 }}>
                         {desc}
                       </p>
                     </div>
@@ -778,18 +778,18 @@ export default async function FeaturesPage() {
                 marginTop: "32px",
                 padding: "24px 32px",
                 borderRadius: "16px",
-                background: "rgba(212,165,116,0.06)",
-                border: "1px solid rgba(212,165,116,0.18)",
+                background: "rgba(167,139,250,0.06)",
+                border: "1px solid rgba(167,139,250,0.18)",
                 textAlign: "center",
               }}
             >
-              <p style={{ fontSize: "14px", color: "#C8B89A", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "14px", color: "#9CA3B8", lineHeight: 1.7 }}>
                 Соответствует требованиям{" "}
-                <strong style={{ color: "#f2f0ff" }}>152-ФЗ</strong> о персональных
+                <strong style={{ color: "#F0EEFF" }}>152-ФЗ</strong> о персональных
                 данных. Подробнее —{" "}
                 <Link
                   href="/privacy"
-                  style={{ color: "#E8C49A", textDecoration: "none" }}
+                  style={{ color: "#C4B5FD", textDecoration: "none" }}
                 >
                   в политике конфиденциальности
                 </Link>
@@ -820,17 +820,17 @@ export default async function FeaturesPage() {
             >
               {[
                 {
-                  icon: <MessageSquare size={20} color="#E8C49A" />,
+                  icon: <MessageSquare size={20} color="#C4B5FD" />,
                   title: "Анализ и отчёты",
                   desc: "Загружай документы — LibraChat анализирует и создаёт профессиональные отчёты за секунды.",
                 },
                 {
-                  icon: <PenLine size={20} color="#E8C49A" />,
+                  icon: <PenLine size={20} color="#C4B5FD" />,
                   title: "Переписка и документы",
                   desc: "Деловые письма, контракты, презентации — создавай профессиональные тексты с нужным стилем.",
                 },
                 {
-                  icon: <Puzzle size={20} color="#E8C49A" />,
+                  icon: <Puzzle size={20} color="#C4B5FD" />,
                   title: "Поддержка клиентов",
                   desc: "Автоматизирует ответы на повторяющиеся вопросы и освобождает команду для сложных задач.",
                 },
@@ -844,7 +844,7 @@ export default async function FeaturesPage() {
                     gap: "16px",
                     padding: "24px",
                     borderRadius: "16px",
-                    background: "rgba(28,25,23,0.75)",
+                    background: "rgba(13,13,26,0.75)",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
@@ -853,8 +853,8 @@ export default async function FeaturesPage() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "12px",
-                      background: "rgba(212,165,116,0.1)",
-                      border: "1px solid rgba(212,165,116,0.18)",
+                      background: "rgba(167,139,250,0.1)",
+                      border: "1px solid rgba(167,139,250,0.18)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -867,7 +867,7 @@ export default async function FeaturesPage() {
                       style={{
                         fontSize: "15px",
                         fontWeight: 600,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         marginBottom: "6px",
                       }}
                     >
@@ -876,7 +876,7 @@ export default async function FeaturesPage() {
                     <p
                       style={{
                         fontSize: "13px",
-                        color: "#C8B89A",
+                        color: "#9CA3B8",
                         lineHeight: 1.65,
                         marginBottom: "12px",
                       }}
@@ -888,7 +888,7 @@ export default async function FeaturesPage() {
                       style={{
                         fontSize: "13px",
                         fontWeight: 500,
-                        color: "#D4A574",
+                        color: "#A78BFA",
                         textDecoration: "none",
                         display: "inline-flex",
                         alignItems: "center",
@@ -905,7 +905,7 @@ export default async function FeaturesPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ padding: "80px 0 100px", background: "#0C0A08" }}>
+        <section style={{ padding: "80px 0 100px", background: "#040408" }}>
           <div className="container-site">
             <div
               className="cta-inner"
@@ -915,8 +915,8 @@ export default async function FeaturesPage() {
                 borderRadius: "24px",
                 padding: "72px 48px",
                 textAlign: "center",
-                background: "rgba(28,25,23,0.97)",
-                border: "1px solid rgba(212,165,116,0.2)",
+                background: "rgba(13,13,26,0.97)",
+                border: "1px solid rgba(167,139,250,0.2)",
               }}
             >
               <div
@@ -927,7 +927,7 @@ export default async function FeaturesPage() {
                   right: 0,
                   height: "1px",
                   background:
-                    "linear-gradient(90deg,transparent,rgba(212,165,116,0.6),transparent)",
+                    "linear-gradient(90deg,transparent,rgba(167,139,250,0.6),transparent)",
                 }}
               />
               <div
@@ -946,7 +946,7 @@ export default async function FeaturesPage() {
                     fontWeight: 800,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                   }}
                 >
                   {page?.ctaTitle ?? "Готов попробовать LibraChat?"}
@@ -954,7 +954,7 @@ export default async function FeaturesPage() {
                 <p
                   style={{
                     fontSize: "16px",
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     maxWidth: "380px",
                     lineHeight: 1.7,
                   }}
@@ -974,12 +974,12 @@ export default async function FeaturesPage() {
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
-                      background: "#D4A574",
+                      background: "#A78BFA",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                      boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     }}
                   >
                     Начать бесплатно
@@ -990,7 +990,7 @@ export default async function FeaturesPage() {
                       padding: "14px 32px",
                       borderRadius: "999px",
                       background: "transparent",
-                      color: "#f2f0ff",
+                      color: "#F0EEFF",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",

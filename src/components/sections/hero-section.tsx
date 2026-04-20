@@ -66,11 +66,11 @@ function AnimatedInput() {
   return (
     <div
       style={{
-        background: "rgba(12,10,8,0.98)",
-        border: "1px solid rgba(212,165,116,0.35)",
+        background: "rgba(4,4,8,0.98)",
+        border: "1px solid rgba(167,139,250,0.35)",
         borderRadius: "20px",
         boxShadow:
-          "0 0 0 1px rgba(212,165,116,0.08), 0 24px 64px rgba(0,0,0,0.55), 0 0 100px rgba(212,165,116,0.07)",
+          "0 0 0 1px rgba(167,139,250,0.08), 0 24px 64px rgba(0,0,0,0.55), 0 0 100px rgba(167,139,250,0.07)",
         overflow: "hidden",
       }}
     >
@@ -95,11 +95,11 @@ function AnimatedInput() {
               fontWeight: 500,
               ...(i === 0
                 ? {
-                    background: "rgba(212,165,116,0.2)",
-                    color: "#C8B89A",
-                    border: "1px solid rgba(212,165,116,0.35)",
+                    background: "rgba(167,139,250,0.2)",
+                    color: "#9CA3B8",
+                    border: "1px solid rgba(167,139,250,0.35)",
                   }
-                : { color: "#3D2E1A", border: "1px solid rgba(255,255,255,0.06)" }),
+                : { color: "#2D2D4A", border: "1px solid rgba(255,255,255,0.06)" }),
             }}
           >
             {t}
@@ -123,7 +123,7 @@ function AnimatedInput() {
             flex: 1,
             fontSize: "16px",
             lineHeight: "1.5",
-            color: "#C8B89A",
+            color: "#9CA3B8",
             height: "26px",
             overflow: "hidden",
             whiteSpace: "nowrap",
@@ -136,7 +136,7 @@ function AnimatedInput() {
               display: "inline-block",
               width: "2px",
               height: "18px",
-              background: "#D4A574",
+              background: "#A78BFA",
               marginLeft: "2px",
               verticalAlign: "middle",
               animation: "typing-cursor 0.9s step-end infinite",
@@ -148,17 +148,17 @@ function AnimatedInput() {
             width: "42px",
             height: "42px",
             borderRadius: "12px",
-            background: "#D4A574",
+            background: "#A78BFA",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexShrink: 0,
             border: "none",
             cursor: "pointer",
-            boxShadow: "0 4px 16px rgba(212,165,116,0.45)",
+            boxShadow: "0 4px 16px rgba(167,139,250,0.45)",
           }}
         >
-          <Send size={16} color="#1C1410" />
+          <Send size={16} color="#ffffff" />
         </button>
       </div>
 
@@ -178,7 +178,7 @@ function AnimatedInput() {
               borderRadius: "999px",
               fontSize: "13px",
               border: "1px solid rgba(255,255,255,0.08)",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               cursor: "pointer",
             }}
           >
@@ -213,7 +213,7 @@ function RotatingHeadline({ phrases }: { phrases: string[] }) {
             top: 0,
             left: 0,
             right: 0,
-            background: "linear-gradient(135deg,#C9893E,#D4A574,#F5C97A)",
+            background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -266,7 +266,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
         paddingBottom: "60px",
         position: "relative",
         background:
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,165,116,0.18) 0%, transparent 70%), #0C0A08",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(167,139,250,0.18) 0%, transparent 70%), #040408",
       }}
     >
       <div className="container-site">
@@ -313,7 +313,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
               fontWeight: 800,
               letterSpacing: "-0.025em",
               lineHeight: 1.1,
-              color: "#FAF5EE",
+              color: "#F0EEFF",
               marginBottom: "18px",
             }}
           >
@@ -345,7 +345,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
             style={{
               fontSize: "17px",
               lineHeight: 1.75,
-              color: "#C8B89A",
+              color: "#9CA3B8",
               maxWidth: "520px",
               marginBottom: "48px",
             }}
@@ -389,9 +389,9 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                   padding: "6px 14px",
                   borderRadius: "8px",
                   fontSize: "12px",
-                  border: "1px solid rgba(212,165,116,0.15)",
-                  background: "rgba(212,165,116,0.05)",
-                  color: "#C8B89A",
+                  border: "1px solid rgba(167,139,250,0.15)",
+                  background: "rgba(167,139,250,0.05)",
+                  color: "#9CA3B8",
                   cursor: "pointer",
                 }}
               >
@@ -465,7 +465,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                   style={{
                     fontSize: "clamp(16px, 3.5vw, 22px)",
                     fontWeight: 700,
-                    color: "#c9920a",
+                    color: "#A78BFA",
                   }}
                 >
                   {s.value}
@@ -474,7 +474,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                   style={{
                     fontSize: "clamp(10px, 2vw, 12px)",
                     lineHeight: 1.45,
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                   }}
                 >
                   {s.label}

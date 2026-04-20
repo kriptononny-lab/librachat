@@ -74,7 +74,7 @@ export default function ContactPage() {
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#0C0A08",
+        background: "#040408",
       }}
     >
       <Header />
@@ -91,13 +91,13 @@ export default function ContactPage() {
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
-                color: "#f2f0ff",
+                color: "#F0EEFF",
                 marginBottom: "20px",
               }}
             >
               Мы на связи
             </h1>
-            <p style={{ fontSize: "18px", color: "#C8B89A", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "18px", color: "#9CA3B8", lineHeight: 1.7 }}>
               Ответим на любой вопрос — от технической интеграции до индивидуального
               тарифа
             </p>
@@ -120,15 +120,15 @@ export default function ContactPage() {
                 style={{
                   borderRadius: "20px",
                   padding: "32px",
-                  background: "rgba(28,25,23,0.92)",
-                  border: "1px solid rgba(212,165,116,0.18)",
+                  background: "rgba(13,13,26,0.92)",
+                  border: "1px solid rgba(167,139,250,0.18)",
                 }}
               >
                 <h2
                   style={{
                     fontSize: "22px",
                     fontWeight: 700,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                     marginBottom: "8px",
                   }}
                 >
@@ -137,7 +137,7 @@ export default function ContactPage() {
                 <p
                   style={{
                     fontSize: "14px",
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     marginBottom: "28px",
                     lineHeight: 1.6,
                   }}
@@ -163,7 +163,7 @@ export default function ContactPage() {
                           padding: "13px 16px",
                           borderRadius: "12px",
                           fontSize: "14px",
-                          color: "#f2f0ff",
+                          color: "#F0EEFF",
                           background: "rgba(255,255,255,0.05)",
                           border: "1px solid rgba(255,255,255,0.09)",
                           outline: "none",
@@ -185,7 +185,7 @@ export default function ContactPage() {
                         padding: "13px 16px",
                         borderRadius: "12px",
                         fontSize: "14px",
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         background: "rgba(255,255,255,0.05)",
                         border: "1px solid rgba(255,255,255,0.09)",
                         outline: "none",
@@ -198,7 +198,7 @@ export default function ContactPage() {
                       padding: "13px 16px",
                       borderRadius: "12px",
                       fontSize: "14px",
-                      color: "#C8B89A",
+                      color: "#9CA3B8",
                       background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(255,255,255,0.09)",
                       outline: "none",
@@ -217,7 +217,7 @@ export default function ContactPage() {
                       padding: "13px 16px",
                       borderRadius: "12px",
                       fontSize: "14px",
-                      color: "#f2f0ff",
+                      color: "#F0EEFF",
                       background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(255,255,255,0.09)",
                       outline: "none",
@@ -235,23 +235,23 @@ export default function ContactPage() {
                       gap: "8px",
                       padding: "15px",
                       borderRadius: "999px",
-                      background: "#D4A574",
+                      background: "#A78BFA",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 24px rgba(212,165,116,0.4)",
+                      boxShadow: "0 4px 24px rgba(167,139,250,0.4)",
                       marginTop: "4px",
                     }}
                   >
                     <Send size={16} />
                     Отправить заявку
                   </Link>
-                  <p style={{ fontSize: "12px", textAlign: "center", color: "#5A4A38" }}>
+                  <p style={{ fontSize: "12px", textAlign: "center", color: "#4B556A" }}>
                     Нажимая кнопку, вы принимаете{" "}
                     <Link
                       href="/privacy"
-                      style={{ color: "#E8C49A", textDecoration: "none" }}
+                      style={{ color: "#C4B5FD", textDecoration: "none" }}
                     >
                       политику конфиденциальности
                     </Link>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                     style={{
                       fontSize: "20px",
                       fontWeight: 700,
-                      color: "#f2f0ff",
+                      color: "#F0EEFF",
                       marginBottom: "20px",
                     }}
                   >
@@ -284,7 +284,7 @@ export default function ContactPage() {
                           gap: "16px",
                           padding: "16px 20px",
                           borderRadius: "16px",
-                          background: "rgba(28,25,23,0.88)",
+                          background: "rgba(13,13,26,0.88)",
                           border: "1px solid rgba(255,255,255,0.08)",
                           textDecoration: "none",
                           transition: "border-color 200ms ease",
@@ -295,21 +295,21 @@ export default function ContactPage() {
                             width: "40px",
                             height: "40px",
                             borderRadius: "12px",
-                            background: "rgba(212,165,116,0.12)",
-                            border: "1px solid rgba(212,165,116,0.22)",
+                            background: "rgba(167,139,250,0.12)",
+                            border: "1px solid rgba(167,139,250,0.22)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <Icon size={18} color="#E8C49A" />
+                          <Icon size={18} color="#C4B5FD" />
                         </div>
                         <div>
                           <p
                             style={{
                               fontSize: "12px",
-                              color: "#C8B89A",
+                              color: "#9CA3B8",
                               marginBottom: "2px",
                             }}
                           >
@@ -319,7 +319,7 @@ export default function ContactPage() {
                             style={{
                               fontSize: "15px",
                               fontWeight: 600,
-                              color: "#f2f0ff",
+                              color: "#F0EEFF",
                             }}
                           >
                             {value}
@@ -336,7 +336,7 @@ export default function ContactPage() {
                     style={{
                       fontSize: "20px",
                       fontWeight: 700,
-                      color: "#f2f0ff",
+                      color: "#F0EEFF",
                       marginBottom: "20px",
                     }}
                   >
@@ -351,7 +351,7 @@ export default function ContactPage() {
                           gap: "14px",
                           padding: "16px 20px",
                           borderRadius: "16px",
-                          background: "rgba(28,25,23,0.88)",
+                          background: "rgba(13,13,26,0.88)",
                           border: "1px solid rgba(255,255,255,0.08)",
                         }}
                       >
@@ -360,22 +360,22 @@ export default function ContactPage() {
                             width: "36px",
                             height: "36px",
                             borderRadius: "10px",
-                            background: "rgba(212,165,116,0.1)",
-                            border: "1px solid rgba(212,165,116,0.2)",
+                            background: "rgba(167,139,250,0.1)",
+                            border: "1px solid rgba(167,139,250,0.2)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <Icon size={16} color="#E8C49A" />
+                          <Icon size={16} color="#C4B5FD" />
                         </div>
                         <div>
                           <p
                             style={{
                               fontSize: "14px",
                               fontWeight: 600,
-                              color: "#f2f0ff",
+                              color: "#F0EEFF",
                               marginBottom: "4px",
                             }}
                           >
@@ -384,7 +384,7 @@ export default function ContactPage() {
                           <p
                             style={{
                               fontSize: "13px",
-                              color: "#C8B89A",
+                              color: "#9CA3B8",
                               lineHeight: 1.6,
                             }}
                           >

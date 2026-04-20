@@ -8,29 +8,29 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-brand-400: #e8c49a;
-  --color-brand-500: #d4a574;
-  --color-brand-600: #c9893e;
-  --color-brand-700: #b8762e;
+  --color-brand-400: #c4b5fd;
+  --color-brand-500: #a78bfa;
+  --color-brand-600: #7b2fbe;
+  --color-brand-700: #6b3fa0;
 
-  --color-amber-400: #f59e0b;
-  --color-amber-500: #d97706;
+  --color-amber-400: #f472b6;
+  --color-amber-500: #8b5cf6;
 
-  --color-bg-base: #0c0a08;
-  --color-bg-surface: #131009;
-  --color-bg-raised: #1c1917;
-  --color-bg-card: #1c1917;
+  --color-bg-base: #040408;
+  --color-bg-surface: #080810;
+  --color-bg-raised: #0d0d1a;
+  --color-bg-card: #0d0d1a;
 
-  --color-text-primary: #faf5ee;
-  --color-text-secondary: #c8b89a;
-  --color-text-muted: #7a6a56;
+  --color-text-primary: #f0eeff;
+  --color-text-secondary: #9ca3b8;
+  --color-text-muted: #6b7280;
 
   --color-border: rgba(255, 255, 255, 0.07);
   --color-border-medium: rgba(255, 255, 255, 0.1);
   --color-border-accent: rgba(212, 165, 116, 0.22);
 
   --color-success: #22c55e;
-  --color-warning: #f59e0b;
+  --color-warning: #f472b6;
   --color-error: #ef4444;
 
   --radius-sm: 4px;
@@ -51,20 +51,20 @@
    Тема через CSS vars (для ThemeProvider)
    =================================================== */
 :root {
-  --t-bg-base: #0c0a08;
-  --t-bg-surface: #131009;
-  --t-bg-card: #1c1917;
-  --t-bg-card-pop: #231e12;
-  --t-brand: #d4a574;
-  --t-brand-light: #e8c49a;
-  --t-brand-hover: #c9893e;
+  --t-bg-base: #040408;
+  --t-bg-surface: #080810;
+  --t-bg-card: #0d0d1a;
+  --t-bg-card-pop: #100a1e;
+  --t-brand: #a78bfa;
+  --t-brand-light: #c4b5fd;
+  --t-brand-hover: #7b2fbe;
   --t-brand-glow: rgba(212, 165, 116, 0.22);
   --t-brand-orb: rgba(212, 165, 116, 0.09);
   --t-border: rgba(255, 255, 255, 0.07);
   --t-border-pop: rgba(212, 165, 116, 0.22);
-  --t-btn-text: #1c1410;
-  --t-gradient: linear-gradient(135deg, #c9893e, #d4a574, #f5c97a);
-  --t-dot: #d4a574;
+  --t-btn-text: #ffffff;
+  --t-gradient: linear-gradient(135deg, #7b2fbe, #a78bfa, #f472b6);
+  --t-dot: #a78bfa;
   --t-dot-glow: rgba(212, 165, 116, 0.5);
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #d4a574;
+  outline: 2px solid #a78bfa;
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
@@ -154,7 +154,7 @@ body {
 
 /* Градиентный текст */
 .text-gradient {
-  background: linear-gradient(135deg, #f5c97a, #d4a574);
+  background: linear-gradient(135deg, #f472b6, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -175,7 +175,7 @@ body {
   border: 1px solid rgba(212, 165, 116, 0.22);
   font-size: 11px;
   font-weight: 600;
-  color: #e8c49a;
+  color: #c4b5fd;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -299,7 +299,7 @@ a[class*="rounded-"] {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #d4a574;
+  background: #a78bfa;
   box-shadow: 0 0 6px rgba(212, 165, 116, 0.55);
   animation: badge-pulse 2s ease-in-out infinite;
   flex-shrink: 0;
@@ -318,8 +318,8 @@ a[class*="rounded-"] {
 
 /* Кнопка primary — warm gold */
 .btn-primary-gold {
-  background: linear-gradient(135deg, #c9893e, #d4a574, #f5c97a);
-  color: #1c1410 !important;
+  background: linear-gradient(135deg, #7b2fbe, #a78bfa, #f472b6);
+  color: #ffffff !important;
   box-shadow: 0 4px 20px rgba(212, 165, 116, 0.25);
   transition: opacity 150ms ease;
 }

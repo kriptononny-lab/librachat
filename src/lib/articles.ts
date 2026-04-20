@@ -23,19 +23,23 @@ export const TYPE_COLOR: Record<
   { bg: string; text: string; border: string }
 > = {
   кейс: {
-    bg: "rgba(212,165,116,0.15)",
-    text: "#E8C49A",
-    border: "rgba(212,165,116,0.3)",
+    bg: "rgba(167,139,250,0.15)",
+    text: "#C4B5FD",
+    border: "rgba(167,139,250,0.3)",
   },
   статья: {
-    bg: "rgba(59,130,246,0.15)",
-    text: "#60a5fa",
-    border: "rgba(59,130,246,0.3)",
+    bg: "rgba(167,139,250,0.15)",
+    text: "#C4B5FD",
+    border: "rgba(167,139,250,0.3)",
   },
-  гайд: { bg: "rgba(34,197,94,0.15)", text: "#4ade80", border: "rgba(34,197,94,0.3)" },
+  гайд: {
+    bg: "rgba(167,139,250,0.15)",
+    text: "#F472B6",
+    border: "rgba(167,139,250,0.3)",
+  },
   новость: {
     bg: "rgba(245,166,35,0.15)",
-    text: "#d4820f",
+    text: "#A78BFA",
     border: "rgba(245,166,35,0.3)",
   },
 };
@@ -53,7 +57,7 @@ export const ARTICLES: ArticleCard[] = [
     views: "3.2K",
     tags: ["кейс", "бизнес", "команды"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(212,165,116,0.3),rgba(109,40,217,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.3),rgba(123,47,190,0.1))",
   },
   {
     slug: "50-promptov-dlya-raboty",
@@ -66,7 +70,7 @@ export const ARTICLES: ArticleCard[] = [
     views: "100K",
     tags: ["промпты", "продуктивность"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(16,185,129,0.05))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.2),rgba(16,185,129,0.05))",
   },
   {
     slug: "retailpro-snizhenie-nagruzki",
@@ -175,7 +179,7 @@ export const ALL_ARTICLES = [
     views: "1.2K",
     tags: ["кейс", "малый бизнес", "маркетинг"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(212,165,116,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.25),rgba(167,139,250,0.1))",
   },
   {
     slug: "keys-ozherelyev",
@@ -190,7 +194,7 @@ export const ALL_ARTICLES = [
     views: "2.3K",
     tags: ["кейс", "e-commerce", "маркетплейсы"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(212,165,116,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.2),rgba(167,139,250,0.1))",
   },
   {
     slug: "keys-bazarkulova",
@@ -206,7 +210,7 @@ export const ALL_ARTICLES = [
     views: "1.8K",
     tags: ["кейс", "маркетинг", "аналитика"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(212,165,116,0.25),rgba(59,130,246,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.25),rgba(167,139,250,0.1))",
   },
   ...ARTICLES,
 ];
@@ -240,7 +244,7 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     views: "1.2K",
     tags: ["кейс", "малый бизнес", "маркетинг", "e-commerce"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(232,149,42,0.25),rgba(212,165,116,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.25),rgba(167,139,250,0.1))",
     results: [
       { label: "Задач в месяц", value: "20+" },
       { label: "Экономия времени", value: "80%" },
@@ -263,7 +267,7 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     views: "2.3K",
     tags: ["кейс", "e-commerce", "маркетплейсы", "WB", "Ozon"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(34,197,94,0.2),rgba(212,165,116,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.2),rgba(167,139,250,0.1))",
     results: [
       { label: "Быстрее запуск товара", value: "5×" },
       { label: "Снижение ДРР", value: "−30%" },
@@ -286,7 +290,7 @@ export const ARTICLES_FULL: Record<string, ArticleFull> = {
     views: "1.8K",
     tags: ["кейс", "маркетинг", "аналитика", "Big Data"],
     featured: true,
-    gradient: "linear-gradient(135deg,rgba(212,165,116,0.25),rgba(59,130,246,0.1))",
+    gradient: "linear-gradient(135deg,rgba(167,139,250,0.25),rgba(167,139,250,0.1))",
     results: [
       { label: "Клиентов в одном окне", value: "10+" },
       { label: "Переделок и правок", value: "0" },

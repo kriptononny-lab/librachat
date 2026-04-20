@@ -43,13 +43,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{ marginTop: "auto", background: "#0C0A08", position: "relative" }}>
+    <footer style={{ marginTop: "auto", background: "#040408", position: "relative" }}>
       {/* Градиентный переход — вместо жёсткой линии */}
       <div
         style={{
           height: "80px",
           background:
-            "linear-gradient(to bottom, transparent, rgba(12,10,8,0.6) 60%, #0C0A08 100%)",
+            "linear-gradient(to bottom, transparent, rgba(4,4,8,0.6) 60%, #040408 100%)",
           marginTop: "-80px",
           pointerEvents: "none",
           position: "relative",
@@ -62,7 +62,7 @@ export function Footer() {
         style={{
           height: "1px",
           background:
-            "linear-gradient(90deg, transparent 0%, rgba(212,165,116,0.3) 30%, rgba(212,165,116,0.5) 50%, rgba(212,165,116,0.3) 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, rgba(167,139,250,0.3) 30%, rgba(167,139,250,0.5) 50%, rgba(167,139,250,0.3) 70%, transparent 100%)",
         }}
       />
 
@@ -82,7 +82,7 @@ export function Footer() {
             <p
               style={{
                 fontSize: "14px",
-                color: "#5A4A38",
+                color: "#4B556A",
                 lineHeight: 1.65,
                 maxWidth: "220px",
               }}
@@ -111,7 +111,7 @@ export function Footer() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#5A4A38",
+                    color: "#4B556A",
                     background: "rgba(255,255,255,0.04)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     textDecoration: "none",
@@ -134,7 +134,7 @@ export function Footer() {
                 style={{
                   fontSize: "11px",
                   fontWeight: 700,
-                  color: "rgba(242,240,255,0.4)",
+                  color: "rgba(167,139,250,0.4)",
                   letterSpacing: "0.09em",
                   textTransform: "uppercase",
                   marginBottom: "4px",
@@ -148,7 +148,7 @@ export function Footer() {
                   href={link.href}
                   style={{
                     fontSize: "14px",
-                    color: "#5A4A38",
+                    color: "#4B556A",
                     textDecoration: "none",
                     transition: "color 150ms ease",
                     lineHeight: 1.4,
@@ -166,7 +166,7 @@ export function Footer() {
               style={{
                 fontSize: "11px",
                 fontWeight: 700,
-                color: "rgba(242,240,255,0.4)",
+                color: "rgba(167,139,250,0.4)",
                 letterSpacing: "0.09em",
                 textTransform: "uppercase",
                 marginBottom: "4px",
@@ -178,7 +178,7 @@ export function Footer() {
               <p
                 style={{
                   fontSize: "11px",
-                  color: "#2e2a3e",
+                  color: "#100A1E",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                 }}
@@ -187,20 +187,20 @@ export function Footer() {
               </p>
               <a
                 href="mailto:support@librachat.kz"
-                style={{ fontSize: "13px", color: "#5A4A38", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
               >
                 support@librachat.kz
               </a>
               <a
                 href="mailto:business@librachat.kz"
-                style={{ fontSize: "13px", color: "#5A4A38", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
               >
                 business@librachat.kz
               </a>
               <p
                 style={{
                   fontSize: "11px",
-                  color: "#2e2a3e",
+                  color: "#100A1E",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                   marginTop: "6px",
@@ -210,11 +210,11 @@ export function Footer() {
               </p>
               <a
                 href="tel:+77478703783"
-                style={{ fontSize: "13px", color: "#5A4A38", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
               >
                 +7 747 870 37 83
               </a>
-              <p style={{ fontSize: "12px", color: "#2e2a3e", lineHeight: 1.4 }}>
+              <p style={{ fontSize: "12px", color: "#100A1E", lineHeight: 1.4 }}>
                 Пн–Пт, 9:00–18:00 (GMT+6)
               </p>
             </div>
@@ -233,7 +233,7 @@ export function Footer() {
             flexWrap: "wrap",
           }}
         >
-          <p style={{ fontSize: "13px", color: "#2e2a3e" }}>
+          <p style={{ fontSize: "13px", color: "#100A1E" }}>
             © {year} LibraChat. Все права защищены.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
@@ -241,7 +241,7 @@ export function Footer() {
               href="/privacy"
               style={{
                 fontSize: "13px",
-                color: "#2e2a3e",
+                color: "#100A1E",
                 textDecoration: "none",
                 transition: "color 150ms ease",
               }}
@@ -252,7 +252,7 @@ export function Footer() {
               href="/terms"
               style={{
                 fontSize: "13px",
-                color: "#2e2a3e",
+                color: "#100A1E",
                 textDecoration: "none",
                 transition: "color 150ms ease",
               }}

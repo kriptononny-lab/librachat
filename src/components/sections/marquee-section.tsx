@@ -35,7 +35,7 @@ function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
                 padding: "0 28px",
                 fontSize: "13px",
                 fontWeight: 500,
-                color: "#5A4A38",
+                color: "#4B556A",
                 whiteSpace: "nowrap",
                 letterSpacing: "0.02em",
               }}
@@ -43,7 +43,7 @@ function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
               {item}
             </span>
             <span
-              style={{ color: "rgba(212,165,116,0.3)", fontSize: "10px", flexShrink: 0 }}
+              style={{ color: "rgba(167,139,250,0.3)", fontSize: "10px", flexShrink: 0 }}
             >
               ✦
             </span>
@@ -61,7 +61,7 @@ export function MarqueeSection() {
         padding: "18px 0",
         borderTop: "1px solid rgba(255,255,255,0.05)",
         borderBottom: "1px solid rgba(255,255,255,0.05)",
-        background: "rgba(16,15,29,0.6)",
+        background: "rgba(8,8,16,0.6)",
         overflow: "hidden",
       }}
     >

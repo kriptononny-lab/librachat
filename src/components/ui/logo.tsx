@@ -20,7 +20,7 @@ export function Logo({ className, size = "md", href = "/" }: LogoProps) {
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2.5 rounded-lg focus-visible:ring-2 focus-visible:ring-[#D4A574] focus-visible:outline-none",
+        "group inline-flex items-center gap-2.5 rounded-lg focus-visible:ring-2 focus-visible:ring-[#A78BFA] focus-visible:outline-none",
         className
       )}
       aria-label="LibraChat — на главную"

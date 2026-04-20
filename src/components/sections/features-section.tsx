@@ -61,7 +61,7 @@ const cardStyle: React.CSSProperties = {
   gap: "20px",
   padding: "28px 24px",
   borderRadius: "16px",
-  background: "rgba(28,25,23,0.92)",
+  background: "rgba(13,13,26,0.92)",
   border: "1px solid rgba(255,255,255,0.07)",
   transition: "border-color 220ms ease, transform 220ms ease, background 220ms ease",
   cursor: "default",
@@ -71,8 +71,8 @@ const iconWrapStyle: React.CSSProperties = {
   width: "48px",
   height: "48px",
   borderRadius: "14px",
-  background: "rgba(212,165,116,0.12)",
-  border: "1px solid rgba(212,165,116,0.22)",
+  background: "rgba(167,139,250,0.12)",
+  border: "1px solid rgba(167,139,250,0.22)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -84,7 +84,7 @@ export function FeaturesSection() {
     <section
       style={{
         padding: "120px 0",
-        background: "#131009",
+        background: "#080810",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >
@@ -105,7 +105,7 @@ export function FeaturesSection() {
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#FAF5EE",
+              color: "#F0EEFF",
             }}
           >
             Посмотри, что я могу <span className="text-gradient">сделать для тебя</span>
@@ -114,7 +114,7 @@ export function FeaturesSection() {
             style={{
               marginTop: "14px",
               fontSize: "16px",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               maxWidth: "440px",
               margin: "14px auto 0",
               lineHeight: 1.6,
@@ -141,32 +141,32 @@ export function FeaturesSection() {
               style={cardStyle}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = "rgba(212,165,116,0.35)";
-                el.style.background = "rgba(35,30,18,0.98)";
+                el.style.borderColor = "rgba(167,139,250,0.35)";
+                el.style.background = "rgba(16,10,30,0.98)";
                 el.style.transform = "translateY(-3px)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.borderColor = "rgba(255,255,255,0.07)";
-                el.style.background = "rgba(28,25,23,0.92)";
+                el.style.background = "rgba(13,13,26,0.92)";
                 el.style.transform = "translateY(0)";
               }}
             >
               <div style={iconWrapStyle}>
-                <Icon size={22} color="#E8C49A" />
+                <Icon size={22} color="#C4B5FD" />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 <h3
                   style={{
                     fontSize: "16px",
                     fontWeight: 600,
-                    color: "#FAF5EE",
+                    color: "#F0EEFF",
                     lineHeight: 1.3,
                   }}
                 >
                   {title}
                 </h3>
-                <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#C8B89A" }}>
+                <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#9CA3B8" }}>
                   {desc}
                 </p>
               </div>

@@ -66,7 +66,7 @@ export default function TermsPage() {
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#0C0A08",
+        background: "#040408",
       }}
     >
       <Header />
@@ -85,13 +85,13 @@ export default function TermsPage() {
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.15,
-                color: "#f2f0ff",
+                color: "#F0EEFF",
                 marginBottom: "10px",
               }}
             >
               Пользовательское соглашение
             </h1>
-            <p style={{ fontSize: "13px", color: "#5A4A38", marginBottom: "48px" }}>
+            <p style={{ fontSize: "13px", color: "#4B556A", marginBottom: "48px" }}>
               Обновлено: 14 апреля 2024 · Версия 2.0
             </p>
 
@@ -108,9 +108,9 @@ export default function TermsPage() {
                       justifyContent: "center",
                       fontSize: "14px",
                       fontWeight: 700,
-                      color: "#E8C49A",
-                      background: "rgba(212,165,116,0.12)",
-                      border: "1px solid rgba(212,165,116,0.25)",
+                      color: "#C4B5FD",
+                      background: "rgba(167,139,250,0.12)",
+                      border: "1px solid rgba(167,139,250,0.25)",
                       flexShrink: 0,
                       marginTop: "2px",
                     }}
@@ -122,13 +122,13 @@ export default function TermsPage() {
                       style={{
                         fontSize: "17px",
                         fontWeight: 700,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         marginBottom: "8px",
                       }}
                     >
                       {section.title}
                     </h2>
-                    <p style={{ fontSize: "14px", color: "#C8B89A", lineHeight: 1.8 }}>
+                    <p style={{ fontSize: "14px", color: "#9CA3B8", lineHeight: 1.8 }}>
                       {section.content}
                     </p>
                   </div>
@@ -149,7 +149,7 @@ export default function TermsPage() {
             >
               <Link
                 href="/privacy"
-                style={{ fontSize: "13px", color: "#C8B89A", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#9CA3B8", textDecoration: "none" }}
               >
                 Политика конфиденциальности
               </Link>
@@ -157,7 +157,7 @@ export default function TermsPage() {
                 href="/contact"
                 style={{
                   fontSize: "13px",
-                  color: "#C8B89A",
+                  color: "#9CA3B8",
                   textDecoration: "none",
                   marginLeft: "auto",
                 }}

@@ -103,7 +103,7 @@ const USE_CASES = [
     title: "Подготовка документов",
     desc: "От отчётов до предложений — LibraChat создаёт профессиональные документы по твоим шаблонам за минуты.",
     badge: "Экономия: 3–4 часа",
-    badgeColor: "#D4A574",
+    badgeColor: "#A78BFA",
   },
   {
     Icon: Headphones,
@@ -117,14 +117,14 @@ const USE_CASES = [
     title: "Анализ данных",
     desc: "Загружайте отчёты — получайте инсайты, выдвигайте гипотезы для развития бизнеса без работы с формулами.",
     badge: "Анализ за минуты: до 50м",
-    badgeColor: "#c9920a",
+    badgeColor: "#A78BFA",
   },
   {
     Icon: Globe,
     title: "Перевод и локализация",
     desc: "Профессиональные переводы маркетинговых материалов с сохранением стиля под разные рынки и аудитории.",
     badge: "50+ языков",
-    badgeColor: "#3b82f6",
+    badgeColor: "#A78BFA",
   },
 ];
 
@@ -156,7 +156,7 @@ const STATS = [
 ];
 
 const S = {
-  section: (bg = "#0C0A08") =>
+  section: (bg = "#040408") =>
     ({
       padding: "120px 0",
       background: bg,
@@ -167,11 +167,11 @@ const S = {
     fontWeight: 800,
     letterSpacing: "-0.02em",
     lineHeight: 1.15,
-    color: "#FAF5EE",
+    color: "#F0EEFF",
   } as React.CSSProperties,
   sub: {
     fontSize: "16px",
-    color: "#C8B89A",
+    color: "#9CA3B8",
     lineHeight: 1.6,
     marginTop: "12px",
   } as React.CSSProperties,
@@ -181,15 +181,15 @@ const S = {
     gap: "16px",
     padding: "28px",
     borderRadius: "20px",
-    background: "rgba(28,25,23,0.88)",
+    background: "rgba(13,13,26,0.88)",
     border: "1px solid rgba(255,255,255,0.07)",
   } as React.CSSProperties,
   iconWrap: {
     width: "48px",
     height: "48px",
     borderRadius: "14px",
-    background: "rgba(212,165,116,0.12)",
-    border: "1px solid rgba(212,165,116,0.2)",
+    background: "rgba(167,139,250,0.12)",
+    border: "1px solid rgba(167,139,250,0.2)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -201,7 +201,7 @@ function StarRow() {
   return (
     <div style={{ display: "flex", gap: "3px" }}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#c9920a">
+        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#A78BFA">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -249,7 +249,7 @@ export default async function BusinessPage() {
           title: f.title,
           desc: f.desc,
           badge: USE_CASES[i]?.badge ?? "",
-          badgeColor: USE_CASES[i]?.badgeColor ?? "#D4A574",
+          badgeColor: USE_CASES[i]?.badgeColor ?? "#A78BFA",
         }))
       : USE_CASES;
 
@@ -262,7 +262,7 @@ export default async function BusinessPage() {
       <Header />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* ── HERO ── */}
-        <section style={{ padding: "100px 0 80px", background: "#0C0A08" }}>
+        <section style={{ padding: "100px 0 80px", background: "#040408" }}>
           <div className="container-site">
             <div
               style={{
@@ -283,7 +283,7 @@ export default async function BusinessPage() {
                     fontWeight: 800,
                     letterSpacing: "-0.025em",
                     lineHeight: 1.1,
-                    color: "#FAF5EE",
+                    color: "#F0EEFF",
                   }}
                 >
                   {page?.heroTitle ?? "Помогаю твоей команде"}
@@ -292,7 +292,7 @@ export default async function BusinessPage() {
                   style={{
                     fontSize: "16px",
                     lineHeight: 1.655,
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     maxWidth: "420px",
                   }}
                 >
@@ -310,12 +310,12 @@ export default async function BusinessPage() {
                       alignItems: "center",
                       padding: "14px 28px",
                       borderRadius: "999px",
-                      background: "#D4A574",
+                      background: "#A78BFA",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                      boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     }}
                   >
                     Запросить демо
@@ -328,7 +328,7 @@ export default async function BusinessPage() {
                       padding: "14px 28px",
                       borderRadius: "999px",
                       background: "transparent",
-                      color: "#FAF5EE",
+                      color: "#F0EEFF",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
@@ -346,7 +346,7 @@ export default async function BusinessPage() {
                         style={{
                           fontSize: "24px",
                           fontWeight: 800,
-                          color: "#c9920a",
+                          color: "#A78BFA",
                           letterSpacing: "-0.02em",
                         }}
                       >
@@ -355,7 +355,7 @@ export default async function BusinessPage() {
                       <p
                         style={{
                           fontSize: "12px",
-                          color: "#C8B89A",
+                          color: "#9CA3B8",
                           marginTop: "4px",
                           lineHeight: 1.4,
                         }}
@@ -375,9 +375,9 @@ export default async function BusinessPage() {
                   display: "flex",
                   flexDirection: "column",
                   gap: "16px",
-                  background: "rgba(28,25,23,0.97)",
-                  border: "1px solid rgba(212,165,116,0.22)",
-                  boxShadow: "0 0 60px rgba(212,165,116,0.1)",
+                  background: "rgba(13,13,26,0.97)",
+                  border: "1px solid rgba(167,139,250,0.22)",
+                  boxShadow: "0 0 60px rgba(167,139,250,0.1)",
                 }}
               >
                 <div
@@ -395,9 +395,9 @@ export default async function BusinessPage() {
                       fontSize: "11px",
                       padding: "4px 10px",
                       borderRadius: "999px",
-                      background: "rgba(212,165,116,0.15)",
-                      color: "#E8C49A",
-                      border: "1px solid rgba(212,165,116,0.3)",
+                      background: "rgba(167,139,250,0.15)",
+                      color: "#C4B5FD",
+                      border: "1px solid rgba(167,139,250,0.3)",
                     }}
                   >
                     Business Pro
@@ -429,7 +429,7 @@ export default async function BusinessPage() {
                       <p style={{ fontSize: "20px", fontWeight: 800, color: "#fff" }}>
                         {s.value}
                       </p>
-                      <p style={{ fontSize: "11px", color: "#C8B89A", marginTop: "4px" }}>
+                      <p style={{ fontSize: "11px", color: "#9CA3B8", marginTop: "4px" }}>
                         {s.label}
                       </p>
                     </div>
@@ -453,7 +453,7 @@ export default async function BusinessPage() {
                       name: "Дмитрий Попов",
                       role: "Администратор",
                       status: "Офлайн",
-                      color: "#C8B89A",
+                      color: "#9CA3B8",
                     },
                   ].map((u) => (
                     <div
@@ -474,7 +474,7 @@ export default async function BusinessPage() {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: "linear-gradient(135deg,#D4A574,#D4A574)",
+                            background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -493,7 +493,7 @@ export default async function BusinessPage() {
                           <p style={{ fontSize: "13px", fontWeight: 500, color: "#fff" }}>
                             {u.name}
                           </p>
-                          <p style={{ fontSize: "11px", color: "#C8B89A" }}>{u.role}</p>
+                          <p style={{ fontSize: "11px", color: "#9CA3B8" }}>{u.role}</p>
                         </div>
                       </div>
                       <span style={{ fontSize: "12px", fontWeight: 500, color: u.color }}>
@@ -513,7 +513,7 @@ export default async function BusinessPage() {
             padding: "28px 0",
             borderTop: "1px solid rgba(255,255,255,0.06)",
             borderBottom: "1px solid rgba(255,255,255,0.06)",
-            background: "#0C0A08",
+            background: "#040408",
           }}
         >
           <div className="container-site">
@@ -521,7 +521,7 @@ export default async function BusinessPage() {
               style={{
                 textAlign: "center",
                 fontSize: "11px",
-                color: "#5A4A38",
+                color: "#4B556A",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 marginBottom: "18px",
@@ -551,7 +551,7 @@ export default async function BusinessPage() {
                     padding: "6px 18px",
                     borderRadius: "999px",
                     fontSize: "13px",
-                    color: "#5A4A38",
+                    color: "#4B556A",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
@@ -563,7 +563,7 @@ export default async function BusinessPage() {
         </div>
 
         {/* ── 6 ПРЕИМУЩЕСТВ ── */}
-        <section style={S.section("#131009")}>
+        <section style={S.section("#080810")}>
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
@@ -571,7 +571,7 @@ export default async function BusinessPage() {
               </div>
               <h2 style={S.h2}>
                 Инструмент, который растёт{" "}
-                <span style={{ color: "#c9920a" }}>вместе с вами</span>
+                <span style={{ color: "#A78BFA" }}>вместе с вами</span>
               </h2>
               <p style={S.sub}>Корпоративные возможности без корпоративной сложности</p>
             </div>
@@ -586,9 +586,9 @@ export default async function BusinessPage() {
                 <div key={num} style={S.card}>
                   <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                     <div style={S.iconWrap}>
-                      <Icon size={22} color="#E8C49A" />
+                      <Icon size={22} color="#C4B5FD" />
                     </div>
-                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#5A4A38" }}>
+                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#4B556A" }}>
                       {num}
                     </span>
                   </div>
@@ -596,13 +596,13 @@ export default async function BusinessPage() {
                     style={{
                       fontSize: "17px",
                       fontWeight: 700,
-                      color: "#FAF5EE",
+                      color: "#F0EEFF",
                       lineHeight: 1.3,
                     }}
                   >
                     {title}
                   </h3>
-                  <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#C8B89A" }}>
+                  <p style={{ fontSize: "14px", lineHeight: 1.75, color: "#9CA3B8" }}>
                     {desc}
                   </p>
                 </div>
@@ -612,7 +612,7 @@ export default async function BusinessPage() {
         </section>
 
         {/* ── КЕЙСЫ ── */}
-        <section style={S.section("#0C0A08")}>
+        <section style={S.section("#040408")}>
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
@@ -631,13 +631,13 @@ export default async function BusinessPage() {
               {USE_CASES_DATA.map(({ Icon, title, desc, badge, badgeColor }) => (
                 <div key={title} style={S.card}>
                   <div style={S.iconWrap}>
-                    <Icon size={22} color="#E8C49A" />
+                    <Icon size={22} color="#C4B5FD" />
                   </div>
                   <h3
                     style={{
                       fontSize: "17px",
                       fontWeight: 700,
-                      color: "#FAF5EE",
+                      color: "#F0EEFF",
                       lineHeight: 1.3,
                     }}
                   >
@@ -647,7 +647,7 @@ export default async function BusinessPage() {
                     style={{
                       fontSize: "14px",
                       lineHeight: 1.75,
-                      color: "#C8B89A",
+                      color: "#9CA3B8",
                       flex: 1,
                     }}
                   >
@@ -675,14 +675,14 @@ export default async function BusinessPage() {
         </section>
 
         {/* ── ОТЗЫВЫ ── */}
-        <section style={S.section("#131009")}>
+        <section style={S.section("#080810")}>
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
                 КЛИЕНТЫ О НАС
               </div>
               <h2 style={S.h2}>
-                Результаты <span style={{ color: "#FAF5EE" }}>говорят сами</span>
+                Результаты <span style={{ color: "#F0EEFF" }}>говорят сами</span>
               </h2>
             </div>
             <div
@@ -695,14 +695,14 @@ export default async function BusinessPage() {
               {TESTIMONIALS_DATA.map((t, i) => (
                 <div
                   key={i}
-                  style={{ ...S.card, border: "1px solid rgba(212,165,116,0.14)" }}
+                  style={{ ...S.card, border: "1px solid rgba(167,139,250,0.14)" }}
                 >
                   <StarRow />
                   <p
                     style={{
                       fontSize: "15px",
                       lineHeight: 1.75,
-                      color: "#C8B89A",
+                      color: "#9CA3B8",
                       fontStyle: "italic",
                       flex: 1,
                     }}
@@ -722,7 +722,7 @@ export default async function BusinessPage() {
                         width: "40px",
                         height: "40px",
                         borderRadius: "50%",
-                        background: "linear-gradient(135deg,#D4A574,#D4A574)",
+                        background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -741,7 +741,7 @@ export default async function BusinessPage() {
                       <p style={{ fontSize: "15px", fontWeight: 600, color: "#fff" }}>
                         {t.name}
                       </p>
-                      <p style={{ fontSize: "13px", color: "#C8B89A", marginTop: "2px" }}>
+                      <p style={{ fontSize: "13px", color: "#9CA3B8", marginTop: "2px" }}>
                         {t.role}
                       </p>
                     </div>
@@ -756,7 +756,7 @@ export default async function BusinessPage() {
         <section
           style={{
             padding: "120px 0",
-            background: "#0C0A08",
+            background: "#040408",
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
@@ -768,8 +768,8 @@ export default async function BusinessPage() {
                 gap: "32px",
                 padding: "48px",
                 borderRadius: "24px",
-                background: "rgba(28,25,23,0.92)",
-                border: "1px solid rgba(212,165,116,0.2)",
+                background: "rgba(13,13,26,0.92)",
+                border: "1px solid rgba(167,139,250,0.2)",
               }}
             >
               <div
@@ -786,7 +786,7 @@ export default async function BusinessPage() {
                     fontWeight: 800,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    color: "#FAF5EE",
+                    color: "#F0EEFF",
                   }}
                 >
                   {page?.ctaTitle ?? "Готовы внедрить ИИ в команду?"}
@@ -795,7 +795,7 @@ export default async function BusinessPage() {
                   style={{
                     fontSize: "16px",
                     lineHeight: 1.75,
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     maxWidth: "360px",
                   }}
                 >
@@ -815,7 +815,7 @@ export default async function BusinessPage() {
                         alignItems: "center",
                         gap: "10px",
                         fontSize: "15px",
-                        color: "#C8B89A",
+                        color: "#9CA3B8",
                       }}
                     >
                       <Check size={15} color="#22c55e" style={{ flexShrink: 0 }} />
@@ -831,7 +831,7 @@ export default async function BusinessPage() {
                   display: "flex",
                   flexDirection: "column",
                   gap: "14px",
-                  background: "rgba(8,7,16,0.7)",
+                  background: "rgba(4,4,8,0.7)",
                   border: "1px solid rgba(255,255,255,0.08)",
                 }}
               >
@@ -894,22 +894,22 @@ export default async function BusinessPage() {
                     justifyContent: "center",
                     padding: "14px",
                     borderRadius: "999px",
-                    background: "#D4A574",
+                    background: "#A78BFA",
                     color: "#fff",
                     fontSize: "15px",
                     fontWeight: 600,
                     textDecoration: "none",
-                    boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                    boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     marginTop: "4px",
                   }}
                 >
                   Запросить демо
                 </Link>
-                <p style={{ fontSize: "12px", textAlign: "center", color: "#5A4A38" }}>
+                <p style={{ fontSize: "12px", textAlign: "center", color: "#4B556A" }}>
                   Нажимая кнопку, вы принимаете{" "}
                   <Link
                     href="/privacy"
-                    style={{ color: "#C8B89A", textDecoration: "underline" }}
+                    style={{ color: "#9CA3B8", textDecoration: "underline" }}
                   >
                     политику конфиденциальности
                   </Link>

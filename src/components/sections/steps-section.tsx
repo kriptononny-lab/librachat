@@ -39,7 +39,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
     <section
       style={{
         padding: "120px 0",
-        background: "#0C0A08",
+        background: "#040408",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >
@@ -62,7 +62,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#f2f0ff",
+              color: "#F0EEFF",
             }}
           >
             {title}
@@ -71,7 +71,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
             style={{
               marginTop: "14px",
               fontSize: "16px",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               maxWidth: "360px",
               margin: "14px auto 0",
               lineHeight: 1.65,
@@ -114,15 +114,15 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
                     width: "68px",
                     height: "68px",
                     borderRadius: "50%",
-                    background: "rgba(212,165,116,0.12)",
-                    border: "1.5px solid rgba(212,165,116,0.3)",
+                    background: "rgba(167,139,250,0.12)",
+                    border: "1.5px solid rgba(167,139,250,0.3)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 0 24px rgba(212,165,116,0.08)",
+                    boxShadow: "0 0 24px rgba(167,139,250,0.08)",
                   }}
                 >
-                  <step.Icon size={28} color="#E8C49A" strokeWidth={1.5} />
+                  <step.Icon size={28} color="#C4B5FD" strokeWidth={1.5} />
                 </div>
 
                 {/* Номер — маленький бейдж снизу-справа */}
@@ -134,8 +134,8 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
                     width: "22px",
                     height: "22px",
                     borderRadius: "50%",
-                    background: "#D4A574",
-                    border: "2px solid #0C0A08",
+                    background: "#A78BFA",
+                    border: "2px solid #040408",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -152,7 +152,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
                 style={{
                   fontSize: "18px",
                   fontWeight: 700,
-                  color: "#f2f0ff",
+                  color: "#F0EEFF",
                   marginBottom: "10px",
                   lineHeight: 1.3,
                 }}
@@ -163,7 +163,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
                 style={{
                   fontSize: "14px",
                   lineHeight: 1.75,
-                  color: "#7a7490",
+                  color: "#6B7280",
                   maxWidth: "220px",
                 }}
               >
@@ -189,17 +189,17 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
               gap: "8px",
               padding: "14px 32px",
               borderRadius: "999px",
-              background: "#D4A574",
+              background: "#A78BFA",
               color: "#fff",
               fontSize: "15px",
               fontWeight: 600,
               textDecoration: "none",
-              boxShadow: "0 4px 24px rgba(212,165,116,0.4)",
+              boxShadow: "0 4px 24px rgba(167,139,250,0.4)",
             }}
           >
             Начать бесплатно <ArrowRight size={16} />
           </Link>
-          <p style={{ marginTop: "12px", fontSize: "13px", color: "#5A4A38" }}>
+          <p style={{ marginTop: "12px", fontSize: "13px", color: "#4B556A" }}>
             30 секунд · Без карты · Без VPN
           </p>
         </motion.div>

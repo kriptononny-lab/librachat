@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 const S = {
-  p: { fontSize: "15px", color: "#C8B89A", lineHeight: 1.8 } as React.CSSProperties,
+  p: { fontSize: "15px", color: "#9CA3B8", lineHeight: 1.8 } as React.CSSProperties,
   h2: {
     fontSize: "20px",
     fontWeight: 700,
-    color: "#f2f0ff",
+    color: "#F0EEFF",
     marginBottom: "14px",
   } as React.CSSProperties,
   li: {
@@ -22,7 +22,7 @@ const S = {
     alignItems: "flex-start",
     gap: "10px",
     fontSize: "14px",
-    color: "#C8B89A",
+    color: "#9CA3B8",
     lineHeight: 1.7,
     listStyle: "none",
   } as React.CSSProperties,
@@ -63,9 +63,9 @@ function Callout({
   children: React.ReactNode;
 }) {
   const styles = {
-    info: { bg: "rgba(59,130,246,0.08)", border: "rgba(59,130,246,0.25)" },
-    warning: { bg: "rgba(201,146,10,0.08)", border: "rgba(201,146,10,0.25)" },
-    success: { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.25)" },
+    info: { bg: "rgba(167,139,250,0.08)", border: "rgba(167,139,250,0.25)" },
+    warning: { bg: "rgba(167,139,250,0.08)", border: "rgba(167,139,250,0.25)" },
+    success: { bg: "rgba(167,139,250,0.08)", border: "rgba(167,139,250,0.25)" },
   }[type];
   const icons = { info: "ℹ️", warning: "⚠️", success: "✅" };
   return (
@@ -76,7 +76,7 @@ function Callout({
         padding: "14px 18px",
         borderRadius: "14px",
         fontSize: "14px",
-        color: "#C8B89A",
+        color: "#9CA3B8",
         lineHeight: 1.7,
         background: styles.bg,
         border: `1px solid ${styles.border}`,
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#0C0A08",
+        background: "#040408",
       }}
     >
       <Header />
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
                     fontWeight: 800,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                     marginBottom: "16px",
                   }}
                 >
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
                     display: "flex",
                     gap: "24px",
                     fontSize: "13px",
-                    color: "#5A4A38",
+                    color: "#4B556A",
                   }}
                 >
                   <span>Обновлено: 14 апреля 2024</span>
@@ -162,8 +162,8 @@ export default function PrivacyPage() {
                 style={{
                   borderRadius: "16px",
                   padding: "20px",
-                  background: "rgba(28,25,23,0.84)",
-                  border: "1px solid rgba(212,165,116,0.2)",
+                  background: "rgba(13,13,26,0.84)",
+                  border: "1px solid rgba(167,139,250,0.2)",
                 }}
               >
                 <div
@@ -174,8 +174,8 @@ export default function PrivacyPage() {
                     marginBottom: "16px",
                   }}
                 >
-                  <Shield size={16} color="#E8C49A" />
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#f2f0ff" }}>
+                  <Shield size={16} color="#C4B5FD" />
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#F0EEFF" }}>
                     Кратко о главном
                   </p>
                 </div>
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
                         alignItems: "flex-start",
                         gap: "8px",
                         fontSize: "13px",
-                        color: "#C8B89A",
+                        color: "#9CA3B8",
                         lineHeight: 1.6,
                         listStyle: "none",
                       }}
@@ -222,7 +222,7 @@ export default function PrivacyPage() {
                 <Callout type="info">
                   <strong>Важно:</strong> Используя LibraChat, вы соглашаетесь с условиями
                   данного документа. Вопросы — на{" "}
-                  <a href="mailto:support@librachat.kz" style={{ color: "#E8C49A" }}>
+                  <a href="mailto:support@librachat.kz" style={{ color: "#C4B5FD" }}>
                     support@librachat.kz
                   </a>
                 </Callout>
@@ -250,7 +250,7 @@ export default function PrivacyPage() {
                       <thead>
                         <tr
                           style={{
-                            background: "rgba(28,25,23,0.92)",
+                            background: "rgba(13,13,26,0.92)",
                             borderBottom: "1px solid rgba(255,255,255,0.07)",
                           }}
                         >
@@ -262,7 +262,7 @@ export default function PrivacyPage() {
                                 padding: "12px 16px",
                                 fontSize: "11px",
                                 fontWeight: 600,
-                                color: "#C8B89A",
+                                color: "#9CA3B8",
                                 textTransform: "uppercase",
                                 letterSpacing: "0.06em",
                               }}
@@ -288,14 +288,14 @@ export default function PrivacyPage() {
                             style={{
                               borderTop: "1px solid rgba(255,255,255,0.05)",
                               background:
-                                i % 2 === 0 ? "rgba(28,25,23,0.5)" : "transparent",
+                                i % 2 === 0 ? "rgba(13,13,26,0.5)" : "transparent",
                             }}
                           >
                             <td
                               style={{
                                 padding: "12px 16px",
                                 fontWeight: 600,
-                                color: "#f2f0ff",
+                                color: "#F0EEFF",
                                 fontSize: "13px",
                               }}
                             >
@@ -304,7 +304,7 @@ export default function PrivacyPage() {
                             <td
                               style={{
                                 padding: "12px 16px",
-                                color: "#C8B89A",
+                                color: "#9CA3B8",
                                 fontSize: "13px",
                               }}
                             >
@@ -313,7 +313,7 @@ export default function PrivacyPage() {
                             <td
                               style={{
                                 padding: "12px 16px",
-                                color: "#C8B89A",
+                                color: "#9CA3B8",
                                 fontSize: "13px",
                               }}
                             >
@@ -344,7 +344,7 @@ export default function PrivacyPage() {
                       "Предотвращение мошенничества и защита от злоупотреблений",
                     ].map((item) => (
                       <li key={item} style={S.li}>
-                        <span style={{ color: "#D4A574", flexShrink: 0 }}>•</span>
+                        <span style={{ color: "#A78BFA", flexShrink: 0 }}>•</span>
                         {item}
                       </li>
                     ))}
@@ -380,21 +380,21 @@ export default function PrivacyPage() {
                         style={{
                           padding: "14px 16px",
                           borderRadius: "12px",
-                          background: "rgba(28,25,23,0.75)",
+                          background: "rgba(13,13,26,0.75)",
                           border: "1px solid rgba(255,255,255,0.07)",
                         }}
                       >
                         <p
                           style={{
                             fontSize: "12px",
-                            color: "#5A4A38",
+                            color: "#4B556A",
                             marginBottom: "4px",
                           }}
                         >
                           {label}
                         </p>
                         <p
-                          style={{ fontSize: "14px", fontWeight: 600, color: "#f2f0ff" }}
+                          style={{ fontSize: "14px", fontWeight: 600, color: "#F0EEFF" }}
                         >
                           {value}
                         </p>
@@ -418,7 +418,7 @@ export default function PrivacyPage() {
                       {
                         label: "Функциональные",
                         text: "Настройки языка и интерфейса — можно отключить",
-                        color: "#c9920a",
+                        color: "#A78BFA",
                       },
                       {
                         label: "Аналитические",
@@ -437,7 +437,7 @@ export default function PrivacyPage() {
                           }}
                         />
                         <span>
-                          <strong style={{ color: "#f2f0ff" }}>{c.label}</strong> —{" "}
+                          <strong style={{ color: "#F0EEFF" }}>{c.label}</strong> —{" "}
                           {c.text}
                         </span>
                       </li>
@@ -458,7 +458,7 @@ export default function PrivacyPage() {
                       "Право на возражение — отказаться от обработки данных для обучения",
                     ].map((r) => (
                       <li key={r} style={S.li}>
-                        <span style={{ color: "#E8C49A", flexShrink: 0 }}>→</span>
+                        <span style={{ color: "#C4B5FD", flexShrink: 0 }}>→</span>
                         {r}
                       </li>
                     ))}
@@ -489,21 +489,21 @@ export default function PrivacyPage() {
                         style={{
                           padding: "14px 16px",
                           borderRadius: "12px",
-                          background: "rgba(28,25,23,0.75)",
+                          background: "rgba(13,13,26,0.75)",
                           border: "1px solid rgba(255,255,255,0.07)",
                         }}
                       >
                         <p
                           style={{
                             fontSize: "12px",
-                            color: "#5A4A38",
+                            color: "#4B556A",
                             marginBottom: "4px",
                           }}
                         >
                           {label}
                         </p>
                         <p
-                          style={{ fontSize: "14px", fontWeight: 500, color: "#f2f0ff" }}
+                          style={{ fontSize: "14px", fontWeight: 500, color: "#F0EEFF" }}
                         >
                           {value}
                         </p>
@@ -528,7 +528,7 @@ export default function PrivacyPage() {
                     style={{
                       borderRadius: "16px",
                       padding: "20px",
-                      background: "rgba(28,25,23,0.84)",
+                      background: "rgba(13,13,26,0.84)",
                       border: "1px solid rgba(255,255,255,0.07)",
                     }}
                   >
@@ -536,7 +536,7 @@ export default function PrivacyPage() {
                       style={{
                         fontSize: "11px",
                         fontWeight: 700,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         textTransform: "uppercase",
                         letterSpacing: "0.07em",
                         marginBottom: "14px",
@@ -555,7 +555,7 @@ export default function PrivacyPage() {
                             gap: "10px",
                             fontSize: "12px",
                             padding: "7px 10px",
-                            color: "#C8B89A",
+                            color: "#9CA3B8",
                             textDecoration: "none",
                             borderLeft: "2px solid rgba(255,255,255,0.06)",
                             transition: "color 150ms",
@@ -564,7 +564,7 @@ export default function PrivacyPage() {
                           <span
                             style={{
                               fontSize: "11px",
-                              color: "#5A4A38",
+                              color: "#4B556A",
                               fontFamily: "monospace",
                               flexShrink: 0,
                             }}
@@ -580,7 +580,7 @@ export default function PrivacyPage() {
                     style={{
                       borderRadius: "16px",
                       padding: "20px",
-                      background: "rgba(28,25,23,0.84)",
+                      background: "rgba(13,13,26,0.84)",
                       border: "1px solid rgba(255,255,255,0.07)",
                     }}
                   >
@@ -588,7 +588,7 @@ export default function PrivacyPage() {
                       style={{
                         fontSize: "13px",
                         fontWeight: 600,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         marginBottom: "8px",
                       }}
                     >
@@ -597,7 +597,7 @@ export default function PrivacyPage() {
                     <p
                       style={{
                         fontSize: "12px",
-                        color: "#C8B89A",
+                        color: "#9CA3B8",
                         marginBottom: "14px",
                         lineHeight: 1.6,
                       }}
@@ -614,7 +614,7 @@ export default function PrivacyPage() {
                         borderRadius: "999px",
                         fontSize: "13px",
                         fontWeight: 600,
-                        color: "#f2f0ff",
+                        color: "#F0EEFF",
                         textDecoration: "none",
                         border: "1px solid rgba(255,255,255,0.16)",
                         background: "transparent",
@@ -641,7 +641,7 @@ export default function PrivacyPage() {
               style={{
                 fontSize: "20px",
                 fontWeight: 700,
-                color: "#f2f0ff",
+                color: "#F0EEFF",
                 textAlign: "center",
                 marginBottom: "24px",
               }}
@@ -666,16 +666,16 @@ export default function PrivacyPage() {
                     gap: "10px",
                     padding: "20px",
                     borderRadius: "16px",
-                    background: "rgba(28,25,23,0.75)",
+                    background: "rgba(13,13,26,0.75)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     textDecoration: "none",
                   }}
                 >
-                  <ExternalLink size={15} color="#5A4A38" />
-                  <p style={{ fontSize: "14px", fontWeight: 600, color: "#f2f0ff" }}>
+                  <ExternalLink size={15} color="#4B556A" />
+                  <p style={{ fontSize: "14px", fontWeight: 600, color: "#F0EEFF" }}>
                     {doc.title}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#C8B89A" }}>{doc.desc}</p>
+                  <p style={{ fontSize: "12px", color: "#9CA3B8" }}>{doc.desc}</p>
                 </Link>
               ))}
             </div>

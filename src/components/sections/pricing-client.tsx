@@ -114,7 +114,7 @@ const heading = {
   fontWeight: 800,
   letterSpacing: "-0.02em",
   lineHeight: 1.15,
-  color: "#FAF5EE",
+  color: "#F0EEFF",
 } as React.CSSProperties;
 
 export function PricingClient({
@@ -139,7 +139,7 @@ export function PricingClient({
     <>
       {/* ── HERO ── */}
       <section
-        style={{ padding: "100px 0 80px", background: "#0C0A08", textAlign: "center" }}
+        style={{ padding: "100px 0 80px", background: "#040408", textAlign: "center" }}
       >
         <div
           className="container-site"
@@ -159,7 +159,7 @@ export function PricingClient({
           <p
             style={{
               fontSize: "16px",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               maxWidth: "400px",
               lineHeight: 1.7,
             }}
@@ -192,9 +192,9 @@ export function PricingClient({
                     fontWeight: 500,
                     border: "none",
                     cursor: "pointer",
-                    background: active ? "rgba(212,165,116,0.18)" : "transparent",
-                    color: active ? "#FAF5EE" : "#C8B89A",
-                    outline: active ? "1px solid rgba(212,165,116,0.35)" : "none",
+                    background: active ? "rgba(167,139,250,0.18)" : "transparent",
+                    color: active ? "#F0EEFF" : "#9CA3B8",
+                    outline: active ? "1px solid rgba(167,139,250,0.35)" : "none",
                     transition: "all 200ms ease",
                     display: "flex",
                     alignItems: "center",
@@ -209,9 +209,9 @@ export function PricingClient({
                         fontWeight: 600,
                         padding: "2px 7px",
                         borderRadius: "999px",
-                        background: "rgba(34,197,94,0.15)",
+                        background: "rgba(167,139,250,0.15)",
                         color: "#22c55e",
-                        border: "1px solid rgba(34,197,94,0.25)",
+                        border: "1px solid rgba(167,139,250,0.25)",
                       }}
                     >
                       −20%
@@ -228,7 +228,7 @@ export function PricingClient({
       <section
         style={{
           padding: "80px 0 120px",
-          background: "#131009",
+          background: "#080810",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -238,7 +238,7 @@ export function PricingClient({
               ТАРИФЫ
             </div>
             <h2 style={heading}>{page?.plansTitle ?? "Выбери свой результат"}</h2>
-            <p style={{ fontSize: "16px", color: "#C8B89A", marginTop: "12px" }}>
+            <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
               {page?.plansSubtitle ??
                 "Тарифы — один инструмент для всех задач. Расти вместе с ним."}
             </p>
@@ -262,11 +262,11 @@ export function PricingClient({
                     flexDirection: "column",
                     padding: "28px",
                     borderRadius: "20px",
-                    background: plan.isPopular ? "rgba(212,165,116,0.07)" : "#1C1917",
+                    background: plan.isPopular ? "rgba(167,139,250,0.07)" : "#0D0D1A",
                     border: plan.isPopular
-                      ? "1px solid rgba(212,165,116,0.45)"
+                      ? "1px solid rgba(167,139,250,0.45)"
                       : "1px solid rgba(255,255,255,0.08)",
-                    boxShadow: plan.isPopular ? "0 0 40px rgba(212,165,116,0.1)" : "none",
+                    boxShadow: plan.isPopular ? "0 0 40px rgba(167,139,250,0.1)" : "none",
                   }}
                 >
                   {plan.isPopular && plan.highlight && (
@@ -281,21 +281,21 @@ export function PricingClient({
                         fontSize: "12px",
                         fontWeight: 600,
                         color: "#fff",
-                        background: "#D4A574",
+                        background: "#A78BFA",
                         whiteSpace: "nowrap",
                       }}
                     >
                       {plan.highlight}
                     </div>
                   )}
-                  <p style={{ fontSize: "12px", color: "#C8B89A", marginBottom: "6px" }}>
+                  <p style={{ fontSize: "12px", color: "#9CA3B8", marginBottom: "6px" }}>
                     {plan.subtitle}
                   </p>
                   <h3
                     style={{
                       fontSize: "16px",
                       fontWeight: 700,
-                      color: "#FAF5EE",
+                      color: "#F0EEFF",
                       lineHeight: 1.35,
                       marginBottom: "20px",
                     }}
@@ -320,7 +320,7 @@ export function PricingClient({
                         style={{
                           fontSize: "clamp(32px, 3vw, 44px)",
                           fontWeight: 800,
-                          color: "#FAF5EE",
+                          color: "#F0EEFF",
                           letterSpacing: "-0.02em",
                         }}
                       >
@@ -328,7 +328,7 @@ export function PricingClient({
                       </motion.span>
                     </AnimatePresence>
                     {price > 0 && (
-                      <span style={{ fontSize: "14px", color: "#C8B89A" }}>/ мес</span>
+                      <span style={{ fontSize: "14px", color: "#9CA3B8" }}>/ мес</span>
                     )}
                   </div>
                   <ul
@@ -353,9 +353,9 @@ export function PricingClient({
                         {f.ok ? (
                           <Check size={15} color="#22c55e" style={{ flexShrink: 0 }} />
                         ) : (
-                          <X size={15} color="#2C2520" style={{ flexShrink: 0 }} />
+                          <X size={15} color="#1A1A2E" style={{ flexShrink: 0 }} />
                         )}
-                        <span style={{ color: f.ok ? "#C8B89A" : "#2C2520" }}>
+                        <span style={{ color: f.ok ? "#9CA3B8" : "#1A1A2E" }}>
                           {f.label}
                         </span>
                       </li>
@@ -372,13 +372,13 @@ export function PricingClient({
                       fontSize: "14px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      background: plan.isPopular ? "#D4A574" : "transparent",
-                      color: plan.isPopular ? "#fff" : "#FAF5EE",
+                      background: plan.isPopular ? "#A78BFA" : "transparent",
+                      color: plan.isPopular ? "#fff" : "#F0EEFF",
                       border: plan.isPopular
                         ? "none"
                         : "1px solid rgba(255,255,255,0.16)",
                       boxShadow: plan.isPopular
-                        ? "0 4px 20px rgba(212,165,116,0.4)"
+                        ? "0 4px 20px rgba(167,139,250,0.4)"
                         : "none",
                     }}
                   >
@@ -395,7 +395,7 @@ export function PricingClient({
       <section
         style={{
           padding: "120px 0",
-          background: "#131009",
+          background: "#080810",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -405,7 +405,7 @@ export function PricingClient({
               ЧАСТО ЗАДАЮТ
             </div>
             <h2 style={heading}>Остались вопросы?</h2>
-            <p style={{ fontSize: "16px", color: "#C8B89A", marginTop: "12px" }}>
+            <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
               Ответы на самые популярные вопросы о тарифах и оплате
             </p>
           </div>
@@ -438,14 +438,14 @@ export function PricingClient({
                     cursor: "pointer",
                     border: "none",
                     background:
-                      openFaq === i ? "rgba(212,165,116,0.06)" : "rgba(28,25,23,0.75)",
+                      openFaq === i ? "rgba(167,139,250,0.06)" : "rgba(13,13,26,0.75)",
                   }}
                 >
                   <span
                     style={{
                       fontSize: "15px",
                       fontWeight: 600,
-                      color: "#FAF5EE",
+                      color: "#F0EEFF",
                       lineHeight: 1.4,
                     }}
                   >
@@ -463,9 +463,9 @@ export function PricingClient({
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: "18px",
-                      background: "rgba(212,165,116,0.12)",
-                      border: "1px solid rgba(212,165,116,0.25)",
-                      color: "#E8C49A",
+                      background: "rgba(167,139,250,0.12)",
+                      border: "1px solid rgba(167,139,250,0.25)",
+                      color: "#C4B5FD",
                     }}
                   >
                     +
@@ -485,9 +485,9 @@ export function PricingClient({
                           padding: "16px 20px",
                           fontSize: "14px",
                           lineHeight: 1.75,
-                          color: "#C8B89A",
+                          color: "#9CA3B8",
                           borderTop: "1px solid rgba(255,255,255,0.06)",
-                          background: "rgba(8,7,16,0.55)",
+                          background: "rgba(4,4,8,0.55)",
                         }}
                       >
                         {item.answer}
@@ -505,7 +505,7 @@ export function PricingClient({
       <section
         style={{
           padding: "80px 0",
-          background: "#0C0A08",
+          background: "#040408",
           borderTop: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -517,8 +517,8 @@ export function PricingClient({
               borderRadius: "24px",
               padding: "clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px)",
               textAlign: "center",
-              background: "rgba(28,25,23,0.97)",
-              border: "1px solid rgba(212,165,116,0.2)",
+              background: "rgba(13,13,26,0.97)",
+              border: "1px solid rgba(167,139,250,0.2)",
             }}
           >
             <div
@@ -529,7 +529,7 @@ export function PricingClient({
                 right: 0,
                 height: "1px",
                 background:
-                  "linear-gradient(90deg,transparent,rgba(212,165,116,0.6),transparent)",
+                  "linear-gradient(90deg,transparent,rgba(167,139,250,0.6),transparent)",
               }}
             />
             <div
@@ -548,7 +548,7 @@ export function PricingClient({
               <p
                 style={{
                   fontSize: "16px",
-                  color: "#C8B89A",
+                  color: "#9CA3B8",
                   maxWidth: "360px",
                   lineHeight: 1.7,
                 }}
@@ -571,12 +571,12 @@ export function PricingClient({
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
-                    background: "#D4A574",
+                    background: "#A78BFA",
                     color: "#fff",
                     fontSize: "15px",
                     fontWeight: 600,
                     textDecoration: "none",
-                    boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                    boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     flex: "1 1 auto",
                     textAlign: "center",
                     minWidth: "200px",
@@ -591,7 +591,7 @@ export function PricingClient({
                     padding: "14px 32px",
                     borderRadius: "999px",
                     background: "transparent",
-                    color: "#FAF5EE",
+                    color: "#F0EEFF",
                     fontSize: "15px",
                     fontWeight: 600,
                     textDecoration: "none",

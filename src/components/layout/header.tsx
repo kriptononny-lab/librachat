@@ -61,13 +61,13 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
           fontSize: "14px",
           fontWeight: 500,
           padding: "6px 4px",
-          color: isActive ? "#FAF5EE" : "#C8B89A",
+          color: isActive ? "#F0EEFF" : "#9CA3B8",
           textDecoration: "none",
           transition: "color 150ms ease",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = "#FAF5EE")}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#F0EEFF")}
         onMouseLeave={(e) =>
-          (e.currentTarget.style.color = isActive ? "#FAF5EE" : "#C8B89A")
+          (e.currentTarget.style.color = isActive ? "#F0EEFF" : "#9CA3B8")
         }
       >
         {item.label}
@@ -89,15 +89,15 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
           fontSize: "14px",
           fontWeight: 500,
           padding: "6px 4px",
-          color: isActive ? "#FAF5EE" : "#C8B89A",
+          color: isActive ? "#F0EEFF" : "#9CA3B8",
           background: "none",
           border: "none",
           cursor: "pointer",
           transition: "color 150ms ease",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = "#FAF5EE")}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#F0EEFF")}
         onMouseLeave={(e) =>
-          (e.currentTarget.style.color = isActive ? "#FAF5EE" : "#C8B89A")
+          (e.currentTarget.style.color = isActive ? "#F0EEFF" : "#9CA3B8")
         }
       >
         {item.label}
@@ -135,7 +135,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                 transform: "translateX(-50%) translateY(-6px) rotate(45deg)",
                 width: "12px",
                 height: "12px",
-                background: "#1e1d2e",
+                background: "#0D0D1A",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderBottom: "none",
                 borderRight: "none",
@@ -146,12 +146,12 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
             <div
               style={{
                 minWidth: "260px",
-                background: "#1e1d2e",
+                background: "#0D0D1A",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: "16px",
                 padding: "8px",
                 boxShadow:
-                  "0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(212,165,116,0.08)",
+                  "0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(167,139,250,0.08)",
                 position: "relative",
                 zIndex: 2,
               }}
@@ -170,7 +170,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                     transition: "background 150ms ease",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(212,165,116,0.12)";
+                    e.currentTarget.style.background = "rgba(167,139,250,0.12)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "transparent";
@@ -183,12 +183,12 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                       height: "36px",
                       borderRadius: "10px",
                       flexShrink: 0,
-                      background: "rgba(212,165,116,0.1)",
-                      border: "1px solid rgba(212,165,116,0.2)",
+                      background: "rgba(167,139,250,0.1)",
+                      border: "1px solid rgba(167,139,250,0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "#E8C49A",
+                      color: "#C4B5FD",
                     }}
                   >
                     {child.icon ? ICON_MAP[child.icon] : <MessageSquare size={18} />}
@@ -200,7 +200,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                       style={{
                         fontSize: "14px",
                         fontWeight: 600,
-                        color: "#FAF5EE",
+                        color: "#F0EEFF",
                         lineHeight: 1.3,
                       }}
                     >
@@ -208,7 +208,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                     </span>
                     {child.description && (
                       <span
-                        style={{ fontSize: "12px", color: "#6b6480", lineHeight: 1.4 }}
+                        style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.4 }}
                       >
                         {child.description}
                       </span>
@@ -232,15 +232,15 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                   href={item.href}
                   style={{
                     fontSize: "12px",
-                    color: "#D4A574",
+                    color: "#A78BFA",
                     textDecoration: "none",
                     fontWeight: 500,
                     display: "flex",
                     alignItems: "center",
                     gap: "4px",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#E8C49A")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A574")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C4B5FD")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#A78BFA")}
                 >
                   Смотреть всё →
                 </Link>
@@ -294,7 +294,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           width: "min(300px, 85vw)",
           display: "flex",
           flexDirection: "column",
-          background: "#13121f",
+          background: "#080810",
           borderLeft: "1px solid rgba(255,255,255,0.1)",
           zIndex: 1,
           overflowY: "auto",
@@ -317,7 +317,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             style={{
               padding: "8px",
               borderRadius: "10px",
-              color: "#C8B89A",
+              color: "#9CA3B8",
               background: "transparent",
               border: "none",
               cursor: "pointer",
@@ -354,8 +354,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                     fontSize: "15px",
                     fontWeight: 500,
                     textDecoration: "none",
-                    color: isActive ? "#fff" : "#c0b8d8",
-                    background: isActive ? "rgba(212,165,116,0.15)" : "transparent",
+                    color: isActive ? "#fff" : "#9CA3B8",
+                    background: isActive ? "rgba(167,139,250,0.15)" : "transparent",
                   }}
                 >
                   {item.label}
@@ -378,7 +378,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                           display: "block",
                           padding: "8px 10px",
                           fontSize: "13px",
-                          color: "#6b6480",
+                          color: "#6B7280",
                           textDecoration: "none",
                         }}
                       >
@@ -413,7 +413,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               borderRadius: "999px",
               fontSize: "15px",
               fontWeight: 600,
-              color: "#f2f0ff",
+              color: "#F0EEFF",
               textDecoration: "none",
               border: "1px solid rgba(255,255,255,0.16)",
             }}
@@ -432,8 +432,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               fontWeight: 600,
               color: "#fff",
               textDecoration: "none",
-              background: "#D4A574",
-              boxShadow: "0 4px 16px rgba(212,165,116,0.4)",
+              background: "#A78BFA",
+              boxShadow: "0 4px 16px rgba(167,139,250,0.4)",
             }}
           >
             Начать бесплатно
@@ -469,7 +469,7 @@ export function Header() {
           zIndex: 60,
           transition: "all 300ms ease",
           padding: scrolled ? "12px 0" : "16px 0",
-          background: scrolled ? "rgba(14,14,19,0.88)" : "transparent",
+          background: scrolled ? "rgba(8,8,16,0.88)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
@@ -526,7 +526,7 @@ export function Header() {
                 flexShrink: 0,
               }}
             >
-              <Menu size={22} color="#C8B89A" />
+              <Menu size={22} color="#9CA3B8" />
             </button>
           </div>
         </div>

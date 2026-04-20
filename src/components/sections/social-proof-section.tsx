@@ -74,7 +74,7 @@ function StarRow() {
   return (
     <div style={{ display: "flex", gap: "4px" }}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#c9920a">
+        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#A78BFA">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -109,7 +109,7 @@ export function SocialProofSection({
     <section
       style={{
         padding: "120px 0",
-        background: "#131009",
+        background: "#080810",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >
@@ -130,7 +130,7 @@ export function SocialProofSection({
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.15,
-              color: "#FAF5EE",
+              color: "#F0EEFF",
             }}
           >
             {title}
@@ -155,7 +155,7 @@ export function SocialProofSection({
                 flexDirection: "column",
                 borderRadius: "20px",
                 overflow: "hidden",
-                background: "rgba(28,25,23,0.84)",
+                background: "rgba(13,13,26,0.84)",
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
@@ -164,7 +164,7 @@ export function SocialProofSection({
                 style={{
                   position: "relative",
                   overflow: "hidden",
-                  background: "rgba(28,25,23,0.92)",
+                  background: "rgba(13,13,26,0.92)",
                   flexShrink: 0,
                 }}
               >
@@ -181,7 +181,7 @@ export function SocialProofSection({
                     position: "absolute",
                     inset: 0,
                     background:
-                      "linear-gradient(to bottom, transparent 40%, rgba(12,12,16,0.9))",
+                      "linear-gradient(to bottom, transparent 40%, rgba(4,4,8,0.9))",
                   }}
                 />
               </div>
@@ -199,7 +199,7 @@ export function SocialProofSection({
                   style={{
                     fontSize: "14px",
                     lineHeight: 1.75,
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     flex: 1,
                     fontStyle: "italic",
                   }}
@@ -212,9 +212,9 @@ export function SocialProofSection({
                     borderRadius: "10px",
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: "#E8C49A",
-                    background: "rgba(212,165,116,0.08)",
-                    border: "1px solid rgba(212,165,116,0.18)",
+                    color: "#C4B5FD",
+                    background: "rgba(167,139,250,0.08)",
+                    border: "1px solid rgba(167,139,250,0.18)",
                   }}
                 >
                   ↑ {t.result}
@@ -234,7 +234,7 @@ export function SocialProofSection({
                         borderRadius: "50%",
                         overflow: "hidden",
                         flexShrink: 0,
-                        border: "2px solid rgba(212,165,116,0.3)",
+                        border: "2px solid rgba(167,139,250,0.3)",
                       }}
                     >
                       {t.photo ? (
@@ -250,7 +250,7 @@ export function SocialProofSection({
                           style={{
                             width: "100%",
                             height: "100%",
-                            background: "#D4A574",
+                            background: "#A78BFA",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -264,10 +264,10 @@ export function SocialProofSection({
                       )}
                     </div>
                     <div>
-                      <p style={{ fontSize: "14px", fontWeight: 600, color: "#FAF5EE" }}>
+                      <p style={{ fontSize: "14px", fontWeight: 600, color: "#F0EEFF" }}>
                         {t.name}
                       </p>
-                      <p style={{ fontSize: "12px", color: "#C8B89A", marginTop: "2px" }}>
+                      <p style={{ fontSize: "12px", color: "#9CA3B8", marginTop: "2px" }}>
                         {t.role}
                       </p>
                     </div>
@@ -276,7 +276,7 @@ export function SocialProofSection({
                     href={t.href}
                     style={{
                       fontSize: "12px",
-                      color: "#D4A574",
+                      color: "#A78BFA",
                       textDecoration: "none",
                       whiteSpace: "nowrap",
                     }}

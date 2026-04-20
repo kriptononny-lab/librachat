@@ -28,7 +28,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
         flexDirection: "column",
         borderRadius: "16px",
         overflow: "hidden",
-        background: "rgba(28,25,23,0.85)",
+        background: "rgba(13,13,26,0.85)",
         border: "1px solid rgba(255,255,255,0.08)",
         textDecoration: "none",
         height: "100%",
@@ -38,7 +38,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
         style={{
           position: "relative",
           height: large ? "180px" : "120px",
-          background: article.gradient ?? "rgba(28,25,23,0.9)",
+          background: article.gradient ?? "rgba(13,13,26,0.9)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -66,8 +66,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
             style={{
               position: "absolute",
               inset: 0,
-              background:
-                "linear-gradient(to bottom, transparent 50%, rgba(12,12,16,0.7))",
+              background: "linear-gradient(to bottom, transparent 50%, rgba(4,4,8,0.7))",
             }}
           />
         )}
@@ -102,14 +101,14 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
           style={{
             fontSize: large ? "15px" : "13px",
             fontWeight: 600,
-            color: "#f2f0ff",
+            color: "#F0EEFF",
             lineHeight: 1.4,
           }}
         >
           {article.title}
         </h3>
         {large && (
-          <p style={{ fontSize: "13px", color: "#C8B89A", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "13px", color: "#9CA3B8", lineHeight: 1.6 }}>
             {article.excerpt}
           </p>
         )}
@@ -130,7 +129,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
                 padding: "2px 8px",
                 borderRadius: "999px",
                 background: "rgba(255,255,255,0.05)",
-                color: "#C8B89A",
+                color: "#9CA3B8",
               }}
             >
               {tag}
@@ -143,7 +142,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
             alignItems: "center",
             gap: "12px",
             fontSize: "12px",
-            color: "#5A4A38",
+            color: "#4B556A",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
@@ -152,7 +151,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
                 width: "16px",
                 height: "16px",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg,#D4A574,#5248c8)",
+                background: "linear-gradient(135deg,#A78BFA,#7B2FBE)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -217,7 +216,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
         display: "flex",
         minHeight: "100dvh",
         flexDirection: "column",
-        background: "#0C0A08",
+        background: "#040408",
       }}
     >
       <Header />
@@ -241,7 +240,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
               height: "400px",
               borderRadius: "50%",
               background:
-                "radial-gradient(circle,rgba(212,165,116,0.12),transparent 70%)",
+                "radial-gradient(circle,rgba(167,139,250,0.12),transparent 70%)",
               pointerEvents: "none",
             }}
           />
@@ -264,7 +263,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                 fontWeight: 800,
                 letterSpacing: "-0.025em",
                 lineHeight: 1.1,
-                color: "#f2f0ff",
+                color: "#F0EEFF",
                 maxWidth: "700px",
               }}
             >
@@ -275,7 +274,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
             <p
               style={{
                 fontSize: "16px",
-                color: "#C8B89A",
+                color: "#9CA3B8",
                 maxWidth: "480px",
                 lineHeight: 1.7,
               }}
@@ -295,13 +294,13 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     style={{
                       fontSize: "22px",
                       fontWeight: 800,
-                      color: "#c9920a",
+                      color: "#A78BFA",
                       letterSpacing: "-0.02em",
                     }}
                   >
                     {s.value}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#C8B89A", marginTop: "4px" }}>
+                  <p style={{ fontSize: "12px", color: "#9CA3B8", marginTop: "4px" }}>
                     {s.label}
                   </p>
                 </div>
@@ -317,11 +316,11 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   gap: "12px",
                   padding: "14px 18px",
                   borderRadius: "16px",
-                  background: "rgba(28,25,23,0.9)",
+                  background: "rgba(13,13,26,0.9)",
                   border: "1px solid rgba(255,255,255,0.1)",
                 }}
               >
-                <Search size={18} color="#5A4A38" style={{ flexShrink: 0 }} />
+                <Search size={18} color="#4B556A" style={{ flexShrink: 0 }} />
                 <input
                   type="text"
                   placeholder="Найти статью или кейс..."
@@ -333,7 +332,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     border: "none",
                     outline: "none",
                     fontSize: "15px",
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                   }}
                 />
               </div>
@@ -364,11 +363,11 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     transition: "all 150ms ease",
                     border: "none",
                     background:
-                      activeFilter === f.key ? "rgba(212,165,116,0.2)" : "transparent",
-                    color: activeFilter === f.key ? "#E8C49A" : "#C8B89A",
+                      activeFilter === f.key ? "rgba(167,139,250,0.2)" : "transparent",
+                    color: activeFilter === f.key ? "#C4B5FD" : "#9CA3B8",
                     outline:
                       activeFilter === f.key
-                        ? "1px solid rgba(212,165,116,0.4)"
+                        ? "1px solid rgba(167,139,250,0.4)"
                         : "1px solid rgba(255,255,255,0.08)",
                   }}
                 >
@@ -384,7 +383,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
           <section
             style={{
               padding: "80px 0",
-              background: "#131009",
+              background: "#080810",
               borderTop: "1px solid rgba(255,255,255,0.06)",
             }}
           >
@@ -397,7 +396,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   style={{
                     fontSize: "clamp(26px, 3vw, 40px)",
                     fontWeight: 800,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                     letterSpacing: "-0.02em",
                   }}
                 >
@@ -420,7 +419,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                       flexDirection: "column",
                       borderRadius: "20px",
                       overflow: "hidden",
-                      background: "rgba(28,25,23,0.85)",
+                      background: "rgba(13,13,26,0.85)",
                       border: "1px solid rgba(255,255,255,0.08)",
                       textDecoration: "none",
                     }}
@@ -430,7 +429,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                         height: "200px",
                         position: "relative",
                         overflow: "hidden",
-                        background: article.gradient ?? "rgba(28,25,23,0.9)",
+                        background: article.gradient ?? "rgba(13,13,26,0.9)",
                       }}
                     >
                       {article.photo && (
@@ -451,7 +450,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                           position: "absolute",
                           inset: 0,
                           background:
-                            "linear-gradient(to bottom, transparent 40%, rgba(12,12,16,0.85))",
+                            "linear-gradient(to bottom, transparent 40%, rgba(4,4,8,0.85))",
                         }}
                       />
                       <span
@@ -488,7 +487,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                             borderRadius: "50%",
                             overflow: "hidden",
                             flexShrink: 0,
-                            border: "2px solid rgba(212,165,116,0.25)",
+                            border: "2px solid rgba(167,139,250,0.25)",
                           }}
                         >
                           {article.photo ? (
@@ -508,7 +507,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                               style={{
                                 width: "100%",
                                 height: "100%",
-                                background: "#D4A574",
+                                background: "#A78BFA",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -526,12 +525,12 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                             style={{
                               fontSize: "13px",
                               fontWeight: 600,
-                              color: "#f2f0ff",
+                              color: "#F0EEFF",
                             }}
                           >
                             {article.author}
                           </p>
-                          <p style={{ fontSize: "11px", color: "#C8B89A" }}>
+                          <p style={{ fontSize: "11px", color: "#9CA3B8" }}>
                             {(article as any).authorRole}
                           </p>
                         </div>
@@ -540,7 +539,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                         style={{
                           fontSize: "16px",
                           fontWeight: 700,
-                          color: "#f2f0ff",
+                          color: "#F0EEFF",
                           lineHeight: 1.4,
                         }}
                       >
@@ -549,14 +548,14 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                       <p
                         style={{
                           fontSize: "13px",
-                          color: "#C8B89A",
+                          color: "#9CA3B8",
                           lineHeight: 1.6,
                           flex: 1,
                         }}
                       >
                         {article.excerpt}
                       </p>
-                      <div style={{ fontSize: "13px", color: "#D4A574" }}>
+                      <div style={{ fontSize: "13px", color: "#A78BFA" }}>
                         Читать кейс →
                       </div>
                     </div>
@@ -572,7 +571,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
           <section
             style={{
               padding: "80px 0",
-              background: "#0C0A08",
+              background: "#040408",
               borderTop: "1px solid rgba(255,255,255,0.06)",
             }}
           >
@@ -585,7 +584,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   style={{
                     fontSize: "clamp(26px, 3vw, 40px)",
                     fontWeight: 800,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                     letterSpacing: "-0.02em",
                   }}
                 >
@@ -611,7 +610,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
         <section
           style={{
             padding: "80px 0",
-            background: activeFilter === "все" && !search ? "#131009" : "#0C0A08",
+            background: activeFilter === "все" && !search ? "#080810" : "#040408",
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
@@ -630,7 +629,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   style={{
                     fontSize: "clamp(22px, 2.5vw, 34px)",
                     fontWeight: 800,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                   }}
                 >
                   {activeFilter === "все"
@@ -641,7 +640,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                         ? "Кейсы"
                         : "Гайды"}
                 </h2>
-                <p style={{ fontSize: "13px", color: "#5A4A38", marginTop: "4px" }}>
+                <p style={{ fontSize: "13px", color: "#4B556A", marginTop: "4px" }}>
                   Найдено {filteredArticles.length}{" "}
                   {filteredArticles.length === 1 ? "материал" : "материалов"}
                 </p>
@@ -662,7 +661,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
               </div>
             ) : (
               <div
-                style={{ textAlign: "center", padding: "60px 20px", color: "#5A4A38" }}
+                style={{ textAlign: "center", padding: "60px 20px", color: "#4B556A" }}
               >
                 <BookOpen size={40} style={{ margin: "0 auto 16px", opacity: 0.3 }} />
                 <p style={{ fontSize: "16px" }}>По запросу ничего не найдено</p>
@@ -674,7 +673,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   style={{
                     marginTop: "12px",
                     fontSize: "13px",
-                    color: "#D4A574",
+                    color: "#A78BFA",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -699,9 +698,9 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "14px",
-                    background: "rgba(212,165,116,0.2)",
-                    color: "#E8C49A",
-                    border: "1px solid rgba(212,165,116,0.4)",
+                    background: "rgba(167,139,250,0.2)",
+                    color: "#C4B5FD",
+                    border: "1px solid rgba(167,139,250,0.4)",
                   }}
                 >
                   1
@@ -715,7 +714,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
         <section
           style={{
             padding: "80px 0",
-            background: "#0C0A08",
+            background: "#040408",
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
@@ -726,8 +725,8 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                 borderRadius: "24px",
                 padding: "72px 40px",
                 textAlign: "center",
-                background: "rgba(28,25,23,0.97)",
-                border: "1px solid rgba(212,165,116,0.18)",
+                background: "rgba(13,13,26,0.97)",
+                border: "1px solid rgba(167,139,250,0.18)",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -740,7 +739,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   right: 0,
                   height: "1px",
                   background:
-                    "linear-gradient(90deg,transparent,rgba(212,165,116,0.6),transparent)",
+                    "linear-gradient(90deg,transparent,rgba(167,139,250,0.6),transparent)",
                 }}
               />
               <div
@@ -759,7 +758,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     fontWeight: 800,
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    color: "#f2f0ff",
+                    color: "#F0EEFF",
                   }}
                 >
                   Попробуйте сами — <span className="text-gradient">бесплатно</span>
@@ -767,7 +766,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                 <p
                   style={{
                     fontSize: "16px",
-                    color: "#C8B89A",
+                    color: "#9CA3B8",
                     maxWidth: "380px",
                     lineHeight: 1.7,
                   }}
@@ -787,12 +786,12 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
-                      background: "#D4A574",
+                      background: "#A78BFA",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      boxShadow: "0 4px 20px rgba(212,165,116,0.4)",
+                      boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     }}
                   >
                     Начать бесплатно
@@ -803,7 +802,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                       padding: "14px 32px",
                       borderRadius: "999px",
                       background: "transparent",
-                      color: "#f2f0ff",
+                      color: "#F0EEFF",
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
