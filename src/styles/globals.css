@@ -13,8 +13,8 @@
   --color-brand-600: #7b2fbe;
   --color-brand-700: #7b2fbe;
 
-  --color-amber-400: #c4b5fd;
-  --color-amber-500: #a78bfa;
+  --color-amber-400: #f59e0b;
+  --color-amber-500: #d97706;
 
   --color-bg-base: #040408;
   --color-bg-surface: #080810;
@@ -154,14 +154,14 @@ body {
 
 /* Градиентный текст */
 .text-gradient {
-  background: linear-gradient(135deg, #a78bfa, #c4b5fd);
+  background: linear-gradient(135deg, #a78bfa, #f472b6, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-amber {
-  color: var(--color-amber-400);
+  color: #f59e0b;
 }
 
 /* Бейдж секции */

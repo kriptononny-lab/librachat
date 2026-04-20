@@ -151,7 +151,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
                 width: "16px",
                 height: "16px",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg,#A78BFA,#7B2FBE)",
+                background: "linear-gradient(135deg,#7B2FBE,#A78BFA)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

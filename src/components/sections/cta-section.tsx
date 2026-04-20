@@ -98,7 +98,7 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   justifyContent: "center",
                   padding: "14px 36px",
                   borderRadius: "999px",
-                  background: "#A78BFA",
+                  background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                   color: "#fff",
                   fontSize: "16px",
                   fontWeight: 600,

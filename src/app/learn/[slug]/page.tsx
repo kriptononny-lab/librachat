@@ -2,16 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  Clock,
-  Eye,
-  Share2,
-  BookOpen,
-  ArrowRight,
-  Check,
-  TrendingUp,
-  Quote,
-} from "lucide-react";
+import { Clock, Eye, BookOpen, ArrowRight, Check, TrendingUp, Quote } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ALL_ARTICLES as STATIC_ARTICLES, TYPE_COLOR } from "@/lib/articles";
@@ -160,7 +151,7 @@ function CaseBlockquote({
             width: "36px",
             height: "36px",
             borderRadius: "50%",
-            background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
+            background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -354,7 +345,7 @@ function CaseShishakova() {
         items={[
           { label: "Стратегия за один вечер", value: "✓", color: "#C4B5FD" },
           { label: "Задач решается в 1 окне", value: "4+", color: "#A78BFA" },
-          { label: "Уровень федеральных сетей", value: "↑", color: "#22c55e" },
+          { label: "Уровень федеральных сетей", value: "↑", color: "#A78BFA" },
         ]}
       />
     </div>
@@ -416,7 +407,7 @@ function CaseOzherelyev() {
         items={[
           { label: "Быстрее запуск товара", value: "5×", color: "#C4B5FD" },
           { label: "Снижение ДРР", value: "−30%", color: "#A78BFA" },
-          { label: "Этапов автоматизировано", value: "4/4", color: "#22c55e" },
+          { label: "Этапов автоматизировано", value: "4/4", color: "#A78BFA" },
         ]}
       />
     </div>
@@ -483,7 +474,7 @@ function CaseBazarkulova() {
         items={[
           { label: "Клиентов в одном окне", value: "10+", color: "#C4B5FD" },
           { label: "Переделок и правок", value: "≈ 0", color: "#A78BFA" },
-          { label: "Работа без VPN", value: "100%", color: "#22c55e" },
+          { label: "Работа без VPN", value: "100%", color: "#A78BFA" },
         ]}
       />
     </div>
@@ -802,7 +793,7 @@ export default async function ArticlePage({
                       style={{
                         width: "100%",
                         height: "100%",
-                        background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
+                        background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -1015,7 +1006,7 @@ export default async function ArticlePage({
                       justifyContent: "center",
                       padding: "12px",
                       borderRadius: "999px",
-                      background: "#A78BFA",
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                       color: "#fff",
                       fontSize: "14px",
                       fontWeight: 600,
@@ -1268,7 +1259,7 @@ export default async function ArticlePage({
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
-                      background: "#A78BFA",
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,

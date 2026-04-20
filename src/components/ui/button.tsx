@@ -15,8 +15,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
-          "bg-[#A78BFA] text-white",
-          "hover:bg-[#7B2FBE]",
+          "btn-primary-gold text-white",
+          "", // hover handled by btn-primary-gold
           "active:scale-[0.97]",
           "focus-visible:ring-[#A78BFA]",
           "btn-primary-glow",

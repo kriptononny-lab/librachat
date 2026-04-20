@@ -282,7 +282,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     style={{
                       fontSize: "13px",
                       fontWeight: 600,
-                      background: "linear-gradient(135deg, #C4B5FD, #A78BFA)",
+                      background: "linear-gradient(135deg,#A78BFA,#F472B6,#38BDF8)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}

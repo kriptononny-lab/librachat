@@ -18,7 +18,6 @@ import {
   FileText,
   Globe,
   Check,
-  Star,
 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -110,7 +109,7 @@ const USE_CASES = [
     title: "Поддержка клиентов",
     desc: "Автоматизируйте типовые обращения, обучайте операторов в реальном времени, формирование базы знаний.",
     badge: "Снижение нагрузки −40%",
-    badgeColor: "#22c55e",
+    badgeColor: "#A78BFA",
   },
   {
     Icon: BarChart2,
@@ -147,12 +146,6 @@ const TESTIMONIALS = [
     name: "Дмитрий Попов",
     role: "Финансовый директор, FinGroup",
   },
-];
-
-const STATS = [
-  { value: "500+", label: "корпоративных клиентов" },
-  { value: "3 ч", label: "экономия на сотрудника в день" },
-  { value: "99.9%", label: "время безотказной работы" },
 ];
 
 const S = {
@@ -310,7 +303,7 @@ export default async function BusinessPage() {
                       alignItems: "center",
                       padding: "14px 28px",
                       borderRadius: "999px",
-                      background: "#A78BFA",
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
@@ -441,13 +434,13 @@ export default async function BusinessPage() {
                       name: "Алексей Козлов",
                       role: "Администратор",
                       status: "Активен",
-                      color: "#22c55e",
+                      color: "#A78BFA",
                     },
                     {
                       name: "Мария Соколова",
                       role: "Менеджер",
                       status: "Активен",
-                      color: "#22c55e",
+                      color: "#A78BFA",
                     },
                     {
                       name: "Дмитрий Попов",
@@ -474,7 +467,7 @@ export default async function BusinessPage() {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
+                            background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -722,7 +715,7 @@ export default async function BusinessPage() {
                         width: "40px",
                         height: "40px",
                         borderRadius: "50%",
-                        background: "linear-gradient(135deg,#A78BFA,#A78BFA)",
+                        background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -818,7 +811,7 @@ export default async function BusinessPage() {
                         color: "#9CA3B8",
                       }}
                     >
-                      <Check size={15} color="#22c55e" style={{ flexShrink: 0 }} />
+                      <Check size={15} color="#F472B6" style={{ flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
@@ -894,7 +887,7 @@ export default async function BusinessPage() {
                     justifyContent: "center",
                     padding: "14px",
                     borderRadius: "999px",
-                    background: "#A78BFA",
+                    background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                     color: "#fff",
                     fontSize: "15px",
                     fontWeight: 600,

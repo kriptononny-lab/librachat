@@ -198,7 +198,7 @@ export default function PrivacyPage() {
                         listStyle: "none",
                       }}
                     >
-                      <span style={{ color: "#22c55e", flexShrink: 0 }}>✓</span>
+                      <span style={{ color: "#A78BFA", flexShrink: 0 }}>✓</span>
                       {t}
                     </li>
                   ))}
@@ -413,7 +413,7 @@ export default function PrivacyPage() {
                       {
                         label: "Необходимые",
                         text: "Авторизация, безопасность сессии — нельзя отключить",
-                        color: "#ef4444",
+                        color: "#F472B6",
                       },
                       {
                         label: "Функциональные",
@@ -423,7 +423,7 @@ export default function PrivacyPage() {
                       {
                         label: "Аналитические",
                         text: "Анонимная статистика посещаемости — можно отключить",
-                        color: "#22c55e",
+                        color: "#A78BFA",
                       },
                     ].map((c) => (
                       <li key={c.label} style={{ ...S.li, alignItems: "center" }}>

@@ -432,7 +432,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               fontWeight: 600,
               color: "#fff",
               textDecoration: "none",
-              background: "#A78BFA",
+              background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
               boxShadow: "0 4px 16px rgba(167,139,250,0.4)",
             }}
           >

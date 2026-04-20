@@ -178,7 +178,7 @@ export function Footer() {
               <p
                 style={{
                   fontSize: "11px",
-                  color: "#100A1E",
+                  color: "#6B7280",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                 }}
@@ -200,7 +200,7 @@ export function Footer() {
               <p
                 style={{
                   fontSize: "11px",
-                  color: "#100A1E",
+                  color: "#6B7280",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                   marginTop: "6px",
@@ -214,7 +214,7 @@ export function Footer() {
               >
                 +7 747 870 37 83
               </a>
-              <p style={{ fontSize: "12px", color: "#100A1E", lineHeight: 1.4 }}>
+              <p style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.4 }}>
                 Пн–Пт, 9:00–18:00 (GMT+6)
               </p>
             </div>
@@ -233,7 +233,7 @@ export function Footer() {
             flexWrap: "wrap",
           }}
         >
-          <p style={{ fontSize: "13px", color: "#100A1E" }}>
+          <p style={{ fontSize: "13px", color: "#6B7280" }}>
             © {year} LibraChat. Все права защищены.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
@@ -241,7 +241,7 @@ export function Footer() {
               href="/privacy"
               style={{
                 fontSize: "13px",
-                color: "#100A1E",
+                color: "#6B7280",
                 textDecoration: "none",
                 transition: "color 150ms ease",
               }}
@@ -252,7 +252,7 @@ export function Footer() {
               href="/terms"
               style={{
                 fontSize: "13px",
-                color: "#100A1E",
+                color: "#6B7280",
                 textDecoration: "none",
                 transition: "color 150ms ease",
               }}

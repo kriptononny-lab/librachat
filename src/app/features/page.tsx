@@ -181,7 +181,7 @@ function ChatMockup() {
             padding: "2px 8px",
             borderRadius: "999px",
             background: "rgba(167,139,250,0.15)",
-            color: "#22c55e",
+            color: "#A78BFA",
           }}
         >
           онлайн
@@ -304,7 +304,7 @@ function FilesMockup() {
       >
         {[
           { name: "Отчёт_Q2_2024.pdf", size: "4.3 МБ", color: "#ef4444" },
-          { name: "Продажи_итог.xlsx", size: "1.2 МБ", color: "#22c55e" },
+          { name: "Продажи_итог.xlsx", size: "1.2 МБ", color: "#A78BFA" },
         ].map((f) => (
           <div
             key={f.name}
@@ -484,7 +484,7 @@ export default async function FeaturesPage() {
                 style={{
                   padding: "13px 28px",
                   borderRadius: "999px",
-                  background: "#A78BFA",
+                  background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                   color: "#fff",
                   fontSize: "15px",
                   fontWeight: 600,
@@ -618,7 +618,7 @@ export default async function FeaturesPage() {
                         >
                           <Check
                             size={15}
-                            color="#22c55e"
+                            color="#F472B6"
                             style={{ flexShrink: 0, marginTop: "3px" }}
                           />
                           {pt}
@@ -974,7 +974,7 @@ export default async function FeaturesPage() {
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
-                      background: "#A78BFA",
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,

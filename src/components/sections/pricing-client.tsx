@@ -210,7 +210,7 @@ export function PricingClient({
                         padding: "2px 7px",
                         borderRadius: "999px",
                         background: "rgba(167,139,250,0.15)",
-                        color: "#22c55e",
+                        color: "#A78BFA",
                         border: "1px solid rgba(167,139,250,0.25)",
                       }}
                     >
@@ -281,7 +281,7 @@ export function PricingClient({
                         fontSize: "12px",
                         fontWeight: 600,
                         color: "#fff",
-                        background: "#A78BFA",
+                        background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                         whiteSpace: "nowrap",
                       }}
                     >
@@ -351,7 +351,7 @@ export function PricingClient({
                         }}
                       >
                         {f.ok ? (
-                          <Check size={15} color="#22c55e" style={{ flexShrink: 0 }} />
+                          <Check size={15} color="#F472B6" style={{ flexShrink: 0 }} />
                         ) : (
                           <X size={15} color="#1A1A2E" style={{ flexShrink: 0 }} />
                         )}
@@ -372,7 +372,9 @@ export function PricingClient({
                       fontSize: "14px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      background: plan.isPopular ? "#A78BFA" : "transparent",
+                      background: plan.isPopular
+                        ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                        : "transparent",
                       color: plan.isPopular ? "#fff" : "#F0EEFF",
                       border: plan.isPopular
                         ? "none"
@@ -571,7 +573,7 @@ export function PricingClient({
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
-                    background: "#A78BFA",
+                    background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                     color: "#fff",
                     fontSize: "15px",
                     fontWeight: 600,

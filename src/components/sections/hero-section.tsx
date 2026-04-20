@@ -99,7 +99,10 @@ function AnimatedInput() {
                     color: "#9CA3B8",
                     border: "1px solid rgba(167,139,250,0.35)",
                   }
-                : { color: "#2D2D4A", border: "1px solid rgba(255,255,255,0.06)" }),
+                : {
+                    color: "rgba(255,255,255,0.25)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                  }),
             }}
           >
             {t}
