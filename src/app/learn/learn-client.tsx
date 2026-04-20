@@ -806,7 +806,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                       fontSize: "15px",
                       fontWeight: 600,
                       textDecoration: "none",
-                      border: "1px solid rgba(255,255,255,0.16)",
+                      border: "1px solid rgba(167,139,250,0.25)",
                     }}
                   >
                     Смотреть тарифы
