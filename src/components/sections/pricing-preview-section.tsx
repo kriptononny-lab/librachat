@@ -137,7 +137,7 @@ export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
                     top: "-12px",
                     left: "50%",
                     transform: "translateX(-50%)",
-                    background: "linear-gradient(135deg,#7B2FBE,#9B72F0)",
+                    background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
                     color: "#ffffff",
                     fontSize: "9px",
                     fontWeight: 700,
@@ -225,7 +225,7 @@ export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
                   fontWeight: plan.isPopular ? 800 : 700,
                   textDecoration: "none",
                   background: plan.isPopular
-                    ? "linear-gradient(135deg,#7B2FBE,#9B72F0)"
+                    ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
                     : "transparent",
                   color: plan.isPopular ? "#ffffff" : "rgba(255,255,255,0.5)",
                   border: plan.isPopular ? "none" : "1px solid rgba(255,255,255,0.10)",

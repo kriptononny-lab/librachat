@@ -714,15 +714,15 @@ export default async function ArticlePage({
                 alignItems: "center",
                 gap: "8px",
                 fontSize: "12px",
-                color: "#4B556A",
+                color: "#6B7280",
                 marginBottom: "24px",
               }}
             >
-              <Link href="/" style={{ color: "#4B556A", textDecoration: "none" }}>
+              <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>
                 Главная
               </Link>
               <span>/</span>
-              <Link href="/learn" style={{ color: "#4B556A", textDecoration: "none" }}>
+              <Link href="/learn" style={{ color: "#6B7280", textDecoration: "none" }}>
                 Обучение
               </Link>
               <span>/</span>
@@ -830,7 +830,7 @@ export default async function ArticlePage({
                   alignItems: "center",
                   gap: "16px",
                   fontSize: "12px",
-                  color: "#4B556A",
+                  color: "#6B7280",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
@@ -1075,7 +1075,7 @@ export default async function ArticlePage({
                             alignItems: "center",
                             gap: "4px",
                             fontSize: "11px",
-                            color: "#4B556A",
+                            color: "#6B7280",
                           }}
                         >
                           <Clock size={10} />

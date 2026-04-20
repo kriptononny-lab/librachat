@@ -82,7 +82,7 @@ export function Footer() {
             <p
               style={{
                 fontSize: "14px",
-                color: "#4B556A",
+                color: "#6B7280",
                 lineHeight: 1.65,
                 maxWidth: "220px",
               }}
@@ -111,7 +111,7 @@ export function Footer() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#4B556A",
+                    color: "#6B7280",
                     background: "rgba(255,255,255,0.04)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     textDecoration: "none",
@@ -148,7 +148,7 @@ export function Footer() {
                   href={link.href}
                   style={{
                     fontSize: "14px",
-                    color: "#4B556A",
+                    color: "#6B7280",
                     textDecoration: "none",
                     transition: "color 150ms ease",
                     lineHeight: 1.4,
@@ -187,13 +187,13 @@ export function Footer() {
               </p>
               <a
                 href="mailto:support@librachat.kz"
-                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#6B7280", textDecoration: "none" }}
               >
                 support@librachat.kz
               </a>
               <a
                 href="mailto:business@librachat.kz"
-                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#6B7280", textDecoration: "none" }}
               >
                 business@librachat.kz
               </a>
@@ -210,7 +210,7 @@ export function Footer() {
               </p>
               <a
                 href="tel:+77478703783"
-                style={{ fontSize: "13px", color: "#4B556A", textDecoration: "none" }}
+                style={{ fontSize: "13px", color: "#6B7280", textDecoration: "none" }}
               >
                 +7 747 870 37 83
               </a>

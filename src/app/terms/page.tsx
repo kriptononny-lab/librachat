@@ -91,7 +91,7 @@ export default function TermsPage() {
             >
               Пользовательское соглашение
             </h1>
-            <p style={{ fontSize: "13px", color: "#4B556A", marginBottom: "48px" }}>
+            <p style={{ fontSize: "13px", color: "#6B7280", marginBottom: "48px" }}>
               Обновлено: 14 апреля 2024 · Версия 2.0
             </p>
 

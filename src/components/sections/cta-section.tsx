@@ -130,7 +130,7 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
               </Link>
             </div>
 
-            <p style={{ fontSize: "13px", color: "#4B556A", marginTop: "4px" }}>
+            <p style={{ fontSize: "13px", color: "#6B7280", marginTop: "4px" }}>
               Уже более 1 480 пользователей доверяют LibraChat · Поддержка 24/7
             </p>
           </div>

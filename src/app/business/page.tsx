@@ -521,7 +521,7 @@ export default async function BusinessPage() {
               style={{
                 textAlign: "center",
                 fontSize: "11px",
-                color: "#4B556A",
+                color: "#6B7280",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 marginBottom: "18px",
@@ -551,7 +551,7 @@ export default async function BusinessPage() {
                     padding: "6px 18px",
                     borderRadius: "999px",
                     fontSize: "13px",
-                    color: "#4B556A",
+                    color: "#6B7280",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
@@ -588,7 +588,7 @@ export default async function BusinessPage() {
                     <div style={S.iconWrap}>
                       <Icon size={22} color="#C4B5FD" />
                     </div>
-                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#4B556A" }}>
+                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#6B7280" }}>
                       {num}
                     </span>
                   </div>
@@ -905,7 +905,7 @@ export default async function BusinessPage() {
                 >
                   Запросить демо
                 </Link>
-                <p style={{ fontSize: "12px", textAlign: "center", color: "#4B556A" }}>
+                <p style={{ fontSize: "12px", textAlign: "center", color: "#6B7280" }}>
                   Нажимая кнопку, вы принимаете{" "}
                   <Link
                     href="/privacy"

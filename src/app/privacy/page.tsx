@@ -149,7 +149,7 @@ export default function PrivacyPage() {
                     display: "flex",
                     gap: "24px",
                     fontSize: "13px",
-                    color: "#4B556A",
+                    color: "#6B7280",
                   }}
                 >
                   <span>Обновлено: 14 апреля 2024</span>
@@ -387,7 +387,7 @@ export default function PrivacyPage() {
                         <p
                           style={{
                             fontSize: "12px",
-                            color: "#4B556A",
+                            color: "#6B7280",
                             marginBottom: "4px",
                           }}
                         >
@@ -496,7 +496,7 @@ export default function PrivacyPage() {
                         <p
                           style={{
                             fontSize: "12px",
-                            color: "#4B556A",
+                            color: "#6B7280",
                             marginBottom: "4px",
                           }}
                         >
@@ -564,7 +564,7 @@ export default function PrivacyPage() {
                           <span
                             style={{
                               fontSize: "11px",
-                              color: "#4B556A",
+                              color: "#6B7280",
                               fontFamily: "monospace",
                               flexShrink: 0,
                             }}
@@ -671,7 +671,7 @@ export default function PrivacyPage() {
                     textDecoration: "none",
                   }}
                 >
-                  <ExternalLink size={15} color="#4B556A" />
+                  <ExternalLink size={15} color="#6B7280" />
                   <p style={{ fontSize: "14px", fontWeight: 600, color: "#F0EEFF" }}>
                     {doc.title}
                   </p>

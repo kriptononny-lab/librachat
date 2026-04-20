@@ -199,7 +199,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
           >
             Начать бесплатно <ArrowRight size={16} />
           </Link>
-          <p style={{ marginTop: "12px", fontSize: "13px", color: "#4B556A" }}>
+          <p style={{ marginTop: "12px", fontSize: "13px", color: "#6B7280" }}>
             30 секунд · Без карты · Без VPN
           </p>
         </motion.div>

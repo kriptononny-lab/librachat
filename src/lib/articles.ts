@@ -38,9 +38,9 @@ export const TYPE_COLOR: Record<
     border: "rgba(167,139,250,0.3)",
   },
   новость: {
-    bg: "rgba(245,166,35,0.15)",
+    bg: "rgba(167,139,250,0.15)",
     text: "#A78BFA",
-    border: "rgba(245,166,35,0.3)",
+    border: "rgba(167,139,250,0.3)",
   },
 };
 

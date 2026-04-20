@@ -247,7 +247,7 @@ export default function ContactPage() {
                     <Send size={16} />
                     Отправить заявку
                   </Link>
-                  <p style={{ fontSize: "12px", textAlign: "center", color: "#4B556A" }}>
+                  <p style={{ fontSize: "12px", textAlign: "center", color: "#6B7280" }}>
                     Нажимая кнопку, вы принимаете{" "}
                     <Link
                       href="/privacy"

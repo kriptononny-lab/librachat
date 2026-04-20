@@ -240,7 +240,7 @@ function ChatMockup() {
           padding: "10px 14px",
           borderRadius: "12px",
           fontSize: "12px",
-          color: "#4B556A",
+          color: "#6B7280",
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.06)",
         }}

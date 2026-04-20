@@ -11,10 +11,10 @@
   --color-brand-400: #c4b5fd;
   --color-brand-500: #a78bfa;
   --color-brand-600: #7b2fbe;
-  --color-brand-700: #6b3fa0;
+  --color-brand-700: #7b2fbe;
 
   --color-amber-400: #c4b5fd;
-  --color-amber-500: #8b5cf6;
+  --color-amber-500: #a78bfa;
 
   --color-bg-base: #040408;
   --color-bg-surface: #080810;
@@ -27,7 +27,7 @@
 
   --color-border: rgba(255, 255, 255, 0.07);
   --color-border-medium: rgba(255, 255, 255, 0.1);
-  --color-border-accent: rgba(212, 165, 116, 0.22);
+  --color-border-accent: rgba(167, 139, 250, 0.22);
 
   --color-success: #22c55e;
   --color-warning: #f59e0b;
@@ -58,14 +58,14 @@
   --t-brand: #a78bfa;
   --t-brand-light: #c4b5fd;
   --t-brand-hover: #7b2fbe;
-  --t-brand-glow: rgba(212, 165, 116, 0.22);
-  --t-brand-orb: rgba(212, 165, 116, 0.09);
+  --t-brand-glow: rgba(167, 139, 250, 0.22);
+  --t-brand-orb: rgba(167, 139, 250, 0.09);
   --t-border: rgba(255, 255, 255, 0.07);
-  --t-border-pop: rgba(212, 165, 116, 0.22);
+  --t-border-pop: rgba(167, 139, 250, 0.22);
   --t-btn-text: #ffffff;
-  --t-gradient: linear-gradient(135deg, #7b2fbe, #9b72f0);
+  --t-gradient: linear-gradient(135deg, #7b2fbe, #a78bfa, #f472b6);
   --t-dot: #a78bfa;
-  --t-dot-glow: rgba(212, 165, 116, 0.5);
+  --t-dot-glow: rgba(167, 139, 250, 0.5);
 }
 
 *,
@@ -132,13 +132,13 @@ body {
    Компоненты
    =================================================== */
 .btn-primary-glow {
-  box-shadow: 0 4px 20px rgba(212, 165, 116, 0.25);
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.25);
   transition:
     box-shadow 200ms ease,
     background 200ms ease;
 }
 .btn-primary-glow:hover {
-  box-shadow: 0 4px 28px rgba(212, 165, 116, 0.4);
+  box-shadow: 0 4px 28px rgba(167, 139, 250, 0.4);
 }
 
 .card-dark {
@@ -154,7 +154,7 @@ body {
 
 /* Градиентный текст */
 .text-gradient {
-  background: linear-gradient(135deg, #9b72f0, #c4b5fd);
+  background: linear-gradient(135deg, #a78bfa, #c4b5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -171,8 +171,8 @@ body {
   gap: 6px;
   padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(212, 165, 116, 0.1);
-  border: 1px solid rgba(212, 165, 116, 0.22);
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.22);
   font-size: 11px;
   font-weight: 600;
   color: #c4b5fd;
@@ -187,8 +187,8 @@ body {
     transform 200ms ease;
 }
 .card-hover:hover {
-  border-color: rgba(212, 165, 116, 0.22) !important;
-  background: rgba(35, 30, 18, 0.98) !important;
+  border-color: rgba(167, 139, 250, 0.22) !important;
+  background: rgba(16, 10, 30, 0.98) !important;
   transform: translateY(-2px);
 }
 
@@ -300,7 +300,7 @@ a[class*="rounded-"] {
   height: 6px;
   border-radius: 50%;
   background: #a78bfa;
-  box-shadow: 0 0 6px rgba(212, 165, 116, 0.55);
+  box-shadow: 0 0 6px rgba(167, 139, 250, 0.55);
   animation: badge-pulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -318,14 +318,14 @@ a[class*="rounded-"] {
 
 /* Кнопка primary — warm gold */
 .btn-primary-gold {
-  background: linear-gradient(135deg, #7b2fbe, #9b72f0);
+  background: linear-gradient(135deg, #7b2fbe, #a78bfa, #f472b6);
   color: #ffffff !important;
-  box-shadow: 0 4px 20px rgba(212, 165, 116, 0.25);
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.25);
   transition: opacity 150ms ease;
 }
 .btn-primary-gold:hover {
   opacity: 0.9;
-  box-shadow: 0 4px 28px rgba(212, 165, 116, 0.4);
+  box-shadow: 0 4px 28px rgba(167, 139, 250, 0.4);
 }
 
 /* Grid helpers */

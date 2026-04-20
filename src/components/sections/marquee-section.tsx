@@ -35,7 +35,7 @@ function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
                 padding: "0 28px",
                 fontSize: "13px",
                 fontWeight: 500,
-                color: "#4B556A",
+                color: "#6B7280",
                 whiteSpace: "nowrap",
                 letterSpacing: "0.02em",
               }}

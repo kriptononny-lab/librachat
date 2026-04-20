@@ -142,7 +142,7 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
             alignItems: "center",
             gap: "12px",
             fontSize: "12px",
-            color: "#4B556A",
+            color: "#6B7280",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
@@ -320,7 +320,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   border: "1px solid rgba(255,255,255,0.1)",
                 }}
               >
-                <Search size={18} color="#4B556A" style={{ flexShrink: 0 }} />
+                <Search size={18} color="#6B7280" style={{ flexShrink: 0 }} />
                 <input
                   type="text"
                   placeholder="Найти статью или кейс..."
@@ -640,7 +640,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                         ? "Кейсы"
                         : "Гайды"}
                 </h2>
-                <p style={{ fontSize: "13px", color: "#4B556A", marginTop: "4px" }}>
+                <p style={{ fontSize: "13px", color: "#6B7280", marginTop: "4px" }}>
                   Найдено {filteredArticles.length}{" "}
                   {filteredArticles.length === 1 ? "материал" : "материалов"}
                 </p>
@@ -661,7 +661,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
               </div>
             ) : (
               <div
-                style={{ textAlign: "center", padding: "60px 20px", color: "#4B556A" }}
+                style={{ textAlign: "center", padding: "60px 20px", color: "#6B7280" }}
               >
                 <BookOpen size={40} style={{ margin: "0 auto 16px", opacity: 0.3 }} />
                 <p style={{ fontSize: "16px" }}>По запросу ничего не найдено</p>
