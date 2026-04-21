@@ -322,14 +322,14 @@ a[class*="rounded-"] {
   color: #ffffff !important;
   box-shadow:
     0 4px 20px rgba(167, 139, 250, 0.25),
-    0 0 32px rgba(251, 146, 60, 0.35);
+    0 0 32px rgba(244, 114, 182, 0.35);
   transition: all 200ms ease;
 }
 .btn-primary-gold:hover {
   opacity: 0.9;
   box-shadow:
     0 4px 28px rgba(167, 139, 250, 0.4),
-    0 0 44px rgba(251, 146, 60, 0.5);
+    0 0 44px rgba(244, 114, 182, 0.5);
   transform: translateY(-1px);
 }
 

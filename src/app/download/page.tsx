@@ -175,7 +175,7 @@ export default function DownloadPage() {
                   fontWeight: 700,
                   textDecoration: "none",
                   boxShadow:
-                    "0 4px 20px rgba(167,139,250,0.3), 0 0 32px rgba(251,146,60,0.2)",
+                    "0 4px 20px rgba(167,139,250,0.3), 0 0 32px rgba(244,114,182,0.2)",
                 }}
               >
                 Начать бесплатно

@@ -255,7 +255,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                   el.style.background = "rgba(16,10,30,0.98)";
                   el.style.transform = "translateY(-4px)";
                   el.style.boxShadow =
-                    "0 8px 32px rgba(167,139,250,0.15), 0 0 60px rgba(251,146,60,0.08)";
+                    "0 8px 32px rgba(167,139,250,0.15), 0 0 60px rgba(244,114,182,0.08)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget;
