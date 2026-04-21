@@ -269,7 +269,7 @@ export default async function BusinessPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
                 <div className="section-badge" style={{ width: "fit-content" }}>
                   <span className="badge-dot" />
-                  {page?.heroBadge ?? "✦ РЕШЕНИЯ ДЛЯ БИЗНЕСА"}
+                  {page?.heroBadge ?? "РЕШЕНИЯ ДЛЯ БИЗНЕСА"}
                 </div>
                 <h1
                   style={{
