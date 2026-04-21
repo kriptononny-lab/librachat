@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import type { StrapiPlan, StrapiFaq, StrapiPricingPage } from "@/lib/strapi";
 
 const STATIC_PLANS: StrapiPlan[] = [
@@ -237,7 +237,25 @@ export function PricingClient({
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               ТАРИФЫ
             </div>
-            <h2 style={heading}>{page?.plansTitle ?? "Выбери свой результат"}</h2>
+            <h2 style={heading}>
+              {page?.plansTitle ? (
+                page.plansTitle
+              ) : (
+                <>
+                  Выбери свой{" "}
+                  <span
+                    style={{
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    результат
+                  </span>
+                </>
+              )}
+            </h2>
             <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
               {page?.plansSubtitle ??
                 "Тарифы — один инструмент для всех задач. Расти вместе с ним."}
@@ -331,36 +349,6 @@ export function PricingClient({
                       <span style={{ fontSize: "14px", color: "#9CA3B8" }}>/ мес</span>
                     )}
                   </div>
-                  <ul
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "12px",
-                      marginBottom: "28px",
-                      flex: 1,
-                    }}
-                  >
-                    {(plan.features ?? []).map((f) => (
-                      <li
-                        key={f.label}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "10px",
-                          fontSize: "14px",
-                        }}
-                      >
-                        {f.ok ? (
-                          <Check size={15} color="#F472B6" style={{ flexShrink: 0 }} />
-                        ) : (
-                          <X size={15} color="#1A1A2E" style={{ flexShrink: 0 }} />
-                        )}
-                        <span style={{ color: f.ok ? "#9CA3B8" : "#1A1A2E" }}>
-                          {f.label}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                   <Link
                     href={plan.ctaHref}
                     style={{
@@ -372,13 +360,14 @@ export function PricingClient({
                       fontSize: "14px",
                       fontWeight: 600,
                       textDecoration: "none",
+                      marginBottom: "24px",
                       background: plan.isPopular
                         ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
                         : "transparent",
                       color: plan.isPopular ? "#fff" : "#F0EEFF",
                       border: plan.isPopular
                         ? "none"
-                        : "1px solid rgba(255,255,255,0.16)",
+                        : "1px solid rgba(167,139,250,0.25)",
                       boxShadow: plan.isPopular
                         ? "0 4px 20px rgba(167,139,250,0.4)"
                         : "none",
@@ -386,6 +375,33 @@ export function PricingClient({
                   >
                     {plan.ctaLabel}
                   </Link>
+                  <ul
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                  >
+                    {(plan.features ?? []).map((f) => (
+                      <li
+                        key={f.label}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          fontSize: "14px",
+                          opacity: f.ok ? 1 : 0.35,
+                        }}
+                      >
+                        <Check
+                          size={15}
+                          color={f.ok ? "#F472B6" : "#6B7280"}
+                          style={{ flexShrink: 0 }}
+                        />
+                        <span style={{ color: "#9CA3B8" }}>{f.label}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
