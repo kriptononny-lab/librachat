@@ -103,7 +103,7 @@ export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "16px",
             alignItems: "stretch",
           }}

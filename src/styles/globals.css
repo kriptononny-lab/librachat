@@ -381,3 +381,19 @@ a[class*="rounded-"] {
     display: none;
   }
 }
+
+/* ── Мобиль: кнопки в паре одинаковой ширины ── */
+@media (max-width: 600px) {
+  .btn-pair {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .btn-pair a,
+  .btn-pair button {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -105,6 +105,9 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   textDecoration: "none",
                   boxShadow: "0 4px 24px rgba(167,139,250,0.45)",
                   transition: "transform 150ms ease",
+                  flex: "1 1 auto",
+                  minWidth: "200px",
+                  maxWidth: "320px",
                 }}
               >
                 Начать бесплатно
@@ -124,6 +127,9 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   textDecoration: "none",
                   border: "1px solid rgba(255,255,255,0.18)",
                   transition: "border-color 150ms ease",
+                  flex: "1 1 auto",
+                  minWidth: "200px",
+                  maxWidth: "320px",
                 }}
               >
                 Запросить демо
