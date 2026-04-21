@@ -77,12 +77,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: `
           .mobile-burger-btn { display: none !important; }
+          .mobile-cta-btn { display: none; }
           .desktop-nav { display: flex; }
           .desktop-nav-right { display: flex; }
           @media (max-width: 768px) {
             .mobile-burger-btn { display: flex !important; }
             .desktop-nav { display: none !important; }
             .desktop-nav-right { display: none !important; }
+            .mobile-cta-btn { display: flex !important; }
           }
         `,
           }}

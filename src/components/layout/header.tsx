@@ -511,6 +511,27 @@ export function Header() {
               </Button>
             </div>
 
+            {/* CTA кнопка для мобиля — всегда видна */}
+            <Link
+              href="https://librachat.kz/auth"
+              className="mobile-cta-btn"
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "8px 16px",
+                borderRadius: "999px",
+                background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                color: "#fff",
+                fontSize: "13px",
+                fontWeight: 700,
+                textDecoration: "none",
+                flexShrink: 0,
+                boxShadow: "0 2px 12px rgba(167,139,250,0.35)",
+              }}
+            >
+              Начать
+            </Link>
+
             <button
               className="mobile-burger-btn"
               onClick={() => setMenuOpen(true)}
