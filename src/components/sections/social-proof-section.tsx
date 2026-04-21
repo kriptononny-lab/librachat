@@ -61,15 +61,6 @@ const STATIC_TESTIMONIALS = [
   },
 ];
 
-const STATS = [
-  {
-    el: <AnimatedCounter to={1480} suffix="+" />,
-    label: "тестировщиков подтвердили преимущества",
-  },
-  { el: <span>4.9 / 5</span>, label: "средняя оценка пользователей" },
-  { el: <span>30 сек</span>, label: "среднее время регистрации" },
-];
-
 function StarRow() {
   return (
     <div style={{ display: "flex", gap: "4px" }}>
@@ -122,6 +113,7 @@ export function SocialProofSection({
           style={{ textAlign: "center", marginBottom: "56px" }}
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>
+            <span className="badge-dot" />
             {badge}
           </div>
           <h2

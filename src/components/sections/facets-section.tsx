@@ -151,6 +151,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
           style={{ textAlign: "center", marginBottom: "52px" }}
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>
+            <span className="badge-dot" />
             {badge}
           </div>
           <h2

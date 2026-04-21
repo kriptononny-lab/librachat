@@ -526,6 +526,7 @@ export default async function FeaturesPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "72px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
+                <span className="badge-dot" />
                 {page?.deepBadge ?? "ТВОЙ ИИ-ПОМОЩНИК"}
               </div>
               <h2 style={S.h2}>{page?.featuresTitle ?? "Всё в одном окне"}</h2>
@@ -587,6 +588,7 @@ export default async function FeaturesPage() {
                     }}
                   >
                     <div className="section-badge" style={{ width: "fit-content" }}>
+                      <span className="badge-dot" />
                       {feat.badge}
                     </div>
                     <h3
@@ -637,6 +639,7 @@ export default async function FeaturesPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "52px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
+                <span className="badge-dot" />
                 КЛЮЧЕВЫЕ ФУНКЦИИ
               </div>
               <h2 style={S.h2}>
@@ -804,6 +807,7 @@ export default async function FeaturesPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "52px" }}>
               <div className="section-badge" style={{ marginBottom: "14px" }}>
+                <span className="badge-dot" />
                 {page?.usecasesBadge ?? "ДЛЯ КОГО"}
               </div>
               <h2 style={S.h2}>{page?.usecasesTitle ?? "Решает задачи любой сферы"}</h2>
@@ -939,7 +943,10 @@ export default async function FeaturesPage() {
                   gap: "20px",
                 }}
               >
-                <div className="section-badge">14 ДНЕЙ БЕСПЛАТНО</div>
+                <div className="section-badge">
+                  <span className="badge-dot" />
+                  14 ДНЕЙ БЕСПЛАТНО
+                </div>
                 <h2
                   style={{
                     fontSize: "clamp(28px, 3.5vw, 48px)",

@@ -97,6 +97,7 @@ export function FeaturesSection() {
           style={{ textAlign: "center", marginBottom: "56px" }}
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>
+            <span className="badge-dot" />
             ВСЁ В ОДНОМ ОКНЕ
           </div>
           <h2

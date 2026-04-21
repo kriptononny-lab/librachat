@@ -268,6 +268,7 @@ export default async function BusinessPage() {
               {/* Текст */}
               <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
                 <div className="section-badge" style={{ width: "fit-content" }}>
+                  <span className="badge-dot" />
                   {page?.heroBadge ?? "✦ РЕШЕНИЯ ДЛЯ БИЗНЕСА"}
                 </div>
                 <h1
@@ -560,6 +561,7 @@ export default async function BusinessPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
+                <span className="badge-dot" />
                 ПОЧЕМУ LIBRACHAT ДЛЯ БИЗНЕСА
               </div>
               <h2 style={S.h2}>
@@ -609,6 +611,7 @@ export default async function BusinessPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
+                <span className="badge-dot" />
                 ПРИМЕНЕНИЕ
               </div>
               <h2 style={S.h2}>Как бизнес использует LibraChat</h2>
@@ -672,6 +675,7 @@ export default async function BusinessPage() {
           <div className="container-site">
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
+                <span className="badge-dot" />
                 КЛИЕНТЫ О НАС
               </div>
               <h2 style={S.h2}>

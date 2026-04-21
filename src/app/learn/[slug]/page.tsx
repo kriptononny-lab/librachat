@@ -975,6 +975,7 @@ export default async function ArticlePage({
                     className="section-badge"
                     style={{ marginBottom: "12px", fontSize: "10px" }}
                   >
+                    <span className="badge-dot" />
                     14 ДНЕЙ БЕСПЛАТНО
                   </div>
                   <p
@@ -1100,6 +1101,7 @@ export default async function ArticlePage({
                 margin: "0 auto 16px",
               }}
             >
+              <span className="badge-dot" />
               ДРУГИЕ МАТЕРИАЛЫ
             </div>
             <h2
@@ -1232,7 +1234,11 @@ export default async function ArticlePage({
                   gap: "20px",
                 }}
               >
-                <div className="section-badge">ПОЛУЧИТЕ ТЕ ЖЕ РЕЗУЛЬТАТЫ</div>
+                <div className="section-badge">
+                  <span className="badge-dot" />
+                  ПОЛУЧИТЕ ТЕ ЖЕ РЕЗУЛЬТАТЫ
+                </div>
+                <span className="badge-dot" />
                 <h2
                   style={{
                     fontSize: "clamp(28px, 3.5vw, 48px)",

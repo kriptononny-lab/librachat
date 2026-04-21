@@ -124,7 +124,7 @@ export default function PrivacyPage() {
                   className="section-badge"
                   style={{ marginBottom: "16px", width: "fit-content" }}
                 >
-                  ✦ ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+                  <span className="badge-dot" />✦ ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
                 </div>
                 <h1
                   style={{

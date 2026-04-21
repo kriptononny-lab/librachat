@@ -77,7 +77,7 @@ export default function TermsPage() {
               className="section-badge"
               style={{ marginBottom: "16px", width: "fit-content" }}
             >
-              ✦ ПРАВОВАЯ ИНФОРМАЦИЯ
+              <span className="badge-dot" />✦ ПРАВОВАЯ ИНФОРМАЦИЯ
             </div>
             <h1
               style={{

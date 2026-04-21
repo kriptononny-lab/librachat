@@ -390,6 +390,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
             <div className="container-site">
               <div style={{ marginBottom: "40px" }}>
                 <div className="section-badge" style={{ marginBottom: "14px" }}>
+                  <span className="badge-dot" />
                   РЕАЛЬНЫЕ ИСТОРИИ
                 </div>
                 <h2
@@ -531,7 +532,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                             {article.author}
                           </p>
                           <p style={{ fontSize: "11px", color: "#9CA3B8" }}>
-                            {(article as any).authorRole}
+                            {(article as { authorRole?: string }).authorRole}
                           </p>
                         </div>
                       </div>
@@ -578,6 +579,7 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
             <div className="container-site">
               <div style={{ marginBottom: "32px" }}>
                 <div className="section-badge" style={{ marginBottom: "14px" }}>
+                  <span className="badge-dot" />
                   РЕДАКЦИЯ РЕКОМЕНДУЕТ
                 </div>
                 <h2
@@ -751,7 +753,10 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                   gap: "20px",
                 }}
               >
-                <div className="section-badge">14 ДНЕЙ БЕСПЛАТНО</div>
+                <div className="section-badge">
+                  <span className="badge-dot" />
+                  14 ДНЕЙ БЕСПЛАТНО
+                </div>
                 <h2
                   style={{
                     fontSize: "clamp(26px, 3vw, 44px)",

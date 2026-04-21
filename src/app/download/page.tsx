@@ -101,6 +101,7 @@ export default function DownloadPage() {
         <section style={{ padding: "80px 0 72px", textAlign: "center" }}>
           <div className="container-site" style={{ maxWidth: "640px" }}>
             <div className="section-badge" style={{ marginBottom: "20px" }}>
+              <span className="badge-dot" />
               ПРИЛОЖЕНИЯ
             </div>
             <h1

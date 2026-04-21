@@ -83,6 +83,7 @@ export default function ContactPage() {
         <section style={{ padding: "80px 0 60px", textAlign: "center" }}>
           <div className="container-site" style={{ maxWidth: "680px" }}>
             <div className="section-badge" style={{ marginBottom: "20px" }}>
+              <span className="badge-dot" />
               СВЯЗАТЬСЯ С НАМИ
             </div>
             <h1

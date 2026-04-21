@@ -54,7 +54,10 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
               gap: "20px",
             }}
           >
-            <div className="section-badge">{badge}</div>
+            <div className="section-badge">
+              <span className="badge-dot" />
+              {badge}
+            </div>
 
             <h2
               style={{

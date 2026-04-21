@@ -150,7 +150,9 @@ export function PricingClient({
             gap: "20px",
           }}
         >
-          <div className="section-badge">✦ ТАРИФНЫЕ ПЛАНЫ</div>
+          <div className="section-badge">
+            <span className="badge-dot" />✦ ТАРИФНЫЕ ПЛАНЫ
+          </div>
           <h1
             style={{ ...heading, fontSize: "clamp(36px, 5vw, 64px)", maxWidth: "600px" }}
           >
@@ -235,6 +237,7 @@ export function PricingClient({
         <div className="container-site">
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
+              <span className="badge-dot" />
               ТАРИФЫ
             </div>
             <h2 style={heading}>
@@ -420,6 +423,7 @@ export function PricingClient({
         <div className="container-site" style={{ maxWidth: "780px" }}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
+              <span className="badge-dot" />
               ЧАСТО ЗАДАЮТ
             </div>
             <h2 style={heading}>Остались вопросы?</h2>
@@ -559,7 +563,10 @@ export function PricingClient({
                 gap: "20px",
               }}
             >
-              <div className="section-badge">НАЧНИТЕ УЖЕ СЕГОДНЯ</div>
+              <div className="section-badge">
+                <span className="badge-dot" />
+                НАЧНИТЕ УЖЕ СЕГОДНЯ
+              </div>
               <h2 style={{ ...heading, fontSize: "clamp(32px, 4vw, 56px)" }}>
                 {page?.ctaTitle ?? "14 дней бесплатно на любом тарифе"}
               </h2>
