@@ -3,7 +3,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { ArrowRight, Send, BarChart2, FileText, Languages, PenLine } from "lucide-react";
+import {
+  ArrowRight,
+  Send,
+  BarChart2,
+  FileText,
+  Languages,
+  PenLine,
+  Paperclip,
+  ImageIcon,
+  Mic,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const STATIC_HERO_PHRASES = [
@@ -127,6 +137,37 @@ function AnimatedInput() {
         >
           <Send size={16} color="#ffffff" />
         </button>
+      </div>
+
+      {/* Иконки снизу */}
+      <div
+        style={{
+          padding: "10px 20px 14px",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+          borderTop: "1px solid rgba(255,255,255,0.05)",
+        }}
+      >
+        {([Paperclip, ImageIcon, Mic] as const).map((Icon, i) => (
+          <button
+            key={i}
+            style={{
+              width: "32px",
+              height: "32px",
+              borderRadius: "8px",
+              background: "transparent",
+              border: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#6B7280",
+              cursor: "pointer",
+            }}
+          >
+            <Icon size={15} />
+          </button>
+        ))}
       </div>
     </div>
   );
