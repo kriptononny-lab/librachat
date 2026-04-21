@@ -320,12 +320,17 @@ a[class*="rounded-"] {
 .btn-primary-gold {
   background: linear-gradient(135deg, #7b2fbe, #a78bfa, #f472b6);
   color: #ffffff !important;
-  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.25);
-  transition: opacity 150ms ease;
+  box-shadow:
+    0 4px 20px rgba(167, 139, 250, 0.25),
+    0 0 32px rgba(251, 146, 60, 0.35);
+  transition: all 200ms ease;
 }
 .btn-primary-gold:hover {
   opacity: 0.9;
-  box-shadow: 0 4px 28px rgba(167, 139, 250, 0.4);
+  box-shadow:
+    0 4px 28px rgba(167, 139, 250, 0.4),
+    0 0 44px rgba(251, 146, 60, 0.5);
+  transform: translateY(-1px);
 }
 
 /* Grid helpers */

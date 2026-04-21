@@ -7,6 +7,7 @@ import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { PricingPreviewSection } from "@/components/sections/pricing-preview-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { ComparisonSection } from "@/components/sections/comparison-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -99,6 +100,7 @@ export default async function HomePage() {
         <HeroSection texts={texts} />
         <FacetsSection texts={texts} />
         <StepsSection texts={texts} />
+        <ComparisonSection />
         <SocialProofSection testimonials={testimonials} texts={texts} />
         <PricingPreviewSection plans={plans} />
         <FaqSection faqs={faqs} texts={texts} />

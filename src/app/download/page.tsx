@@ -150,6 +150,54 @@ export default function DownloadPage() {
                 </div>
               ))}
             </div>
+            {/* CTA кнопки */}
+            <div
+              style={{
+                display: "flex",
+                gap: "12px",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                marginTop: "32px",
+              }}
+            >
+              <Link
+                href="https://librachat.kz/auth"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "14px 28px",
+                  borderRadius: "999px",
+                  background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                  color: "#fff",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  boxShadow:
+                    "0 4px 20px rgba(167,139,250,0.3), 0 0 32px rgba(251,146,60,0.2)",
+                }}
+              >
+                Начать бесплатно
+              </Link>
+              <Link
+                href="https://librachat.kz/auth"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "14px 28px",
+                  borderRadius: "999px",
+                  background: "transparent",
+                  color: "#F0EEFF",
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  border: "1px solid rgba(167,139,250,0.25)",
+                }}
+              >
+                Посмотреть демо →
+              </Link>
+            </div>
           </div>
         </section>
 
