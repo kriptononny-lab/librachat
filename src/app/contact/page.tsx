@@ -236,7 +236,7 @@ export default function ContactPage() {
                       gap: "8px",
                       padding: "15px",
                       borderRadius: "999px",
-                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                      background: "#A78BFA",
                       color: "#fff",
                       fontSize: "15px",
                       fontWeight: 600,
