@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { UserPlus, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
+import { UserPlus, MessageCircle, Sparkles } from "lucide-react";
 
 export function StepsSection({ texts = {} }: { texts?: Record<string, string> }) {
   const badge = texts["steps.badge"] ?? "3 ПРОСТЫХ ШАГА";
@@ -197,7 +197,7 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
               boxShadow: "0 4px 24px rgba(167,139,250,0.4)",
             }}
           >
-            Начать бесплатно <ArrowRight size={16} />
+            Начать бесплатно
           </Link>
           <p style={{ marginTop: "12px", fontSize: "13px", color: "#6B7280" }}>
             30 секунд · Без карты · Без VPN

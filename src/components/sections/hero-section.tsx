@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import {
-  ArrowRight,
   Send,
   BarChart2,
   FileText,
@@ -414,7 +413,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                 className="inline-flex items-center gap-2"
                 style={{ minWidth: "220px", maxWidth: "280px", flex: "1 1 auto" }}
               >
-                Для бизнеса <ArrowRight size={16} />
+                Для бизнеса
               </Link>
             </Button>
           </motion.div>

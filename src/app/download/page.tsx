@@ -196,7 +196,7 @@ export default function DownloadPage() {
                   border: "1px solid rgba(167,139,250,0.25)",
                 }}
               >
-                Посмотреть демо →
+                Посмотреть демо
               </Link>
             </div>
           </div>
