@@ -74,42 +74,6 @@ function AnimatedInput() {
         overflow: "hidden",
       }}
     >
-      {/* Теги — только десктоп */}
-      <div
-        className="widget-tabs"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          padding: "14px 20px 12px",
-          borderBottom: "1px solid rgba(255,255,255,0.05)",
-        }}
-      >
-        {["LibraChat", "Pro", "Без VPN", "Помнит всё"].map((t, i) => (
-          <span
-            key={t}
-            style={{
-              padding: "3px 10px",
-              borderRadius: "999px",
-              fontSize: "12px",
-              fontWeight: 500,
-              ...(i === 0
-                ? {
-                    background: "rgba(167,139,250,0.2)",
-                    color: "#9CA3B8",
-                    border: "1px solid rgba(167,139,250,0.35)",
-                  }
-                : {
-                    color: "rgba(255,255,255,0.25)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }),
-            }}
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-
       {/* Ввод */}
       <div
         style={{
@@ -442,7 +406,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                   style={{
                     fontSize: "clamp(16px, 3.5vw, 22px)",
                     fontWeight: 700,
-                    color: "#A78BFA",
+                    color: "#F0EEFF",
                   }}
                 >
                   {s.value}
