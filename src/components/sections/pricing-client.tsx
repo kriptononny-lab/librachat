@@ -175,9 +175,9 @@ export function PricingClient({
               display: "inline-flex",
               padding: "4px",
               borderRadius: "999px",
-              gap: "4px",
-              background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.07)",
+              gap: "8px",
+              background: "none",
+              border: "none",
               marginTop: "8px",
             }}
           >

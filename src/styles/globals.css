@@ -397,3 +397,16 @@ a[class*="rounded-"] {
     justify-content: center;
   }
 }
+
+/* Platform grid (download page) */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

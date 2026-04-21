@@ -278,13 +278,15 @@ export default function DownloadPage() {
                     <Link
                       href={href}
                       style={{
-                        display: "flex",
+                        display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
                         gap: "8px",
-                        padding: "13px 20px",
+                        padding: "12px 24px",
                         borderRadius: "999px",
-                        background: primary ? "#A78BFA" : "transparent",
+                        background: primary
+                          ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                          : "transparent",
                         color: primary ? "#fff" : "#F0EEFF",
                         fontSize: "15px",
                         fontWeight: 600,
