@@ -23,14 +23,21 @@ export const metadata: Metadata = {
     siteName: "LibraChat",
     locale: "ru_RU",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+    images: [
+      {
+        url: "https://librachat.ai/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LibraChat",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LibraChat — первый российский ИИ-ассистент без VPN",
     description:
       "Анализ файлов, тексты, перевод, код — всё в одном чате без VPN. 14 дней бесплатно.",
-    images: ["/og-image.png"],
+    images: ["https://librachat.ai/og-image.png"],
   },
 };
 

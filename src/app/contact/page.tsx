@@ -15,13 +15,20 @@ export const metadata: Metadata = {
     siteName: "LibraChat",
     locale: "ru_RU",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LibraChat" }],
+    images: [
+      {
+        url: "https://librachat.ai/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LibraChat",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Контакты и запрос демо LibraChat",
     description: "Запросите демо или задайте вопрос команде LibraChat.",
-    images: ["/og-image.png"],
+    images: ["https://librachat.ai/og-image.png"],
   },
   alternates: {
     canonical: "https://librachat.ai/contact",
