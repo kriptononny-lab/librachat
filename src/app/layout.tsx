@@ -121,6 +121,42 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "LibraChat",
+              url: "https://librachat.ai",
+              description: "ИИ-ассистент без VPN для России и СНГ",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://librachat.ai/learn?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "LibraChat",
+              url: "https://librachat.ai",
+              logo: "https://librachat.ai/logo.png",
+              sameAs: [],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "support@librachat.kz",
+                contactType: "customer support",
+                availableLanguage: "Russian",
+              },
+            }),
+          }}
+        />
         <GoogleAnalytics />
         <YandexMetrika />
         {children}

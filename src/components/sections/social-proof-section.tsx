@@ -1,29 +1,10 @@
 "use client";
 
-import { motion, useInView, useMotionValue, animate } from "motion/react";
-import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { StrapiTestimonial } from "@/lib/strapi";
-
-function AnimatedCounter({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const count = useMotionValue(0);
-  useEffect(() => {
-    if (!inView) return;
-    const c = animate(count, to, {
-      duration: 1.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate(v) {
-        if (ref.current)
-          ref.current.textContent = Math.round(v).toLocaleString("ru") + suffix;
-      },
-    });
-    return c.stop;
-  }, [inView, to, suffix, count]);
-  return <span ref={ref}>0{suffix}</span>;
-}
 
 const STATIC_TESTIMONIALS = [
   {

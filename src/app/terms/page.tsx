@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://librachat.ai/terms" },
   title: "Пользовательское соглашение",
   description: "Условия использования сервиса LibraChat.",
 };

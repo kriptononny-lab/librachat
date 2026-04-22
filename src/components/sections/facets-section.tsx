@@ -233,7 +233,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
               gap: "20px",
             }}
           >
-            {DYNAMIC_CARDS[activeTab].map((card, i) => (
+            {DYNAMIC_CARDS[activeTab].map((card, _i) => (
               <Link
                 key={card.badge}
                 href={card.href}

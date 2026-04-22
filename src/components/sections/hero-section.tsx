@@ -303,7 +303,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
           </motion.h1>
 
           {/* Ротируемая фраза */}
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.18 }}
@@ -317,7 +317,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
             }}
           >
             <RotatingHeadline phrases={HERO_PHRASES} />
-          </motion.div>
+          </motion.h2>
 
           {/* Подзаголовок */}
           <motion.p

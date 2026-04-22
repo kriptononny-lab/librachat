@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://librachat.ai/privacy" },
   title: "Политика конфиденциальности",
   description: "Как LibraChat собирает, использует и защищает ваши персональные данные.",
 };
