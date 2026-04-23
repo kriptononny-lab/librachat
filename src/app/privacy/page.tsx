@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, ExternalLink } from "lucide-react";
-import { ServerHeader } from "@/components/layout/server-header";
+import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
         background: "#040408",
       }}
     >
-      <ServerHeader />
+      <Header />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Шапка */}
         <section style={{ padding: "60px 0 48px" }}>

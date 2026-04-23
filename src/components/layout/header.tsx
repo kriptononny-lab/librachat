@@ -258,21 +258,7 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
 // ===================================================
 // Мобильное меню — без анимации, максимально надёжно
 // ===================================================
-function MobileMenu({
-  open,
-  onClose,
-  loginText = "Войти",
-  loginUrl = "https://librachat.kz/auth",
-  registerText = "Начать бесплатно",
-  registerUrl = "https://librachat.kz/auth",
-}: {
-  open: boolean;
-  onClose: () => void;
-  loginText?: string;
-  loginUrl?: string;
-  registerText?: string;
-  registerUrl?: string;
-}) {
+function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const prevPathname = useRef(pathname);
 
@@ -420,7 +406,7 @@ function MobileMenu({
           }}
         >
           <Link
-            href={registerUrl}
+            href="https://librachat.kz/auth"
             style={{
               display: "flex",
               alignItems: "center",
@@ -434,10 +420,10 @@ function MobileMenu({
               border: "1px solid rgba(255,255,255,0.16)",
             }}
           >
-            {loginText}
+            Войти
           </Link>
           <Link
-            href={registerUrl}
+            href="https://librachat.kz/auth"
             style={{
               display: "flex",
               alignItems: "center",
@@ -452,7 +438,7 @@ function MobileMenu({
               boxShadow: "0 4px 16px rgba(167,139,250,0.4)",
             }}
           >
-            {registerText}
+            Начать бесплатно
           </Link>
         </div>
       </div>
@@ -463,17 +449,7 @@ function MobileMenu({
 // ===================================================
 // Header (главный компонент)
 // ===================================================
-export function Header({
-  loginText = "Войти",
-  loginUrl = "https://librachat.kz/auth",
-  registerText = "Начать бесплатно",
-  registerUrl = "https://librachat.kz/auth",
-}: {
-  loginText?: string;
-  loginUrl?: string;
-  registerText?: string;
-  registerUrl?: string;
-} = {}) {
+export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const handleClose = useCallback(() => setMenuOpen(false), []);
@@ -530,16 +506,16 @@ export function Header({
               style={{ alignItems: "center", gap: "8px", flexShrink: 0 }}
             >
               <Button variant="ghost" size="md" asChild>
-                <Link href={loginUrl}>{loginText}</Link>
+                <Link href="https://librachat.kz/auth">Войти</Link>
               </Button>
               <Button variant="primary" size="md" asChild>
-                <Link href={registerUrl}>{registerText}</Link>
+                <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
               </Button>
             </div>
 
             {/* CTA кнопка для мобиля — всегда видна */}
             <Link
-              href={registerUrl}
+              href="https://librachat.kz/auth"
               className="mobile-cta-btn"
               style={{
                 alignItems: "center",
@@ -555,7 +531,7 @@ export function Header({
                 boxShadow: "0 2px 12px rgba(167,139,250,0.35)",
               }}
             >
-              {loginText}
+              Начать
             </Link>
 
             <button
@@ -578,14 +554,7 @@ export function Header({
           </div>
         </div>
       </header>
-      <MobileMenu
-        open={menuOpen}
-        onClose={handleClose}
-        loginText={loginText}
-        loginUrl={loginUrl}
-        registerText={registerText}
-        registerUrl={registerUrl}
-      />
+      <MobileMenu open={menuOpen} onClose={handleClose} />
     </>
   );
 }

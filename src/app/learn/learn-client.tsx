@@ -1,5 +1,4 @@
 "use client";
-import type { StrapiLearnPage } from "@/lib/strapi";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -195,13 +194,7 @@ const FILTERS = [
 ];
 
 // ── Главный компонент ─────────────────────────────────
-export function LearnClient({
-  articles: ARTICLES,
-  learnPage,
-}: {
-  articles: ArticleCard[];
-  learnPage?: StrapiLearnPage | null;
-}) {
+export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] }) {
   const [activeFilter, setActiveFilter] = useState("все");
   const [search, setSearch] = useState("");
 
@@ -293,14 +286,8 @@ export function LearnClient({
             <div style={{ display: "flex", gap: "40px" }}>
               {[
                 { value: `${ARTICLES.length}`, label: "материалов" },
-                {
-                  value: learnPage?.stat1Value ?? "3",
-                  label: learnPage?.stat1Label ?? "реальных кейса",
-                },
-                {
-                  value: learnPage?.stat2Value ?? "50K+",
-                  label: learnPage?.stat2Label ?? "читателей",
-                },
+                { value: "3", label: "реальных кейса" },
+                { value: "50K+", label: "читателей" },
               ].map((s) => (
                 <div key={s.label} style={{ textAlign: "center" }}>
                   <p

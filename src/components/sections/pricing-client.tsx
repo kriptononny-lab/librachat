@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { Check } from "lucide-react";
@@ -117,46 +117,6 @@ const heading = {
   color: "#F0EEFF",
 } as React.CSSProperties;
 
-type CompRow = {
-  label: string;
-  free: string | boolean;
-  pro: string | boolean;
-  team: string | boolean;
-};
-type CompGroup = { group: string; rows: CompRow[] };
-
-const DEFAULT_COMPARISON: CompGroup[] = [
-  {
-    group: "ДИАЛОГ",
-    rows: [
-      { label: "Сообщений в день", free: "20", pro: "∞", team: "∞" },
-      { label: "История диалогов", free: "7 дней", pro: "90 дней", team: "Бесконечно" },
-      { label: "Приоритетный доступ", free: false, pro: false, team: true },
-    ],
-  },
-  {
-    group: "ФАЙЛЫ",
-    rows: [
-      { label: "Загрузка файлов", free: "1/день", pro: "150/день", team: "Без лимита" },
-      { label: "Размер файла", free: "5 МБ", pro: "50 МБ", team: "500 МБ" },
-    ],
-  },
-  {
-    group: "КОМАНДА",
-    rows: [
-      { label: "Общее пространство", free: false, pro: false, team: true },
-      { label: "Управление ролями", free: false, pro: false, team: true },
-    ],
-  },
-  {
-    group: "ИНТЕГРАЦИИ И API",
-    rows: [
-      { label: "API-доступ", free: false, pro: false, team: false },
-      { label: "Webhook-интеграции", free: false, pro: false, team: true },
-    ],
-  },
-];
-
 export function PricingClient({
   plans,
   faqs,
@@ -192,7 +152,7 @@ export function PricingClient({
         >
           <div className="section-badge">
             <span className="badge-dot" />
-            {page?.plansBadge ?? "ТАРИФНЫЕ ПЛАНЫ"}
+            ТАРИФНЫЕ ПЛАНЫ
           </div>
           <h1
             style={{ ...heading, fontSize: "clamp(36px, 5vw, 64px)", maxWidth: "600px" }}
@@ -279,10 +239,26 @@ export function PricingClient({
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               <span className="badge-dot" />
-              {page?.previewBadge ?? "ТАРИФЫ"}
+              ТАРИФЫ
             </div>
             <h2 style={heading}>
-              {page?.plansTitle ?? page?.plansTitle2 ?? "Выбери свой результат"}
+              {page?.plansTitle ? (
+                page.plansTitle
+              ) : (
+                <>
+                  Выбери свой{" "}
+                  <span
+                    style={{
+                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    результат
+                  </span>
+                </>
+              )}
             </h2>
             <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
               {page?.plansSubtitle ??
@@ -437,152 +413,6 @@ export function PricingClient({
         </div>
       </section>
 
-      {/* ── СРАВНЕНИЕ ПЛАНОВ ── */}
-      <section
-        style={{
-          padding: "80px 0",
-          background: "#080810",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <div className="container-site">
-          <div style={{ textAlign: "center", marginBottom: "48px" }}>
-            <div className="section-badge" style={{ marginBottom: "16px" }}>
-              <span className="badge-dot" />
-              {page?.comparisonTitle ?? "СРАВНЕНИЕ"}
-            </div>
-            <h2 style={heading}>Что входит в каждый план</h2>
-            <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
-              {page?.comparisonSubtitle ?? "Подробное сравнение всех возможностей"}
-            </p>
-          </div>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{ width: "100%", borderCollapse: "collapse", minWidth: "560px" }}
-            >
-              <thead>
-                <tr>
-                  <th
-                    style={{
-                      padding: "12px 16px",
-                      textAlign: "left",
-                      color: "#6B7280",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    ФУНКЦИИ
-                  </th>
-                  <th
-                    style={{
-                      padding: "12px 16px",
-                      textAlign: "center",
-                      color: "#9CA3B8",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    Бесплатно
-                  </th>
-                  <th
-                    style={{
-                      padding: "12px 16px",
-                      textAlign: "center",
-                      color: "#C4B5FD",
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    ПРО
-                  </th>
-                  <th
-                    style={{
-                      padding: "12px 16px",
-                      textAlign: "center",
-                      color: "#F0EEFF",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    Команда
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {(Array.isArray(page?.comparisonRows)
-                  ? (page.comparisonRows as CompGroup[])
-                  : DEFAULT_COMPARISON
-                ).map((group) => (
-                  <Fragment key={group.group}>
-                    <tr>
-                      <td
-                        colSpan={4}
-                        style={{
-                          padding: "16px 16px 8px",
-                          fontSize: "11px",
-                          fontWeight: 600,
-                          color: "#6B7280",
-                          letterSpacing: "0.08em",
-                        }}
-                      >
-                        {group.group}
-                      </td>
-                    </tr>
-                    {group.rows.map((row) => (
-                      <tr
-                        key={row.label}
-                        style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}
-                      >
-                        <td
-                          style={{
-                            padding: "10px 16px",
-                            fontSize: "14px",
-                            color: "#9CA3B8",
-                          }}
-                        >
-                          {row.label}
-                        </td>
-                        {(["free", "pro", "team"] as const).map((plan) => (
-                          <td
-                            key={plan}
-                            style={{ padding: "10px 16px", textAlign: "center" }}
-                          >
-                            {typeof row[plan] === "boolean" ? (
-                              row[plan] ? (
-                                <span style={{ color: "#A78BFA", fontSize: "16px" }}>
-                                  ✓
-                                </span>
-                              ) : (
-                                <span style={{ color: "#374151", fontSize: "14px" }}>
-                                  —
-                                </span>
-                              )
-                            ) : (
-                              <span
-                                style={{
-                                  fontSize: "13px",
-                                  color: plan === "pro" ? "#C4B5FD" : "#9CA3B8",
-                                }}
-                              >
-                                {String(row[plan])}
-                              </span>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </Fragment>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section
         style={{
@@ -595,7 +425,7 @@ export function PricingClient({
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               <span className="badge-dot" />
-              {page?.faqBadge ?? "ЧАСТО ЗАДАЮТ"}
+              ЧАСТО ЗАДАЮТ
             </div>
             <h2 style={heading}>Остались вопросы?</h2>
             <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
@@ -763,7 +593,7 @@ export function PricingClient({
                 }}
               >
                 <Link
-                  href={page?.ctaBtnPrimaryUrl ?? "https://librachat.kz/auth"}
+                  href="https://librachat.kz/auth"
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
@@ -779,10 +609,10 @@ export function PricingClient({
                     maxWidth: "280px",
                   }}
                 >
-                  {page?.ctaBtnPrimaryText ?? "Начать бесплатно"}
+                  Начать бесплатно
                 </Link>
                 <Link
-                  href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
+                  href="/contact?type=demo"
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
