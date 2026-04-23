@@ -197,11 +197,11 @@ export function ComparisonSection() {
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",
-                  opacity: 0.55,
+                  opacity: 1,
                 }}
               >
-                <X size={14} color="#6B7280" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: "13px", color: "#6B7280" }}>
+                <X size={14} color="#9CA3B8" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: "13px", color: "#9CA3B8" }}>
                   {row.other.text}
                 </span>
               </div>
