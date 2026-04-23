@@ -1,6 +1,6 @@
 "use client";
 
-const ITEMS = [
+const DEFAULT_ITEMS = [
   "Без VPN",
   "Без галлюцинаций",
   "Понимает русский",
@@ -13,8 +13,14 @@ const ITEMS = [
   "Отвечает за 3 сек",
 ];
 
-function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
-  const items = [...ITEMS, ...ITEMS];
+function MarqueeRow({
+  reverse = false,
+  items: itemsProp,
+}: {
+  reverse?: boolean;
+  items: string[];
+}) {
+  const items = [...itemsProp, ...itemsProp];
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>
       <div
@@ -54,7 +60,15 @@ function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
   );
 }
 
-export function MarqueeSection() {
+export function MarqueeSection({
+  texts = {},
+}: {
+  texts?: Record<string, string | unknown>;
+}) {
+  const rawItems = texts["marqueeItems"];
+  const ITEMS: string[] = Array.isArray(rawItems)
+    ? (rawItems as string[])
+    : DEFAULT_ITEMS;
   return (
     <div
       style={{
@@ -75,7 +89,7 @@ export function MarqueeSection() {
           to { transform: translateX(0); }
         }
       `}</style>
-      <MarqueeRow />
+      <MarqueeRow items={ITEMS} />
     </div>
   );
 }

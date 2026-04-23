@@ -6,9 +6,9 @@ import Link from "next/link";
 import { ArrowRight, Zap, Briefcase, GraduationCap } from "lucide-react";
 
 const TABS = [
-  { id: "self", label: "Для себя" },
-  { id: "business", label: "Для бизнеса" },
-  { id: "study", label: "Для учёбы" },
+  { id: "self", labelKey: "facetsTab1Label", fallback: "Для себя" },
+  { id: "business", labelKey: "facetsTab2Label", fallback: "Для бизнеса" },
+  { id: "study", labelKey: "facetsTab3Label", fallback: "Для учёбы" },
 ] as const;
 type TabId = (typeof TABS)[number]["id"];
 
@@ -213,7 +213,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                   transition: "all 200ms ease",
                 }}
               >
-                {tab.label}
+                {texts[tab.labelKey] ?? tab.fallback}
               </button>
             ))}
           </div>

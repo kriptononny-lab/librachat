@@ -107,7 +107,7 @@ export default async function HomePage() {
         <HeroSection texts={texts} />
         <FacetsSection texts={texts} />
         <StepsSection texts={texts} />
-        <ComparisonSection />
+        <ComparisonSection texts={texts} />
         <SocialProofSection testimonials={testimonials} texts={texts} />
         <PricingPreviewSection plans={plans} />
         <FaqSection faqs={faqs} texts={texts} />

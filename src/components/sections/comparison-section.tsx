@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { Check, X } from "lucide-react";
 
-const ROWS = [
+const DEFAULT_ROWS = [
   {
     feature: "Работает без VPN",
     libra: { ok: true, text: "Да, в России и СНГ" },
@@ -36,7 +36,30 @@ const ROWS = [
   },
 ];
 
-export function ComparisonSection() {
+type CompRow = {
+  feature: string;
+  libraOk: boolean;
+  libraText: string;
+  otherOk: boolean;
+  otherText: string;
+};
+
+export function ComparisonSection({ texts = {} }: { texts?: Record<string, unknown> }) {
+  const rawRows = texts["comparisonRows"];
+  const ROWS: {
+    feature: string;
+    libra: { ok: boolean; text: string };
+    other: { ok: boolean; text: string };
+  }[] = Array.isArray(rawRows)
+    ? (rawRows as CompRow[]).map((r) => ({
+        feature: r.feature,
+        libra: { ok: r.libraOk, text: r.libraText },
+        other: { ok: r.otherOk, text: r.otherText },
+      }))
+    : DEFAULT_ROWS;
+  const badge = (texts["comparisonBadge"] as string) ?? "СРАВНЕНИЕ";
+  const title = (texts["comparisonTitle"] as string) ?? "LibraChat vs обычный ИИ";
+
   return (
     <section
       style={{
@@ -55,7 +78,7 @@ export function ComparisonSection() {
         >
           <div className="section-badge" style={{ marginBottom: "16px" }}>
             <span className="badge-dot" />
-            СРАВНЕНИЕ
+            {badge}
           </div>
           <h2
             style={{
@@ -68,7 +91,8 @@ export function ComparisonSection() {
               marginBottom: "12px",
             }}
           >
-            LibraChat vs{" "}
+            {title.split(" vs ")[0]}
+            {" vs "}
             <span
               style={{
                 background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
@@ -77,7 +101,7 @@ export function ComparisonSection() {
                 backgroundClip: "text",
               }}
             >
-              обычный ИИ
+              {title.split(" vs ")[1] ?? "обычный ИИ"}
             </span>
           </h2>
           <p

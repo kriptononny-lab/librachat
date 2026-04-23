@@ -9,3 +9,4 @@ export { CtaSection } from "./cta-section";
 export { PricingClient } from "./pricing-client";
 export { ComparisonSection } from "./comparison-section";
 export { FeaturesGridSection } from "./features-grid-section";
+export { MarqueeSection } from "./marquee-section";

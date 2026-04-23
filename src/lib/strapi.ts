@@ -300,6 +300,13 @@ export interface StrapiHomePage {
   ctaBtnSecondaryText: string | null;
   ctaBtnSecondaryUrl: string | null;
   ctaSubLabel: string | null;
+  facetsTab1Label: string | null;
+  facetsTab2Label: string | null;
+  facetsTab3Label: string | null;
+  marqueeItems: unknown;
+  comparisonBadge: string | null;
+  comparisonTitle: string | null;
+  comparisonRows: unknown;
 }
 
 export interface StrapiFeaturesPage {
