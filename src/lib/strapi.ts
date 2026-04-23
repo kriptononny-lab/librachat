@@ -288,6 +288,18 @@ export interface StrapiHomePage {
   faqSubtitle: string | null;
   ctaBadge: string | null;
   ctaTitle: string | null;
+  heroBtnPrimaryText: string | null;
+  heroBtnPrimaryUrl: string | null;
+  heroBtnSecondaryText: string | null;
+  heroBtnSecondaryUrl: string | null;
+  stepsBtnText: string | null;
+  stepsBtnUrl: string | null;
+  stepsSubLabel: string | null;
+  ctaBtnPrimaryText: string | null;
+  ctaBtnPrimaryUrl: string | null;
+  ctaBtnSecondaryText: string | null;
+  ctaBtnSecondaryUrl: string | null;
+  ctaSubLabel: string | null;
 }
 
 export interface StrapiFeaturesPage {
@@ -307,6 +319,8 @@ export interface StrapiFeaturesPage {
   usecasesSubtitle: string | null;
   ctaTitle: string | null;
   ctaSubtitle: string | null;
+  ctaBtnText: string | null;
+  ctaBtnUrl: string | null;
 }
 
 export interface StrapiPricingPage {
@@ -319,6 +333,10 @@ export interface StrapiPricingPage {
   faqSubtitle: string | null;
   ctaTitle: string | null;
   ctaSubtitle: string | null;
+  ctaBtnPrimaryText: string | null;
+  ctaBtnPrimaryUrl: string | null;
+  ctaBtnSecondaryText: string | null;
+  ctaBtnSecondaryUrl: string | null;
 }
 
 export interface StrapiBusinessPage {
@@ -333,6 +351,10 @@ export interface StrapiBusinessPage {
   stat3Label: string | null;
   ctaTitle: string | null;
   ctaSubtitle: string | null;
+  ctaBtnPrimaryText: string | null;
+  ctaBtnPrimaryUrl: string | null;
+  ctaBtnSecondaryText: string | null;
+  ctaBtnSecondaryUrl: string | null;
 }
 
 async function fetchSingleType<T>(endpoint: string): Promise<T | null> {

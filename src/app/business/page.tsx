@@ -305,7 +305,7 @@ export default async function BusinessPage() {
                   style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
                 >
                   <Link
-                    href="/contact?type=demo"
+                    href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -319,10 +319,10 @@ export default async function BusinessPage() {
                       boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     }}
                   >
-                    Запросить демо
+                    {page?.ctaBtnSecondaryText ?? "Запросить демо"}
                   </Link>
                   <Link
-                    href="/contact?type=sales"
+                    href={page?.ctaBtnSecondaryUrl ?? "/contact?type=sales"}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -847,7 +847,7 @@ export default async function BusinessPage() {
                     marginBottom: "4px",
                   }}
                 >
-                  Запросить демо
+                  {page?.ctaBtnSecondaryText ?? "Запросить демо"}
                 </p>
                 <div
                   style={{
@@ -891,7 +891,7 @@ export default async function BusinessPage() {
                   ))}
                 </div>
                 <Link
-                  href="/contact?type=demo"
+                  href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -907,7 +907,7 @@ export default async function BusinessPage() {
                     marginTop: "4px",
                   }}
                 >
-                  Запросить демо
+                  {page?.ctaBtnSecondaryText ?? "Запросить демо"}
                 </Link>
                 <p style={{ fontSize: "12px", textAlign: "center", color: "#6B7280" }}>
                   Нажимая кнопку, вы принимаете{" "}

@@ -401,19 +401,19 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
           >
             <Button size="xl" asChild>
               <Link
-                href="https://librachat.kz/auth"
+                href={texts["heroBtnPrimaryUrl"] ?? "https://librachat.kz/auth"}
                 style={{ minWidth: "220px", maxWidth: "280px", flex: "1 1 auto" }}
               >
-                Начать бесплатно
+                {texts["heroBtnPrimaryText"] ?? "Начать бесплатно"}
               </Link>
             </Button>
             <Button variant="secondary" size="xl" asChild>
               <Link
-                href="/business"
+                href={texts["heroBtnSecondaryUrl"] ?? "/business"}
                 className="inline-flex items-center gap-2"
                 style={{ minWidth: "220px", maxWidth: "280px", flex: "1 1 auto" }}
               >
-                Для бизнеса
+                {texts["heroBtnSecondaryText"] ?? "Для бизнеса"}
               </Link>
             </Button>
           </motion.div>

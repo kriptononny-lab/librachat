@@ -94,7 +94,7 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
               }}
             >
               <Link
-                href="https://librachat.kz/auth"
+                href={texts["ctaBtnPrimaryUrl"] ?? "https://librachat.kz/auth"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -113,10 +113,10 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   maxWidth: "320px",
                 }}
               >
-                Начать бесплатно
+                {texts["ctaBtnPrimaryText"] ?? "Начать бесплатно"}
               </Link>
               <Link
-                href="/contact"
+                href={texts["ctaBtnSecondaryUrl"] ?? "/contact"}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -135,12 +135,13 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   maxWidth: "320px",
                 }}
               >
-                Запросить демо
+                {texts["ctaBtnSecondaryText"] ?? "Запросить демо"}
               </Link>
             </div>
 
             <p style={{ fontSize: "13px", color: "#6B7280", marginTop: "4px" }}>
-              Уже более 1 480 пользователей доверяют LibraChat · Поддержка 24/7
+              {texts["ctaSubLabel"] ??
+                "Уже более 1 480 пользователей доверяют LibraChat · Поддержка 24/7"}
             </p>
           </div>
         </motion.div>

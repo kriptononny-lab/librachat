@@ -197,10 +197,10 @@ export function StepsSection({ texts = {} }: { texts?: Record<string, string> })
               boxShadow: "0 4px 24px rgba(167,139,250,0.4)",
             }}
           >
-            Начать бесплатно
+            {texts["stepsBtnText"] ?? "Начать бесплатно"}
           </Link>
           <p style={{ marginTop: "12px", fontSize: "13px", color: "#6B7280" }}>
-            30 секунд · Без карты · Без VPN
+            {texts["stepsSubLabel"] ?? "30 секунд · Без карты · Без VPN"}
           </p>
         </motion.div>
       </div>

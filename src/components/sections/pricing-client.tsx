@@ -593,7 +593,7 @@ export function PricingClient({
                 }}
               >
                 <Link
-                  href="https://librachat.kz/auth"
+                  href={page?.ctaBtnPrimaryUrl ?? "https://librachat.kz/auth"}
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
@@ -609,10 +609,10 @@ export function PricingClient({
                     maxWidth: "280px",
                   }}
                 >
-                  Начать бесплатно
+                  {page?.ctaBtnPrimaryText ?? "Начать бесплатно"}
                 </Link>
                 <Link
-                  href="/contact?type=demo"
+                  href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
