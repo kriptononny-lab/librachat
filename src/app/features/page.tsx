@@ -364,6 +364,272 @@ function FilesMockup() {
   );
 }
 
+function ContentMockup() {
+  return (
+    <div
+      style={{
+        borderRadius: "20px",
+        padding: "20px",
+        background: "rgba(13,13,26,0.97)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        width: "100%",
+        maxWidth: "380px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          marginBottom: "16px",
+          paddingBottom: "12px",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+        }}
+      >
+        <div
+          style={{
+            width: "24px",
+            height: "24px",
+            borderRadius: "50%",
+            background: "#A78BFA",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "11px",
+            fontWeight: 700,
+            color: "#fff",
+          }}
+        >
+          L
+        </div>
+        <span style={{ fontSize: "14px", fontWeight: 500, color: "#fff" }}>
+          LibraChat
+        </span>
+      </div>
+      <div
+        style={{
+          padding: "10px 14px",
+          borderRadius: "10px",
+          background: "rgba(167,139,250,0.1)",
+          border: "1px solid rgba(167,139,250,0.2)",
+          marginBottom: "10px",
+          fontSize: "13px",
+          color: "#C4B5FD",
+          alignSelf: "flex-end",
+          marginLeft: "auto",
+          display: "inline-block",
+        }}
+      >
+        Напиши пост про запуск нового продукта
+      </div>
+      <div
+        style={{
+          padding: "12px 14px",
+          borderRadius: "10px",
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.07)",
+          fontSize: "13px",
+          color: "#9CA3B8",
+          lineHeight: 1.7,
+        }}
+      >
+        🚀 <strong style={{ color: "#F0EEFF" }}>Мы запустили!</strong>
+        <br />
+        Наш новый продукт уже доступен. Мы долго шли к этому — и вот он здесь. Попробуй
+        первым и расскажи что думаешь 👇
+      </div>
+    </div>
+  );
+}
+
+function CodeMockup() {
+  return (
+    <div
+      style={{
+        borderRadius: "20px",
+        padding: "20px",
+        background: "rgba(8,8,16,0.99)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        width: "100%",
+        maxWidth: "380px",
+        fontFamily: "monospace",
+      }}
+    >
+      <div style={{ display: "flex", gap: "6px", marginBottom: "14px" }}>
+        {["#ef4444", "#f59e0b", "#22c55e"].map((c) => (
+          <div
+            key={c}
+            style={{ width: "10px", height: "10px", borderRadius: "50%", background: c }}
+          />
+        ))}
+      </div>
+      {[
+        { text: "function getTotal(items) {", color: "#C4B5FD" },
+        { text: "  return items.reduce((sum, i)", color: "#9CA3B8" },
+        { text: "    => sum + i.price, 0);", color: "#9CA3B8" },
+        { text: "}", color: "#C4B5FD" },
+      ].map((line, i) => (
+        <div key={i} style={{ fontSize: "12px", color: line.color, lineHeight: 1.8 }}>
+          {line.text}
+        </div>
+      ))}
+      <div
+        style={{
+          marginTop: "12px",
+          padding: "8px 12px",
+          borderRadius: "8px",
+          background: "rgba(167,139,250,0.08)",
+          border: "1px solid rgba(167,139,250,0.2)",
+          fontSize: "12px",
+          color: "#A78BFA",
+        }}
+      >
+        ✓ Функция корректна. Можно добавить проверку на пустой массив...
+      </div>
+    </div>
+  );
+}
+
+function TranslateMockup() {
+  return (
+    <div
+      style={{
+        borderRadius: "20px",
+        padding: "20px",
+        background: "rgba(13,13,26,0.97)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        width: "100%",
+        maxWidth: "380px",
+      }}
+    >
+      <div style={{ display: "flex", gap: "8px", marginBottom: "14px" }}>
+        {["🇷🇺 Русский", "🇬🇧 English"].map((lang, i) => (
+          <div
+            key={lang}
+            style={{
+              padding: "4px 12px",
+              borderRadius: "999px",
+              fontSize: "12px",
+              fontWeight: 500,
+              background: i === 0 ? "rgba(167,139,250,0.15)" : "transparent",
+              color: i === 0 ? "#C4B5FD" : "#6B7280",
+              border: `1px solid ${i === 0 ? "rgba(167,139,250,0.3)" : "rgba(255,255,255,0.07)"}`,
+            }}
+          >
+            {lang}
+          </div>
+        ))}
+      </div>
+      <div
+        style={{
+          padding: "12px",
+          borderRadius: "10px",
+          background: "rgba(255,255,255,0.04)",
+          marginBottom: "8px",
+          fontSize: "13px",
+          color: "#9CA3B8",
+          lineHeight: 1.6,
+        }}
+      >
+        Коммерческое предложение для вашей компании...
+      </div>
+      <div
+        style={{
+          padding: "12px",
+          borderRadius: "10px",
+          background: "rgba(167,139,250,0.08)",
+          border: "1px solid rgba(167,139,250,0.2)",
+          fontSize: "13px",
+          color: "#F0EEFF",
+          lineHeight: 1.6,
+        }}
+      >
+        Commercial proposal for your company...
+      </div>
+    </div>
+  );
+}
+
+function DataMockup() {
+  return (
+    <div
+      style={{
+        borderRadius: "20px",
+        padding: "20px",
+        background: "rgba(13,13,26,0.97)",
+        border: "1px solid rgba(167,139,250,0.2)",
+        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        width: "100%",
+        maxWidth: "380px",
+      }}
+    >
+      <div
+        style={{
+          marginBottom: "14px",
+          fontSize: "13px",
+          fontWeight: 600,
+          color: "#F0EEFF",
+        }}
+      >
+        📊 Анализ продаж Q2
+      </div>
+      {[
+        { label: "Выручка", val: "+23%", w: "85%" },
+        { label: "Конверсия", val: "+8%", w: "60%" },
+        { label: "Возвраты", val: "−5%", w: "35%" },
+      ].map((r) => (
+        <div key={r.label} style={{ marginBottom: "10px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "4px",
+              fontSize: "12px",
+              color: "#9CA3B8",
+            }}
+          >
+            <span>{r.label}</span>
+            <span style={{ color: r.val.startsWith("+") ? "#A78BFA" : "#F472B6" }}>
+              {r.val}
+            </span>
+          </div>
+          <div
+            style={{
+              height: "6px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.06)",
+            }}
+          >
+            <div
+              style={{
+                height: "100%",
+                width: r.w,
+                borderRadius: "999px",
+                background: "linear-gradient(90deg,#7B2FBE,#A78BFA)",
+              }}
+            />
+          </div>
+        </div>
+      ))}
+      <div
+        style={{
+          marginTop: "12px",
+          padding: "8px 12px",
+          borderRadius: "8px",
+          background: "rgba(167,139,250,0.08)",
+          fontSize: "12px",
+          color: "#A78BFA",
+        }}
+      >
+        💡 Основной драйвер роста — регион Сибирь и продукт B
+      </div>
+    </div>
+  );
+}
+
 const S = {
   sec: (bg = "#040408") =>
     ({
@@ -548,6 +814,50 @@ export default async function FeaturesPage() {
                   ],
                   mockup: "files",
                 },
+                {
+                  badge: "ГЕНЕРАЦИЯ КОНТЕНТА",
+                  title: "Пишет тексты любого формата — быстро и по делу",
+                  desc: "Посты, статьи, письма, сценарии, описания товаров — LibraChat создаёт контент с нужным тоном и структурой. Адаптирует под платформу и аудиторию.",
+                  points: [
+                    "Посты для ВКонтакте, Telegram, Instagram",
+                    "SEO-тексты, карточки товаров для WB и Ozon",
+                    "Email-рассылки и коммерческие предложения",
+                  ],
+                  mockup: "content",
+                },
+                {
+                  badge: "КОД И РАЗРАБОТКА",
+                  title: "Помогает с кодом на любом языке",
+                  desc: "Пишет, объясняет, исправляет и оптимизирует код. Подходит и для начинающих, которым нужно разобраться, и для профессионалов, которым нужно ускориться.",
+                  points: [
+                    "Python, JavaScript, TypeScript, SQL и ещё 20+ языков",
+                    "Находит и исправляет баги с объяснением",
+                    "Генерирует тесты и документацию автоматически",
+                  ],
+                  mockup: "code",
+                },
+                {
+                  badge: "ПЕРЕВОД",
+                  title: "Переводит точно и сохраняет стиль текста",
+                  desc: "Не просто переводит слова — передаёт смысл, тон и контекст. Работает с профессиональными текстами, договорами, маркетинговыми материалами.",
+                  points: [
+                    "50+ языков с сохранением стиля и форматирования",
+                    "Адаптирует под целевую аудиторию и культуру",
+                    "Переводит файлы целиком: PDF, Word, Excel",
+                  ],
+                  mockup: "translate",
+                },
+                {
+                  badge: "АНАЛИЗ ДАННЫХ",
+                  title: "Превращает таблицы в понятные выводы",
+                  desc: "Загрузи Excel или CSV — LibraChat найдёт закономерности, аномалии и тренды. Даст конкретные рекомендации без лишних слов.",
+                  points: [
+                    "Анализ продаж, воронок, метрик и KPI",
+                    "Автоматические выводы и рекомендации",
+                    "Визуализация данных в виде описания графиков",
+                  ],
+                  mockup: "data",
+                },
               ].map((feat, i) => (
                 <div
                   key={feat.badge}
@@ -566,7 +876,19 @@ export default async function FeaturesPage() {
                       justifyContent: "center",
                     }}
                   >
-                    {feat.mockup === "chat" ? <ChatMockup /> : <FilesMockup />}
+                    {feat.mockup === "chat" ? (
+                      <ChatMockup />
+                    ) : feat.mockup === "files" ? (
+                      <FilesMockup />
+                    ) : feat.mockup === "content" ? (
+                      <ContentMockup />
+                    ) : feat.mockup === "code" ? (
+                      <CodeMockup />
+                    ) : feat.mockup === "translate" ? (
+                      <TranslateMockup />
+                    ) : (
+                      <DataMockup />
+                    )}
                   </div>
                   <div
                     style={{
@@ -619,78 +941,6 @@ export default async function FeaturesPage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Все возможности — сетка */}
-        <section style={S.sec()}>
-          <div className="container-site">
-            <div style={{ textAlign: "center", marginBottom: "52px" }}>
-              <div className="section-badge" style={{ marginBottom: "14px" }}>
-                <span className="badge-dot" />
-                КЛЮЧЕВЫЕ ФУНКЦИИ
-              </div>
-              <h2 style={S.h2}>
-                Всё в <span style={{ color: "#F0EEFF" }}>одном окне</span>
-              </h2>
-              <p style={S.sub}>8 инструментов — не нужно переключаться между сервисами</p>
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-                gap: "16px",
-              }}
-            >
-              {ALL_FEATURES.map(({ icon, title, desc }) => {
-                const Icon = ICON_MAP[icon] ?? Shield;
-                return (
-                  <div
-                    key={title}
-                    className="card-hover"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "16px",
-                      padding: "24px",
-                      borderRadius: "16px",
-                      background: "rgba(13,13,26,0.75)",
-                      border: "1px solid rgba(255,255,255,0.07)",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "12px",
-                        background: "rgba(167,139,250,0.1)",
-                        border: "1px solid rgba(167,139,250,0.18)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Icon size={20} color="#C4B5FD" />
-                    </div>
-                    <div>
-                      <h3
-                        style={{
-                          fontSize: "15px",
-                          fontWeight: 600,
-                          color: "#F0EEFF",
-                          marginBottom: "6px",
-                        }}
-                      >
-                        {title}
-                      </h3>
-                      <p style={{ fontSize: "13px", color: "#9CA3B8", lineHeight: 1.65 }}>
-                        {desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </section>
