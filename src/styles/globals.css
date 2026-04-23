@@ -410,3 +410,22 @@ a[class*="rounded-"] {
     margin: 0 auto;
   }
 }
+
+/* Текстовые ссылки — hover */
+.text-link {
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
+}
+.text-link:hover {
+  color: #c4b5fd !important;
+  opacity: 0.9;
+}
+.text-link:hover svg {
+  transform: translateX(3px);
+  transition: transform 150ms ease;
+}
+.text-link svg {
+  transition: transform 150ms ease;
+}

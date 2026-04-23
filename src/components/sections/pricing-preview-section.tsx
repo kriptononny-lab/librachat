@@ -254,6 +254,8 @@ export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
               fontSize: "13px",
               fontWeight: 600,
               textDecoration: "none",
+              cursor: "pointer",
+              transition: "color 150ms ease",
             }}
           >
             Сравнить все тарифы подробно →

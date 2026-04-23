@@ -326,23 +326,48 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     color: "#C4B5FD",
                   }}
                 >
-                  <span style={{ fontWeight: 600 }}>Супер-сила: </span>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    <Zap size={13} color="#A78BFA" style={{ flexShrink: 0 }} />
+                    <span style={{ fontWeight: 700, color: "#A78BFA" }}>Супер-сила</span>
+                  </div>
                   {card.superpower}
                 </div>
 
                 {/* Ссылка */}
                 <div
+                  className="facet-link"
                   style={{
-                    display: "flex",
+                    display: "inline-flex",
                     alignItems: "center",
                     gap: "6px",
                     fontSize: "14px",
                     fontWeight: 500,
                     color: "#A78BFA",
+                    cursor: "pointer",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget;
+                    el.style.color = "#C4B5FD";
+                    const arrow = el.querySelector("svg");
+                    if (arrow) (arrow as HTMLElement).style.transform = "translateX(3px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget;
+                    el.style.color = "#A78BFA";
+                    const arrow = el.querySelector("svg");
+                    if (arrow) (arrow as HTMLElement).style.transform = "translateX(0)";
                   }}
                 >
                   Попробовать
-                  <ArrowRight size={14} />
+                  <ArrowRight size={14} style={{ transition: "transform 150ms ease" }} />
                 </div>
               </Link>
             ))}

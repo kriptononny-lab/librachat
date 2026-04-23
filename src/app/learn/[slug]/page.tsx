@@ -1183,6 +1183,8 @@ export default async function ArticlePage({
                       fontSize: "13px",
                       color: "#A78BFA",
                       marginTop: "auto",
+                      cursor: "pointer",
+                      transition: "color 150ms ease",
                     }}
                   >
                     Читать <ArrowRight size={13} />

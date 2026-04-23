@@ -252,6 +252,8 @@ export function SocialProofSection({
                       color: "#A78BFA",
                       textDecoration: "none",
                       whiteSpace: "nowrap",
+                      cursor: "pointer",
+                      transition: "color 150ms ease",
                     }}
                   >
                     Читать кейс →

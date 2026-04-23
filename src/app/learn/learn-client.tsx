@@ -556,7 +556,14 @@ export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] })
                       >
                         {article.excerpt}
                       </p>
-                      <div style={{ fontSize: "13px", color: "#A78BFA" }}>
+                      <div
+                        style={{
+                          fontSize: "13px",
+                          color: "#A78BFA",
+                          cursor: "pointer",
+                          transition: "color 150ms ease",
+                        }}
+                      >
                         Читать кейс →
                       </div>
                     </div>

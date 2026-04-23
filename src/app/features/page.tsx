@@ -904,6 +904,8 @@ export default async function FeaturesPage() {
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "4px",
+                        cursor: "pointer",
+                        transition: "color 150ms ease",
                       }}
                     >
                       Подробнее <ArrowRight size={12} />
