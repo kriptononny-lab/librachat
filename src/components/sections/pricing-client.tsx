@@ -192,7 +192,7 @@ export function PricingClient({
         >
           <div className="section-badge">
             <span className="badge-dot" />
-            ТАРИФНЫЕ ПЛАНЫ
+            {page?.plansBadge ?? "ТАРИФНЫЕ ПЛАНЫ"}
           </div>
           <h1
             style={{ ...heading, fontSize: "clamp(36px, 5vw, 64px)", maxWidth: "600px" }}
