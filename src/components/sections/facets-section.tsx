@@ -357,13 +357,13 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     const el = e.currentTarget;
                     el.style.color = "#C4B5FD";
                     const arrow = el.querySelector("svg");
-                    if (arrow) (arrow as HTMLElement).style.transform = "translateX(3px)";
+                    if (arrow) (arrow as SVGElement).style.transform = "translateX(3px)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
                     el.style.color = "#A78BFA";
                     const arrow = el.querySelector("svg");
-                    if (arrow) (arrow as HTMLElement).style.transform = "translateX(0)";
+                    if (arrow) (arrow as SVGElement).style.transform = "translateX(0)";
                   }}
                 >
                   Попробовать
