@@ -448,10 +448,6 @@ export default async function FeaturesPage() {
               position: "relative",
             }}
           >
-            <div className="section-badge">
-              <span className="badge-dot" />
-              ОБЗОР ПРОДУКТА
-            </div>
             <h1
               style={{
                 fontSize: "clamp(32px, 5vw, 60px)",
@@ -459,7 +455,9 @@ export default async function FeaturesPage() {
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
                 color: "#F0EEFF",
-                maxWidth: "700px",
+                maxWidth: "800px",
+                width: "100%",
+                textAlign: "center",
               }}
             >
               Всё что нужно для работы и жизни —{" "}
@@ -469,14 +467,17 @@ export default async function FeaturesPage() {
               style={{
                 fontSize: "18px",
                 color: "#9CA3B8",
-                maxWidth: "500px",
+                maxWidth: "640px",
+                width: "100%",
                 lineHeight: 1.7,
+                textAlign: "center",
               }}
             >
               LibraChat отвечает на вопросы, анализирует файлы, переводит, пишет и думает
               вместе с тобой. Без переключений между сервисами.
             </p>
             <div
+              className="btn-pair"
               style={{
                 display: "flex",
                 gap: "12px",
@@ -504,25 +505,6 @@ export default async function FeaturesPage() {
                 }}
               >
                 Попробовать
-              </Link>
-              <Link
-                href="/contact"
-                style={{
-                  padding: "13px 28px",
-                  borderRadius: "999px",
-                  background: "transparent",
-                  color: "#F0EEFF",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.16)",
-                  flex: "1 1 auto",
-                  textAlign: "center",
-                  minWidth: "180px",
-                  maxWidth: "260px",
-                }}
-              >
-                Запросить демо
               </Link>
             </div>
           </div>
