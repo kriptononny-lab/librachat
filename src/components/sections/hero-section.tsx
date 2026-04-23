@@ -34,10 +34,10 @@ const DEMO_PROMPTS = [
 ];
 
 const QUICK_ACTIONS = [
-  { icon: BarChart2, label: "Анализ данных" },
-  { icon: FileText, label: "Написать текст" },
-  { icon: Languages, label: "Перевести" },
-  { icon: PenLine, label: "Написать код" },
+  { icon: BarChart2, labelKey: "heroChatTab1", fallback: "Анализ данных" },
+  { icon: FileText, labelKey: "heroChatTab2", fallback: "Написать текст" },
+  { icon: Languages, labelKey: "heroChatTab3", fallback: "Перевести" },
+  { icon: PenLine, labelKey: "heroChatTab4", fallback: "Написать код" },
 ];
 
 function AnimatedInput() {
@@ -361,9 +361,9 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
               maxWidth: "700px",
             }}
           >
-            {QUICK_ACTIONS.map(({ icon: Icon, label }) => (
+            {QUICK_ACTIONS.map(({ icon: Icon, labelKey, fallback }) => (
               <span
-                key={label}
+                key={texts[labelKey] ?? fallback}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -378,7 +378,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
                 }}
               >
                 <Icon size={13} />
-                {label}
+                {texts[labelKey] ?? fallback}
               </span>
             ))}
           </motion.div>

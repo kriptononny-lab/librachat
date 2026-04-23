@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fetchDownloadPage } from "@/lib/strapi";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -85,14 +86,19 @@ const PLATFORMS = [
   },
 ];
 
-const FEATURES = [
-  { icon: WifiOff, text: "Работает без VPN" },
-  { icon: Zap, text: "Синхронизация между устройствами" },
-  { icon: Shield, text: "Данные зашифрованы" },
-  { icon: Star, text: "Одна подписка — все платформы" },
+const DEFAULT_FEATURES = [
+  { icon: WifiOff, textKey: "benefit1Text", fallback: "Работает без VPN" },
+  { icon: Zap, textKey: "benefit2Text", fallback: "Синхронизация между устройствами" },
+  { icon: Shield, textKey: "benefit3Text", fallback: "Данные зашифрованы" },
+  { icon: Star, textKey: "benefit4Text", fallback: "Одна подписка — все платформы" },
 ];
 
-export default function DownloadPage() {
+export default async function DownloadPage() {
+  const page = await fetchDownloadPage();
+  const FEATURES = DEFAULT_FEATURES.map((f) => ({
+    icon: f.icon,
+    text: (page as Record<string, string | null> | null)?.[f.textKey] ?? f.fallback,
+  }));
   return (
     <div
       style={{

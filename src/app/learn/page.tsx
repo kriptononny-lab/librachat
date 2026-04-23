@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LearnClient } from "./learn-client";
-import { fetchStrapiArticles } from "@/lib/strapi";
+import { fetchStrapiArticles, fetchLearnPage } from "@/lib/strapi";
 import { ALL_ARTICLES as STATIC_ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -36,8 +36,11 @@ export const metadata: Metadata = {
 
 export default async function LearnPage() {
   // Тянем статьи из Strapi; если CMS недоступна — показываем статику
-  const strapiArticles = await fetchStrapiArticles();
+  const [strapiArticles, learnPage] = await Promise.all([
+    fetchStrapiArticles(),
+    fetchLearnPage(),
+  ]);
   const articles = strapiArticles.length > 0 ? strapiArticles : STATIC_ARTICLES;
 
-  return <LearnClient articles={articles} />;
+  return <LearnClient articles={articles} learnPage={learnPage} />;
 }

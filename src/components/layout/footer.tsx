@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { fetchHomePage } from "@/lib/strapi";
 import { Logo } from "@/components/ui/logo";
 import { FOOTER_NAV, SITE_CONFIG } from "@/lib/constants";
 
@@ -39,7 +40,8 @@ const NAV_COLUMNS = [
   { title: "Поддержка", links: FOOTER_NAV.legal },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const page = await fetchHomePage();
   const year = new Date().getFullYear();
 
   return (
@@ -87,7 +89,8 @@ export function Footer() {
                 maxWidth: "220px",
               }}
             >
-              ИИ-ассистент нового поколения для работы, учёбы и творчества.
+              {page?.footerDesc ??
+                "ИИ-ассистент нового поколения для работы, учёбы и творчества."}
             </p>
             <div
               style={{
@@ -234,7 +237,7 @@ export function Footer() {
           }}
         >
           <p style={{ fontSize: "13px", color: "#6B7280" }}>
-            © {year} LibraChat. Все права защищены.
+            © {year} LibraChat. {page?.footerCopyright ?? "Все права защищены."}
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
             <Link

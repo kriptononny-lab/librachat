@@ -307,6 +307,12 @@ export interface StrapiHomePage {
   comparisonBadge: string | null;
   comparisonTitle: string | null;
   comparisonRows: unknown;
+  heroChatTab1: string | null;
+  heroChatTab2: string | null;
+  heroChatTab3: string | null;
+  heroChatTab4: string | null;
+  footerDesc: string | null;
+  footerCopyright: string | null;
 }
 
 export interface StrapiFeaturesPage {
@@ -413,6 +419,20 @@ export interface StrapiBusinessPage {
   ctaBtnSecondaryUrl: string | null;
 }
 
+export interface StrapiDownloadPage {
+  benefit1Text: string | null;
+  benefit2Text: string | null;
+  benefit3Text: string | null;
+  benefit4Text: string | null;
+}
+
+export interface StrapiLearnPage {
+  stat1Value: string | null;
+  stat1Label: string | null;
+  stat2Value: string | null;
+  stat2Label: string | null;
+}
+
 async function fetchSingleType<T>(endpoint: string): Promise<T | null> {
   try {
     const url = `${STRAPI_URL}/api/${endpoint}`;
@@ -434,6 +454,9 @@ export const fetchFeaturesPage = () =>
 export const fetchPricingPage = () => fetchSingleType<StrapiPricingPage>("pricing-page");
 export const fetchBusinessPage = () =>
   fetchSingleType<StrapiBusinessPage>("business-page");
+export const fetchDownloadPage = () =>
+  fetchSingleType<StrapiDownloadPage>("download-page");
+export const fetchLearnPage = () => fetchSingleType<StrapiLearnPage>("learn-page");
 
 // ── Business page specific fetches ────────────────
 
