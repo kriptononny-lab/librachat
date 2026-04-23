@@ -392,6 +392,7 @@ export interface StrapiPricingPage {
   ctaBtnPrimaryUrl: string | null;
   ctaBtnSecondaryText: string | null;
   ctaBtnSecondaryUrl: string | null;
+  comparisonRows: unknown;
 }
 
 export interface StrapiBusinessPage {
