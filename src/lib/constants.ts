@@ -7,22 +7,31 @@ export const MAIN_NAV: NavItem[] = [
   {
     label: "Возможности",
     href: "/features",
-    children: [
-      { label: "Умный чат",          href: "/features/chat",      description: "Общайтесь с ИИ на любую тему",       icon: "MessageSquare" },
-      { label: "Анализ документов",  href: "/features/documents", description: "Загружайте файлы и задавайте вопросы", icon: "FileText"      },
-      { label: "Генерация контента", href: "/features/content",   description: "Тексты, идеи, переводы",              icon: "PenLine"       },
-      { label: "Код и разработка",   href: "/features/code",      description: "Помощь с программированием",          icon: "Code2"         },
-    ],
   },
-  { label: "Тарифы",       href: "/pricing"  },
+  { label: "Тарифы", href: "/pricing" },
   { label: "Для бизнеса", href: "/business" },
   {
     label: "Обучение",
     href: "/learn",
     children: [
-      { label: "Статьи",           href: "/learn",                description: "Советы и руководства",    icon: "BookOpen"  },
-      { label: "Кейсы клиентов",   href: "/learn",                description: "Примеры использования",   icon: "TrendingUp"},
-      { label: "Гайды по промптам",href: "/learn",                description: "Как получить лучший ответ", icon: "Lightbulb" },
+      {
+        label: "Статьи",
+        href: "/learn",
+        description: "Советы и руководства",
+        icon: "BookOpen",
+      },
+      {
+        label: "Кейсы клиентов",
+        href: "/learn",
+        description: "Примеры использования",
+        icon: "TrendingUp",
+      },
+      {
+        label: "Гайды по промптам",
+        href: "/learn",
+        description: "Как получить лучший ответ",
+        icon: "Lightbulb",
+      },
     ],
   },
   { label: "Скачать", href: "/download" },
@@ -30,25 +39,25 @@ export const MAIN_NAV: NavItem[] = [
 
 export const FOOTER_NAV = {
   product: [
-    { label: "Возможности",       href: "/features"  },
-    { label: "Тарифы",            href: "/pricing"   },
-    { label: "Для бизнеса",       href: "/business"  },
-    { label: "Скачать приложение",href: "/download"  },
+    { label: "Возможности", href: "/features" },
+    { label: "Тарифы", href: "/pricing" },
+    { label: "Для бизнеса", href: "/business" },
+    { label: "Скачать приложение", href: "/download" },
   ],
   learn: [
-    { label: "Статьи и кейсы",    href: "/learn"     },
-    { label: "Кейс: малый бизнес",href: "/learn/keys-shishakova"  },
-    { label: "Кейс: маркетплейсы",href: "/learn/keys-ozherelyev" },
-    { label: "Кейс: маркетолог",  href: "/learn/keys-bazarkulova"},
+    { label: "Статьи и кейсы", href: "/learn" },
+    { label: "Кейс: малый бизнес", href: "/learn/keys-shishakova" },
+    { label: "Кейс: маркетплейсы", href: "/learn/keys-ozherelyev" },
+    { label: "Кейс: маркетолог", href: "/learn/keys-bazarkulova" },
   ],
   company: [
-    { label: "Для бизнеса",       href: "/business"  },
-    { label: "Тарифы",            href: "/pricing"   },
-    { label: "Контакты",          href: "/contact"   },
+    { label: "Для бизнеса", href: "/business" },
+    { label: "Тарифы", href: "/pricing" },
+    { label: "Контакты", href: "/contact" },
   ],
   legal: [
     { label: "Политика конфиденциальности", href: "/privacy" },
-    { label: "Пользовательское соглашение", href: "/terms"   },
+    { label: "Пользовательское соглашение", href: "/terms" },
   ],
 };
 
