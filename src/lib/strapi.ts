@@ -328,6 +328,30 @@ export interface StrapiFeaturesPage {
   ctaSubtitle: string | null;
   ctaBtnText: string | null;
   ctaBtnUrl: string | null;
+  feat1Badge: string | null;
+  feat1Title: string | null;
+  feat1Subtitle: string | null;
+  feat1Bullets: unknown;
+  feat2Badge: string | null;
+  feat2Title: string | null;
+  feat2Subtitle: string | null;
+  feat2Bullets: unknown;
+  feat3Badge: string | null;
+  feat3Title: string | null;
+  feat3Subtitle: string | null;
+  feat3Bullets: unknown;
+  feat4Badge: string | null;
+  feat4Title: string | null;
+  feat4Subtitle: string | null;
+  feat4Bullets: unknown;
+  feat5Badge: string | null;
+  feat5Title: string | null;
+  feat5Subtitle: string | null;
+  feat5Bullets: unknown;
+  feat6Badge: string | null;
+  feat6Title: string | null;
+  feat6Subtitle: string | null;
+  feat6Bullets: unknown;
 }
 
 export interface StrapiPricingPage {
