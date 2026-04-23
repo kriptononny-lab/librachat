@@ -201,7 +201,7 @@ export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
                       key={f.label}
                       style={{
                         fontSize: "13px",
-                        color: "#9CA3B8",
+                        color: "#F0EEFF",
                         display: "flex",
                         alignItems: "center",
                         gap: "8px",

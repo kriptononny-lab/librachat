@@ -402,7 +402,7 @@ export function PricingClient({
                           color={f.ok ? "#F472B6" : "#6B7280"}
                           style={{ flexShrink: 0 }}
                         />
-                        <span style={{ color: "#9CA3B8" }}>{f.label}</span>
+                        <span style={{ color: "#F0EEFF" }}>{f.label}</span>
                       </li>
                     ))}
                   </ul>
