@@ -186,7 +186,8 @@ async function fetchCollection<T>(endpoint: string): Promise<T[]> {
 
 export async function fetchStrapiTestimonials(): Promise<StrapiTestimonial[]> {
   const items = await fetchCollection<StrapiTestimonial>("testimonials?populate=photo");
-  return items.map((t: unknown) => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return items.map((t: any) => ({
     ...t,
     photo: t.photo
       ? {
@@ -518,7 +519,8 @@ export async function fetchStrapiBusinessTestimonials(): Promise<StrapiTestimoni
     });
     if (!res.ok) return [];
     const json = await res.json();
-    return (json.data ?? []).map((t: unknown) => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (json.data ?? []).map((t: any) => ({
       ...t,
       photo: t.photo
         ? {
