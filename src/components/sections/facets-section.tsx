@@ -286,9 +286,7 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     style={{
                       fontSize: "13px",
                       fontWeight: 600,
-                      background: "linear-gradient(135deg,#A78BFA,#F472B6,#38BDF8)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      color: "#A78BFA",
                     }}
                   >
                     {card.badge}
@@ -335,7 +333,17 @@ export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }
                     }}
                   >
                     <Zap size={13} color="#A78BFA" style={{ flexShrink: 0 }} />
-                    <span style={{ fontWeight: 700, color: "#A78BFA" }}>Супер-сила</span>
+                    <span
+                      style={{
+                        fontWeight: 700,
+                        background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Супер-сила
+                    </span>
                   </div>
                   {card.superpower}
                 </div>
