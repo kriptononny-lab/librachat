@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Menu,
-  X,
   ChevronDown,
   MessageSquare,
   FileText,
@@ -18,7 +17,6 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { MAIN_NAV } from "@/lib/constants";
 
 // Маппинг имён иконок → компоненты

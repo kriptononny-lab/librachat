@@ -16,6 +16,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { TYPE_COLOR } from "@/lib/articles";
 import type { ArticleCard } from "@/lib/articles";
+import type { StrapiLearnPage } from "@/lib/strapi";
 
 // ── Карточка ─────────────────────────────────────────
 function Card({ article, large = false }: { article: ArticleCard; large?: boolean }) {
@@ -194,7 +195,13 @@ const FILTERS = [
 ];
 
 // ── Главный компонент ─────────────────────────────────
-export function LearnClient({ articles: ARTICLES }: { articles: ArticleCard[] }) {
+export function LearnClient({
+  articles: ARTICLES,
+  learnPage,
+}: {
+  articles: ArticleCard[];
+  learnPage?: StrapiLearnPage | null;
+}) {
   const [activeFilter, setActiveFilter] = useState("все");
   const [search, setSearch] = useState("");
 

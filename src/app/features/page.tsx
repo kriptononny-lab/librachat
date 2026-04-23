@@ -689,7 +689,6 @@ export default async function FeaturesPage() {
         }))
       : STATIC_FEATURES;
 
-  const ALL_FEATURES = features.filter((f) => f.section === "main");
   const SECURITY = features.filter((f) => f.section === "security");
   return (
     <div

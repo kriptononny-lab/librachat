@@ -10,7 +10,6 @@ import {
   BarChart2,
   Users,
 } from "lucide-react";
-import { Check } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   Shield,
