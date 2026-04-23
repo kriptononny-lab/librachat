@@ -31,17 +31,6 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 // Хук определения мобильного экрана — mobile-first (по умолчанию мобильный)
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(true);
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 768px)");
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-  return isMobile;
-}
 
 // ===================================================
 // Десктопный дропдаун
@@ -447,7 +436,19 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 // ===================================================
 // Header (главный компонент)
 // ===================================================
-export function Header() {
+export interface HeaderProps {
+  loginText?: string;
+  loginUrl?: string;
+  registerText?: string;
+  registerUrl?: string;
+}
+
+export function Header({
+  loginText = "Войти",
+  loginUrl = "https://librachat.kz/auth",
+  registerText = "Начать бесплатно",
+  registerUrl = "https://librachat.kz/auth",
+}: HeaderProps = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const handleClose = useCallback(() => setMenuOpen(false), []);
@@ -504,16 +505,16 @@ export function Header() {
               style={{ alignItems: "center", gap: "8px", flexShrink: 0 }}
             >
               <Button variant="ghost" size="md" asChild>
-                <Link href="https://librachat.kz/auth">Войти</Link>
+                <Link href={loginUrl}>{loginText}</Link>
               </Button>
               <Button variant="primary" size="md" asChild>
-                <Link href="https://librachat.kz/auth">Начать бесплатно</Link>
+                <Link href={registerUrl}>{registerText}</Link>
               </Button>
             </div>
 
             {/* CTA кнопка для мобиля — всегда видна */}
             <Link
-              href="https://librachat.kz/auth"
+              href={registerUrl}
               className="mobile-cta-btn"
               style={{
                 alignItems: "center",

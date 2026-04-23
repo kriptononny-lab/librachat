@@ -178,7 +178,7 @@ function RotatingHeadline({ phrases }: { phrases: string[] }) {
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % phrases.length), 3800);
     return () => clearInterval(t);
-  }, []);
+  }, [phrases.length]);
 
   return (
     <div className="rotating-headline-wrap">
