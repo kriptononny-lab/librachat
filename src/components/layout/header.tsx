@@ -455,6 +455,7 @@ export function Header({
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
+    handleScroll(); // проверяем сразу при монтировании
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

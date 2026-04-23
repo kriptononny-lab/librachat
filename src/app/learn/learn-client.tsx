@@ -234,7 +234,6 @@ export function LearnClient({
             padding: "80px 0 60px",
             textAlign: "center",
             position: "relative",
-            overflow: "hidden",
           }}
         >
           <div
@@ -352,11 +351,14 @@ export function LearnClient({
                 flexWrap: "wrap",
                 justifyContent: "center",
                 gap: "8px",
+                position: "relative",
+                zIndex: 2,
               }}
             >
               {FILTERS.map((f) => (
                 <button
                   key={f.key}
+                  type="button"
                   onClick={() => setActiveFilter(f.key)}
                   style={{
                     display: "flex",
