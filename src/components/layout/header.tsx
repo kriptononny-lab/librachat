@@ -238,6 +238,8 @@ function NavItem({ item }: { item: (typeof MAIN_NAV)[number] }) {
                     display: "flex",
                     alignItems: "center",
                     gap: "4px",
+                    cursor: "pointer",
+                    transition: "color 150ms ease",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#C4B5FD")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#A78BFA")}
