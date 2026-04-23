@@ -151,8 +151,7 @@ function ChatMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(13,13,26,0.97)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -192,8 +191,8 @@ function ChatMockup() {
             fontSize: "11px",
             padding: "2px 8px",
             borderRadius: "999px",
-            background: "rgba(167,139,250,0.15)",
-            color: "#A78BFA",
+            background: "rgba(255,255,255,0.06)",
+            color: "#9CA3B8",
           }}
         >
           онлайн
@@ -208,7 +207,7 @@ function ChatMockup() {
               borderRadius: "16px 16px 4px 16px",
               fontSize: "13px",
               color: "#fff",
-              background: "rgba(167,139,250,0.3)",
+              background: "rgba(167,139,250,0.18)",
             }}
           >
             Составь КП для нового клиента
@@ -270,8 +269,7 @@ function FilesMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(13,13,26,0.97)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -315,7 +313,7 @@ function FilesMockup() {
         }}
       >
         {[
-          { name: "Отчёт_Q2_2024.pdf", size: "4.3 МБ", color: "#ef4444" },
+          { name: "Отчёт_Q2_2024.pdf", size: "4.3 МБ", color: "#A78BFA" },
           { name: "Продажи_итог.xlsx", size: "1.2 МБ", color: "#A78BFA" },
         ].map((f) => (
           <div
@@ -357,8 +355,8 @@ function FilesMockup() {
           borderRadius: "12px",
           fontSize: "13px",
           color: "#9CA3B8",
-          background: "rgba(167,139,250,0.08)",
-          border: "1px solid rgba(167,139,250,0.2)",
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.07)",
           lineHeight: 1.6,
         }}
       >
@@ -378,8 +376,7 @@ function ContentMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(13,13,26,0.97)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -418,11 +415,11 @@ function ContentMockup() {
         style={{
           padding: "10px 14px",
           borderRadius: "10px",
-          background: "rgba(167,139,250,0.1)",
-          border: "1px solid rgba(167,139,250,0.2)",
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.08)",
           marginBottom: "10px",
           fontSize: "13px",
-          color: "#C4B5FD",
+          color: "#F0EEFF",
           alignSelf: "flex-end",
           marginLeft: "auto",
           display: "inline-block",
@@ -454,7 +451,7 @@ function ContentMockup() {
         </span>
         <br />
         Наш новый продукт уже доступен. Мы долго шли к этому — и вот он здесь. Попробуй
-        первым и расскажи что думаешь 👇
+        первым и расскажи что думаешь.
       </div>
     </div>
   );
@@ -467,15 +464,18 @@ function CodeMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(8,8,16,0.99)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
         fontFamily: "monospace",
       }}
     >
       <div style={{ display: "flex", gap: "6px", marginBottom: "14px" }}>
-        {["#ef4444", "#f59e0b", "#22c55e"].map((c) => (
+        {[
+          "rgba(255,255,255,0.35)",
+          "rgba(255,255,255,0.18)",
+          "rgba(255,255,255,0.08)",
+        ].map((c) => (
           <div
             key={c}
             style={{ width: "10px", height: "10px", borderRadius: "50%", background: c }}
@@ -497,10 +497,10 @@ function CodeMockup() {
           marginTop: "12px",
           padding: "8px 12px",
           borderRadius: "8px",
-          background: "rgba(167,139,250,0.08)",
-          border: "1px solid rgba(167,139,250,0.2)",
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.07)",
           fontSize: "12px",
-          color: "#A78BFA",
+          color: "#9CA3B8",
         }}
       >
         ✓ Функция корректна. Можно добавить проверку на пустой массив...
@@ -516,8 +516,7 @@ function TranslateMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(13,13,26,0.97)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -531,9 +530,9 @@ function TranslateMockup() {
               borderRadius: "999px",
               fontSize: "12px",
               fontWeight: 500,
-              background: i === 0 ? "rgba(167,139,250,0.15)" : "transparent",
-              color: i === 0 ? "#C4B5FD" : "#6B7280",
-              border: `1px solid ${i === 0 ? "rgba(167,139,250,0.3)" : "rgba(255,255,255,0.07)"}`,
+              background: i === 0 ? "rgba(255,255,255,0.08)" : "transparent",
+              color: i === 0 ? "#F0EEFF" : "#6B7280",
+              border: `1px solid ${i === 0 ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.06)"}`,
             }}
           >
             {lang}
@@ -557,8 +556,8 @@ function TranslateMockup() {
         style={{
           padding: "12px",
           borderRadius: "10px",
-          background: "rgba(167,139,250,0.08)",
-          border: "1px solid rgba(167,139,250,0.2)",
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.07)",
           fontSize: "13px",
           color: "#F0EEFF",
           lineHeight: 1.6,
@@ -577,8 +576,7 @@ function DataMockup() {
         borderRadius: "20px",
         padding: "20px",
         background: "rgba(13,13,26,0.97)",
-        border: "1px solid rgba(167,139,250,0.2)",
-        boxShadow: "0 0 40px rgba(167,139,250,0.1)",
+        border: "1px solid rgba(255,255,255,0.08)",
         width: "100%",
         maxWidth: "380px",
       }}
@@ -639,9 +637,9 @@ function DataMockup() {
           marginTop: "12px",
           padding: "8px 12px",
           borderRadius: "8px",
-          background: "rgba(167,139,250,0.08)",
+          background: "rgba(255,255,255,0.04)",
           fontSize: "12px",
-          color: "#A78BFA",
+          color: "#9CA3B8",
         }}
       >
         <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
