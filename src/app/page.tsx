@@ -8,6 +8,7 @@ import { PricingPreviewSection } from "@/components/sections/pricing-preview-sec
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
+import { MarqueeSection } from "@/components/sections/marquee-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
+import { fetchPricingPage } from "@/lib/strapi";
 import {
   fetchStrapiTestimonials,
   fetchStrapiFaqs,
@@ -49,11 +51,12 @@ import {
 } from "@/lib/strapi";
 
 export default async function HomePage() {
-  const [testimonials, faqs, plans, page] = await Promise.all([
+  const [testimonials, faqs, plans, page, pricingPage] = await Promise.all([
     fetchStrapiTestimonials(),
     fetchStrapiFaqs("home"),
     fetchStrapiPlans(),
     fetchHomePage(),
+    fetchPricingPage(),
   ]);
 
   // Конвертируем Single Type в формат texts для компонентов
@@ -102,14 +105,20 @@ export default async function HomePage() {
 
   return (
     <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
-      <Header />
+      <Header
+        loginText={texts["headerLoginText"] ?? "Войти"}
+        loginUrl={texts["headerLoginUrl"] ?? "https://librachat.kz/auth"}
+        registerText={texts["headerRegisterText"] ?? "Начать бесплатно"}
+        registerUrl={texts["headerRegisterUrl"] ?? "https://librachat.kz/auth"}
+      />
       <main className="flex-1" style={{ paddingTop: "68px" }}>
         <HeroSection texts={texts} />
+        <MarqueeSection texts={texts} />
         <FacetsSection texts={texts} />
         <StepsSection texts={texts} />
         <ComparisonSection texts={texts} />
         <SocialProofSection testimonials={testimonials} texts={texts} />
-        <PricingPreviewSection plans={plans} />
+        <PricingPreviewSection plans={plans} pricingPage={pricingPage} />
         <FaqSection faqs={faqs} texts={texts} />
         <CtaSection texts={texts} />
       </main>
