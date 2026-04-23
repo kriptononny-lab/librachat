@@ -197,7 +197,7 @@ const FILTERS = [
 // ── Главный компонент ─────────────────────────────────
 export function LearnClient({
   articles: ARTICLES,
-  _learnPage: _learnPage,
+  learnPage: _learnPage,
 }: {
   articles: ArticleCard[];
   learnPage?: StrapiLearnPage | null;

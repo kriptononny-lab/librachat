@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Check } from "lucide-react";
-import type { StrapiPlan } from "@/lib/strapi";
+import type { StrapiPlan, StrapiPricingPage } from "@/lib/strapi";
 
 const STATIC_PLANS = [
   {
@@ -59,7 +59,13 @@ function fmt(n: number) {
   return n === 0 ? "0 ₽" : n.toLocaleString("ru-RU") + " ₽";
 }
 
-export function PricingPreviewSection({ plans }: { plans?: StrapiPlan[] }) {
+export function PricingPreviewSection({
+  plans,
+  pricingPage: _pricingPage,
+}: {
+  plans?: StrapiPlan[];
+  pricingPage?: StrapiPricingPage | null;
+}) {
   const items = plans && plans.length > 0 ? plans : STATIC_PLANS;
 
   return (
