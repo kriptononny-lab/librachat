@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
+import { ServerHeader } from "@/components/layout/server-header";
 import {
   fetchBusinessPage,
   fetchStrapiBusinessFeatures,
@@ -259,7 +259,7 @@ export default async function BusinessPage() {
       : TESTIMONIALS;
   return (
     <div style={{ display: "flex", minHeight: "100dvh", flexDirection: "column" }}>
-      <Header />
+      <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* ── HERO ── */}
         <section style={{ padding: "100px 0 80px", background: "#040408" }}>
@@ -336,7 +336,7 @@ export default async function BusinessPage() {
                       border: "1px solid rgba(255,255,255,0.16)",
                     }}
                   >
-                    Для продаж
+                    {page?.salesBtnText ?? "Для продаж"}
                   </Link>
                 </div>
                 {/* Статистика */}
@@ -528,7 +528,7 @@ export default async function BusinessPage() {
                 marginBottom: "18px",
               }}
             >
-              НАМ ДОВЕРЯЮТ ЛИДЕРЫ РЫНКА
+              {page?.socialBadge ?? "НАМ ДОВЕРЯЮТ ЛИДЕРЫ РЫНКА"}
             </p>
             <div
               style={{
@@ -569,13 +569,15 @@ export default async function BusinessPage() {
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
                 <span className="badge-dot" />
-                ПОЧЕМУ LIBRACHAT ДЛЯ БИЗНЕСА
+                {page?.whyBadge ?? "ПОЧЕМУ LIBRACHAT ДЛЯ БИЗНЕСА"}
               </div>
               <h2 style={S.h2}>
-                Инструмент, который растёт{" "}
-                <span style={{ color: "#A78BFA" }}>вместе с вами</span>
+                {page?.whyTitle ?? "Инструмент, который растёт вместе с вами"}
               </h2>
-              <p style={S.sub}>Корпоративные возможности без корпоративной сложности</p>
+              <p style={S.sub}>
+                {page?.whySubtitle ??
+                  "Корпоративные возможности без корпоративной сложности"}
+              </p>
             </div>
             <div
               style={{

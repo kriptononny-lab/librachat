@@ -59,6 +59,11 @@ export function ComparisonSection({ texts = {} }: { texts?: Record<string, unkno
     : DEFAULT_ROWS;
   const badge = (texts["comparisonBadge"] as string) ?? "СРАВНЕНИЕ";
   const title = (texts["comparisonTitle"] as string) ?? "LibraChat vs обычный ИИ";
+  const subtitle =
+    (texts["comparisonSubtitle"] as string) ??
+    "Не все ИИ одинаковы. Вот почему мы другие.";
+  const colFeature = (texts["comparisonColFeature"] as string) ?? "ФУНКЦИЯ";
+  const colOther = (texts["comparisonColOther"] as string) ?? "Обычный ИИ";
 
   return (
     <section
@@ -112,7 +117,7 @@ export function ComparisonSection({ texts = {} }: { texts?: Record<string, unkno
               margin: "0 auto",
             }}
           >
-            Не все ИИ одинаковы. Вот почему мы другие.
+            {subtitle}
           </p>
         </motion.div>
 
@@ -147,7 +152,7 @@ export function ComparisonSection({ texts = {} }: { texts?: Record<string, unkno
                 letterSpacing: "0.06em",
               }}
             >
-              ФУНКЦИЯ
+              {colFeature}
             </div>
             <div
               style={{
@@ -172,7 +177,7 @@ export function ComparisonSection({ texts = {} }: { texts?: Record<string, unkno
                 textAlign: "center",
               }}
             >
-              Обычный ИИ
+              {colOther}
             </div>
           </div>
 

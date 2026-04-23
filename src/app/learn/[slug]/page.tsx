@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Clock, Eye, BookOpen, ArrowRight, Check, TrendingUp, Quote } from "lucide-react";
-import { Header } from "@/components/layout/header";
+import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import { ALL_ARTICLES as STATIC_ARTICLES, TYPE_COLOR } from "@/lib/articles";
 import { fetchStrapiArticles, fetchStrapiArticleBySlug } from "@/lib/strapi";
@@ -694,7 +694,7 @@ export default async function ArticlePage({
         background: "#040408",
       }}
     >
-      <Header />
+      <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Шапка */}
         <section style={{ padding: "60px 0 40px" }}>

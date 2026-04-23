@@ -313,6 +313,15 @@ export interface StrapiHomePage {
   heroChatTab4: string | null;
   footerDesc: string | null;
   footerCopyright: string | null;
+  comparisonSubtitle: string | null;
+  comparisonColFeature: string | null;
+  comparisonColOther: string | null;
+  facetsSupersilaLabel: string | null;
+  facetsCardBtnText: string | null;
+  socialReadMoreText: string | null;
+  headerLoginText: string | null;
+  headerRegisterText: string | null;
+  headerRegisterUrl: string | null;
 }
 
 export interface StrapiFeaturesPage {
@@ -399,6 +408,15 @@ export interface StrapiPricingPage {
   ctaBtnSecondaryText: string | null;
   ctaBtnSecondaryUrl: string | null;
   comparisonRows: unknown;
+  plansBadge: string | null;
+  plansTitle2: string | null;
+  plansSubtitle2: string | null;
+  comparisonSubtitle: string | null;
+  faqBadge: string | null;
+  previewBadge: string | null;
+  popularLabel: string | null;
+  compareAllText: string | null;
+  compareAllUrl: string | null;
 }
 
 export interface StrapiBusinessPage {
@@ -417,6 +435,11 @@ export interface StrapiBusinessPage {
   ctaBtnPrimaryUrl: string | null;
   ctaBtnSecondaryText: string | null;
   ctaBtnSecondaryUrl: string | null;
+  socialBadge: string | null;
+  whyBadge: string | null;
+  whyTitle: string | null;
+  whySubtitle: string | null;
+  salesBtnText: string | null;
 }
 
 export interface StrapiDownloadPage {
@@ -424,6 +447,16 @@ export interface StrapiDownloadPage {
   benefit2Text: string | null;
   benefit3Text: string | null;
   benefit4Text: string | null;
+  heroBadge: string | null;
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  appsBadge: string | null;
+  startBtnText: string | null;
+  startBtnUrl: string | null;
+  demoBtnText: string | null;
+  demoBtnUrl: string | null;
+  loginText: string | null;
+  loginUrl: string | null;
 }
 
 export interface StrapiLearnPage {
@@ -431,6 +464,14 @@ export interface StrapiLearnPage {
   stat1Label: string | null;
   stat2Value: string | null;
   stat2Label: string | null;
+  heroBadge: string | null;
+  heroTitle: string | null;
+  heroSubtitle: string | null;
+  readMoreText: string | null;
+  featuredTitle: string | null;
+  realStoriesTitle: string | null;
+  allMaterialsText: string | null;
+  searchPlaceholder: string | null;
 }
 
 async function fetchSingleType<T>(endpoint: string): Promise<T | null> {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { fetchDownloadPage } from "@/lib/strapi";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
+import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import {
   Smartphone,
@@ -108,14 +108,14 @@ export default async function DownloadPage() {
         background: "#040408",
       }}
     >
-      <Header />
+      <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}
         <section style={{ padding: "80px 0 72px", textAlign: "center" }}>
           <div className="container-site" style={{ maxWidth: "640px" }}>
             <div className="section-badge" style={{ marginBottom: "20px" }}>
               <span className="badge-dot" />
-              ПРИЛОЖЕНИЯ
+              {page?.heroBadge ?? "ПРИЛОЖЕНИЯ"}
             </div>
             <h1
               style={{
@@ -127,7 +127,7 @@ export default async function DownloadPage() {
                 marginBottom: "20px",
               }}
             >
-              LibraChat везде, где ты работаешь
+              {page?.heroTitle ?? "LibraChat везде, где ты работаешь"}
             </h1>
             <p
               style={{
@@ -137,8 +137,8 @@ export default async function DownloadPage() {
                 marginBottom: "32px",
               }}
             >
-              Скачай на телефон, открой в браузере — всё синхронизируется. Без VPN, без
-              настроек.
+              {page?.heroSubtitle ??
+                "Скачай на телефон, открой в браузере — всё синхронизируется. Без VPN, без настроек."}
             </p>
             <div
               style={{
@@ -191,7 +191,7 @@ export default async function DownloadPage() {
                     "0 4px 20px rgba(167,139,250,0.3), 0 0 32px rgba(244,114,182,0.2)",
                 }}
               >
-                Начать бесплатно
+                {page?.startBtnText ?? "Начать бесплатно"}
               </Link>
               <Link
                 href="https://librachat.kz/auth"
@@ -209,7 +209,7 @@ export default async function DownloadPage() {
                   border: "1px solid rgba(167,139,250,0.25)",
                 }}
               >
-                Посмотреть демо
+                {page?.demoBtnText ?? "Посмотреть демо"}
               </Link>
             </div>
           </div>
@@ -342,7 +342,7 @@ export default async function DownloadPage() {
                   marginBottom: "8px",
                 }}
               >
-                Уже есть аккаунт?
+                {page?.loginText ?? "Уже есть аккаунт?"}
               </p>
               <p style={{ fontSize: "14px", color: "#9CA3B8", marginBottom: "20px" }}>
                 Войдите на любом устройстве — все чаты и настройки синхронизируются

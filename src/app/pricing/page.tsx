@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/header";
+import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import { PricingClient } from "@/components/sections/pricing-client";
 import { fetchStrapiPlans, fetchStrapiFaqs, fetchPricingPage } from "@/lib/strapi";
@@ -44,7 +44,7 @@ export default async function PricingPage() {
 
   return (
     <div className="flex min-h-dvh flex-col">
-      <Header />
+      <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         <PricingClient plans={plans} faqs={faqs} page={page} />
       </main>

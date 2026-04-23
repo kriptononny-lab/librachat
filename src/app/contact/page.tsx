@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
+import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react";
 
@@ -84,7 +84,7 @@ export default function ContactPage() {
         background: "#040408",
       }}
     >
-      <Header />
+      <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}
         <section style={{ padding: "80px 0 60px", textAlign: "center" }}>

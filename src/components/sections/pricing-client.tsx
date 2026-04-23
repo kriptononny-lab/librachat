@@ -279,26 +279,10 @@ export function PricingClient({
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               <span className="badge-dot" />
-              ТАРИФЫ
+              {page?.previewBadge ?? "ТАРИФЫ"}
             </div>
             <h2 style={heading}>
-              {page?.plansTitle ? (
-                page.plansTitle
-              ) : (
-                <>
-                  Выбери свой{" "}
-                  <span
-                    style={{
-                      background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    результат
-                  </span>
-                </>
-              )}
+              {page?.plansTitle ?? page?.plansTitle2 ?? "Выбери свой результат"}
             </h2>
             <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
               {page?.plansSubtitle ??
@@ -469,7 +453,7 @@ export function PricingClient({
             </div>
             <h2 style={heading}>Что входит в каждый план</h2>
             <p style={{ fontSize: "16px", color: "#a89ec0", marginTop: "12px" }}>
-              Подробное сравнение всех возможностей
+              {page?.comparisonSubtitle ?? "Подробное сравнение всех возможностей"}
             </p>
           </div>
           <div style={{ overflowX: "auto" }}>
@@ -611,7 +595,7 @@ export function PricingClient({
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <div className="section-badge" style={{ marginBottom: "16px" }}>
               <span className="badge-dot" />
-              ЧАСТО ЗАДАЮТ
+              {page?.faqBadge ?? "ЧАСТО ЗАДАЮТ"}
             </div>
             <h2 style={heading}>Остались вопросы?</h2>
             <p style={{ fontSize: "16px", color: "#9CA3B8", marginTop: "12px" }}>
