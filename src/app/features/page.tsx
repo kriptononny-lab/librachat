@@ -14,6 +14,11 @@ import {
   Lock,
   Eye,
   Server,
+  Rocket,
+  TrendingUp,
+  Lightbulb,
+  BarChart2,
+  Globe,
 } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -357,8 +362,10 @@ function FilesMockup() {
           lineHeight: 1.6,
         }}
       >
-        📈 Рост выручки на 23% в Q2. Основные драйверы: продуктовая линейка B и расширение
-        в регионы...
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+          <TrendingUp size={13} color="#A78BFA" style={{ flexShrink: 0 }} /> Рост выручки
+          на 23% в Q2. Основные драйверы: продуктовая линейка B и расширение в регионы...
+        </span>
       </div>
     </div>
   );
@@ -434,7 +441,17 @@ function ContentMockup() {
           lineHeight: 1.7,
         }}
       >
-        🚀 <strong style={{ color: "#F0EEFF" }}>Мы запустили!</strong>
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
+            marginBottom: "4px",
+          }}
+        >
+          <Rocket size={14} color="#A78BFA" />{" "}
+          <strong style={{ color: "#F0EEFF" }}>Мы запустили!</strong>
+        </span>
         <br />
         Наш новый продукт уже доступен. Мы долго шли к этому — и вот он здесь. Попробуй
         первым и расскажи что думаешь 👇
@@ -506,7 +523,7 @@ function TranslateMockup() {
       }}
     >
       <div style={{ display: "flex", gap: "8px", marginBottom: "14px" }}>
-        {["🇷🇺 Русский", "🇬🇧 English"].map((lang, i) => (
+        {["Русский", "English"].map((lang, i) => (
           <div
             key={lang}
             style={{
@@ -569,12 +586,15 @@ function DataMockup() {
       <div
         style={{
           marginBottom: "14px",
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
           fontSize: "13px",
           fontWeight: 600,
           color: "#F0EEFF",
         }}
       >
-        📊 Анализ продаж Q2
+        <BarChart2 size={14} color="#A78BFA" /> Анализ продаж Q2
       </div>
       {[
         { label: "Выручка", val: "+23%", w: "85%" },
@@ -624,7 +644,10 @@ function DataMockup() {
           color: "#A78BFA",
         }}
       >
-        💡 Основной драйвер роста — регион Сибирь и продукт B
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+          <Lightbulb size={13} color="#A78BFA" style={{ flexShrink: 0 }} /> Основной
+          драйвер роста — регион Сибирь и продукт B
+        </span>
       </div>
     </div>
   );
