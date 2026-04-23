@@ -352,6 +352,30 @@ export interface StrapiFeaturesPage {
   feat6Title: string | null;
   feat6Subtitle: string | null;
   feat6Bullets: unknown;
+  security1Title: string | null;
+  security1Desc: string | null;
+  security2Title: string | null;
+  security2Desc: string | null;
+  security3Title: string | null;
+  security3Desc: string | null;
+  security4Title: string | null;
+  security4Desc: string | null;
+  usecase1Title: string | null;
+  usecase1Desc: string | null;
+  usecase1Stat: string | null;
+  usecase1Href: string | null;
+  usecase2Title: string | null;
+  usecase2Desc: string | null;
+  usecase2Stat: string | null;
+  usecase2Href: string | null;
+  usecase3Title: string | null;
+  usecase3Desc: string | null;
+  usecase3Stat: string | null;
+  usecase3Href: string | null;
+  usecase4Title: string | null;
+  usecase4Desc: string | null;
+  usecase4Stat: string | null;
+  usecase4Href: string | null;
 }
 
 export interface StrapiPricingPage {

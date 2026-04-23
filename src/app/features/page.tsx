@@ -1111,18 +1111,39 @@ export default async function FeaturesPage() {
               {[
                 {
                   icon: <MessageSquare size={20} color="#C4B5FD" />,
-                  title: "Анализ и отчёты",
-                  desc: "Загружай документы — LibraChat анализирует и создаёт профессиональные отчёты за секунды.",
+                  title: page?.usecase1Title ?? "Анализ и отчёты",
+                  desc:
+                    page?.usecase1Desc ??
+                    "Загружай документы — LibraChat анализирует и создаёт профессиональные отчёты за секунды.",
+                  stat: page?.usecase1Stat ?? "Экономия: 3–4 часа",
+                  href: page?.usecase1Href ?? "/business",
                 },
                 {
                   icon: <PenLine size={20} color="#C4B5FD" />,
-                  title: "Переписка и документы",
-                  desc: "Деловые письма, контракты, презентации — создавай профессиональные тексты с нужным стилем.",
+                  title: page?.usecase2Title ?? "Переписка и документы",
+                  desc:
+                    page?.usecase2Desc ??
+                    "Деловые письма, контракты, презентации — создавай профессиональные тексты с нужным стилем.",
+                  stat: page?.usecase2Stat ?? "Скорость: x5",
+                  href: page?.usecase2Href ?? "/business",
                 },
                 {
                   icon: <Puzzle size={20} color="#C4B5FD" />,
-                  title: "Поддержка клиентов",
-                  desc: "Автоматизирует ответы на повторяющиеся вопросы и освобождает команду для сложных задач.",
+                  title: page?.usecase3Title ?? "Поддержка клиентов",
+                  desc:
+                    page?.usecase3Desc ??
+                    "Автоматизируйте типовые обращения, обучайте операторов в реальном времени.",
+                  stat: page?.usecase3Stat ?? "Снижение нагрузки −40%",
+                  href: page?.usecase3Href ?? "/business",
+                },
+                {
+                  icon: <MessageSquare size={20} color="#C4B5FD" />,
+                  title: page?.usecase4Title ?? "Перевод и локализация",
+                  desc:
+                    page?.usecase4Desc ??
+                    "Профессиональные переводы маркетинговых материалов с сохранением стиля.",
+                  stat: page?.usecase4Stat ?? "50+ языков",
+                  href: page?.usecase4Href ?? "/business",
                 },
               ].map((card) => (
                 <div
@@ -1174,7 +1195,7 @@ export default async function FeaturesPage() {
                       {card.desc}
                     </p>
                     <Link
-                      href="/business"
+                      href={card.href ?? "/business"}
                       style={{
                         fontSize: "13px",
                         fontWeight: 500,
