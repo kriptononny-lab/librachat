@@ -213,13 +213,13 @@ export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<Strapi
 
 export interface StrapiFeatureBlock {
   id: number;
-  badge: string | null;
-  title: string | null;
-  subtitle: string | null;
-  bullets: unknown;
+  Метка: string | null;
+  Заголовок: string | null;
+  Описание: unknown;
+  Пункты: unknown;
   mockup: string | null;
   page: string | null;
-  order: number | null;
+  Порядок: number | null;
 }
 
 export async function fetchStrapiFeatureBlocks(

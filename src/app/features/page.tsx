@@ -819,10 +819,10 @@ export default async function FeaturesPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "96px" }}>
               {(featureBlocks.length > 0
                 ? featureBlocks.map((fb) => ({
-                    badge: fb.badge ?? "",
-                    title: fb.title ?? "",
-                    desc: fb.subtitle ?? "",
-                    points: Array.isArray(fb.bullets) ? (fb.bullets as string[]) : [],
+                    badge: fb["Метка"] ?? "",
+                    title: fb["Заголовок"] ?? "",
+                    desc: (fb["Описание"] as string) ?? "",
+                    points: Array.isArray(fb["Пункты"]) ? (fb["Пункты"] as string[]) : [],
                     mockup: fb.mockup ?? "chat",
                   }))
                 : ([
