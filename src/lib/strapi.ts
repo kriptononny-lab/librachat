@@ -186,7 +186,6 @@ async function fetchCollection<T>(endpoint: string): Promise<T[]> {
 
 export async function fetchStrapiTestimonials(): Promise<StrapiTestimonial[]> {
   const items = await fetchCollection<StrapiTestimonial>("testimonials?populate=photo");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return items.map((t: any) => ({
     ...t,
     photo: t.photo
@@ -210,6 +209,25 @@ export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<Strapi
   } catch {
     return [];
   }
+}
+
+export interface StrapiFeatureBlock {
+  id: number;
+  badge: string | null;
+  title: string | null;
+  subtitle: string | null;
+  bullets: unknown;
+  mockup: string | null;
+  page: string | null;
+  order: number | null;
+}
+
+export async function fetchStrapiFeatureBlocks(
+  page = "features"
+): Promise<StrapiFeatureBlock[]> {
+  return fetchCollection<StrapiFeatureBlock>(
+    `feature-blocks?filters[page][$eq]=${page}&sort=order:asc`
+  );
 }
 
 export async function fetchStrapiFeatures(): Promise<StrapiFeature[]> {
@@ -519,7 +537,6 @@ export async function fetchStrapiBusinessTestimonials(): Promise<StrapiTestimoni
     });
     if (!res.ok) return [];
     const json = await res.json();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (json.data ?? []).map((t: any) => ({
       ...t,
       photo: t.photo
