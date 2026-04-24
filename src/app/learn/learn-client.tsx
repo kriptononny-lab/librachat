@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -207,14 +207,18 @@ export function LearnClient({
   const realCases = ARTICLES.filter((a) => a.slug.startsWith("keys-"));
   const featured = ARTICLES.filter((a) => a.featured).slice(0, 5);
 
-  const filteredArticles = ARTICLES.filter((a) => {
-    const matchType = activeFilter === "все" || a.type === activeFilter;
-    const matchSearch =
-      !search ||
-      a.title.toLowerCase().includes(search.toLowerCase()) ||
-      a.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
-    return matchType && matchSearch;
-  });
+  const filteredArticles = useMemo(
+    () =>
+      ARTICLES.filter((a) => {
+        const matchType = activeFilter === "все" || a.type === activeFilter;
+        const matchSearch =
+          !search ||
+          a.title.toLowerCase().includes(search.toLowerCase()) ||
+          a.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
+        return matchType && matchSearch;
+      }),
+    [ARTICLES, activeFilter, search]
+  );
 
   return (
     <div

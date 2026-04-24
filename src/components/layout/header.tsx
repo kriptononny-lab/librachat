@@ -471,8 +471,8 @@ export function Header({
           zIndex: 60,
           transition: "all 300ms ease",
           padding: scrolled ? "12px 0" : "16px 0",
-          background: scrolled ? "rgba(8,8,16,0.88)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
+          background: scrolled ? "rgba(8,8,16,0.92)" : "rgba(4,4,8,0.4)",
+          backdropFilter: "blur(12px)",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >

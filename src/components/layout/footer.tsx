@@ -27,12 +27,6 @@ function YoutubeIcon() {
   );
 }
 
-const socialLinks = [
-  { href: "https://t.me/", icon: <TelegramIcon />, label: "Telegram" },
-  { href: SITE_CONFIG.social.vk, icon: <VkIcon />, label: "ВКонтакте" },
-  { href: SITE_CONFIG.social.youtube, icon: <YoutubeIcon />, label: "YouTube" },
-];
-
 const NAV_COLUMNS = [
   { title: "Продукт", links: FOOTER_NAV.product },
   { title: "Компания", links: FOOTER_NAV.company },
@@ -43,6 +37,11 @@ const NAV_COLUMNS = [
 export async function Footer() {
   const page = await fetchHomePage();
   const year = new Date().getFullYear();
+  const socialLinks = [
+    { href: "https://t.me/", icon: <TelegramIcon />, label: "Telegram" },
+    { href: SITE_CONFIG.social.vk, icon: <VkIcon />, label: "ВКонтакте" },
+    { href: SITE_CONFIG.social.youtube, icon: <YoutubeIcon />, label: "YouTube" },
+  ];
 
   return (
     <footer style={{ marginTop: "auto", background: "#040408", position: "relative" }}>
