@@ -12,8 +12,6 @@ import {
   FileText,
   Lightbulb,
 } from "lucide-react";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 import { TYPE_COLOR } from "@/lib/articles";
 import type { ArticleCard } from "@/lib/articles";
 import type { StrapiLearnPage } from "@/lib/strapi";
@@ -221,15 +219,7 @@ export function LearnClient({
   );
 
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100dvh",
-        flexDirection: "column",
-        background: "#040408",
-      }}
-    >
-      <Header />
+    <>
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}
         <section
@@ -841,7 +831,6 @@ export function LearnClient({
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 }
