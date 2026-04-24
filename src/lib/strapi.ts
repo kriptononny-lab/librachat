@@ -236,7 +236,7 @@ export async function fetchStrapiUsecaseBlocks(
   page = "features"
 ): Promise<StrapiUsecaseBlock[]> {
   return fetchCollection<StrapiUsecaseBlock>(
-    `usecase-blocks?filters[page][$eq]=${page}&sort=Порядок:asc`
+    `usecase-blocks?filters[page][$eq]=${page}&sort=%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA:asc`
   );
 }
 
