@@ -167,7 +167,8 @@ export interface StrapiPlan {
 
 async function fetchCollection<T>(endpoint: string): Promise<T[]> {
   try {
-    const url = `${STRAPI_URL}/api/${endpoint}?sort=order:asc&pagination[pageSize]=100`;
+    const sep = endpoint.includes("?") ? "&" : "?";
+    const url = `${STRAPI_URL}/api/${endpoint}${sep}pagination[pageSize]=100`;
     const res = await fetch(url, {
       headers: buildHeaders(),
       next: { revalidate: 60 },
