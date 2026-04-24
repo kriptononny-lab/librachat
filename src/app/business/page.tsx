@@ -6,6 +6,7 @@ import {
   fetchStrapiBusinessFeatures,
   fetchStrapiBusinessCases,
   fetchStrapiBusinessTestimonials,
+  fetchStrapiBusinessStats,
 } from "@/lib/strapi";
 import { Footer } from "@/components/layout/footer";
 import {
@@ -210,27 +211,34 @@ function StarRow() {
 }
 
 export default async function BusinessPage() {
-  const [page, bizFeatures, bizCases, bizTestimonials] = await Promise.all([
+  const [page, bizFeatures, bizCases, bizTestimonials, bizStats] = await Promise.all([
     fetchBusinessPage(),
     fetchStrapiBusinessFeatures(),
     fetchStrapiBusinessCases(),
     fetchStrapiBusinessTestimonials(),
+    fetchStrapiBusinessStats("business"),
   ]);
 
-  const STATS_DATA = [
-    {
-      value: page?.stat1Value ?? "500+",
-      label: page?.stat1Label ?? "корпоративных клиентов",
-    },
-    {
-      value: page?.stat2Value ?? "3 ч",
-      label: page?.stat2Label ?? "экономия на сотрудника в день",
-    },
-    {
-      value: page?.stat3Value ?? "99.9%",
-      label: page?.stat3Label ?? "время безотказной работы",
-    },
-  ];
+  const STATS_DATA =
+    bizStats.length > 0
+      ? bizStats.map((s) => ({
+          value: s.value ?? "",
+          label: s.label ?? "",
+        }))
+      : [
+          {
+            value: page?.stat1Value ?? "500+",
+            label: page?.stat1Label ?? "корпоративных клиентов",
+          },
+          {
+            value: page?.stat2Value ?? "3 ч",
+            label: page?.stat2Label ?? "экономия на сотрудника в день",
+          },
+          {
+            value: page?.stat3Value ?? "99.9%",
+            label: page?.stat3Label ?? "время безотказной работы",
+          },
+        ];
 
   const FEATURES_DATA =
     bizFeatures.length > 0

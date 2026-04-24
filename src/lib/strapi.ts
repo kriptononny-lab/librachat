@@ -249,6 +249,39 @@ export async function fetchStrapiFeatureBlocks(
   );
 }
 
+// ── Steps (главная) ────────────────────────────────
+
+export interface StrapiStep {
+  id: number;
+  title: string | null;
+  description: string | null;
+  icon: "user-plus" | "message-circle" | "sparkles" | null;
+  order: number | null;
+  page: string | null;
+}
+
+export async function fetchStrapiSteps(page = "home"): Promise<StrapiStep[]> {
+  return fetchCollection<StrapiStep>(`steps?filters[page][$eq]=${page}&sort=order:asc`);
+}
+
+// ── Business Stats (/business) ─────────────────────
+
+export interface StrapiBusinessStat {
+  id: number;
+  value: string | null;
+  label: string | null;
+  order: number | null;
+  page: string | null;
+}
+
+export async function fetchStrapiBusinessStats(
+  page = "business"
+): Promise<StrapiBusinessStat[]> {
+  return fetchCollection<StrapiBusinessStat>(
+    `business-stats?filters[page][$eq]=${page}&sort=order:asc`
+  );
+}
+
 export async function fetchStrapiFeatures(): Promise<StrapiFeature[]> {
   return fetchCollection<StrapiFeature>("features");
 }
