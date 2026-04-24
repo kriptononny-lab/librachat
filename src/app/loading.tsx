@@ -1,18 +1,31 @@
 export default function Loading() {
   return (
-    <div className="container-site py-20 animate-pulse">
-      <div className="space-y-4 max-w-2xl mx-auto">
+    <div className="container-site py-20" style={{ animation: "pulse 2s infinite" }}>
+      <div style={{ maxWidth: "700px", margin: "0 auto" }}>
         <div
-          className="h-10 rounded-lg"
-          style={{ background: "var(--color-neutral-100)" }}
+          style={{
+            height: "56px",
+            borderRadius: "12px",
+            background: "rgba(167,139,250,0.08)",
+            marginBottom: "16px",
+          }}
         />
         <div
-          className="h-6 rounded-lg w-3/4"
-          style={{ background: "var(--color-neutral-100)" }}
+          style={{
+            height: "28px",
+            borderRadius: "8px",
+            background: "rgba(255,255,255,0.05)",
+            marginBottom: "12px",
+            width: "75%",
+          }}
         />
         <div
-          className="h-6 rounded-lg w-1/2"
-          style={{ background: "var(--color-neutral-100)" }}
+          style={{
+            height: "28px",
+            borderRadius: "8px",
+            background: "rgba(255,255,255,0.04)",
+            width: "50%",
+          }}
         />
       </div>
     </div>

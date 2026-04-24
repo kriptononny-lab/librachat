@@ -186,14 +186,6 @@ function Card({ article, large = false }: { article: ArticleCard; large?: boolea
   );
 }
 
-// ── Типы фильтров ─────────────────────────────────────
-const FILTERS = [
-  { key: "все", label: "Все", icon: null },
-  { key: "статья", label: "Статьи", icon: <FileText size={13} /> },
-  { key: "кейс", label: "Кейсы", icon: <TrendingUp size={13} /> },
-  { key: "гайд", label: "Гайды", icon: <Lightbulb size={13} /> },
-];
-
 // ── Главный компонент ─────────────────────────────────
 export function LearnClient({
   articles: ARTICLES,
@@ -204,6 +196,13 @@ export function LearnClient({
 }) {
   const [activeFilter, setActiveFilter] = useState("все");
   const [search, setSearch] = useState("");
+
+  const FILTERS = [
+    { key: "все", label: "Все", icon: null },
+    { key: "статья", label: "Статьи", icon: <FileText size={13} /> },
+    { key: "кейс", label: "Кейсы", icon: <TrendingUp size={13} /> },
+    { key: "гайд", label: "Гайды", icon: <Lightbulb size={13} /> },
+  ];
 
   const realCases = ARTICLES.filter((a) => a.slug.startsWith("keys-"));
   const featured = ARTICLES.filter((a) => a.featured).slice(0, 5);
