@@ -48,15 +48,17 @@ import {
   fetchStrapiFaqs,
   fetchStrapiPlans,
   fetchHomePage,
+  fetchStrapiSteps,
 } from "@/lib/strapi";
 
 export default async function HomePage() {
-  const [testimonials, faqs, plans, page, pricingPage] = await Promise.all([
+  const [testimonials, faqs, plans, page, pricingPage, steps] = await Promise.all([
     fetchStrapiTestimonials(),
     fetchStrapiFaqs("home"),
     fetchStrapiPlans(),
     fetchHomePage(),
     fetchPricingPage(),
+    fetchStrapiSteps("home"),
   ]);
 
   // Конвертируем Single Type в формат texts для компонентов
@@ -115,7 +117,7 @@ export default async function HomePage() {
         <HeroSection texts={texts} />
         <MarqueeSection texts={texts} />
         <FacetsSection texts={texts} />
-        <StepsSection texts={texts} />
+        <StepsSection texts={texts} steps={steps} />
         <ComparisonSection texts={texts} />
         <SocialProofSection testimonials={testimonials} texts={texts} />
         <PricingPreviewSection plans={plans} pricingPage={pricingPage} />

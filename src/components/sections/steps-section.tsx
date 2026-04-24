@@ -3,38 +3,65 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { UserPlus, MessageCircle, Sparkles } from "lucide-react";
+import type { StrapiStep } from "@/lib/strapi";
 
-export function StepsSection({ texts = {} }: { texts?: Record<string, string> }) {
+// Маппинг строкового значения icon → компонент lucide
+const ICON_MAP = {
+  "user-plus": UserPlus,
+  "message-circle": MessageCircle,
+  sparkles: Sparkles,
+} as const;
+
+export function StepsSection({
+  texts = {},
+  steps = [],
+}: {
+  texts?: Record<string, string>;
+  steps?: StrapiStep[];
+}) {
   const badge = texts["steps.badge"] ?? "3 ПРОСТЫХ ШАГА";
   const title = texts["steps.title"] ?? "Начни работу за 2 минуты";
   const subtitle =
     texts["steps.subtitle"] ?? "Никаких сложных настроек — просто зайди и начни";
-  const STEPS = [
-    {
-      number: "1",
-      Icon: UserPlus,
-      title: texts["steps.1.title"] ?? "Зарегистрируйтесь",
-      desc:
-        texts["steps.1.desc"] ??
-        "Создайте аккаунт за 30 секунд. Никаких данных карты — просто email и пароль.",
-    },
-    {
-      number: "2",
-      Icon: MessageCircle,
-      title: texts["steps.2.title"] ?? "Задайте вопрос",
-      desc:
-        texts["steps.2.desc"] ??
-        "Напишите любой вопрос на русском — я понимаю контекст и отвечаю сразу.",
-    },
-    {
-      number: "3",
-      Icon: Sparkles,
-      title: texts["steps.3.title"] ?? "Получите результат",
-      desc:
-        texts["steps.3.desc"] ??
-        "Деловой текст, код, анализ или перевод — готово мгновенно.",
-    },
-  ];
+
+  // Fallback iconы по порядку для случая, когда данные приходят из Single Type
+  const FALLBACK_ICONS = [UserPlus, MessageCircle, Sparkles];
+
+  // Если коллекция не пустая — используем её, иначе собираем из texts (Single Type)
+  const STEPS =
+    steps.length > 0
+      ? steps.map((s, i) => ({
+          number: String(s.order ?? i + 1),
+          Icon: ICON_MAP[s.icon ?? "sparkles"] ?? FALLBACK_ICONS[i] ?? Sparkles,
+          title: s.title ?? "",
+          desc: s.description ?? "",
+        }))
+      : [
+          {
+            number: "1",
+            Icon: UserPlus,
+            title: texts["steps.1.title"] ?? "Зарегистрируйтесь",
+            desc:
+              texts["steps.1.desc"] ??
+              "Создайте аккаунт за 30 секунд. Никаких данных карты — просто email и пароль.",
+          },
+          {
+            number: "2",
+            Icon: MessageCircle,
+            title: texts["steps.2.title"] ?? "Задайте вопрос",
+            desc:
+              texts["steps.2.desc"] ??
+              "Напишите любой вопрос на русском — я понимаю контекст и отвечаю сразу.",
+          },
+          {
+            number: "3",
+            Icon: Sparkles,
+            title: texts["steps.3.title"] ?? "Получите результат",
+            desc:
+              texts["steps.3.desc"] ??
+              "Деловой текст, код, анализ или перевод — готово мгновенно.",
+          },
+        ];
   return (
     <section
       style={{
