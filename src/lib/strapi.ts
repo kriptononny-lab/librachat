@@ -222,6 +222,24 @@ export interface StrapiFeatureBlock {
   Порядок: number | null;
 }
 
+export interface StrapiUsecaseBlock {
+  id: number;
+  Заголовок: string | null;
+  Описание: string | null;
+  Статистика: string | null;
+  Ссылка: string | null;
+  page: string | null;
+  Порядок: number | null;
+}
+
+export async function fetchStrapiUsecaseBlocks(
+  page = "features"
+): Promise<StrapiUsecaseBlock[]> {
+  return fetchCollection<StrapiUsecaseBlock>(
+    `usecase-blocks?filters[page][$eq]=${page}&sort=Порядок:asc`
+  );
+}
+
 export async function fetchStrapiFeatureBlocks(
   page = "features"
 ): Promise<StrapiFeatureBlock[]> {
@@ -362,54 +380,7 @@ export interface StrapiFeaturesPage {
   ctaSubtitle: string | null;
   ctaBtnText: string | null;
   ctaBtnUrl: string | null;
-  feat1Badge: string | null;
-  feat1Title: string | null;
-  feat1Subtitle: string | null;
-  feat1Bullets: unknown;
-  feat2Badge: string | null;
-  feat2Title: string | null;
-  feat2Subtitle: string | null;
-  feat2Bullets: unknown;
-  feat3Badge: string | null;
-  feat3Title: string | null;
-  feat3Subtitle: string | null;
-  feat3Bullets: unknown;
-  feat4Badge: string | null;
-  feat4Title: string | null;
-  feat4Subtitle: string | null;
-  feat4Bullets: unknown;
-  feat5Badge: string | null;
-  feat5Title: string | null;
-  feat5Subtitle: string | null;
-  feat5Bullets: unknown;
-  feat6Badge: string | null;
-  feat6Title: string | null;
-  feat6Subtitle: string | null;
-  feat6Bullets: unknown;
-  security1Title: string | null;
-  security1Desc: string | null;
-  security2Title: string | null;
-  security2Desc: string | null;
-  security3Title: string | null;
-  security3Desc: string | null;
-  security4Title: string | null;
-  security4Desc: string | null;
-  usecase1Title: string | null;
-  usecase1Desc: string | null;
-  usecase1Stat: string | null;
-  usecase1Href: string | null;
-  usecase2Title: string | null;
-  usecase2Desc: string | null;
-  usecase2Stat: string | null;
-  usecase2Href: string | null;
-  usecase3Title: string | null;
-  usecase3Desc: string | null;
-  usecase3Stat: string | null;
-  usecase3Href: string | null;
-  usecase4Title: string | null;
-  usecase4Desc: string | null;
-  usecase4Stat: string | null;
-  usecase4Href: string | null;
+  // feat1-6 and usecase1-4 moved to Collection Types
 }
 
 export interface StrapiPricingPage {

@@ -26,6 +26,7 @@ import {
   fetchStrapiFeatures,
   fetchFeaturesPage,
   fetchStrapiFeatureBlocks,
+  fetchStrapiUsecaseBlocks,
 } from "@/lib/strapi";
 
 export const metadata: Metadata = {
@@ -679,10 +680,11 @@ const S = {
 };
 
 export default async function FeaturesPage() {
-  const [strapiFeatures, page, featureBlocks] = await Promise.all([
+  const [strapiFeatures, page, featureBlocks, usecaseBlocks] = await Promise.all([
     fetchStrapiFeatures(),
     fetchFeaturesPage(),
     fetchStrapiFeatureBlocks("features"),
+    fetchStrapiUsecaseBlocks("features"),
   ]);
   const features =
     strapiFeatures.length > 0
@@ -827,74 +829,69 @@ export default async function FeaturesPage() {
                   }))
                 : ([
                     {
-                      badge: page?.feat1Badge ?? "УМНЫЙ ДИАЛОГ",
-                      title:
-                        page?.feat1Title ?? "Отвечает на любые вопросы — понятно и точно",
-                      desc:
-                        page?.feat1Subtitle ??
-                        "LibraChat понимает контекст, помнит историю диалога и адаптирует ответы.",
-                      points: Array.isArray(page?.feat1Bullets)
-                        ? (page.feat1Bullets as string[])
-                        : [],
+                      badge: "УМНЫЙ ДИАЛОГ",
+                      title: "Отвечает на любые вопросы — понятно и точно",
+                      desc: "LibraChat понимает контекст, помнит историю диалога.",
+                      points: [
+                        "Поддерживает контекст до 200 000 токенов",
+                        "Объясняет сложные термины понятным языком",
+                        "Отвечает на русском, английском и 50+ языках",
+                      ],
                       mockup: "chat",
                     },
                     {
-                      badge: page?.feat2Badge ?? "РАБОТА С ФАЙЛАМИ",
-                      title:
-                        page?.feat2Title ?? "Анализирует документы и данные за секунды",
-                      desc:
-                        page?.feat2Subtitle ??
-                        "Загрузи PDF, таблицу или презентацию — LibraChat прочитает, выделит главное.",
-                      points: Array.isArray(page?.feat2Bullets)
-                        ? (page.feat2Bullets as string[])
-                        : [],
+                      badge: "РАБОТА С ФАЙЛАМИ",
+                      title: "Анализирует документы и данные за секунды",
+                      desc: "Загрузи PDF, таблицу или презентацию — LibraChat прочитает, выделит главное.",
+                      points: [
+                        "PDF, Word, Excel, PowerPoint, CSV",
+                        "Автоматическое извлечение ключевых данных",
+                        "Работа с несколькими файлами одновременно",
+                      ],
                       mockup: "files",
                     },
                     {
-                      badge: page?.feat3Badge ?? "ГЕНЕРАЦИЯ КОНТЕНТА",
-                      title:
-                        page?.feat3Title ??
-                        "Пишет тексты любого формата — быстро и по делу",
-                      desc:
-                        page?.feat3Subtitle ??
-                        "Посты, статьи, письма, сценарии — LibraChat создаёт контент с нужным тоном.",
-                      points: Array.isArray(page?.feat3Bullets)
-                        ? (page.feat3Bullets as string[])
-                        : [],
+                      badge: "ГЕНЕРАЦИЯ КОНТЕНТА",
+                      title: "Пишет тексты любого формата — быстро и по делу",
+                      desc: "Посты, статьи, письма, сценарии — LibraChat создаёт контент с нужным тоном.",
+                      points: [
+                        "Посты для ВКонтакте, Telegram, Instagram",
+                        "SEO-тексты, карточки товаров для WB и Ozon",
+                        "Email-рассылки и коммерческие предложения",
+                      ],
                       mockup: "content",
                     },
                     {
-                      badge: page?.feat4Badge ?? "КОД И РАЗРАБОТКА",
-                      title: page?.feat4Title ?? "Помогает с кодом на любом языке",
-                      desc:
-                        page?.feat4Subtitle ??
-                        "Пишет, объясняет, исправляет и оптимизирует код.",
-                      points: Array.isArray(page?.feat4Bullets)
-                        ? (page.feat4Bullets as string[])
-                        : [],
+                      badge: "КОД И РАЗРАБОТКА",
+                      title: "Помогает с кодом на любом языке",
+                      desc: "Пишет, объясняет, исправляет и оптимизирует код.",
+                      points: [
+                        "Python, JavaScript, TypeScript, SQL и ещё 20+ языков",
+                        "Находит и исправляет баги с объяснением",
+                        "Генерирует тесты и документацию автоматически",
+                      ],
                       mockup: "code",
                     },
                     {
-                      badge: page?.feat5Badge ?? "ПЕРЕВОД",
-                      title:
-                        page?.feat5Title ?? "Переводит точно и сохраняет стиль текста",
-                      desc:
-                        page?.feat5Subtitle ??
-                        "Не просто переводит слова — передаёт смысл, тон и контекст.",
-                      points: Array.isArray(page?.feat5Bullets)
-                        ? (page.feat5Bullets as string[])
-                        : [],
+                      badge: "ПЕРЕВОД",
+                      title: "Переводит точно и сохраняет стиль текста",
+                      desc: "Не просто переводит слова — передаёт смысл, тон и контекст.",
+                      points: [
+                        "50+ языков с сохранением стиля",
+                        "Адаптирует под целевую аудиторию",
+                        "Переводит файлы целиком: PDF, Word, Excel",
+                      ],
                       mockup: "translate",
                     },
                     {
-                      badge: page?.feat6Badge ?? "АНАЛИЗ ДАННЫХ",
-                      title: page?.feat6Title ?? "Превращает таблицы в понятные выводы",
-                      desc:
-                        page?.feat6Subtitle ??
-                        "Загрузи Excel или CSV — LibraChat найдёт закономерности и тренды.",
-                      points: Array.isArray(page?.feat6Bullets)
-                        ? (page.feat6Bullets as string[])
-                        : [],
+                      badge: "АНАЛИЗ ДАННЫХ",
+                      title: "Превращает таблицы в понятные выводы",
+                      desc: "Загрузи Excel или CSV — LibraChat найдёт закономерности и тренды.",
+                      points: [
+                        "Анализ продаж, воронок, метрик и KPI",
+                        "Автоматические выводы и рекомендации",
+                        "Визуализация данных в виде описания графиков",
+                      ],
                       mockup: "data",
                     },
                   ] as {
@@ -1107,44 +1104,51 @@ export default async function FeaturesPage() {
                 gap: "16px",
               }}
             >
-              {[
-                {
-                  icon: <MessageSquare size={20} color="#C4B5FD" />,
-                  title: page?.usecase1Title ?? "Анализ и отчёты",
-                  desc:
-                    page?.usecase1Desc ??
-                    "Загружай документы — LibraChat анализирует и создаёт профессиональные отчёты за секунды.",
-                  stat: page?.usecase1Stat ?? "Экономия: 3–4 часа",
-                  href: page?.usecase1Href ?? "/business",
-                },
-                {
-                  icon: <PenLine size={20} color="#C4B5FD" />,
-                  title: page?.usecase2Title ?? "Переписка и документы",
-                  desc:
-                    page?.usecase2Desc ??
-                    "Деловые письма, контракты, презентации — создавай профессиональные тексты с нужным стилем.",
-                  stat: page?.usecase2Stat ?? "Скорость: x5",
-                  href: page?.usecase2Href ?? "/business",
-                },
-                {
-                  icon: <Puzzle size={20} color="#C4B5FD" />,
-                  title: page?.usecase3Title ?? "Поддержка клиентов",
-                  desc:
-                    page?.usecase3Desc ??
-                    "Автоматизируйте типовые обращения, обучайте операторов в реальном времени.",
-                  stat: page?.usecase3Stat ?? "Снижение нагрузки −40%",
-                  href: page?.usecase3Href ?? "/business",
-                },
-                {
-                  icon: <MessageSquare size={20} color="#C4B5FD" />,
-                  title: page?.usecase4Title ?? "Перевод и локализация",
-                  desc:
-                    page?.usecase4Desc ??
-                    "Профессиональные переводы маркетинговых материалов с сохранением стиля.",
-                  stat: page?.usecase4Stat ?? "50+ языков",
-                  href: page?.usecase4Href ?? "/business",
-                },
-              ].map((card) => (
+              {(usecaseBlocks.length > 0
+                ? usecaseBlocks.map((ub) => ({
+                    icon: null,
+                    title: ub["Заголовок"] ?? "",
+                    desc: ub["Описание"] ?? "",
+                    stat: ub["Статистика"] ?? "",
+                    href: ub["Ссылка"] ?? "/business",
+                  }))
+                : ([
+                    {
+                      icon: null,
+                      title: "Анализ и отчёты",
+                      desc: "Загружай документы — LibraChat анализирует и создаёт отчёты.",
+                      stat: "Экономия: 3-4 часа",
+                      href: "/business",
+                    },
+                    {
+                      icon: null,
+                      title: "Переписка и документы",
+                      desc: "Составляй письма, договоры и коммерческие предложения.",
+                      stat: "Скорость: x5",
+                      href: "/business",
+                    },
+                    {
+                      icon: null,
+                      title: "Поддержка клиентов",
+                      desc: "Автоматизируйте типовые обращения.",
+                      stat: "Снижение нагрузки -40%",
+                      href: "/business",
+                    },
+                    {
+                      icon: null,
+                      title: "Перевод и локализация",
+                      desc: "Профессиональные переводы с сохранением стиля.",
+                      stat: "50+ языков",
+                      href: "/business",
+                    },
+                  ] as {
+                    icon: null;
+                    title: string;
+                    desc: string;
+                    stat: string;
+                    href: string;
+                  }[])
+              ).map((card) => (
                 <div
                   key={card.title}
                   className="card-hover"
