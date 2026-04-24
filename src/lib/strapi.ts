@@ -214,30 +214,30 @@ export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<Strapi
 
 export interface StrapiFeatureBlock {
   id: number;
-  Метка: string | null;
-  Заголовок: string | null;
-  Описание: unknown;
-  Пункты: unknown;
+  label: string | null;
+  title: string | null;
+  description: string | null;
+  bullets: string[] | null;
   mockup: string | null;
   page: string | null;
-  Порядок: number | null;
+  order: number | null;
 }
 
 export interface StrapiUsecaseBlock {
   id: number;
-  Заголовок: string | null;
-  Описание: string | null;
-  Статистика: string | null;
-  Ссылка: string | null;
+  title: string | null;
+  description: string | null;
+  stat: string | null;
+  href: string | null;
   page: string | null;
-  Порядок: number | null;
+  order: number | null;
 }
 
 export async function fetchStrapiUsecaseBlocks(
   page = "features"
 ): Promise<StrapiUsecaseBlock[]> {
   return fetchCollection<StrapiUsecaseBlock>(
-    `usecase-blocks?filters[page][$eq]=${page}&sort=%D0%9F%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA:asc`
+    `usecase-blocks?filters[page][$eq]=${page}&sort=order:asc`
   );
 }
 

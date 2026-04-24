@@ -821,10 +821,10 @@ export default async function FeaturesPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "96px" }}>
               {(featureBlocks.length > 0
                 ? featureBlocks.map((fb) => ({
-                    badge: fb["Метка"] ?? "",
-                    title: fb["Заголовок"] ?? "",
-                    desc: (fb["Описание"] as string) ?? "",
-                    points: Array.isArray(fb["Пункты"]) ? (fb["Пункты"] as string[]) : [],
+                    badge: fb.label ?? "",
+                    title: fb.title ?? "",
+                    desc: fb.description ?? "",
+                    points: Array.isArray(fb.bullets) ? fb.bullets : [],
                     mockup: fb.mockup ?? "chat",
                   }))
                 : ([
@@ -1107,10 +1107,10 @@ export default async function FeaturesPage() {
               {(usecaseBlocks.length > 0
                 ? usecaseBlocks.map((ub) => ({
                     icon: null,
-                    title: ub["Заголовок"] ?? "",
-                    desc: ub["Описание"] ?? "",
-                    stat: ub["Статистика"] ?? "",
-                    href: ub["Ссылка"] ?? "/business",
+                    title: ub.title ?? "",
+                    desc: ub.description ?? "",
+                    stat: ub.stat ?? "",
+                    href: ub.href ?? "/business",
                   }))
                 : ([
                     {
