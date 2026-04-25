@@ -62,9 +62,11 @@ function fmt(n: number) {
 export function PricingPreviewSection({
   plans,
   pricingPage: _pricingPage,
+  texts,
 }: {
   plans?: StrapiPlan[];
   pricingPage?: StrapiPricingPage | null;
+  texts?: Record<string, string>;
 }) {
   const items = plans && plans.length > 0 ? plans : STATIC_PLANS;
 
@@ -80,7 +82,7 @@ export function PricingPreviewSection({
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <div className="section-badge" style={{ marginBottom: "16px" }}>
             <span className="badge-dot" />
-            ТАРИФЫ
+            {texts?.["pricingPreview.badge"] ?? "ТАРИФЫ"}
           </div>
           <h2
             style={{
@@ -91,7 +93,10 @@ export function PricingPreviewSection({
               color: "#F0EEFF",
             }}
           >
-            Ты хочешь <span className="text-gradient">такой результат?</span>
+            {texts?.["pricingPreview.title"] ?? "Ты хочешь"}{" "}
+            <span className="text-gradient">
+              {texts?.["pricingPreview.titleAccent"] ?? "такой результат?"}
+            </span>
           </h2>
           <p
             style={{
@@ -101,7 +106,8 @@ export function PricingPreviewSection({
               lineHeight: 1.6,
             }}
           >
-            14 дней бесплатно — без карты, без обязательств
+            {texts?.["pricingPreview.subtitle"] ??
+              "14 дней бесплатно — без карты, без обязательств"}
           </p>
         </div>
 

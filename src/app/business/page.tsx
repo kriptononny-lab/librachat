@@ -629,10 +629,14 @@ export default async function BusinessPage() {
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
                 <span className="badge-dot" />
-                ПРИМЕНЕНИЕ
+                {page?.casesBadge ?? "ПРИМЕНЕНИЕ"}
               </div>
-              <h2 style={S.h2}>Как бизнес использует LibraChat</h2>
-              <p style={S.sub}>Реальные задачи — реальные результаты</p>
+              <h2 style={S.h2}>
+                {page?.casesTitle ?? "Как бизнес использует LibraChat"}
+              </h2>
+              <p style={S.sub}>
+                {page?.casesSubtitle ?? "Реальные задачи — реальные результаты"}
+              </p>
             </div>
             <div
               style={{
@@ -693,11 +697,9 @@ export default async function BusinessPage() {
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
               <div className="section-badge" style={{ marginBottom: "16px" }}>
                 <span className="badge-dot" />
-                КЛИЕНТЫ О НАС
+                {page?.testimonialsBadge ?? "КЛИЕНТЫ О НАС"}
               </div>
-              <h2 style={S.h2}>
-                Результаты <span style={{ color: "#F0EEFF" }}>говорят сами</span>
-              </h2>
+              <h2 style={S.h2}>{page?.testimonialsTitle ?? "Результаты говорят сами"}</h2>
             </div>
             <div
               style={{
