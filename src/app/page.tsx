@@ -99,6 +99,10 @@ export default async function HomePage() {
       "faq.subtitle": page.faqSubtitle,
       "cta.badge": page.ctaBadge,
       "cta.title": page.ctaTitle,
+      "pricingPreview.badge": page.pricingPreviewBadge,
+      "pricingPreview.title": page.pricingPreviewTitle,
+      "pricingPreview.titleAccent": page.pricingPreviewTitleAccent,
+      "pricingPreview.subtitle": page.pricingPreviewSubtitle,
     };
     for (const [k, v] of Object.entries(map)) {
       if (v) texts[k] = v;
@@ -120,7 +124,7 @@ export default async function HomePage() {
         <StepsSection texts={texts} steps={steps} />
         <ComparisonSection texts={texts} />
         <SocialProofSection testimonials={testimonials} texts={texts} />
-        <PricingPreviewSection plans={plans} pricingPage={pricingPage} />
+        <PricingPreviewSection plans={plans} pricingPage={pricingPage} texts={texts} />
         <FaqSection faqs={faqs} texts={texts} />
         <CtaSection texts={texts} />
       </main>

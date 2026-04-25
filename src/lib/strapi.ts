@@ -393,6 +393,10 @@ export interface StrapiHomePage {
   headerLoginText: string | null;
   headerRegisterText: string | null;
   headerRegisterUrl: string | null;
+  pricingPreviewBadge: string | null;
+  pricingPreviewTitle: string | null;
+  pricingPreviewTitleAccent: string | null;
+  pricingPreviewSubtitle: string | null;
 }
 
 export interface StrapiFeaturesPage {
@@ -464,6 +468,11 @@ export interface StrapiBusinessPage {
   whyTitle: string | null;
   whySubtitle: string | null;
   salesBtnText: string | null;
+  casesBadge: string | null;
+  casesTitle: string | null;
+  casesSubtitle: string | null;
+  testimonialsBadge: string | null;
+  testimonialsTitle: string | null;
 }
 
 export interface StrapiDownloadPage {
