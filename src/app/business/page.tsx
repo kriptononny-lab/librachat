@@ -313,7 +313,7 @@ export default async function BusinessPage() {
                   style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
                 >
                   <Link
-                    href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
+                    href={page?.ctaBtnPrimaryUrl ?? "/contact?type=demo"}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -327,7 +327,7 @@ export default async function BusinessPage() {
                       boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
                     }}
                   >
-                    {page?.ctaBtnSecondaryText ?? "Запросить демо"}
+                    {page?.ctaBtnPrimaryText ?? "Запросить демо"}
                   </Link>
                   <Link
                     href={page?.ctaBtnSecondaryUrl ?? "/contact?type=sales"}
@@ -859,7 +859,7 @@ export default async function BusinessPage() {
                     marginBottom: "4px",
                   }}
                 >
-                  {page?.ctaBtnSecondaryText ?? "Запросить демо"}
+                  {page?.salesBtnText ?? "Для продаж"}
                 </p>
                 <div
                   style={{
@@ -903,7 +903,7 @@ export default async function BusinessPage() {
                   ))}
                 </div>
                 <Link
-                  href={page?.ctaBtnSecondaryUrl ?? "/contact?type=demo"}
+                  href={page?.ctaBtnSecondaryUrl ?? "/contact?type=sales"}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -919,7 +919,7 @@ export default async function BusinessPage() {
                     marginTop: "4px",
                   }}
                 >
-                  {page?.ctaBtnSecondaryText ?? "Запросить демо"}
+                  {page?.salesBtnText ?? "Для продаж"}
                 </Link>
                 <p style={{ fontSize: "12px", textAlign: "center", color: "#6B7280" }}>
                   Нажимая кнопку, вы принимаете{" "}
