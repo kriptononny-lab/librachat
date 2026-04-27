@@ -355,7 +355,7 @@ export default async function BusinessPage() {
                         style={{
                           fontSize: "24px",
                           fontWeight: 800,
-                          color: "#A78BFA",
+                          color: "#F0EEFF",
                           letterSpacing: "-0.02em",
                         }}
                       >
