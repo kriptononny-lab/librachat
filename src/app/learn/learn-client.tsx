@@ -293,7 +293,7 @@ export function LearnClient({
                     style={{
                       fontSize: "22px",
                       fontWeight: 800,
-                      color: "#A78BFA",
+                      color: "#F0EEFF",
                       letterSpacing: "-0.02em",
                     }}
                   >

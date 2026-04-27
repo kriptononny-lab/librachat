@@ -8,7 +8,6 @@ import { PricingPreviewSection } from "@/components/sections/pricing-preview-sec
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
-import { MarqueeSection } from "@/components/sections/marquee-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -119,7 +118,6 @@ export default async function HomePage() {
       />
       <main className="flex-1" style={{ paddingTop: "68px" }}>
         <HeroSection texts={texts} />
-        <MarqueeSection texts={texts} />
         <FacetsSection texts={texts} />
         <StepsSection texts={texts} steps={steps} />
         <ComparisonSection texts={texts} />
