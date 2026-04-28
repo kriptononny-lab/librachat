@@ -187,18 +187,17 @@ async function fetchCollection<T>(endpoint: string): Promise<T[]> {
 
 export async function fetchStrapiTestimonials(): Promise<StrapiTestimonial[]> {
   const items = await fetchCollection<StrapiTestimonial>("testimonials?populate=photo");
-  return items.map(
-    (t: Record<string, unknown> & { photo?: { url?: string } | null }) => ({
-      ...t,
-      photo: t.photo
-        ? {
-            url: t.photo.url?.startsWith("http")
-              ? t.photo.url
-              : `${STRAPI_URL}${t.photo.url}`,
-          }
-        : null,
-    })
-  ) as StrapiTestimonial[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return items.map((t: any) => ({
+    ...t,
+    photo: t.photo
+      ? {
+          url: t.photo.url?.startsWith("http")
+            ? t.photo.url
+            : `${STRAPI_URL}${t.photo.url}`,
+        }
+      : null,
+  }));
 }
 
 export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<StrapiFaq[]> {
@@ -554,18 +553,17 @@ export async function fetchStrapiBusinessTestimonials(): Promise<StrapiTestimoni
     });
     if (!res.ok) return [];
     const json = await res.json();
-    return (json.data ?? []).map(
-      (t: Record<string, unknown> & { photo?: { url?: string } | null }) => ({
-        ...t,
-        photo: t.photo
-          ? {
-              url: t.photo.url?.startsWith("http")
-                ? t.photo.url
-                : `${STRAPI_URL}${t.photo.url}`,
-            }
-          : null,
-      })
-    ) as StrapiTestimonial[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (json.data ?? []).map((t: any) => ({
+      ...t,
+      photo: t.photo
+        ? {
+            url: t.photo.url?.startsWith("http")
+              ? t.photo.url
+              : `${STRAPI_URL}${t.photo.url}`,
+          }
+        : null,
+    }));
   } catch {
     return [];
   }
