@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { ArrowRight, Zap, Briefcase, GraduationCap } from "lucide-react";
+import type { StrapiFacetCard } from "@/lib/strapi";
 
 const TABS = [
   { id: "self", labelKey: "facetsTab1Label", fallback: "Для себя" },
@@ -12,7 +13,14 @@ const TABS = [
 ] as const;
 type TabId = (typeof TABS)[number]["id"];
 
-const CARDS: Record<
+// Маппинг имени иконки из CMS в компонент Lucide
+const ICON_MAP = {
+  Zap: Zap,
+  Briefcase: Briefcase,
+  GraduationCap: GraduationCap,
+} as const;
+
+const FALLBACK_CARDS: Record<
   TabId,
   {
     icon: React.ReactNode;
@@ -110,26 +118,52 @@ const CARDS: Record<
   ],
 };
 
-export function FacetsSection({ texts = {} }: { texts?: Record<string, string> }) {
+export function FacetsSection({
+  texts = {},
+  facetCards,
+}: {
+  texts?: Record<string, string>;
+  facetCards?: StrapiFacetCard[];
+}) {
   const badge = texts["facets.badge"] ?? "СДЕЛАЕТ МНОГОЕ ДЛЯ ТЕБЯ";
   const title = texts["facets.title"] ?? "Посмотри, что я могу сделать для тебя";
   const subtitle =
     texts["facets.subtitle"] ?? "Это лишь несколько идей. Но я могу больше.";
 
-  function getCard(tab: string, n: number, staticCard: (typeof CARDS)["self"][0]) {
-    return {
-      ...staticCard,
-      badge: texts[`facets.${tab}.${n}.badge`] ?? staticCard.badge,
-      title: texts[`facets.${tab}.${n}.title`] ?? staticCard.title,
-      desc: texts[`facets.${tab}.${n}.desc`] ?? staticCard.desc,
-      superpower: texts[`facets.${tab}.${n}.superpower`] ?? staticCard.superpower,
-    };
+  // Группируем карточки из CMS по табам и сортируем по order
+  function buildCardsForTab(tab: TabId): {
+    icon: React.ReactNode;
+    badge: string;
+    title: string;
+    desc: string;
+    superpower: string;
+    href: string;
+  }[] {
+    if (facetCards && facetCards.length > 0) {
+      const filtered = facetCards
+        .filter((c) => c.tab === tab)
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+      if (filtered.length > 0) {
+        return filtered.map((c) => {
+          const IconCmp = c.icon ? ICON_MAP[c.icon] : Zap;
+          return {
+            icon: <IconCmp size={20} color="#C4B5FD" />,
+            badge: c.badge ?? "",
+            title: c.title ?? "",
+            desc: c.description ?? "",
+            superpower: c.superpower ?? "",
+            href: c.href ?? "#",
+          };
+        });
+      }
+    }
+    return FALLBACK_CARDS[tab];
   }
 
   const DYNAMIC_CARDS = {
-    self: CARDS.self.map((c, i) => getCard("self", i + 1, c)),
-    business: CARDS.business.map((c, i) => getCard("business", i + 1, c)),
-    study: CARDS.study.map((c, i) => getCard("study", i + 1, c)),
+    self: buildCardsForTab("self"),
+    business: buildCardsForTab("business"),
+    study: buildCardsForTab("study"),
   };
   const [activeTab, setActiveTab] = useState<TabId>("self");
 

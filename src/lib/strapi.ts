@@ -187,16 +187,18 @@ async function fetchCollection<T>(endpoint: string): Promise<T[]> {
 
 export async function fetchStrapiTestimonials(): Promise<StrapiTestimonial[]> {
   const items = await fetchCollection<StrapiTestimonial>("testimonials?populate=photo");
-  return items.map((t: any) => ({
-    ...t,
-    photo: t.photo
-      ? {
-          url: t.photo.url?.startsWith("http")
-            ? t.photo.url
-            : `${STRAPI_URL}${t.photo.url}`,
-        }
-      : null,
-  }));
+  return items.map(
+    (t: Record<string, unknown> & { photo?: { url?: string } | null }) => ({
+      ...t,
+      photo: t.photo
+        ? {
+            url: t.photo.url?.startsWith("http")
+              ? t.photo.url
+              : `${STRAPI_URL}${t.photo.url}`,
+          }
+        : null,
+    })
+  ) as StrapiTestimonial[];
 }
 
 export async function fetchStrapiFaqs(page?: "home" | "pricing"): Promise<StrapiFaq[]> {
@@ -397,6 +399,7 @@ export interface StrapiHomePage {
   pricingPreviewTitle: string | null;
   pricingPreviewTitleAccent: string | null;
   pricingPreviewSubtitle: string | null;
+  demoPrompts: unknown;
 }
 
 export interface StrapiFeaturesPage {
@@ -551,17 +554,87 @@ export async function fetchStrapiBusinessTestimonials(): Promise<StrapiTestimoni
     });
     if (!res.ok) return [];
     const json = await res.json();
-    return (json.data ?? []).map((t: any) => ({
-      ...t,
-      photo: t.photo
-        ? {
-            url: t.photo.url?.startsWith("http")
-              ? t.photo.url
-              : `${STRAPI_URL}${t.photo.url}`,
-          }
-        : null,
-    }));
+    return (json.data ?? []).map(
+      (t: Record<string, unknown> & { photo?: { url?: string } | null }) => ({
+        ...t,
+        photo: t.photo
+          ? {
+              url: t.photo.url?.startsWith("http")
+                ? t.photo.url
+                : `${STRAPI_URL}${t.photo.url}`,
+            }
+          : null,
+      })
+    ) as StrapiTestimonial[];
   } catch {
     return [];
   }
+}
+
+// ── Facet Cards (карточки в табах главной) ─────────
+
+export interface StrapiFacetCard {
+  id: number;
+  tab: "self" | "business" | "study";
+  icon: "Zap" | "Briefcase" | "GraduationCap" | null;
+  badge: string | null;
+  title: string | null;
+  description: string | null;
+  superpower: string | null;
+  href: string | null;
+  order: number | null;
+}
+
+export async function fetchStrapiFacetCards(): Promise<StrapiFacetCard[]> {
+  return fetchCollection<StrapiFacetCard>(
+    "facet-cards?sort=order:asc&pagination[pageSize]=50"
+  );
+}
+
+// ── Download Platforms (платформы на /download) ────
+
+export interface StrapiDownloadPlatform {
+  id: number;
+  title: string | null;
+  subtitle: string | null;
+  version: string | null;
+  badge: string | null;
+  href: string | null;
+  icon: "Smartphone" | "Monitor" | "Chrome" | null;
+  primary: boolean | null;
+  soon: boolean | null;
+  order: number | null;
+}
+
+export async function fetchStrapiDownloadPlatforms(): Promise<StrapiDownloadPlatform[]> {
+  return fetchCollection<StrapiDownloadPlatform>("download-platforms?sort=order:asc");
+}
+
+// ── Contact Methods (Email/Telegram/Phone) ─────────
+
+export interface StrapiContactMethod {
+  id: number;
+  label: string | null;
+  value: string | null;
+  href: string | null;
+  icon: "Mail" | "MessageSquare" | "Phone" | null;
+  order: number | null;
+}
+
+export async function fetchStrapiContactMethods(): Promise<StrapiContactMethod[]> {
+  return fetchCollection<StrapiContactMethod>("contact-methods?sort=order:asc");
+}
+
+// ── Contact Reasons (Демо/Корпорат/Партнёрство) ────
+
+export interface StrapiContactReason {
+  id: number;
+  title: string | null;
+  description: string | null;
+  icon: "Send" | "Building2" | "Users" | null;
+  order: number | null;
+}
+
+export async function fetchStrapiContactReasons(): Promise<StrapiContactReason[]> {
+  return fetchCollection<StrapiContactReason>("contact-reasons?sort=order:asc");
 }

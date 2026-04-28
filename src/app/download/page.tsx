@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { fetchDownloadPage } from "@/lib/strapi";
+import { fetchDownloadPage, fetchStrapiDownloadPlatforms } from "@/lib/strapi";
+import type { StrapiDownloadPlatform } from "@/lib/strapi";
 import Link from "next/link";
 import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   },
 };
 
-const PLATFORMS = [
+const FALLBACK_PLATFORMS = [
   {
     icon: Smartphone,
     title: "iOS",
@@ -93,12 +94,37 @@ const DEFAULT_FEATURES = [
   { icon: Star, textKey: "benefit4Text", fallback: "Одна подписка — все платформы" },
 ];
 
+// Маппинг иконок из CMS в компоненты Lucide
+const PLATFORM_ICON_MAP = {
+  Smartphone: Smartphone,
+  Monitor: Monitor,
+  Chrome: Chrome,
+} as const;
+
 export default async function DownloadPage() {
-  const page = await fetchDownloadPage();
+  const [page, cmsPlatforms] = await Promise.all([
+    fetchDownloadPage(),
+    fetchStrapiDownloadPlatforms(),
+  ]);
   const FEATURES = DEFAULT_FEATURES.map((f) => ({
     icon: f.icon,
     text: (page as Record<string, string | null> | null)?.[f.textKey] ?? f.fallback,
   }));
+
+  // Платформы: если в CMS есть — берём оттуда, иначе fallback
+  const PLATFORMS =
+    cmsPlatforms.length > 0
+      ? cmsPlatforms.map((p: StrapiDownloadPlatform) => ({
+          icon: p.icon ? PLATFORM_ICON_MAP[p.icon] : Smartphone,
+          title: p.title ?? "",
+          subtitle: p.subtitle ?? "",
+          badge: p.badge ?? "",
+          version: p.version ?? "",
+          href: p.href ?? "#",
+          primary: p.primary ?? false,
+          soon: p.soon ?? false,
+        }))
+      : FALLBACK_PLATFORMS;
   return (
     <div
       style={{

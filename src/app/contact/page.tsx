@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react";
+import { fetchStrapiContactMethods, fetchStrapiContactReasons } from "@/lib/strapi";
 
 export const metadata: Metadata = {
   title: "Контакты и запрос демо LibraChat",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CONTACTS = [
+const FALLBACK_CONTACTS = [
   {
     icon: Mail,
     label: "Email",
@@ -56,7 +57,7 @@ const CONTACTS = [
   },
 ];
 
-const REASONS = [
+const FALLBACK_REASONS = [
   {
     icon: Send,
     title: "Запросить демо",
@@ -74,7 +75,44 @@ const REASONS = [
   },
 ];
 
-export default function ContactPage() {
+// Маппинги иконок для CMS-значений
+const CONTACT_ICON_MAP = {
+  Mail: Mail,
+  MessageSquare: MessageSquare,
+  Phone: Phone,
+} as const;
+
+const REASON_ICON_MAP = {
+  Send: Send,
+  Building2: Building2,
+  Users: Users,
+} as const;
+
+export default async function ContactPage() {
+  const [cmsContacts, cmsReasons] = await Promise.all([
+    fetchStrapiContactMethods(),
+    fetchStrapiContactReasons(),
+  ]);
+
+  const CONTACTS =
+    cmsContacts.length > 0
+      ? cmsContacts.map((c) => ({
+          icon: c.icon ? CONTACT_ICON_MAP[c.icon] : Mail,
+          label: c.label ?? "",
+          value: c.value ?? "",
+          href: c.href ?? "#",
+        }))
+      : FALLBACK_CONTACTS;
+
+  const REASONS =
+    cmsReasons.length > 0
+      ? cmsReasons.map((r) => ({
+          icon: r.icon ? REASON_ICON_MAP[r.icon] : Send,
+          title: r.title ?? "",
+          desc: r.description ?? "",
+        }))
+      : FALLBACK_REASONS;
+
   return (
     <div
       style={{

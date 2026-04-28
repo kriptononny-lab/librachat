@@ -24,7 +24,7 @@ const STATIC_HERO_PHRASES = [
   "Надёжный друг\nс запасом знаний.",
 ];
 
-const DEMO_PROMPTS = [
+const STATIC_DEMO_PROMPTS = [
   "Как увеличить продажи на Wildberries? Спроси меня...",
   "Проанализируй этот Excel-отчёт и дай рекомендации...",
   "Напиши контент-план на месяц для Instagram...",
@@ -40,14 +40,15 @@ const QUICK_ACTIONS = [
   { icon: PenLine, labelKey: "heroChatTab4", fallback: "Написать код" },
 ];
 
-function AnimatedInput() {
+function AnimatedInput({ prompts }: { prompts: string[] }) {
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
   const [charIdx, setCharIdx] = useState(0);
 
   useEffect(() => {
-    const current = DEMO_PROMPTS[phraseIdx];
+    const current = prompts[phraseIdx];
+    if (!current) return;
     if (typing) {
       if (charIdx < current.length) {
         const t = setTimeout(() => {
@@ -67,11 +68,11 @@ function AnimatedInput() {
         }, 16);
         return () => clearTimeout(t);
       } else {
-        setPhraseIdx((i) => (i + 1) % DEMO_PROMPTS.length);
+        setPhraseIdx((i) => (i + 1) % prompts.length);
         setTyping(true);
       }
     }
-  }, [charIdx, typing, phraseIdx]);
+  }, [charIdx, typing, phraseIdx, prompts]);
 
   return (
     <div
@@ -215,6 +216,18 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
   const subtitle =
     texts["hero.subtitle"] ??
     "Используй меня даже тогда, когда нужно обработать большой объём данных или сделать честный документ без галлюцинаций и выдумок.";
+
+  // Парсим demoPrompts из CMS (передаются JSON-строкой), fallback на захардкоженный массив
+  let demoPrompts: string[] = STATIC_DEMO_PROMPTS;
+  const raw = texts["hero.demoPrompts"];
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) demoPrompts = parsed;
+    } catch {
+      // невалидный JSON — fallback
+    }
+  }
   const stats = [
     {
       value: texts["hero.stat1.value"] ?? "Без VPN",
@@ -343,7 +356,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
             style={{ width: "100%", maxWidth: "700px", marginBottom: "14px" }}
             className="hero-widget-aura"
           >
-            <AnimatedInput />
+            <AnimatedInput prompts={demoPrompts} />
           </motion.div>
 
           {/* Быстрые чипы под инпутом */}

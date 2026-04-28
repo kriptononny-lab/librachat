@@ -48,17 +48,20 @@ import {
   fetchStrapiPlans,
   fetchHomePage,
   fetchStrapiSteps,
+  fetchStrapiFacetCards,
 } from "@/lib/strapi";
 
 export default async function HomePage() {
-  const [testimonials, faqs, plans, page, pricingPage, steps] = await Promise.all([
-    fetchStrapiTestimonials(),
-    fetchStrapiFaqs("home"),
-    fetchStrapiPlans(),
-    fetchHomePage(),
-    fetchPricingPage(),
-    fetchStrapiSteps("home"),
-  ]);
+  const [testimonials, faqs, plans, page, pricingPage, steps, facetCards] =
+    await Promise.all([
+      fetchStrapiTestimonials(),
+      fetchStrapiFaqs("home"),
+      fetchStrapiPlans(),
+      fetchHomePage(),
+      fetchPricingPage(),
+      fetchStrapiSteps("home"),
+      fetchStrapiFacetCards(),
+    ]);
 
   // Конвертируем Single Type в формат texts для компонентов
   const texts: Record<string, string> = {};
@@ -106,6 +109,10 @@ export default async function HomePage() {
     for (const [k, v] of Object.entries(map)) {
       if (v) texts[k] = v;
     }
+    // demoPrompts — массив строк, передаём как JSON в texts
+    if (Array.isArray(page.demoPrompts) && page.demoPrompts.length > 0) {
+      texts["hero.demoPrompts"] = JSON.stringify(page.demoPrompts);
+    }
   }
 
   return (
@@ -118,7 +125,7 @@ export default async function HomePage() {
       />
       <main className="flex-1" style={{ paddingTop: "68px" }}>
         <HeroSection texts={texts} />
-        <FacetsSection texts={texts} />
+        <FacetsSection texts={texts} facetCards={facetCards} />
         <StepsSection texts={texts} steps={steps} />
         <ComparisonSection texts={texts} />
         <SocialProofSection testimonials={testimonials} texts={texts} />
