@@ -4,37 +4,25 @@ import { ServerHeader } from "@/components/layout/server-header";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react";
 import { fetchStrapiContactMethods, fetchStrapiContactReasons } from "@/lib/strapi";
+import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Контакты и запрос демо LibraChat",
-  description:
-    "Свяжитесь с командой LibraChat — запросите персональное демо, задайте технический вопрос или обсудите корпоративное решение для вашей компании.",
-  openGraph: {
-    title: "Контакты и запрос демо LibraChat",
-    description: "Запросите демо или задайте вопрос команде LibraChat.",
-    url: "https://librachat.ai/contact",
-    siteName: "LibraChat",
-    locale: "ru_RU",
-    type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Контакты и запрос демо LibraChat",
-    description: "Запросите демо или задайте вопрос команде LibraChat.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://librachat.ai/contact",
-  },
-};
+const FALLBACK_TITLE = "Контакты и запрос демо LibraChat";
+const FALLBACK_DESC =
+  "Свяжитесь с командой LibraChat — запросите персональное демо, задайте технический вопрос или обсудите корпоративное решение для вашей компании.";
+
+// На странице Контакты пока нет Single Type в CMS, поэтому SEO статичный.
+// Когда появится — поменять на await fetchContactPage() и передать seo.
+export const metadata: Metadata = buildMetadata({
+  fallbackTitle: FALLBACK_TITLE,
+  fallbackDescription: FALLBACK_DESC,
+  url: "https://librachat.ai/contact",
+  type: "website",
+});
+
+const CONTACT_BREADCRUMBS = breadcrumbJsonLd([
+  { name: "Главная", url: "https://librachat.ai" },
+  { name: "Контакты", url: "https://librachat.ai/contact" },
+]);
 
 const FALLBACK_CONTACTS = [
   {
@@ -122,6 +110,10 @@ export default async function ContactPage() {
         background: "#040408",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(CONTACT_BREADCRUMBS)}
+      />
       <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}

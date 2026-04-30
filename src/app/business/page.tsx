@@ -32,38 +32,27 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Globe,
 };
 
-export const metadata: Metadata = {
-  title: "LibraChat для бизнеса — корпоративный ИИ-ассистент",
-  description:
-    "Корпоративный ИИ-ассистент без сложных настроек. Безопасность данных, управление командой по ролям, интеграции с вашими сервисами и выделенная поддержка 24/7.",
-  openGraph: {
-    title: "LibraChat для бизнеса — корпоративный ИИ",
-    description:
-      "Масштабируй команду с LibraChat. Безопасность данных, управление доступом, 24/7 поддержка.",
+import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
+
+const FALLBACK_TITLE = "LibraChat для бизнеса — корпоративный ИИ-ассистент";
+const FALLBACK_DESC =
+  "Корпоративный ИИ-ассистент без сложных настроек. Безопасность данных, управление командой по ролям, интеграции с вашими сервисами и выделенная поддержка 24/7.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await fetchBusinessPage();
+  return buildMetadata({
+    seo: page?.seo,
+    fallbackTitle: FALLBACK_TITLE,
+    fallbackDescription: FALLBACK_DESC,
     url: "https://librachat.ai/business",
-    siteName: "LibraChat",
-    locale: "ru_RU",
     type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "LibraChat для бизнеса — корпоративный ИИ",
-    description:
-      "Масштабируй команду с LibraChat. Безопасность данных, управление доступом, 24/7 поддержка.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://librachat.ai/business",
-  },
-};
+  });
+}
+
+const BUSINESS_BREADCRUMBS = breadcrumbJsonLd([
+  { name: "Главная", url: "https://librachat.ai" },
+  { name: "Для бизнеса", url: "https://librachat.ai/business" },
+]);
 
 const FEATURES = [
   {
@@ -267,6 +256,10 @@ export default async function BusinessPage() {
       : TESTIMONIALS;
   return (
     <div style={{ display: "flex", minHeight: "100dvh", flexDirection: "column" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(BUSINESS_BREADCRUMBS)}
+      />
       <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* ── HERO ── */}

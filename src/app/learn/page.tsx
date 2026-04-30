@@ -2,37 +2,27 @@ import type { Metadata } from "next";
 import { LearnClient } from "./learn-client";
 import { fetchStrapiArticles, fetchLearnPage } from "@/lib/strapi";
 import { ALL_ARTICLES as STATIC_ARTICLES } from "@/lib/articles";
+import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
-  description:
-    "Практические статьи, пошаговые гайды и реальные кейсы от команды LibraChat. Узнайте как работать с ИИ-ассистентом быстрее и эффективнее — без лишних слов.",
-  openGraph: {
-    title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
-    description: "Гайды, кейсы и обучающие материалы по работе с ИИ-ассистентом.",
+const FALLBACK_TITLE = "Статьи, гайды и кейсы по работе с ИИ-ассистентом";
+const FALLBACK_DESC =
+  "Практические статьи, пошаговые гайды и реальные кейсы от команды LibraChat. Узнайте как работать с ИИ-ассистентом быстрее и эффективнее — без лишних слов.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await fetchLearnPage();
+  return buildMetadata({
+    seo: page?.seo,
+    fallbackTitle: FALLBACK_TITLE,
+    fallbackDescription: FALLBACK_DESC,
     url: "https://librachat.ai/learn",
-    siteName: "LibraChat",
-    locale: "ru_RU",
     type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Статьи, гайды и кейсы по работе с ИИ-ассистентом",
-    description: "Гайды, кейсы и обучающие материалы по работе с ИИ-ассистентом.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://librachat.ai/learn",
-  },
-};
+  });
+}
+
+const LEARN_BREADCRUMBS = breadcrumbJsonLd([
+  { name: "Главная", url: "https://librachat.ai" },
+  { name: "Обучение", url: "https://librachat.ai/learn" },
+]);
 
 export default async function LearnPage() {
   // Тянем статьи из Strapi; если CMS недоступна — показываем статику
@@ -42,5 +32,13 @@ export default async function LearnPage() {
   ]);
   const articles = strapiArticles.length > 0 ? strapiArticles : STATIC_ARTICLES;
 
-  return <LearnClient articles={articles} learnPage={learnPage} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(LEARN_BREADCRUMBS)}
+      />
+      <LearnClient articles={articles} learnPage={learnPage} />
+    </>
+  );
 }

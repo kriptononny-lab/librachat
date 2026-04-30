@@ -15,37 +15,27 @@ import {
   Shield,
   WifiOff,
 } from "lucide-react";
+import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Скачать приложение LibraChat для iOS, Android и браузера",
-  description:
-    "Скачайте приложение LibraChat для iOS и Android или работайте прямо в браузере. Работает без VPN в России и СНГ — быстро, удобно, бесплатно.",
-  openGraph: {
-    title: "Скачать LibraChat — iOS, Android, браузер",
-    description: "Работает без VPN. Доступен на всех устройствах.",
+const FALLBACK_TITLE = "Скачать приложение LibraChat для iOS, Android и браузера";
+const FALLBACK_DESC =
+  "Скачайте приложение LibraChat для iOS и Android или работайте прямо в браузере. Работает без VPN в России и СНГ — быстро, удобно, бесплатно.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await fetchDownloadPage();
+  return buildMetadata({
+    seo: page?.seo,
+    fallbackTitle: FALLBACK_TITLE,
+    fallbackDescription: FALLBACK_DESC,
     url: "https://librachat.ai/download",
-    siteName: "LibraChat",
-    locale: "ru_RU",
     type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Скачать LibraChat — iOS, Android, браузер",
-    description: "Работает без VPN. Доступен на всех устройствах.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://librachat.ai/download",
-  },
-};
+  });
+}
+
+const DOWNLOAD_BREADCRUMBS = breadcrumbJsonLd([
+  { name: "Главная", url: "https://librachat.ai" },
+  { name: "Скачать", url: "https://librachat.ai/download" },
+]);
 
 const FALLBACK_PLATFORMS = [
   {
@@ -134,6 +124,10 @@ export default async function DownloadPage() {
         background: "#040408",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(DOWNLOAD_BREADCRUMBS)}
+      />
       <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}

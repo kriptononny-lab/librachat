@@ -1,4 +1,5 @@
 import type { ArticleCard, ArticleType } from "./articles";
+import type { StrapiSeo } from "./seo";
 
 const STRAPI_URL =
   process.env.NEXT_PUBLIC_STRAPI_URL || "https://librachat-cms.onrender.com";
@@ -28,6 +29,8 @@ interface StrapiArticleV5 {
   photoPos: string | null;
   photo: StrapiMediaV5 | null;
   publishedAt: string | null;
+  updatedAt: string | null;
+  seo: StrapiSeo | null;
 }
 
 interface StrapiResponse<T> {
@@ -70,7 +73,7 @@ function buildHeaders(): HeadersInit {
 
 export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
   try {
-    const url = `${STRAPI_URL}/api/articles?populate=photo&sort=createdAt:desc&pagination[pageSize]=100`;
+    const url = `${STRAPI_URL}/api/articles?populate[photo]=true&populate[seo][populate]=ogImage&sort=createdAt:desc&pagination[pageSize]=100`;
     const res = await fetch(url, {
       headers: buildHeaders(),
       next: { revalidate: 60 },
@@ -89,11 +92,44 @@ export async function fetchStrapiArticles(): Promise<ArticleCard[]> {
   }
 }
 
-export async function fetchStrapiArticleBySlug(
-  slug: string
-): Promise<(ArticleCard & { rawContent: unknown }) | null> {
+/**
+ * Возвращает статьи со всеми датами для построения sitemap.
+ */
+export async function fetchStrapiArticlesForSitemap(): Promise<
+  { slug: string; publishedAt: string | null; updatedAt: string | null }[]
+> {
   try {
-    const url = `${STRAPI_URL}/api/articles?filters[slug][$eq]=${encodeURIComponent(slug)}&populate=photo`;
+    const url = `${STRAPI_URL}/api/articles?fields[0]=slug&fields[1]=publishedAt&fields[2]=updatedAt&sort=updatedAt:desc&pagination[pageSize]=200`;
+    const res = await fetch(url, {
+      headers: buildHeaders(),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return [];
+    const json = await res.json();
+    return (json.data ?? []).map(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (a: any) => ({
+        slug: a.slug,
+        publishedAt: a.publishedAt ?? null,
+        updatedAt: a.updatedAt ?? null,
+      })
+    );
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchStrapiArticleBySlug(slug: string): Promise<
+  | (ArticleCard & {
+      rawContent: unknown;
+      seo: StrapiSeo | null;
+      publishedAt: string | null;
+      updatedAt: string | null;
+    })
+  | null
+> {
+  try {
+    const url = `${STRAPI_URL}/api/articles?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[photo]=true&populate[seo][populate]=ogImage`;
     const res = await fetch(url, {
       headers: buildHeaders(),
       next: { revalidate: 60 },
@@ -111,6 +147,9 @@ export async function fetchStrapiArticleBySlug(
     return {
       ...mapToArticleCard(item),
       rawContent: item.content,
+      seo: item.seo ?? null,
+      publishedAt: item.publishedAt ?? null,
+      updatedAt: item.updatedAt ?? null,
     };
   } catch (err) {
     console.error("[Strapi] fetchArticleBySlug error:", err);
@@ -399,6 +438,7 @@ export interface StrapiHomePage {
   pricingPreviewTitleAccent: string | null;
   pricingPreviewSubtitle: string | null;
   demoPrompts: unknown;
+  seo: StrapiSeo | null;
 }
 
 export interface StrapiFeaturesPage {
@@ -421,6 +461,7 @@ export interface StrapiFeaturesPage {
   ctaBtnText: string | null;
   ctaBtnUrl: string | null;
   // feat1-6 and usecase1-4 moved to Collection Types
+  seo: StrapiSeo | null;
 }
 
 export interface StrapiPricingPage {
@@ -447,6 +488,7 @@ export interface StrapiPricingPage {
   popularLabel: string | null;
   compareAllText: string | null;
   compareAllUrl: string | null;
+  seo: StrapiSeo | null;
 }
 
 export interface StrapiBusinessPage {
@@ -475,6 +517,7 @@ export interface StrapiBusinessPage {
   casesSubtitle: string | null;
   testimonialsBadge: string | null;
   testimonialsTitle: string | null;
+  seo: StrapiSeo | null;
 }
 
 export interface StrapiDownloadPage {
@@ -492,6 +535,7 @@ export interface StrapiDownloadPage {
   demoBtnUrl: string | null;
   loginText: string | null;
   loginUrl: string | null;
+  seo: StrapiSeo | null;
 }
 
 export interface StrapiLearnPage {
@@ -507,11 +551,12 @@ export interface StrapiLearnPage {
   realStoriesTitle: string | null;
   allMaterialsText: string | null;
   searchPlaceholder: string | null;
+  seo: StrapiSeo | null;
 }
 
 async function fetchSingleType<T>(endpoint: string): Promise<T | null> {
   try {
-    const url = `${STRAPI_URL}/api/${endpoint}`;
+    const url = `${STRAPI_URL}/api/${endpoint}?populate[seo][populate]=ogImage`;
     const res = await fetch(url, {
       headers: buildHeaders(),
       next: { revalidate: 60 },

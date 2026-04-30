@@ -28,37 +28,27 @@ import {
   fetchStrapiFeatureBlocks,
   fetchStrapiUsecaseBlocks,
 } from "@/lib/strapi";
+import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Возможности LibraChat — 8 инструментов в одном чате",
-  description:
-    "Всё что нужно для работы и жизни — в одном чате. Анализ файлов, написание текстов, перевод, код и многое другое — без переключений между десятками сервисов.",
-  openGraph: {
-    title: "Возможности LibraChat — 8 инструментов в одном чате",
-    description: "Анализ файлов, тексты, перевод, код — всё в одном окне без VPN.",
+const FALLBACK_TITLE = "Возможности LibraChat — 8 инструментов в одном чате";
+const FALLBACK_DESC =
+  "Всё что нужно для работы и жизни — в одном чате. Анализ файлов, написание текстов, перевод, код и многое другое — без переключений между десятками сервисов.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await fetchFeaturesPage();
+  return buildMetadata({
+    seo: page?.seo,
+    fallbackTitle: FALLBACK_TITLE,
+    fallbackDescription: FALLBACK_DESC,
     url: "https://librachat.ai/features",
-    siteName: "LibraChat",
-    locale: "ru_RU",
     type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Возможности LibraChat — 8 инструментов в одном чате",
-    description: "Анализ файлов, тексты, перевод, код — всё в одном окне без VPN.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://librachat.ai/features",
-  },
-};
+  });
+}
+
+const FEATURES_BREADCRUMBS = breadcrumbJsonLd([
+  { name: "Главная", url: "https://librachat.ai" },
+  { name: "Возможности", url: "https://librachat.ai/features" },
+]);
 
 const ICON_MAP: Record<string, React.ElementType> = {
   MessageSquare,
@@ -707,6 +697,10 @@ export default async function FeaturesPage() {
         background: "#040408",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(FEATURES_BREADCRUMBS)}
+      />
       <ServerHeader />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Hero */}
