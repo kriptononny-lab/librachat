@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ALL_ARTICLES as STATIC_ARTICLES, TYPE_COLOR } from "@/lib/articles";
 import { fetchStrapiArticles, fetchStrapiArticleBySlug } from "@/lib/strapi";
+import { buildMetadata, articleJsonLd, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
 
 // Новые slug-и из Strapi рендерятся на лету — без редеплоя
 export const dynamicParams = true;
@@ -31,28 +32,19 @@ export async function generateMetadata({
   const strapi = await fetchStrapiArticleBySlug(slug);
   const article = strapi ?? STATIC_ARTICLES.find((a) => a.slug === slug);
   if (!article) return { title: "Статья не найдена" };
+
   const url = `${BASE}/learn/${slug}`;
-  const image = article.photo ?? "/og-image.png";
-  return {
-    title: article.title,
-    description: article.excerpt,
-    alternates: { canonical: url },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt ?? "",
-      url,
-      siteName: "LibraChat",
-      locale: "ru_RU",
-      type: "article",
-      images: [{ url: image, width: 1200, height: 630, alt: article.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.title,
-      description: article.excerpt ?? "",
-      images: [image],
-    },
-  };
+
+  return buildMetadata({
+    seo: strapi?.seo ?? null,
+    fallbackTitle: article.title,
+    fallbackDescription: article.excerpt ?? "",
+    url,
+    type: "article",
+    contentTitle: article.title,
+    contentDescription: article.excerpt ?? "",
+    contentImage: article.photo ?? null,
+  });
 }
 
 // ─── Переиспользуемые блоки ────────────────────────
@@ -685,6 +677,24 @@ export default async function ArticlePage({
   // Контент: приоритет — хардкод реальных кейсов, затем Strapi blocks, затем заглушка
   const realContent = REAL_CASES[slug];
 
+  // ── JSON-LD для статьи ──────────────────────────────
+  const articleUrl = `${BASE}/learn/${slug}`;
+  const articleLd = articleJsonLd({
+    title: article.title,
+    description: article.excerpt ?? "",
+    url: articleUrl,
+    image: article.photo ?? null,
+    author: article.author,
+    authorRole: article.authorRole ?? null,
+    datePublished: strapiData?.publishedAt ?? null,
+    dateModified: strapiData?.updatedAt ?? null,
+  });
+  const breadcrumbsLd = breadcrumbJsonLd([
+    { name: "Главная", url: BASE },
+    { name: "Обучение", url: `${BASE}/learn` },
+    { name: article.title, url: articleUrl },
+  ]);
+
   return (
     <div
       style={{
@@ -694,6 +704,14 @@ export default async function ArticlePage({
         background: "#040408",
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(articleLd)}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(breadcrumbsLd)}
+      />
       <Header />
       <main style={{ flex: 1, paddingTop: "68px" }}>
         {/* Шапка */}

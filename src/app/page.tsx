@@ -9,38 +9,6 @@ import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "LibraChat — первый российский ИИ-ассистент без VPN",
-  description:
-    "LibraChat — мощный ИИ-ассистент для работы, учёбы и творчества. Анализирует файлы, пишет тексты, переводит и программирует. Работает без VPN. Попробуй бесплатно 14 дней.",
-  alternates: { canonical: "https://librachat.ai" },
-  openGraph: {
-    title: "LibraChat — первый российский ИИ-ассистент без VPN",
-    description:
-      "Анализ файлов, тексты, перевод, код — всё в одном чате без VPN. 14 дней бесплатно.",
-    url: "https://librachat.ai",
-    siteName: "LibraChat",
-    locale: "ru_RU",
-    type: "website",
-    images: [
-      {
-        url: "https://librachat.ai/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LibraChat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "LibraChat — первый российский ИИ-ассистент без VPN",
-    description:
-      "Анализ файлов, тексты, перевод, код — всё в одном чате без VPN. 14 дней бесплатно.",
-    images: ["https://librachat.ai/og-image.png"],
-  },
-};
-
 import { fetchPricingPage } from "@/lib/strapi";
 import {
   fetchStrapiTestimonials,
@@ -50,6 +18,22 @@ import {
   fetchStrapiSteps,
   fetchStrapiFacetCards,
 } from "@/lib/strapi";
+import { buildMetadata, faqJsonLd, jsonLdScript } from "@/lib/seo";
+
+const FALLBACK_TITLE = "LibraChat — первый российский ИИ-ассистент без VPN";
+const FALLBACK_DESC =
+  "LibraChat — мощный ИИ-ассистент для работы, учёбы и творчества. Анализирует файлы, пишет тексты, переводит и программирует. Работает без VPN. Попробуй бесплатно 14 дней.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await fetchHomePage();
+  return buildMetadata({
+    seo: page?.seo,
+    fallbackTitle: FALLBACK_TITLE,
+    fallbackDescription: FALLBACK_DESC,
+    url: "https://librachat.ai",
+    type: "website",
+  });
+}
 
 export default async function HomePage() {
   const [testimonials, faqs, plans, page, pricingPage, steps, facetCards] =
@@ -115,8 +99,20 @@ export default async function HomePage() {
     }
   }
 
+  // FAQPage JSON-LD из реальных вопросов
+  const faqLd =
+    faqs.length > 0
+      ? faqJsonLd(faqs.map((f) => ({ question: f.question, answer: f.answer })))
+      : null;
+
   return (
     <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript(faqLd)}
+        />
+      )}
       <Header
         loginText={texts["headerLoginText"] ?? "Войти"}
         loginUrl={texts["headerLoginUrl"] ?? "https://librachat.kz/auth"}

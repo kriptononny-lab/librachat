@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { fetchStrapiArticles } from "@/lib/strapi";
+import { fetchStrapiArticlesForSitemap } from "@/lib/strapi";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://librachat.ai";
 
@@ -57,16 +57,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Динамические страницы статей из Strapi
+  // Динамические страницы статей из Strapi с реальными датами обновления.
+  // Это важно для SEO: Google переобходит только реально изменившиеся страницы.
   let articlePages: MetadataRoute.Sitemap = [];
   try {
-    const articles = await fetchStrapiArticles();
-    articlePages = articles.map((a) => ({
-      url: `${BASE}/learn/${a.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+    const articles = await fetchStrapiArticlesForSitemap();
+    articlePages = articles.map((a) => {
+      // Приоритет: updatedAt → publishedAt → текущая дата
+      const lastModified = a.updatedAt
+        ? new Date(a.updatedAt)
+        : a.publishedAt
+          ? new Date(a.publishedAt)
+          : new Date();
+      return {
+        url: `${BASE}/learn/${a.slug}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      };
+    });
   } catch {
     // fallback — без статей
   }
