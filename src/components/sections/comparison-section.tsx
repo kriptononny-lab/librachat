@@ -127,115 +127,231 @@ export function ComparisonSection({ texts = {} }: { texts?: Record<string, unkno
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{
-            borderRadius: "20px",
-            overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.07)",
             maxWidth: "820px",
             margin: "0 auto",
           }}
         >
-          {/* Header */}
+          {/* ── Desktop: таблица 3 колонки ── */}
           <div
+            className="comp-desktop"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              background: "rgba(13,13,26,0.97)",
-              borderBottom: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: "20px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.07)",
             }}
           >
+            {/* Header */}
             <div
-              style={{
-                padding: "16px 20px",
-                fontSize: "12px",
-                fontWeight: 600,
-                color: "#6B7280",
-                letterSpacing: "0.06em",
-              }}
-            >
-              {colFeature}
-            </div>
-            <div
-              style={{
-                padding: "16px 20px",
-                fontSize: "13px",
-                fontWeight: 700,
-                color: "#C4B5FD",
-                borderLeft: "1px solid rgba(255,255,255,0.06)",
-                background: "rgba(167,139,250,0.06)",
-                textAlign: "center",
-              }}
-            >
-              LibraChat ✦
-            </div>
-            <div
-              style={{
-                padding: "16px 20px",
-                fontSize: "13px",
-                fontWeight: 600,
-                color: "#6B7280",
-                borderLeft: "1px solid rgba(255,255,255,0.06)",
-                textAlign: "center",
-              }}
-            >
-              {colOther}
-            </div>
-          </div>
-
-          {/* Rows */}
-          {ROWS.map((row, i) => (
-            <div
-              key={row.feature}
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr 1fr",
-                borderBottom:
-                  i < ROWS.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
-                background: i % 2 === 0 ? "rgba(13,13,26,0.5)" : "transparent",
+                background: "rgba(13,13,26,0.97)",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
               }}
             >
               <div
                 style={{
                   padding: "16px 20px",
-                  fontSize: "14px",
-                  color: "#9CA3B8",
-                  display: "flex",
-                  alignItems: "center",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "#6B7280",
+                  letterSpacing: "0.06em",
                 }}
               >
-                {row.feature}
+                {colFeature}
               </div>
               <div
                 style={{
                   padding: "16px 20px",
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  color: "#C4B5FD",
                   borderLeft: "1px solid rgba(255,255,255,0.06)",
-                  background: "rgba(167,139,250,0.04)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
+                  background: "rgba(167,139,250,0.06)",
+                  textAlign: "center",
                 }}
               >
-                <Check size={14} color="#F472B6" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: "13px", color: "#C4B5FD" }}>
-                  {row.libra.text}
-                </span>
+                LibraChat ✦
               </div>
               <div
                 style={{
                   padding: "16px 20px",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  color: "#6B7280",
                   borderLeft: "1px solid rgba(255,255,255,0.06)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  opacity: 1,
+                  textAlign: "center",
                 }}
               >
-                <X size={14} color="#9CA3B8" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: "13px", color: "#9CA3B8" }}>
-                  {row.other.text}
-                </span>
+                {colOther}
               </div>
             </div>
-          ))}
+
+            {/* Rows */}
+            {ROWS.map((row, i) => (
+              <div
+                key={row.feature}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr 1fr",
+                  borderBottom:
+                    i < ROWS.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                  background: i % 2 === 0 ? "rgba(13,13,26,0.5)" : "transparent",
+                }}
+              >
+                <div
+                  style={{
+                    padding: "16px 20px",
+                    fontSize: "14px",
+                    color: "#9CA3B8",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {row.feature}
+                </div>
+                <div
+                  style={{
+                    padding: "16px 20px",
+                    borderLeft: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(167,139,250,0.04)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <Check size={14} color="#F472B6" style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: "13px", color: "#C4B5FD" }}>
+                    {row.libra.text}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    padding: "16px 20px",
+                    borderLeft: "1px solid rgba(255,255,255,0.06)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    opacity: 1,
+                  }}
+                >
+                  <X size={14} color="#9CA3B8" style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: "13px", color: "#9CA3B8" }}>
+                    {row.other.text}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Mobile: карточки по фичам ── */}
+          <div className="comp-mobile">
+            {ROWS.map((row) => (
+              <div
+                key={row.feature}
+                style={{
+                  borderRadius: "16px",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(13,13,26,0.84)",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Заголовок фичи */}
+                <div
+                  style={{
+                    padding: "14px 16px",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    color: "#F0EEFF",
+                    background: "rgba(13,13,26,0.97)",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                  }}
+                >
+                  {row.feature}
+                </div>
+
+                {/* LibraChat */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                    padding: "12px 16px",
+                    background: "rgba(167,139,250,0.06)",
+                    borderBottom: "1px solid rgba(255,255,255,0.04)",
+                  }}
+                >
+                  <Check
+                    size={16}
+                    color="#F472B6"
+                    style={{ flexShrink: 0, marginTop: "2px" }}
+                  />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div
+                      style={{
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        color: "#C4B5FD",
+                        letterSpacing: "0.04em",
+                        marginBottom: "2px",
+                      }}
+                    >
+                      LIBRACHAT ✦
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "14px",
+                        color: "#F0EEFF",
+                        lineHeight: 1.45,
+                        overflowWrap: "anywhere",
+                      }}
+                    >
+                      {row.libra.text}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Обычный ИИ */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                    padding: "12px 16px",
+                  }}
+                >
+                  <X
+                    size={16}
+                    color="#9CA3B8"
+                    style={{ flexShrink: 0, marginTop: "2px" }}
+                  />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div
+                      style={{
+                        fontSize: "11px",
+                        fontWeight: 600,
+                        color: "#6B7280",
+                        letterSpacing: "0.04em",
+                        marginBottom: "2px",
+                      }}
+                    >
+                      {colOther.toUpperCase()}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "14px",
+                        color: "#9CA3B8",
+                        lineHeight: 1.45,
+                        overflowWrap: "anywhere",
+                      }}
+                    >
+                      {row.other.text}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

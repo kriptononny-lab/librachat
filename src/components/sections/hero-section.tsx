@@ -436,11 +436,10 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.68 }}
+            className="hero-stats-grid"
             style={{
               width: "100%",
               maxWidth: "700px",
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
               borderTop: "1px solid rgba(255,255,255,0.07)",
             }}
           >
