@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import { navigateToApp } from "@/lib/handoff";
 
 export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
   const badge = texts["cta.badge"] ?? "14 ДНЕЙ БЕСПЛАТНО";
@@ -93,8 +94,8 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                 marginTop: "8px",
               }}
             >
-              <Link
-                href={texts["ctaBtnPrimaryUrl"] ?? "https://librachat.kz/auth"}
+              <button
+                onClick={() => navigateToApp()}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -111,10 +112,12 @@ export function CtaSection({ texts = {} }: { texts?: Record<string, string> }) {
                   flex: "1 1 auto",
                   minWidth: "200px",
                   maxWidth: "320px",
+                  border: "none",
+                  cursor: "pointer",
                 }}
               >
                 {texts["ctaBtnPrimaryText"] ?? "Начать бесплатно"}
-              </Link>
+              </button>
               <Link
                 href={texts["ctaBtnSecondaryUrl"] ?? "/contact"}
                 style={{
