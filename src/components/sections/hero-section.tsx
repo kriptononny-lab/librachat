@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
 import {
   Send,
   BarChart2,
@@ -14,6 +13,8 @@ import {
   Mic,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useHeroDraft } from "@/context/hero-draft-context";
+import { navigateToApp } from "@/lib/handoff";
 
 const STATIC_HERO_PHRASES = [
   "Закрою лишние вкладки\nв твоём браузере.",
@@ -40,13 +41,19 @@ const QUICK_ACTIONS = [
   { icon: PenLine, labelKey: "heroChatTab4", fallback: "Написать код" },
 ];
 
-function AnimatedInput({ prompts }: { prompts: string[] }) {
+function RealInput({ prompts }: { prompts: string[] }) {
+  const { draft, setDraft } = useHeroDraft();
+  const [focused, setFocused] = useState(false);
+
+  // Анимация плейсхолдера (только когда поле пустое и не в фокусе)
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
   const [charIdx, setCharIdx] = useState(0);
+  const animActive = !focused && !draft;
 
   useEffect(() => {
+    if (!animActive) return;
     const current = prompts[phraseIdx];
     if (!current) return;
     if (typing) {
@@ -72,61 +79,125 @@ function AnimatedInput({ prompts }: { prompts: string[] }) {
         setTyping(true);
       }
     }
-  }, [charIdx, typing, phraseIdx, prompts]);
+  }, [charIdx, typing, phraseIdx, prompts, animActive]);
+
+  // Auto-resize textarea
+  const taRef = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    const ta = taRef.current;
+    if (!ta) return;
+    ta.style.height = "auto";
+    ta.style.height = Math.min(ta.scrollHeight, 200) + "px";
+  }, [draft]);
+
+  const handleSend = useCallback(() => {
+    navigateToApp(draft);
+  }, [draft]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        handleSend();
+      }
+    },
+    [handleSend]
+  );
 
   return (
     <div
       style={{
         background: "rgba(4,4,8,0.98)",
-        border: "1px solid rgba(167,139,250,0.35)",
+        border: `1px solid ${focused ? "rgba(167,139,250,0.6)" : "rgba(167,139,250,0.35)"}`,
         borderRadius: "20px",
-        boxShadow:
-          "0 0 0 1px rgba(167,139,250,0.08), 0 24px 64px rgba(0,0,0,0.55), 0 0 100px rgba(167,139,250,0.07)",
+        boxShadow: focused
+          ? "0 0 0 3px rgba(167,139,250,0.12), 0 24px 64px rgba(0,0,0,0.55)"
+          : "0 0 0 1px rgba(167,139,250,0.08), 0 24px 64px rgba(0,0,0,0.55), 0 0 100px rgba(167,139,250,0.07)",
         overflow: "hidden",
+        transition: "border-color 150ms ease, box-shadow 150ms ease",
+        position: "relative",
       }}
     >
-      {/* Ввод */}
+      {/* Поле ввода */}
       <div
         style={{
           padding: "16px 20px",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           gap: "12px",
-          height: "72px",
-          overflow: "hidden",
+          minHeight: "72px",
+          position: "relative",
         }}
       >
-        <div
+        {/* Анимированный плейсхолдер (overlay) */}
+        {animActive && (
+          <div
+            style={{
+              position: "absolute",
+              top: "16px",
+              left: "20px",
+              right: "74px",
+              fontSize: "16px",
+              lineHeight: "1.5",
+              color: "#9CA3B8",
+              pointerEvents: "none",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {displayed}
+            <span
+              style={{
+                display: "inline-block",
+                width: "2px",
+                height: "18px",
+                background: "#A78BFA",
+                marginLeft: "2px",
+                verticalAlign: "middle",
+                animation: "typing-cursor 0.9s step-end infinite",
+              }}
+            />
+          </div>
+        )}
+
+        <textarea
+          ref={taRef}
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          onKeyDown={handleKeyDown}
+          rows={1}
           style={{
             flex: 1,
             fontSize: "16px",
             lineHeight: "1.5",
-            color: "#9CA3B8",
-            height: "26px",
+            color: "#F0EEFF",
+            background: "transparent",
+            border: "none",
+            outline: "none",
+            resize: "none",
             overflow: "hidden",
-            whiteSpace: "nowrap",
-            textOverflow: "ellipsis",
+            fontFamily: "inherit",
+            // Скрываем нативный placeholder — используем overlay
+            caretColor: "#A78BFA",
+            minHeight: "26px",
+            maxHeight: "200px",
           }}
-        >
-          {displayed}
-          <span
-            style={{
-              display: "inline-block",
-              width: "2px",
-              height: "18px",
-              background: "#A78BFA",
-              marginLeft: "2px",
-              verticalAlign: "middle",
-              animation: "typing-cursor 0.9s step-end infinite",
-            }}
-          />
-        </div>
+          placeholder=""
+          aria-label="Введите запрос"
+        />
+
         <button
+          onClick={handleSend}
           style={{
             width: "42px",
             height: "42px",
             borderRadius: "12px",
-            background: "#A78BFA",
+            background: draft.trim()
+              ? "linear-gradient(135deg,#7B2FBE,#A78BFA)"
+              : "#A78BFA",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -134,7 +205,11 @@ function AnimatedInput({ prompts }: { prompts: string[] }) {
             border: "none",
             cursor: "pointer",
             boxShadow: "0 4px 16px rgba(167,139,250,0.45)",
+            transition: "background 200ms ease, transform 100ms ease",
+            marginBottom: "2px",
           }}
+          onMouseDown={(e) => e.preventDefault()} // не теряем фокус textarea
+          aria-label="Отправить"
         >
           <Send size={16} color="#ffffff" />
         </button>
@@ -164,7 +239,12 @@ function AnimatedInput({ prompts }: { prompts: string[] }) {
               justifyContent: "center",
               color: "#6B7280",
               cursor: "pointer",
+              transition: "color 150ms ease",
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#9CA3B8")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+            onClick={() => navigateToApp(draft)}
+            aria-label={["Прикрепить файл", "Изображение", "Голосовой ввод"][i]}
           >
             <Icon size={15} />
           </button>
@@ -211,6 +291,7 @@ function RotatingHeadline({ phrases }: { phrases: string[] }) {
 }
 
 export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) {
+  const { draft } = useHeroDraft();
   const badge = texts["hero.badge"] ?? "ИИ-АССИСТЕНТ НОВОГО ПОКОЛЕНИЯ";
   const title = texts["hero.title"] ?? "Привет, я LibraChat.";
   const subtitle =
@@ -356,7 +437,7 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
             style={{ width: "100%", maxWidth: "700px", marginBottom: "14px" }}
             className="hero-widget-aura"
           >
-            <AnimatedInput prompts={demoPrompts} />
+            <RealInput prompts={demoPrompts} />
           </motion.div>
 
           {/* Быстрые чипы под инпутом */}
@@ -412,22 +493,33 @@ export function HeroSection({ texts = {} }: { texts?: Record<string, string> }) 
               padding: "0 16px",
             }}
           >
-            <Button size="xl" asChild>
-              <Link
-                href={texts["heroBtnPrimaryUrl"] ?? "https://librachat.kz/auth"}
-                style={{ minWidth: "220px", maxWidth: "280px", flex: "1 1 auto" }}
-              >
-                {texts["heroBtnPrimaryText"] ?? "Начать бесплатно"}
-              </Link>
+            <Button
+              size="xl"
+              onClick={() => navigateToApp(draft)}
+              style={{
+                minWidth: "220px",
+                maxWidth: "280px",
+                flex: "1 1 auto",
+                cursor: "pointer",
+              }}
+            >
+              {texts["heroBtnPrimaryText"] ?? "Начать бесплатно"}
             </Button>
-            <Button variant="secondary" size="xl" asChild>
-              <Link
-                href={texts["heroBtnSecondaryUrl"] ?? "/business"}
-                className="inline-flex items-center gap-2"
-                style={{ minWidth: "220px", maxWidth: "280px", flex: "1 1 auto" }}
-              >
-                {texts["heroBtnSecondaryText"] ?? "Для бизнеса"}
-              </Link>
+            <Button
+              variant="secondary"
+              size="xl"
+              onClick={() => {
+                window.location.href = texts["heroBtnSecondaryUrl"] ?? "/business";
+              }}
+              className="inline-flex items-center gap-2"
+              style={{
+                minWidth: "220px",
+                maxWidth: "280px",
+                flex: "1 1 auto",
+                cursor: "pointer",
+              }}
+            >
+              {texts["heroBtnSecondaryText"] ?? "Для бизнеса"}
             </Button>
           </motion.div>
 

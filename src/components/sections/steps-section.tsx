@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
 import { UserPlus, MessageCircle, Sparkles } from "lucide-react";
+import { navigateToApp } from "@/lib/handoff";
 import type { StrapiStep } from "@/lib/strapi";
 
 // Маппинг строкового значения icon → компонент lucide
@@ -208,8 +208,8 @@ export function StepsSection({
           transition={{ duration: 0.4, delay: 0.5 }}
           style={{ textAlign: "center", marginTop: "60px" }}
         >
-          <Link
-            href="https://librachat.kz/auth"
+          <button
+            onClick={() => navigateToApp()}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -222,10 +222,12 @@ export function StepsSection({
               fontWeight: 600,
               textDecoration: "none",
               boxShadow: "0 4px 24px rgba(167,139,250,0.4)",
+              border: "none",
+              cursor: "pointer",
             }}
           >
             {texts["stepsBtnText"] ?? "Начать бесплатно"}
-          </Link>
+          </button>
           <p style={{ marginTop: "12px", fontSize: "13px", color: "#6B7280" }}>
             {texts["stepsSubLabel"] ?? "30 секунд · Без карты · Без VPN"}
           </p>

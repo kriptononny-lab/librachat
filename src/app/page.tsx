@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PageDraftWrapper } from "@/components/layout/page-draft-wrapper";
 import { HeroSection } from "@/components/sections/hero-section";
 import { FacetsSection } from "@/components/sections/facets-section";
 import { StepsSection } from "@/components/sections/steps-section";
@@ -106,30 +107,32 @@ export default async function HomePage() {
       : null;
 
   return (
-    <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
-      {faqLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={jsonLdScript(faqLd)}
+    <PageDraftWrapper>
+      <div className="flex min-h-dvh flex-col" style={{ overflowX: "hidden" }}>
+        {faqLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={jsonLdScript(faqLd)}
+          />
+        )}
+        <Header
+          loginText={texts["headerLoginText"] ?? "Войти"}
+          loginUrl={texts["headerLoginUrl"] ?? "https://librachat.kz/auth"}
+          registerText={texts["headerRegisterText"] ?? "Начать бесплатно"}
+          registerUrl={texts["headerRegisterUrl"] ?? "https://librachat.kz/auth"}
         />
-      )}
-      <Header
-        loginText={texts["headerLoginText"] ?? "Войти"}
-        loginUrl={texts["headerLoginUrl"] ?? "https://librachat.kz/auth"}
-        registerText={texts["headerRegisterText"] ?? "Начать бесплатно"}
-        registerUrl={texts["headerRegisterUrl"] ?? "https://librachat.kz/auth"}
-      />
-      <main className="flex-1" style={{ paddingTop: "68px" }}>
-        <HeroSection texts={texts} />
-        <FacetsSection texts={texts} facetCards={facetCards} />
-        <StepsSection texts={texts} steps={steps} />
-        <ComparisonSection texts={texts} />
-        <SocialProofSection testimonials={testimonials} texts={texts} />
-        <PricingPreviewSection plans={plans} pricingPage={pricingPage} texts={texts} />
-        <FaqSection faqs={faqs} texts={texts} />
-        <CtaSection texts={texts} />
-      </main>
-      <Footer />
-    </div>
+        <main className="flex-1" style={{ paddingTop: "68px" }}>
+          <HeroSection texts={texts} />
+          <FacetsSection texts={texts} facetCards={facetCards} />
+          <StepsSection texts={texts} steps={steps} />
+          <ComparisonSection texts={texts} />
+          <SocialProofSection testimonials={testimonials} texts={texts} />
+          <PricingPreviewSection plans={plans} pricingPage={pricingPage} texts={texts} />
+          <FaqSection faqs={faqs} texts={texts} />
+          <CtaSection texts={texts} />
+        </main>
+        <Footer />
+      </div>
+    </PageDraftWrapper>
   );
 }
