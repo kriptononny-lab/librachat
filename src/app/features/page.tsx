@@ -29,6 +29,7 @@ import {
   fetchStrapiUsecaseBlocks,
 } from "@/lib/strapi";
 import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
+import { navigateToApp } from "@/lib/handoff";
 
 const FALLBACK_TITLE = "Возможности LibraChat — 8 инструментов в одном чате";
 const FALLBACK_DESC =
@@ -775,8 +776,8 @@ export default async function FeaturesPage() {
                 padding: "0 16px",
               }}
             >
-              <Link
-                href={page?.ctaBtnUrl ?? "https://librachat.kz/auth"}
+              <button
+                onClick={() => navigateToApp()}
                 style={{
                   padding: "13px 28px",
                   borderRadius: "999px",
@@ -790,10 +791,12 @@ export default async function FeaturesPage() {
                   textAlign: "center",
                   minWidth: "180px",
                   maxWidth: "260px",
+                  border: "none",
+                  cursor: "pointer",
                 }}
               >
                 Попробовать
-              </Link>
+              </button>
             </div>
           </div>
         </section>
@@ -1282,8 +1285,8 @@ export default async function FeaturesPage() {
                     justifyContent: "center",
                   }}
                 >
-                  <Link
-                    href={page?.ctaBtnUrl ?? "https://librachat.kz/auth"}
+                  <button
+                    onClick={() => navigateToApp()}
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
@@ -1293,10 +1296,12 @@ export default async function FeaturesPage() {
                       fontWeight: 600,
                       textDecoration: "none",
                       boxShadow: "0 4px 20px rgba(167,139,250,0.4)",
+                      border: "none",
+                      cursor: "pointer",
                     }}
                   >
                     Начать бесплатно
-                  </Link>
+                  </button>
                   <Link
                     href="/contact"
                     style={{

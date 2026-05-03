@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { ALL_ARTICLES as STATIC_ARTICLES, TYPE_COLOR } from "@/lib/articles";
 import { fetchStrapiArticles, fetchStrapiArticleBySlug } from "@/lib/strapi";
 import { buildMetadata, articleJsonLd, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
+import { navigateToApp } from "@/lib/handoff";
 
 // Новые slug-и из Strapi рендерятся на лету — без редеплоя
 export const dynamicParams = true;
@@ -1017,8 +1018,8 @@ export default async function ArticlePage({
                   >
                     Без карты. Отмена в любой момент.
                   </p>
-                  <Link
-                    href="https://librachat.kz/auth"
+                  <button
+                    onClick={() => navigateToApp()}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -1034,7 +1035,7 @@ export default async function ArticlePage({
                     }}
                   >
                     Начать бесплатно
-                  </Link>
+                  </button>
                 </div>
 
                 <div
@@ -1280,8 +1281,8 @@ export default async function ArticlePage({
                     justifyContent: "center",
                   }}
                 >
-                  <Link
-                    href="https://librachat.kz/auth"
+                  <button
+                    onClick={() => navigateToApp()}
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
@@ -1294,7 +1295,7 @@ export default async function ArticlePage({
                     }}
                   >
                     Начать бесплатно
-                  </Link>
+                  </button>
                   <Link
                     href="/pricing"
                     style={{

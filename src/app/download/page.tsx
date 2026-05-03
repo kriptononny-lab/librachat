@@ -16,6 +16,7 @@ import {
   WifiOff,
 } from "lucide-react";
 import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
+import { navigateToApp } from "@/lib/handoff";
 
 const FALLBACK_TITLE = "Скачать приложение LibraChat для iOS, Android и браузера";
 const FALLBACK_DESC =
@@ -194,8 +195,8 @@ export default async function DownloadPage() {
                 marginTop: "32px",
               }}
             >
-              <Link
-                href="https://librachat.kz/auth"
+              <button
+                onClick={() => navigateToApp()}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -212,9 +213,9 @@ export default async function DownloadPage() {
                 }}
               >
                 {page?.startBtnText ?? "Начать бесплатно"}
-              </Link>
-              <Link
-                href="https://librachat.kz/auth"
+              </button>
+              <button
+                onClick={() => navigateToApp()}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -230,7 +231,7 @@ export default async function DownloadPage() {
                 }}
               >
                 {page?.demoBtnText ?? "Посмотреть демо"}
-              </Link>
+              </button>
             </div>
           </div>
         </section>
@@ -308,8 +309,12 @@ export default async function DownloadPage() {
                         {version}
                       </div>
                     </div>
-                    <Link
-                      href={href}
+                    <button
+                      onClick={() =>
+                        href.startsWith("http") && href.includes("librachat")
+                          ? navigateToApp()
+                          : (window.location.href = href)
+                      }
                       style={{
                         display: "inline-flex",
                         alignItems: "center",
@@ -337,7 +342,7 @@ export default async function DownloadPage() {
                           <Download size={15} /> {badge}
                         </>
                       )}
-                    </Link>
+                    </button>
                   </div>
                 )
               )}
@@ -368,8 +373,8 @@ export default async function DownloadPage() {
                 Войдите на любом устройстве — все чаты и настройки синхронизируются
                 автоматически
               </p>
-              <Link
-                href="https://librachat.kz/auth"
+              <button
+                onClick={() => navigateToApp()}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -386,7 +391,7 @@ export default async function DownloadPage() {
               >
                 <Zap size={16} />
                 Войти в аккаунт
-              </Link>
+              </button>
             </div>
           </div>
         </section>

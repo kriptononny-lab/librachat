@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { Mail, Phone, MessageSquare, Building2, Users, Send } from "lucide-react";
 import { fetchStrapiContactMethods, fetchStrapiContactReasons } from "@/lib/strapi";
 import { buildMetadata, breadcrumbJsonLd, jsonLdScript } from "@/lib/seo";
+import { navigateToApp } from "@/lib/handoff";
 
 const FALLBACK_TITLE = "Контакты и запрос демо LibraChat";
 const FALLBACK_DESC =
@@ -264,8 +265,8 @@ export default async function ContactPage() {
                     }}
                   />
 
-                  <Link
-                    href="https://librachat.kz/auth"
+                  <button
+                    onClick={() => navigateToApp()}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -284,7 +285,7 @@ export default async function ContactPage() {
                   >
                     <Send size={16} />
                     Отправить заявку
-                  </Link>
+                  </button>
                   <p style={{ fontSize: "12px", textAlign: "center", color: "#6B7280" }}>
                     Нажимая кнопку, вы принимаете{" "}
                     <Link

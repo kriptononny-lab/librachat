@@ -15,6 +15,7 @@ import {
 import { TYPE_COLOR } from "@/lib/articles";
 import type { ArticleCard } from "@/lib/articles";
 import type { StrapiLearnPage } from "@/lib/strapi";
+import { navigateToApp } from "@/lib/handoff";
 
 // ── Карточка ─────────────────────────────────────────
 function Card({ article, large = false }: { article: ArticleCard; large?: boolean }) {
@@ -795,8 +796,8 @@ export function LearnClient({
                     justifyContent: "center",
                   }}
                 >
-                  <Link
-                    href="https://librachat.kz/auth"
+                  <button
+                    onClick={() => navigateToApp()}
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",
@@ -809,7 +810,7 @@ export function LearnClient({
                     }}
                   >
                     Начать бесплатно
-                  </Link>
+                  </button>
                   <Link
                     href="/pricing"
                     style={{
