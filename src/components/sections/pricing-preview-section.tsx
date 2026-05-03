@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import type { StrapiPlan, StrapiPricingPage } from "@/lib/strapi";
+import { navigateToApp } from "@/lib/handoff";
 
 const STATIC_PLANS = [
   {
@@ -225,29 +226,56 @@ export function PricingPreviewSection({
                   ))}
               </div>
 
-              <Link
-                href={plan.ctaHref}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "center",
-                  borderRadius: "999px",
-                  padding: "12px",
-                  fontSize: "13px",
-                  fontWeight: plan.isPopular ? 800 : 700,
-                  textDecoration: "none",
-                  background: plan.isPopular
-                    ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
-                    : "transparent",
-                  color: plan.isPopular ? "#ffffff" : "rgba(255,255,255,0.5)",
-                  border: plan.isPopular ? "none" : "1px solid rgba(255,255,255,0.10)",
-                  boxShadow: plan.isPopular
-                    ? "0 4px 14px rgba(167,139,250,0.25)"
-                    : "none",
-                }}
-              >
-                {plan.ctaLabel}
-              </Link>
+              {plan.ctaHref.startsWith("http") ? (
+                <button
+                  onClick={() => navigateToApp()}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "center",
+                    borderRadius: "999px",
+                    padding: "12px",
+                    fontSize: "13px",
+                    fontWeight: plan.isPopular ? 800 : 700,
+                    textDecoration: "none",
+                    background: plan.isPopular
+                      ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                      : "transparent",
+                    color: plan.isPopular ? "#ffffff" : "rgba(255,255,255,0.5)",
+                    border: plan.isPopular ? "none" : "1px solid rgba(255,255,255,0.10)",
+                    boxShadow: plan.isPopular
+                      ? "0 4px 14px rgba(167,139,250,0.25)"
+                      : "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  {plan.ctaLabel}
+                </button>
+              ) : (
+                <Link
+                  href={plan.ctaHref}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "center",
+                    borderRadius: "999px",
+                    padding: "12px",
+                    fontSize: "13px",
+                    fontWeight: plan.isPopular ? 800 : 700,
+                    textDecoration: "none",
+                    background: plan.isPopular
+                      ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                      : "transparent",
+                    color: plan.isPopular ? "#ffffff" : "rgba(255,255,255,0.5)",
+                    border: plan.isPopular ? "none" : "1px solid rgba(255,255,255,0.10)",
+                    boxShadow: plan.isPopular
+                      ? "0 4px 14px rgba(167,139,250,0.25)"
+                      : "none",
+                  }}
+                >
+                  {plan.ctaLabel}
+                </Link>
+              )}
             </div>
           ))}
         </div>

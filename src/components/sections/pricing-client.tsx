@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import type { StrapiPlan, StrapiFaq, StrapiPricingPage } from "@/lib/strapi";
+import { navigateToApp } from "@/lib/handoff";
 
 const STATIC_PLANS: StrapiPlan[] = [
   {
@@ -353,32 +354,63 @@ export function PricingClient({
                       <span style={{ fontSize: "14px", color: "#9CA3B8" }}>/ мес</span>
                     )}
                   </div>
-                  <Link
-                    href={plan.ctaHref}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      padding: "13px",
-                      borderRadius: "999px",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      textDecoration: "none",
-                      marginBottom: "24px",
-                      background: plan.isPopular
-                        ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
-                        : "transparent",
-                      color: plan.isPopular ? "#fff" : "#F0EEFF",
-                      border: plan.isPopular
-                        ? "none"
-                        : "1px solid rgba(167,139,250,0.25)",
-                      boxShadow: plan.isPopular
-                        ? "0 4px 20px rgba(167,139,250,0.4)"
-                        : "none",
-                    }}
-                  >
-                    {plan.ctaLabel}
-                  </Link>
+                  {plan.ctaHref.startsWith("http") ? (
+                    <button
+                      onClick={() => navigateToApp()}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "13px",
+                        borderRadius: "999px",
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                        marginBottom: "24px",
+                        background: plan.isPopular
+                          ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                          : "transparent",
+                        color: plan.isPopular ? "#fff" : "#F0EEFF",
+                        border: plan.isPopular
+                          ? "none"
+                          : "1px solid rgba(167,139,250,0.25)",
+                        boxShadow: plan.isPopular
+                          ? "0 4px 20px rgba(167,139,250,0.4)"
+                          : "none",
+                        cursor: "pointer",
+                        width: "100%",
+                      }}
+                    >
+                      {plan.ctaLabel}
+                    </button>
+                  ) : (
+                    <Link
+                      href={plan.ctaHref}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "13px",
+                        borderRadius: "999px",
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                        marginBottom: "24px",
+                        background: plan.isPopular
+                          ? "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)"
+                          : "transparent",
+                        color: plan.isPopular ? "#fff" : "#F0EEFF",
+                        border: plan.isPopular
+                          ? "none"
+                          : "1px solid rgba(167,139,250,0.25)",
+                        boxShadow: plan.isPopular
+                          ? "0 4px 20px rgba(167,139,250,0.4)"
+                          : "none",
+                      }}
+                    >
+                      {plan.ctaLabel}
+                    </Link>
+                  )}
                   <ul
                     style={{
                       display: "flex",
@@ -592,8 +624,8 @@ export function PricingClient({
                   padding: "0 16px",
                 }}
               >
-                <Link
-                  href="https://librachat.kz/auth"
+                <button
+                  onClick={() => navigateToApp()}
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",
@@ -607,10 +639,12 @@ export function PricingClient({
                     textAlign: "center",
                     minWidth: "200px",
                     maxWidth: "280px",
+                    border: "none",
+                    cursor: "pointer",
                   }}
                 >
                   Начать бесплатно
-                </Link>
+                </button>
                 <Link
                   href="/contact?type=demo"
                   style={{

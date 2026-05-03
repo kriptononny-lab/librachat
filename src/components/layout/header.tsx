@@ -18,6 +18,7 @@ import {
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { MAIN_NAV } from "@/lib/constants";
+import { navigateToApp } from "@/lib/handoff";
 
 // Маппинг имён иконок → компоненты
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -392,8 +393,8 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             flexShrink: 0,
           }}
         >
-          <Link
-            href="https://librachat.kz/auth"
+          <button
+            onClick={() => navigateToApp()}
             style={{
               display: "flex",
               alignItems: "center",
@@ -405,12 +406,15 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               color: "#F0EEFF",
               textDecoration: "none",
               border: "1px solid rgba(255,255,255,0.16)",
+              background: "transparent",
+              cursor: "pointer",
+              width: "100%",
             }}
           >
             Войти
-          </Link>
-          <Link
-            href="https://librachat.kz/auth"
+          </button>
+          <button
+            onClick={() => navigateToApp()}
             style={{
               display: "flex",
               alignItems: "center",
@@ -423,10 +427,13 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               textDecoration: "none",
               background: "linear-gradient(135deg,#7B2FBE,#A78BFA,#F472B6)",
               boxShadow: "0 4px 16px rgba(167,139,250,0.4)",
+              border: "none",
+              cursor: "pointer",
+              width: "100%",
             }}
           >
             Начать бесплатно
-          </Link>
+          </button>
         </div>
       </div>
     </div>
@@ -505,17 +512,17 @@ export function Header({
               className="desktop-nav-right"
               style={{ alignItems: "center", gap: "8px", flexShrink: 0 }}
             >
-              <Button variant="ghost" size="md" asChild>
-                <Link href={loginUrl}>{loginText}</Link>
+              <Button variant="ghost" size="md" onClick={() => navigateToApp()}>
+                {loginText}
               </Button>
-              <Button variant="primary" size="md" asChild>
-                <Link href={registerUrl}>{registerText}</Link>
+              <Button variant="primary" size="md" onClick={() => navigateToApp()}>
+                {registerText}
               </Button>
             </div>
 
             {/* CTA кнопка для мобиля — всегда видна */}
-            <Link
-              href={registerUrl}
+            <button
+              onClick={() => navigateToApp()}
               className="mobile-cta-btn"
               style={{
                 alignItems: "center",
@@ -529,10 +536,12 @@ export function Header({
                 textDecoration: "none",
                 flexShrink: 0,
                 boxShadow: "0 2px 12px rgba(167,139,250,0.35)",
+                border: "none",
+                cursor: "pointer",
               }}
             >
               Начать
-            </Link>
+            </button>
 
             <button
               className="mobile-burger-btn"
