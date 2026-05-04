@@ -1018,7 +1018,7 @@ export default async function ArticlePage({
                     Без карты. Отмена в любой момент.
                   </p>
                   <Link
-                    href="https://librachat.kz/auth"
+                    href="https://ai.librachat.kz/auth"
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -1281,7 +1281,7 @@ export default async function ArticlePage({
                   }}
                 >
                   <Link
-                    href="https://librachat.kz/auth"
+                    href="https://ai.librachat.kz/auth"
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",

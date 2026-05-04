@@ -796,7 +796,7 @@ export function LearnClient({
                   }}
                 >
                   <Link
-                    href="https://librachat.kz/auth"
+                    href="https://ai.librachat.kz/auth"
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",

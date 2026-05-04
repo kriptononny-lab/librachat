@@ -15,7 +15,7 @@ const STATIC_PLANS: StrapiPlan[] = [
     priceMonthly: 0,
     priceAnnual: 0,
     ctaLabel: "Начать бесплатно",
-    ctaHref: "https://librachat.kz/auth",
+    ctaHref: "https://ai.librachat.kz/auth",
     isPopular: false,
     highlight: null,
     order: 1,
@@ -36,7 +36,7 @@ const STATIC_PLANS: StrapiPlan[] = [
     priceMonthly: 990,
     priceAnnual: 790,
     ctaLabel: "Начать бесплатно",
-    ctaHref: "https://librachat.kz/auth",
+    ctaHref: "https://ai.librachat.kz/auth",
     isPopular: true,
     highlight: "Лучший выбор",
     order: 2,
@@ -593,7 +593,7 @@ export function PricingClient({
                 }}
               >
                 <Link
-                  href="https://librachat.kz/auth"
+                  href="https://ai.librachat.kz/auth"
                   style={{
                     padding: "14px 32px",
                     borderRadius: "999px",

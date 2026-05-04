@@ -13,7 +13,7 @@ const STATIC_PLANS = [
     priceAnnual: 0,
     isPopular: false,
     ctaLabel: "Начать бесплатно",
-    ctaHref: "https://librachat.kz/auth",
+    ctaHref: "https://ai.librachat.kz/auth",
     features: [
       { label: "20 сообщений в день", ok: true },
       { label: "Базовый диалог", ok: true },
@@ -28,7 +28,7 @@ const STATIC_PLANS = [
     priceAnnual: 790,
     isPopular: true,
     ctaLabel: "Попробовать Pro",
-    ctaHref: "https://librachat.kz/auth",
+    ctaHref: "https://ai.librachat.kz/auth",
     features: [
       { label: "Безлимитные запросы", ok: true },
       { label: "Файлы до 50 МБ", ok: true },

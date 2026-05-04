@@ -265,7 +265,7 @@ export default async function ContactPage() {
                   />
 
                   <Link
-                    href="https://librachat.kz/auth"
+                    href="https://ai.librachat.kz/auth"
                     style={{
                       display: "flex",
                       alignItems: "center",

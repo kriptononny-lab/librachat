@@ -393,7 +393,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           }}
         >
           <Link
-            href="https://librachat.kz/auth"
+            href="https://ai.librachat.kz/auth"
             style={{
               display: "flex",
               alignItems: "center",
@@ -410,7 +410,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             Войти
           </Link>
           <Link
-            href="https://librachat.kz/auth"
+            href="https://ai.librachat.kz/auth"
             style={{
               display: "flex",
               alignItems: "center",
@@ -445,9 +445,9 @@ export interface HeaderProps {
 
 export function Header({
   loginText = "Войти",
-  loginUrl = "https://librachat.kz/auth",
+  loginUrl = "https://ai.librachat.kz/auth",
   registerText = "Начать бесплатно",
-  registerUrl = "https://librachat.kz/auth",
+  registerUrl = "https://ai.librachat.kz/auth",
 }: HeaderProps = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

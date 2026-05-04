@@ -117,9 +117,9 @@ export default async function HomePage() {
         )}
         <Header
           loginText={texts["headerLoginText"] ?? "Войти"}
-          loginUrl={texts["headerLoginUrl"] ?? "https://librachat.kz/auth"}
+          loginUrl={texts["headerLoginUrl"] ?? "https://ai.librachat.kz/auth"}
           registerText={texts["headerRegisterText"] ?? "Начать бесплатно"}
-          registerUrl={texts["headerRegisterUrl"] ?? "https://librachat.kz/auth"}
+          registerUrl={texts["headerRegisterUrl"] ?? "https://ai.librachat.kz/auth"}
         />
         <main className="flex-1" style={{ paddingTop: "68px" }}>
           <HeroSection texts={texts} />

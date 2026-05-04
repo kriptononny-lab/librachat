@@ -776,7 +776,7 @@ export default async function FeaturesPage() {
               }}
             >
               <Link
-                href={page?.ctaBtnUrl ?? "https://librachat.kz/auth"}
+                href={page?.ctaBtnUrl ?? "https://ai.librachat.kz/auth"}
                 style={{
                   padding: "13px 28px",
                   borderRadius: "999px",
@@ -1283,7 +1283,7 @@ export default async function FeaturesPage() {
                   }}
                 >
                   <Link
-                    href={page?.ctaBtnUrl ?? "https://librachat.kz/auth"}
+                    href={page?.ctaBtnUrl ?? "https://ai.librachat.kz/auth"}
                     style={{
                       padding: "14px 32px",
                       borderRadius: "999px",

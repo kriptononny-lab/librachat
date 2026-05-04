@@ -6,9 +6,9 @@ export async function ServerHeader() {
   return (
     <Header
       loginText={page?.headerLoginText ?? "Войти"}
-      loginUrl={page?.headerRegisterUrl ?? "https://librachat.kz/auth"}
+      loginUrl={page?.headerRegisterUrl ?? "https://ai.librachat.kz/auth"}
       registerText={page?.headerRegisterText ?? "Начать бесплатно"}
-      registerUrl={page?.headerRegisterUrl ?? "https://librachat.kz/auth"}
+      registerUrl={page?.headerRegisterUrl ?? "https://ai.librachat.kz/auth"}
     />
   );
 }

@@ -98,7 +98,7 @@ export const PLANS = [
       { label: "Приоритетный доступ", included: false },
       { label: "API-доступ", included: false },
     ],
-    cta: { label: "Начать бесплатно", href: "https://librachat.kz/auth" },
+    cta: { label: "Начать бесплатно", href: "https://ai.librachat.kz/auth" },
     isPopular: false,
   },
   {
@@ -115,7 +115,7 @@ export const PLANS = [
       { label: "Приоритетный доступ", included: true },
       { label: "API-доступ", included: false },
     ],
-    cta: { label: "Попробовать Pro", href: "https://librachat.kz/auth" },
+    cta: { label: "Попробовать Pro", href: "https://ai.librachat.kz/auth" },
     isPopular: true,
   },
   {

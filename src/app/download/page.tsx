@@ -44,7 +44,7 @@ const FALLBACK_PLATFORMS = [
     subtitle: "iPhone и iPad",
     badge: "App Store",
     version: "iOS 15.0+",
-    href: "https://librachat.kz/auth",
+    href: "https://ai.librachat.kz/auth",
     primary: true,
   },
   {
@@ -53,7 +53,7 @@ const FALLBACK_PLATFORMS = [
     subtitle: "Смартфоны и планшеты",
     badge: "Google Play",
     version: "Android 8.0+",
-    href: "https://librachat.kz/auth",
+    href: "https://ai.librachat.kz/auth",
     primary: false,
   },
   {
@@ -62,7 +62,7 @@ const FALLBACK_PLATFORMS = [
     subtitle: "Любой браузер",
     badge: "Открыть",
     version: "Без установки",
-    href: "https://librachat.kz/auth",
+    href: "https://ai.librachat.kz/auth",
     primary: false,
   },
   {
@@ -195,7 +195,7 @@ export default async function DownloadPage() {
               }}
             >
               <Link
-                href="https://librachat.kz/auth"
+                href="https://ai.librachat.kz/auth"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -214,7 +214,7 @@ export default async function DownloadPage() {
                 {page?.startBtnText ?? "Начать бесплатно"}
               </Link>
               <Link
-                href="https://librachat.kz/auth"
+                href="https://ai.librachat.kz/auth"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -369,7 +369,7 @@ export default async function DownloadPage() {
                 автоматически
               </p>
               <Link
-                href="https://librachat.kz/auth"
+                href="https://ai.librachat.kz/auth"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
