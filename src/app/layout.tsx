@@ -1,7 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { YandexMetrika } from "@/components/analytics/yandex-metrika";
 import "@/styles/globals.css";
+
+// viewport-fit=cover нужен, чтобы env(safe-area-inset-*) работал на iOS
+// (без него insets возвращают 0 — и шапка fixed уезжает под динамический остров / top-бар браузера)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   icons: {

@@ -296,6 +296,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "20px",
+            paddingTop: "max(20px, env(safe-area-inset-top))",
             borderBottom: "1px solid rgba(255,255,255,0.08)",
             flexShrink: 0,
           }}
@@ -385,6 +386,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         <div
           style={{
             padding: "16px",
+            paddingBottom: "max(16px, env(safe-area-inset-bottom))",
             borderTop: "1px solid rgba(255,255,255,0.08)",
             display: "flex",
             flexDirection: "column",
@@ -470,9 +472,18 @@ export function Header({
           right: 0,
           zIndex: 60,
           transition: "all 300ms ease",
-          padding: scrolled ? "12px 0" : "16px 0",
+          // На iOS добавляем safe-area-inset сверху, чтобы шапка не залезала
+          // под динамический остров / top-бар встроенного браузера (Telegram, Instagram).
+          // На Android и десктопе env(...) = 0 — поведение не меняется.
+          paddingTop: scrolled
+            ? "max(12px, env(safe-area-inset-top))"
+            : "max(16px, env(safe-area-inset-top))",
+          paddingBottom: scrolled ? "12px" : "16px",
+          paddingLeft: "env(safe-area-inset-left)",
+          paddingRight: "env(safe-area-inset-right)",
           background: scrolled ? "rgba(8,8,16,0.92)" : "rgba(4,4,8,0.4)",
           backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >
