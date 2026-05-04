@@ -509,61 +509,6 @@ export default async function BusinessPage() {
           </div>
         </section>
 
-        {/* Логотипы */}
-        <div
-          style={{
-            padding: "28px 0",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-            background: "#040408",
-          }}
-        >
-          <div className="container-site">
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: "11px",
-                color: "#6B7280",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                marginBottom: "18px",
-              }}
-            >
-              {page?.socialBadge ?? "НАМ ДОВЕРЯЮТ ЛИДЕРЫ РЫНКА"}
-            </p>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              {[
-                "Компания А",
-                "Компания Б",
-                "Компания В",
-                "Компания Г",
-                "Компания Д",
-                "Компания Е",
-              ].map((n) => (
-                <div
-                  key={n}
-                  style={{
-                    padding: "6px 18px",
-                    borderRadius: "999px",
-                    fontSize: "13px",
-                    color: "#6B7280",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                  }}
-                >
-                  {n}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* ── 6 ПРЕИМУЩЕСТВ ── */}
         <section style={S.section("#080810")}>
           <div className="container-site">
