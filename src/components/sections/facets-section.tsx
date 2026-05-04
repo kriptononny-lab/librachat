@@ -39,7 +39,7 @@ const FALLBACK_CARDS: Record<
       desc: "Сделаю за тебя сценарии для Reels, виральные посты и контент-планы за секунды.",
       superpower:
         "Креатив без тормозов. Мой разработчик убрал ограничения — теперь я иду дальше и глубже, чем другие.",
-      href: "/features/content",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <Briefcase size={20} color="#C4B5FD" />,
@@ -48,7 +48,7 @@ const FALLBACK_CARDS: Record<
       desc: "Смотри, вот эта рутина вся на мне: от создания описаний товаров для маркетплейсов до анализа конкурентов и ответов клиентам. Ещё я знаю, как продать твой продукт дороже.",
       superpower:
         "Если ты дашь мне большой объём данных — отчёт на 900 строк — я проанализирую его со 100% точностью без выдумок.",
-      href: "/features/marketing",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <GraduationCap size={20} color="#C4B5FD" />,
@@ -57,7 +57,7 @@ const FALLBACK_CARDS: Record<
       desc: "Я мгновенно делаю саммари из часовых лекций, помогаю разобраться в сложных темах и пишу качественные работы, которые проходят проверки.",
       superpower:
         "Пересказ 2-часового видео за 30 секунд. Загружай мне книги целиком — выдам готовую работу без галлюцинаций.",
-      href: "/features/study",
+      href: "https://ai.librachat.kz/auth",
     },
   ],
   business: [
@@ -68,7 +68,7 @@ const FALLBACK_CARDS: Record<
       desc: "Я закрываю рутину целого маркетингового отдела: аналитика, документы, переписка, ответы клиентам — всё на мне.",
       superpower:
         "Анализирую отчёт на 900 строк со 100% точностью. Никаких выдумок — только данные.",
-      href: "/business",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <Zap size={20} color="#C4B5FD" />,
@@ -76,7 +76,7 @@ const FALLBACK_CARDS: Record<
       title: "SEO, карточки, описания — за секунды",
       desc: "Пишу SEO-тексты для WB/Ozon, создаю ТЗ для дизайнеров, адаптирую западный контент под российский рынок.",
       superpower: "Один чат заменяет копирайтера, маркетолога и аналитика одновременно.",
-      href: "/business",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <GraduationCap size={20} color="#C4B5FD" />,
@@ -85,7 +85,7 @@ const FALLBACK_CARDS: Record<
       desc: "Загрузи любой файл — я выдаю выводы строго по данным. Никаких галлюцинаций, только факты.",
       superpower:
         "Разделение на проекты: каждый клиент — отдельное пространство с сохранённым контекстом.",
-      href: "/business",
+      href: "https://ai.librachat.kz/auth",
     },
   ],
   study: [
@@ -96,7 +96,7 @@ const FALLBACK_CARDS: Record<
       desc: "Объясняю любые темы простым языком, помогаю с домашними заданиями, готовлю к экзаменам без шаблонных ответов.",
       superpower:
         "Загружай книги целиком — я выдам готовую работу на основе их контента без галлюцинаций.",
-      href: "/features/study",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <Zap size={20} color="#C4B5FD" />,
@@ -105,7 +105,7 @@ const FALLBACK_CARDS: Record<
       desc: "Загрузи лекцию или учебник — получишь структурированный конспект, ключевые тезисы и план подготовки.",
       superpower:
         "Курсовая без галлюцинаций. Я не очередной — я первый, кто работает честно.",
-      href: "/features/study",
+      href: "https://ai.librachat.kz/auth",
     },
     {
       icon: <Briefcase size={20} color="#C4B5FD" />,
@@ -113,7 +113,7 @@ const FALLBACK_CARDS: Record<
       title: "Качественные работы, которые проходят проверки",
       desc: "Помогаю структурировать курсовую, нахожу источники, проверяю логику аргументов и оформление.",
       superpower: "Пишу на основе реальных данных — ни одного выдуманного факта.",
-      href: "/features/study",
+      href: "https://ai.librachat.kz/auth",
     },
   ],
 };
